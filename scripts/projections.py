@@ -54,4 +54,4 @@ ax = fig.add_axes([b,b,1-2*b,1-2*b], frameon=False,
 ax.add_feature(cartopy.feature.LAND, zorder=0,
                facecolor="C1", edgecolor="0.0", linewidth=0)
 plt.savefig("../figures/projection-cartopy.pdf")
-
+# plt.show()
