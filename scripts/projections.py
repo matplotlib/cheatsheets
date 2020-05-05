@@ -23,7 +23,7 @@ ax.set_yticks(np.linspace(0, 2, 8))
 ax.set_yticklabels([])
 ax.set_ylim(0,2)
 ax.grid(linewidth=1)
-plt.savefig("projection-polar.pdf")
+plt.savefig("../figures/projection-polar.pdf")
 fig.clear()
 
 # 3D plot
@@ -42,7 +42,7 @@ ax.set_zlim(0, 1)
 ax.set_xticks([])
 ax.set_yticks([])
 ax.set_zticks([])
-plt.savefig("projection-3d.pdf")
+plt.savefig("../figures/projection-3d.pdf")
 fig.clear()
 
 # Cartopy plot
@@ -53,5 +53,5 @@ ax = fig.add_axes([b,b,1-2*b,1-2*b], frameon=False,
                   projection=cartopy.crs.Orthographic())
 ax.add_feature(cartopy.feature.LAND, zorder=0,
                facecolor="C1", edgecolor="0.0", linewidth=0)
-plt.savefig("projection-cartopy.pdf")
-plt.show()
+plt.savefig("../figures/projection-cartopy.pdf")
+

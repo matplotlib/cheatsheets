@@ -19,7 +19,7 @@ ax.plot(X, Y, color="C1", linewidth=0.75)
 ax.set_xlim(0, 8), ax.set_xticks(np.arange(1,8))
 ax.set_ylim(0, 8), ax.set_yticks(np.arange(1,8))
 ax.grid(linewidth=0.125)
-plt.savefig("basic-plot.pdf")
+plt.savefig("../figures/basic-plot.pdf")
 ax.clear()
 
 # Basic scatter plot
@@ -32,7 +32,7 @@ ax.scatter(X, Y, 5, zorder=10,
 ax.set_xlim(0, 8), ax.set_xticks(np.arange(1,8))
 ax.set_ylim(0, 8), ax.set_yticks(np.arange(1,8))
 ax.grid(linewidth=0.125)
-plt.savefig("basic-scatter.pdf")
+plt.savefig("../figures/basic-scatter.pdf")
 ax.clear()
 
 # Basic bar plot
@@ -46,7 +46,7 @@ ax.set_xlim(0, 8), ax.set_xticks(np.arange(1,8))
 ax.set_ylim(0, 8), ax.set_yticks(np.arange(1,8))
 ax.set_axisbelow(True)
 ax.grid(linewidth=0.125)
-plt.savefig("basic-bar.pdf")
+plt.savefig("../figures/basic-bar.pdf")
 ax.clear()
 
 
@@ -60,7 +60,7 @@ ax.imshow(I, extent=[0,8,0,8], interpolation="nearest")
 ax.set_xlim(0, 8), ax.set_xticks(np.arange(1,8))
 ax.set_ylim(0, 8), ax.set_yticks(np.arange(1,8))
 ax.grid(linewidth=0.25, color="white")
-plt.savefig("basic-imshow.pdf")
+plt.savefig("../figures/basic-imshow.pdf")
 ax.clear()
 
 
@@ -80,7 +80,7 @@ ax.set_xlim(0, 8), ax.set_xticks(np.arange(1,8))
 ax.set_ylim(0, 8), ax.set_yticks(np.arange(1,8))
 # ax.set_axisbelow(True)
 # ax.grid(linewidth=0.125, color="0.75")
-plt.savefig("basic-contour.pdf")
+plt.savefig("../figures/basic-contour.pdf")
 ax.clear()
 
 
@@ -98,7 +98,7 @@ ax.pie(X, colors=["white",]*len(X), radius=3, center=(4,4),
         wedgeprops = {"linewidth": 0.25, "edgecolor": "white"}, frame=True)
 ax.pie(X, colors=colors, radius=3, center=(4,4), 
         wedgeprops = {"linewidth": 0.25, "edgecolor": "white"}, frame=True)
-plt.savefig("basic-pie.pdf")
+plt.savefig("../figures/basic-pie.pdf")
 ax.clear()
 
 
@@ -110,7 +110,7 @@ ax.set_axisbelow(True)
 ax.grid(linewidth=0.25, color="0.75")
 ax.text(4, 4, "TEXT", color="C1", size=8, weight="bold",
         ha="center", va="center", rotation=25)
-plt.savefig("basic-text.pdf")
+plt.savefig("../figures/basic-text.pdf")
 ax.clear()
 
 # Basic fill plot
@@ -125,7 +125,7 @@ ax.set_xlim(0, 8), ax.set_xticks(np.arange(1,8))
 ax.set_ylim(0, 8), ax.set_yticks(np.arange(1,8))
 ax.set_axisbelow(True)
 ax.grid(linewidth=0.125, color="0.75")
-plt.savefig("basic-fill.pdf")
+plt.savefig("../figures/basic-fill.pdf")
 ax.clear()
 
 # Basic quiver plot
@@ -140,6 +140,6 @@ ax.set_xlim(0, 8), ax.set_xticks(np.arange(1,8))
 ax.set_ylim(0, 8), ax.set_yticks(np.arange(1,8))
 ax.set_axisbelow(True)
 ax.grid(linewidth=0.125, color="0.75")
-plt.savefig("basic-quiver.pdf")
+plt.savefig("../figures/basic-quiver.pdf")
 ax.clear()
 

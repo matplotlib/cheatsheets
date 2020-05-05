@@ -19,7 +19,7 @@ ax.text(0, 0.12, "-∞", ha="left", va="bottom", size=3, transform=ax.transAxes)
 ax.text(0, 0.15, "⇤",  ha="left", va="top", size=4, transform=ax.transAxes)
 ax.text(1, 0.12, "+∞", ha="right", va="bottom", size=3, transform=ax.transAxes)
 ax.text(1, 0.15, "⇥",  ha="right", va="top", size=4, transform=ax.transAxes)
-plt.savefig("scale-linear.pdf")
+plt.savefig("../figures/scale-linear.pdf")
 ax.clear()
 
 # Log scale
@@ -31,7 +31,7 @@ ax.text(0, 0.12, "0", ha="left", va="bottom", size=3, transform=ax.transAxes)
 ax.text(0, 0.15, "⇤",  ha="left", va="top", size=4, transform=ax.transAxes)
 ax.text(1, 0.12, "+∞", ha="right", va="bottom", size=3, transform=ax.transAxes)
 ax.text(1, 0.15, "⇥",  ha="right", va="top", size=4, transform=ax.transAxes)
-plt.savefig("scale-log.pdf")
+plt.savefig("../figures/scale-log.pdf")
 ax.clear()
 
 # Symlog scale
@@ -43,7 +43,7 @@ ax.text(0, 0.12, "-∞", ha="left", va="bottom", size=3, transform=ax.transAxes)
 ax.text(0, 0.15, "⇤",  ha="left", va="top", size=4, transform=ax.transAxes)
 ax.text(1, 0.12, "+∞", ha="right", va="bottom", size=3, transform=ax.transAxes)
 ax.text(1, 0.15, "⇥",  ha="right", va="top", size=4, transform=ax.transAxes)
-plt.savefig("scale-symlog.pdf")
+plt.savefig("../figures/scale-symlog.pdf")
 ax.clear()
 
 # Symlog scale
@@ -55,6 +55,6 @@ ax.text(0, 0.12, "0", ha="left", va="bottom", size=3, transform=ax.transAxes)
 ax.text(0, 0.15, "⇤",  ha="left", va="top", size=4, transform=ax.transAxes)
 ax.text(1, 0.12, "1", ha="right", va="bottom", size=3, transform=ax.transAxes)
 ax.text(1, 0.15, "⇥",  ha="right", va="top", size=4, transform=ax.transAxes)
-plt.savefig("scale-logit.pdf")
+plt.savefig("../figures/scale-logit.pdf")
 ax.clear()
 
