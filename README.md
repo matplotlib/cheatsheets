@@ -29,5 +29,3 @@ $ xelatex cheatsheet-basic.tex
 ```
 
 
-
-
