@@ -27,4 +27,3 @@ $ cd ..
 $ xelatex cheatsheet-basic.tex
 $ xelatex cheatsheet-basic.tex
 ```
-
