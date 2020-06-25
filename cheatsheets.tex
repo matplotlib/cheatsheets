@@ -920,6 +920,23 @@
     \hspace*{2.5mm}~$\rightarrow$ plt.close("all")
   \end{myboxed}
  
+  \begin{myboxed}{Performance tips}
+    {\ttfamily \fontsize{6pt}{7pt}\selectfont
+    \textcolor{red}{ax.scatter(X, Y)  \hfill slow}\\
+    ax.plot(X, Y, marker="o", ls="")  \hfill fast\\
+    \hrule \smallskip
+    \textcolor{red}{for i in range(0,n,2):  \hfill (very) slow}\\
+    \hspace*{2.5mm}~\textcolor{red}{plt.plot(X[i:i+2], Y[i:i+2])}\\
+
+    X0, Y0 = X[0::2], Y[0::2]         \hfill fast\\
+    X1, Y1 = X[1::2], Y[1::2]\\
+    S = [None]*len(X)\\
+    X = [v for t in zip(X0,X1,S) for v in t]\\
+    Y = [v for t in zip(Y0,Y1,S) for v in t]\\
+    plt.plot(X,Y)
+}
+  \end{myboxed}
+
 \end{multicols*}
 \end{document}
 

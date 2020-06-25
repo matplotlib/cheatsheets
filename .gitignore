@@ -3,3 +3,4 @@ fonts*
 *.log
 *.out
 *.aux
+figures/*.pdf
