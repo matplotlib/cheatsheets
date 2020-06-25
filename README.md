@@ -1,5 +1,8 @@
-# cheatsheets
-Various cheat sheets for matplotlib
+# Cheatsheets
+
+![](./cheatsheets-1.png)
+
+![](./cheatsheets-2.png)
 
 # How to compile
 
@@ -9,6 +12,7 @@ Various cheat sheets for matplotlib
 * `fonts/source-code-pro/*`  : See https://fonts.google.com/specimen/Source+Code+Pro
 * `fonts/source-sans-pro/*`  : See https://fonts.google.com/specimen/Source+Sans+Pro
 * `fonts/source-serif-pro/*` : See https://fonts.google.com/specimen/Source+Serif+Pro
+* `fonts/delicious-123: See https://www.exljbris.com/delicious.html
 
 2. You need to generate all the figures:
 
@@ -23,6 +27,7 @@ $ cd ..
 $ xelatex cheatsheet-basic.tex
 $ xelatex cheatsheet-basic.tex
 ```
+
 
 
 

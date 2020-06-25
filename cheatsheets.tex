@@ -875,9 +875,51 @@
       \colormap{twilight}
     \end{tabular}
   \end{myboxed}
-            
-\end{multicols*}
-  
 
+  \begin{myboxed}{Color names}
+    \includegraphics[width=\columnwidth]{colornames.pdf}
+  \end{myboxed}
+  %
+  \vspace{\fill}
+  %
+  \begin{myboxed}{Legend placement}
+    \includegraphics[width=\columnwidth]{legend-placement.pdf}
+    plt.\textbf{legend}(loc="string", bbox\_to\_anchor=(x,y))\\
+    \begin{tabular}{@{}p{0.33\columnwidth}
+                       p{0.33\columnwidth}
+                       p{0.33\columnwidth}@{}}
+      \scriptsize \rule{0pt}{1.25em}\noindent
+      1: lower left & 2: lower center & 3: lower right\\
+      4: left       & 5: center       & 6: right\\
+      7: upper left & 8: upper center & 9: upper right\\
+    \end{tabular}
+
+    \begin{tabular}{@{}p{0.495\columnwidth}
+                       p{0.495\columnwidth}@{}}
+      \scriptsize \rule{0pt}{1.25em}\noindent
+      A: upper right / (-.1,.9) & B: right / (-.1,.5)\\
+      C: lower right / (-.1,.1) & D: upper left / (-.1,-.1)\\
+      E: upper center / (.5,-.1) & F: upper right / (.9,-.1)\\
+      G: lower left / (1.1,.1) & H: left / (1.1,.5)\\
+      I: upper left / (1.1,.9) & J: lower right / (.9,1.1)\\
+      K: lower center / (.5,1.1) & L: lower left / (.1,1.1)
+    \end{tabular}
+    
+  \end{myboxed}
+  %
+  \vspace{\fill}
+  %
+  \begin{myboxed}{How do I …}
+    \textbf{… resize a figure?}\\
+    \hspace*{2.5mm}~$\rightarrow$ fig.set\_size\_inches(w,h)\\
+    \textbf{… save a figure?}\\
+    \hspace*{2.5mm}~$\rightarrow$ plt.savefig("figure.pdf")\\
+    \textbf{… clear a figure?}\\
+    \hspace*{2.5mm}~$\rightarrow$ ax.clear()\\
+    \textbf{… close all figures?}\\
+    \hspace*{2.5mm}~$\rightarrow$ plt.close("all")
+  \end{myboxed}
+ 
+\end{multicols*}
 \end{document}
 
