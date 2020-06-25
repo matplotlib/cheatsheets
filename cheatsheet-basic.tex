@@ -659,22 +659,32 @@
       \API{https://matplotlib.org/tutorials/introductory/customizing.html}}
     \setlength{\fboxsep}{0pt}%
     \setlength{\fboxrule}{.25pt}%
-    {\ttfamily plt.style.use(\textbf{style})\smallskip}\\
-    \fbox{\includegraphics[width=.24\columnwidth]{style-default.pdf}}
-    \fbox{\includegraphics[width=.24\columnwidth]{style-classic.pdf}}
-    \fbox{\includegraphics[width=.24\columnwidth]{style-grayscale.pdf}}
-    \fbox{\includegraphics[width=.24\columnwidth]{style-ggplot.pdf}}
-    \fbox{\includegraphics[width=.24\columnwidth]{style-seaborn.pdf}}
-    \fbox{\includegraphics[width=.24\columnwidth]{style-fast.pdf}}
-    \fbox{\includegraphics[width=.24\columnwidth]{style-bmh.pdf}}
-    \fbox{\includegraphics[width=.24\columnwidth]{style-Solarize_Light2.pdf}}
+              {\ttfamily plt.style.use(\textbf{style})\medskip}\\
+    \fbox{\includegraphics[width=.32\columnwidth]{style-default.pdf}}
+    \fbox{\includegraphics[width=.32\columnwidth]{style-classic.pdf}}
+    \fbox{\includegraphics[width=.32\columnwidth]{style-grayscale.pdf}}
+    \fbox{\includegraphics[width=.32\columnwidth]{style-ggplot.pdf}}
+    \fbox{\includegraphics[width=.32\columnwidth]{style-seaborn.pdf}}
+    \fbox{\includegraphics[width=.32\columnwidth]{style-fast.pdf}}
+    \fbox{\includegraphics[width=.32\columnwidth]{style-bmh.pdf}}
+    \fbox{\includegraphics[width=.32\columnwidth]{style-Solarize_Light2.pdf}}
+    \fbox{\includegraphics[width=.32\columnwidth]{style-seaborn-notebook.pdf}}
+    %% \fbox{\includegraphics[width=.24\columnwidth]{style-default.pdf}}
+    %% \fbox{\includegraphics[width=.24\columnwidth]{style-classic.pdf}}
+    %% \fbox{\includegraphics[width=.24\columnwidth]{style-grayscale.pdf}}
+    %% \fbox{\includegraphics[width=.24\columnwidth]{style-ggplot.pdf}}
+    %% \fbox{\includegraphics[width=.24\columnwidth]{style-seaborn.pdf}}
+    %% \fbox{\includegraphics[width=.24\columnwidth]{style-fast.pdf}}
+    %% \fbox{\includegraphics[width=.24\columnwidth]{style-bmh.pdf}}
+    %% \fbox{\includegraphics[width=.24\columnwidth]{style-Solarize_Light2.pdf}}
   \end{myboxed}
   %
   \vspace{\fill}
   %
   \begin{myboxed}{Quick reminder}
   {\ttfamily
-    ax.\textbf{grid}(), ax.patch.\textbf{set\_alpha}(0)\\
+    ax.\textbf{grid}()\\
+    ax.patch.\textbf{set\_alpha}(0)\\
     ax.\textbf{set\_[xy]lim}(vmin, vmax)\\
     ax.\textbf{set\_[xy]label}(label)\\
     ax.\textbf{set\_[xy]ticks}(list)\\
@@ -736,12 +746,138 @@
     8. Avoid “Chartjunk”\\
     9. Message Trumps Beauty\\
     10. Get the Right Tool
-  \end{myboxed}
-  
-
-
-  
-  
+  \end{myboxed} 
 \end{multicols*}
+
+\begin{multicols*}{5}
+  \begin{myboxed}{Axes adjustements\hfill
+      \API{https://matplotlib.org/api/_as_gen/matplotlib.pyplot.subplots_adjust.html}}
+    plt.\textbf{subplot\_adjust}( … )\\
+
+    \includegraphics[width=\columnwidth]{adjustments.pdf}
+  \end{myboxed}
+  %
+  \vspace{\fill}
+  %
+  \begin{myboxed}{Extent \& origin \hfill
+      \API{https://matplotlib.org/tutorials/intermediate/imshow_extent.html} }
+    plt.\textbf{imshow}( extent=…, origin=… )\\
+
+    \includegraphics[width=\columnwidth]{extents.pdf}
+  \end{myboxed}
+  %
+  \vspace{\fill}
+  %
+  \begin{myboxed}{Text aligmnents \hfill
+      \API{https://matplotlib.org/tutorials/text/text_props.html} }
+    plt.\textbf{text}( …, ha=… , va=…, … )\\
+
+    \includegraphics[width=\columnwidth]{text-alignments.pdf}
+  \end{myboxed}
+  %
+  \vspace{\fill}
+  %
+  \begin{myboxed}{Text parameters  \hfill
+      \API{https://matplotlib.org/tutorials/text/text_props.html}}
+    plt.\textbf{text}( …, family=… , size=…, weight = …)\\
+    plt.\textbf{text}( …, fontproperties = … )\\
+
+    \includegraphics[width=\columnwidth]{fonts.pdf}
+  \end{myboxed}
+
+
+  \begin{myboxed}{Uniform colormaps}
+    \begin{tabular}{@{}p{0.7\columnwidth}p{0.25\columnwidth}@{}}
+      \scriptsize \rule{0pt}{1.25em}\noindent
+      \colormap{viridis}
+      \colormap{plasma}
+      \colormap{inferno}
+      \colormap{magma}
+      \colormap{cividis}
+    \end{tabular}
+  \end{myboxed}
+  %
+  \vspace{\fill}
+  %
+  \begin{myboxed}{Sequential colormaps}
+    \begin{tabular}{@{}p{0.7\columnwidth}p{0.25\columnwidth}@{}}
+      \scriptsize \rule{0pt}{1.25em}\noindent
+      \colormap{Greys}
+      \colormap{Purples}
+      \colormap{Blues}
+      \colormap{Greens}
+      \colormap{Oranges}
+      \colormap{Reds}
+      \colormap{YlOrBr}
+      \colormap{YlOrRd}
+      \colormap{OrRd}
+      \colormap{PuRd}
+      \colormap{RdPu}
+      \colormap{BuPu}
+      \colormap{GnBu}
+      \colormap{PuBu}
+      \colormap{YlGnBu}
+      \colormap{PuBuGn}
+      \colormap{BuGn}
+      \colormap{YlGn}
+    \end{tabular}
+  \end{myboxed}
+  %
+  \vspace{\fill}
+  %
+  \begin{myboxed}{Diverging colormaps}
+    \begin{tabular}{@{}p{0.7\columnwidth}p{0.25\columnwidth}@{}}
+      \scriptsize \rule{0pt}{1.25em}\noindent
+      \colormap{PiYG}
+      \colormap{PRGn}
+      \colormap{BrBG}
+      \colormap{PuOr}
+      \colormap{RdGy}
+      \colormap{RdBu}
+      \colormap{RdYlBu}
+      \colormap{RdYlGn}
+      \colormap{Spectral}
+      \colormap{coolwarm}
+      \colormap{bwr}
+      \colormap{seismic}
+    \end{tabular}
+  \end{myboxed}
+  %
+  \vspace{\fill}
+  %
+  \begin{myboxed}{Qualitative colormaps}
+    \begin{tabular}{@{}p{0.7\columnwidth}p{0.25\columnwidth}@{}}
+      \scriptsize \rule{0pt}{1.25em}\noindent
+      \colormap{Pastel1}
+      \colormap{Pastel2}
+      \colormap{Paired}
+      \colormap{Accent}
+      \colormap{Dark2}
+      \colormap{Set1}
+      \colormap{Set2}
+      \colormap{Set3}
+      \colormap{tab10}
+      \colormap{tab20}
+      \colormap{tab20b}
+      \colormap{tab20c}
+    \end{tabular}
+  \end{myboxed}
+  %
+  \vspace{\fill}
+  %
+  \begin{myboxed}{Miscellaneous colormaps}
+    \begin{tabular}{@{}p{0.7\columnwidth}p{0.25\columnwidth}@{}}
+      \scriptsize \rule{0pt}{1.25em}\noindent
+      \colormap{terrain}
+      \colormap{ocean}
+      \colormap{cubehelix}
+      \colormap{rainbow}
+      \colormap{twilight}
+    \end{tabular}
+  \end{myboxed}
+            
+\end{multicols*}
+  
+
 \end{document}
 
