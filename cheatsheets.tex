@@ -1,6 +1,5 @@
 % -----------------------------------------------------------------------------
-% Matplotlib cheat sheet
-% Released under the BSD License
+% Matplotlib cheat sheet - Released under the BSD License
 % -----------------------------------------------------------------------------
 \documentclass[10pt,landscape,a4paper]{article}
 \usepackage[utf8]{inputenc}
@@ -246,8 +245,10 @@
   \includegraphics[width=\columnwidth]{logo.pdf}
   %\textbf{\Large \RobotoCon Matplotlib 3.2 cheat sheet}\\
   %{\ttfamily https://matplotlib.org} \hfill CC-BY 4.0
-  %\bigskip
+  % \bigskip
   \vspace{\fill}
+  %\hspace{1mm} \small \url{https://matplotlib.org/}
+  %\vspace{\fill}
 
   % --- Quick start -----------------------------------------------------------
   \begin{myboxed}{Quick start \hfill
@@ -274,7 +275,6 @@
   \includegraphics[width=\columnwidth]{anatomy.pdf}
   \end{myboxed}
   \vspace{\fill}
-  
   % --- Layout ---------------------------------------------------------------
   \begin{myboxed}{Subplots layout \hfill
       \API{https://matplotlib.org/tutorials/intermediate/gridspec.html} }
@@ -318,16 +318,21 @@
   \begin{myboxed}{Basic plots}
   \plot{basic-plot.pdf}{\textbf{plot}([X],Y,[fmt],…)}
        {https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html}
-       {\paramx{optional},
-        \paramy{mandatory},
-        \paramfmt{optional},
-        \paramcolor{optional},
-        \parammarker{optional},
-        \paramlinestyle{optional}}
+       {\optional{X},
+        \mandatory{Y},
+        \optional{fmt},
+        \optional{color},
+        \optional{marker},
+        \optional{linestyle}}
        {}
   \plot{basic-scatter.pdf}{\textbf{scatter}(X,Y,…)}
        {https://matplotlib.org/api/_as_gen/matplotlib.pyplot.scatter.html}
-       {x, y, [s]izes, [c]olors, markers, cmap}
+       {\mandatory{X},
+        \mandatory{Y},
+        \optional{[s]izes},
+        \optional{[c]olors},
+        \optional{markers},
+        \optional{cmap}}
        {}
   \plot{basic-bar.pdf}{\textbf{bar[h]}(x,height,…)}
        {https://matplotlib.org/api/_as_gen/matplotlib.pyplot.bar.html}
@@ -339,67 +344,134 @@
          \optional{color} }{}
   \plot{basic-imshow.pdf}{\textbf{imshow}(Z,[cmap],…)}
        {https://matplotlib.org/api/_as_gen/matplotlib.pyplot.imshow.html}
-       {\Z, \cmap, \interpolation{optional}, \extent, \origin}
+       { \mandatory{Z},
+         \optional{cmap},
+         \optional{interpolation},
+         \optional{extent},
+         \optional{origin} }
        {}
-  \plot{basic-contour.pdf}{\textbf{contour[f]}(Z,[n],…)}
+  \plot{basic-contour.pdf}{\textbf{contour[f]}([X],[Y],Z,,…)}
        {https://matplotlib.org/api/_as_gen/matplotlib.pyplot.contour.html}
-       {z, n, colors, extents, origin}
+       { \optional{X},
+         \optional{Y},
+         \mandatory{Z},
+         \optional{levels},
+         \optional{colors},
+         \optional{extent},
+         \optional{origin} }
        {}
-  \plot{basic-quiver.pdf}{\textbf{quiver}(X,Y,U,V,…)}
+  \plot{basic-quiver.pdf}{\textbf{quiver}([X],[Y],U,V,…)}
      {https://matplotlib.org/api/_as_gen/matplotlib.pyplot.quiver.html}
-     {x, y, fmt, color, marker, linestyle}
+     { \optional{X},
+       \optional{Y},
+       \mandatory{U},
+       \mandatory{V},
+       \optional{C},
+       \optional{units},
+       \optional{angles} }
      {}
-  \plot{basic-pie.pdf}{\textbf{pie}(Z,[n],…)}
+  \plot{basic-pie.pdf}{\textbf{pie}(X,[explode],…)}
        {https://matplotlib.org/api/_as_gen/matplotlib.pyplot.pie.html}
-       {z, n, colors, extents, origin}
+       {\mandatory{Z},
+         \optional{explode},
+         \optional{labels},
+         \optional{colors},
+         \optional{radius}}
        {}
-   \plot{basic-text.pdf}{\textbf{text}(X,Y,text,…)}
+   \plot{basic-text.pdf}{\textbf{text}(x,y,text,…)}
+       {https://matplotlib.org/api/_as_gen/matplotlib.pyplot.text.html}
+       {\mandatory{x},
+        \mandatory{y},
+        \mandatory{text},
+        \optional{va},
+        \optional{ha},
+        \optional{size},
+        \optional{weight},
+        \optional{transform} }
+       {}
+   \plot{basic-fill.pdf}{\textbf{fill[\_between][x]}( … )}
        {https://matplotlib.org/api/_as_gen/matplotlib.pyplot.pie.html}
-       {ha, va, size, weight, family, transform}
-       {}
-   \plot{basic-fill.pdf}{\textbf{fill[\_between][x]}(…)}
-       {https://matplotlib.org/api/_as_gen/matplotlib.pyplot.pie.html}
-       {}
+       {\mandatory{X},
+        \optional{Y1},
+        \optional{Y2},
+        \optional{color},
+        \optional{where} }
        {}
   \end{myboxed}
   \vspace{\fill}
   % --- Advanced plots --------------------------------------------------------
   \begin{myboxed}{Advanced plots}
-  \plot{advanced-step.pdf}{\textbf{step}([X],Y,[fmt],…)}
-     {https://matplotlib.org/api/_as_gen/matplotlib.axes.Axes.violinplot.html}
-     {x, y, fmt, color, marker, linestyle}
+  \plot{advanced-step.pdf}{\textbf{step}(X,Y,[fmt],…)}
+     {https://matplotlib.org/api/_as_gen/matplotlib.pyplot.step.html}
+     {\mandatory{X},
+      \mandatory{Y},
+      \optional{fmt},
+      \optional{color},
+      \optional{marker},
+      \optional{where} }
      {}
-  \plot{advanced-boxplot.pdf}{\textbf{boxplot}(D,…)}
-     {https://matplotlib.org/api/_as_gen/matplotlib.axes.Axes.violinplot.html}
-     {x, y, fmt, color, marker, linestyle}
+  \plot{advanced-boxplot.pdf}{\textbf{boxplot}(X,…)}
+     {https://matplotlib.org/api/_as_gen/matplotlib.pyplot.boxplot.html}
+     { \mandatory{X},
+       \optional{notch},
+       \optional{sym},
+       \optional{bootstrap},
+       \optional{widths} }
      {}
-  \plot{advanced-errorbar.pdf}{\textbf{errorbar}(X,Y,E,…)}
+  \plot{advanced-errorbar.pdf}{\textbf{errorbar}(X,Y,xerr,yerr,…)}
      {https://matplotlib.org/api/_as_gen/matplotlib.pyplot.errorbar.html}
-     {x, y, fmt, color, marker, linestyle}
+     { \mandatory{X},
+       \mandatory{Y},
+       \optional{xerr},
+       \optional{yerr},
+       \optional{fmt} }
      {}
-  \plot{advanced-hist.pdf}{\textbf{hist}(X,bins,…)}
+  \plot{advanced-hist.pdf}{\textbf{hist}(X, bins, …)}
      {https://matplotlib.org/api/_as_gen/matplotlib.pyplot.hist.html}
-     {x, y, fmt, color, marker, linestyle}
+     {\mandatory{X},
+      \optional{bins},
+      \optional{range},
+      \optional{density},
+      \optional{weights}}
      {}
   \plot{advanced-violin.pdf}{\textbf{violinplot}(D,…)}
      {https://matplotlib.org/api/_as_gen/matplotlib.axes.Axes.violinplot.html}
-     {x, y, fmt, color, marker, linestyle}
+     {\mandatory{D},
+      \optional{positions},
+      \optional{widths},
+      \optional{vert} }
      {}
-  \plot{advanced-barbs.pdf}{\textbf{barbs}([X],[Y],U,V,…)}
+  \plot{advanced-barbs.pdf}{\textbf{barbs}([X],[Y], U, V, …)}
      {https://matplotlib.org/api/_as_gen/matplotlib.axes.Axes.violinplot.html}
-     {x, y, fmt, color, marker, linestyle}
+     { \optional{X},
+       \optional{Y},
+       \mandatory{U},
+       \mandatory{V},
+       \optional{C},
+       \optional{length},
+       \optional{pivot},
+       \optional{sizes} }
      {}
   \plot{advanced-event.pdf}{\textbf{eventplot}(positions,…)}
      {https://matplotlib.org/api/_as_gen/matplotlib.pyplot.eventplot.html}
-     {x, y, fmt, color, marker, linestyle}
+     {\mandatory{positions},
+       \optional{orientation},
+       \optional{lineoffsets} }
      {}
   \plot{advanced-hexbin.pdf}{\textbf{hexbin}(X,Y,C,…)}
      {https://matplotlib.org/api/_as_gen/matplotlib.pyplot.hexbin.html}
-     {x, y, fmt, color, marker, linestyle}
+     {\mandatory{X},
+      \mandatory{Y},
+      \optional{C},
+      \optional{gridsize},
+       \optional{bins} }
      {}
   \plot{advanced-xcorr.pdf}{\textbf{xcorr}(X,Y,…)}
      {https://matplotlib.org/api/_as_gen/matplotlib.pyplot.xcorr.html}
-     {x, y, fmt, color, marker, linestyle}
+     {\mandatory{X},
+      \mandatory{Y},
+      \optional{normed},
+      \optional{detrend} }
      {}
   \end{myboxed}
 
@@ -460,7 +532,7 @@
       \API{https://matplotlib.org/tutorials/colors/colors.html}}
     %  mpl.colors.to\_rbga(\textbf{color})\smallskip\\
     \def\arraystretch{0.5}
-    \begin{tabular}{@{}p{0.7\columnwidth}p{0.3\columnwidth}@{}}
+    \begin{tabular}{@{}p{0.7\columnwidth}p{0.25\columnwidth}@{}}
       \palette{cycle}{'Cn'}
       \palette{raw}{ 'x' }
       \palette{name}{'name'}
@@ -479,7 +551,7 @@
       \API{https://matplotlib.org/tutorials/colors/colormaps.html}}
     {\ttfamily plt.\textbf{get\_cmap}(name) \smallskip\\}
     \def\arraystretch{0.5}
-    \begin{tabular}{@{}p{0.7\columnwidth}p{0.3\columnwidth}@{}}
+    \begin{tabular}{@{}p{0.7\columnwidth}p{0.25\columnwidth}@{}}
       \scriptsize \rule{0pt}{1.25em}Uniform & \\
       \colormap{viridis} \colormap{magma} \colormap{plasma}
       %
@@ -537,8 +609,14 @@
     %
     {\ttfamily ax.\textbf{annotate}(…)} \hfill
     \api{https://matplotlib.org/api/_as_gen/matplotlib.pyplot.annotate.html}\\
-    mappable, ax, cax, orientation \smallskip\\
-    \includegraphics[width=\columnwidth]{colorbar.pdf}\\
+    \mandatory{text},
+    \mandatory{xy},
+    \mandatory{xytext},
+    \optional{xycoords},
+    \optional{textcoords},
+    \optional{arrowprops}
+    \smallskip\\
+    \includegraphics[width=\columnwidth]{annotate.pdf}\\
     %
   \end{myboxed}
   %
@@ -581,22 +659,32 @@
       \API{https://matplotlib.org/tutorials/introductory/customizing.html}}
     \setlength{\fboxsep}{0pt}%
     \setlength{\fboxrule}{.25pt}%
-    {\ttfamily plt.style.use(\textbf{style})\smallskip}\\
-    \fbox{\includegraphics[width=.24\columnwidth]{style-default.pdf}}
-    \fbox{\includegraphics[width=.24\columnwidth]{style-classic.pdf}}
-    \fbox{\includegraphics[width=.24\columnwidth]{style-grayscale.pdf}}
-    \fbox{\includegraphics[width=.24\columnwidth]{style-ggplot.pdf}}
-    \fbox{\includegraphics[width=.24\columnwidth]{style-seaborn.pdf}}
-    \fbox{\includegraphics[width=.24\columnwidth]{style-fast.pdf}}
-    \fbox{\includegraphics[width=.24\columnwidth]{style-bmh.pdf}}
-    \fbox{\includegraphics[width=.24\columnwidth]{style-Solarize_Light2.pdf}}
+              {\ttfamily plt.style.use(\textbf{style})\medskip}\\
+    \fbox{\includegraphics[width=.32\columnwidth]{style-default.pdf}}
+    \fbox{\includegraphics[width=.32\columnwidth]{style-classic.pdf}}
+    \fbox{\includegraphics[width=.32\columnwidth]{style-grayscale.pdf}}
+    \fbox{\includegraphics[width=.32\columnwidth]{style-ggplot.pdf}}
+    \fbox{\includegraphics[width=.32\columnwidth]{style-seaborn.pdf}}
+    \fbox{\includegraphics[width=.32\columnwidth]{style-fast.pdf}}
+    \fbox{\includegraphics[width=.32\columnwidth]{style-bmh.pdf}}
+    \fbox{\includegraphics[width=.32\columnwidth]{style-Solarize_Light2.pdf}}
+    \fbox{\includegraphics[width=.32\columnwidth]{style-seaborn-notebook.pdf}}
+    %% \fbox{\includegraphics[width=.24\columnwidth]{style-default.pdf}}
+    %% \fbox{\includegraphics[width=.24\columnwidth]{style-classic.pdf}}
+    %% \fbox{\includegraphics[width=.24\columnwidth]{style-grayscale.pdf}}
+    %% \fbox{\includegraphics[width=.24\columnwidth]{style-ggplot.pdf}}
+    %% \fbox{\includegraphics[width=.24\columnwidth]{style-seaborn.pdf}}
+    %% \fbox{\includegraphics[width=.24\columnwidth]{style-fast.pdf}}
+    %% \fbox{\includegraphics[width=.24\columnwidth]{style-bmh.pdf}}
+    %% \fbox{\includegraphics[width=.24\columnwidth]{style-Solarize_Light2.pdf}}
   \end{myboxed}
   %
   \vspace{\fill}
   %
   \begin{myboxed}{Quick reminder}
   {\ttfamily
-    ax.\textbf{grid}(), ax.patch.\textbf{set\_alpha}(0)\\
+    ax.\textbf{grid}()\\
+    ax.patch.\textbf{set\_alpha}(0)\\
     ax.\textbf{set\_[xy]lim}(vmin, vmax)\\
     ax.\textbf{set\_[xy]label}(label)\\
     ax.\textbf{set\_[xy]ticks}(list)\\
@@ -658,12 +746,180 @@
     8. Avoid “Chartjunk”\\
     9. Message Trumps Beauty\\
     10. Get the Right Tool
+  \end{myboxed} 
+\end{multicols*}
+
+\begin{multicols*}{5}
+  \begin{myboxed}{Axes adjustements\hfill
+      \API{https://matplotlib.org/api/_as_gen/matplotlib.pyplot.subplots_adjust.html}}
+    plt.\textbf{subplot\_adjust}( … )\\
+
+    \includegraphics[width=\columnwidth]{adjustments.pdf}
   \end{myboxed}
-  
+  %
+  \vspace{\fill}
+  %
+  \begin{myboxed}{Extent \& origin \hfill
+      \API{https://matplotlib.org/tutorials/intermediate/imshow_extent.html} }
+    plt.\textbf{imshow}( extent=…, origin=… )\\
+
+    \includegraphics[width=\columnwidth]{extents.pdf}
+  \end{myboxed}
+  %
+  \vspace{\fill}
+  %
+  \begin{myboxed}{Text aligmnents \hfill
+      \API{https://matplotlib.org/tutorials/text/text_props.html} }
+    plt.\textbf{text}( …, ha=… , va=…, … )\\
+
+    \includegraphics[width=\columnwidth]{text-alignments.pdf}
+  \end{myboxed}
+  %
+  \vspace{\fill}
+  %
+  \begin{myboxed}{Text parameters  \hfill
+      \API{https://matplotlib.org/tutorials/text/text_props.html}}
+    plt.\textbf{text}( …, family=… , size=…, weight = …)\\
+    plt.\textbf{text}( …, fontproperties = … )\\
+
+    \includegraphics[width=\columnwidth]{fonts.pdf}
+  \end{myboxed}
 
 
-  
-  
+  \begin{myboxed}{Uniform colormaps}
+    \begin{tabular}{@{}p{0.7\columnwidth}p{0.25\columnwidth}@{}}
+      \scriptsize \rule{0pt}{1.25em}\noindent
+      \colormap{viridis}
+      \colormap{plasma}
+      \colormap{inferno}
+      \colormap{magma}
+      \colormap{cividis}
+    \end{tabular}
+  \end{myboxed}
+  %
+  \vspace{\fill}
+  %
+  \begin{myboxed}{Sequential colormaps}
+    \begin{tabular}{@{}p{0.7\columnwidth}p{0.25\columnwidth}@{}}
+      \scriptsize \rule{0pt}{1.25em}\noindent
+      \colormap{Greys}
+      \colormap{Purples}
+      \colormap{Blues}
+      \colormap{Greens}
+      \colormap{Oranges}
+      \colormap{Reds}
+      \colormap{YlOrBr}
+      \colormap{YlOrRd}
+      \colormap{OrRd}
+      \colormap{PuRd}
+      \colormap{RdPu}
+      \colormap{BuPu}
+      \colormap{GnBu}
+      \colormap{PuBu}
+      \colormap{YlGnBu}
+      \colormap{PuBuGn}
+      \colormap{BuGn}
+      \colormap{YlGn}
+    \end{tabular}
+  \end{myboxed}
+  %
+  \vspace{\fill}
+  %
+  \begin{myboxed}{Diverging colormaps}
+    \begin{tabular}{@{}p{0.7\columnwidth}p{0.25\columnwidth}@{}}
+      \scriptsize \rule{0pt}{1.25em}\noindent
+      \colormap{PiYG}
+      \colormap{PRGn}
+      \colormap{BrBG}
+      \colormap{PuOr}
+      \colormap{RdGy}
+      \colormap{RdBu}
+      \colormap{RdYlBu}
+      \colormap{RdYlGn}
+      \colormap{Spectral}
+      \colormap{coolwarm}
+      \colormap{bwr}
+      \colormap{seismic}
+    \end{tabular}
+  \end{myboxed}
+  %
+  \vspace{\fill}
+  %
+  \begin{myboxed}{Qualitative colormaps}
+    \begin{tabular}{@{}p{0.7\columnwidth}p{0.25\columnwidth}@{}}
+      \scriptsize \rule{0pt}{1.25em}\noindent
+      \colormap{Pastel1}
+      \colormap{Pastel2}
+      \colormap{Paired}
+      \colormap{Accent}
+      \colormap{Dark2}
+      \colormap{Set1}
+      \colormap{Set2}
+      \colormap{Set3}
+      \colormap{tab10}
+      \colormap{tab20}
+      \colormap{tab20b}
+      \colormap{tab20c}
+    \end{tabular}
+  \end{myboxed}
+  %
+  \vspace{\fill}
+  %
+  \begin{myboxed}{Miscellaneous colormaps}
+    \begin{tabular}{@{}p{0.7\columnwidth}p{0.25\columnwidth}@{}}
+      \scriptsize \rule{0pt}{1.25em}\noindent
+      \colormap{terrain}
+      \colormap{ocean}
+      \colormap{cubehelix}
+      \colormap{rainbow}
+      \colormap{twilight}
+    \end{tabular}
+  \end{myboxed}
+
+  \begin{myboxed}{Color names}
+    \includegraphics[width=\columnwidth]{colornames.pdf}
+  \end{myboxed}
+  %
+  \vspace{\fill}
+  %
+  \begin{myboxed}{Legend placement}
+    \includegraphics[width=\columnwidth]{legend-placement.pdf}
+    plt.\textbf{legend}(loc="string", bbox\_to\_anchor=(x,y))\\
+    \begin{tabular}{@{}p{0.33\columnwidth}
+                       p{0.33\columnwidth}
+                       p{0.33\columnwidth}@{}}
+      \scriptsize \rule{0pt}{1.25em}\noindent
+      1: lower left & 2: lower center & 3: lower right\\
+      4: left       & 5: center       & 6: right\\
+      7: upper left & 8: upper center & 9: upper right\\
+    \end{tabular}
+
+    \begin{tabular}{@{}p{0.495\columnwidth}
+                       p{0.495\columnwidth}@{}}
+      \scriptsize \rule{0pt}{1.25em}\noindent
+      A: upper right / (-.1,.9) & B: right / (-.1,.5)\\
+      C: lower right / (-.1,.1) & D: upper left / (-.1,-.1)\\
+      E: upper center / (.5,-.1) & F: upper right / (.9,-.1)\\
+      G: lower left / (1.1,.1) & H: left / (1.1,.5)\\
+      I: upper left / (1.1,.9) & J: lower right / (.9,1.1)\\
+      K: lower center / (.5,1.1) & L: lower left / (.1,1.1)
+    \end{tabular}
+    
+  \end{myboxed}
+  %
+  \vspace{\fill}
+  %
+  \begin{myboxed}{How do I …}
+    \textbf{… resize a figure?}\\
+    \hspace*{2.5mm}~$\rightarrow$ fig.set\_size\_inches(w,h)\\
+    \textbf{… save a figure?}\\
+    \hspace*{2.5mm}~$\rightarrow$ plt.savefig("figure.pdf")\\
+    \textbf{… clear a figure?}\\
+    \hspace*{2.5mm}~$\rightarrow$ ax.clear()\\
+    \textbf{… close all figures?}\\
+    \hspace*{2.5mm}~$\rightarrow$ plt.close("all")
+  \end{myboxed}
+ 
 \end{multicols*}
 \end{document}
 
