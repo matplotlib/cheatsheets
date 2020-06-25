@@ -24,6 +24,6 @@ $ cd ..
 
 3. Compile the sheet
 ```
-$ xelatex cheatsheet-basic.tex
-$ xelatex cheatsheet-basic.tex
+$ xelatex cheatsheets.tex
+$ xelatex cheatsheets.tex
 ```
