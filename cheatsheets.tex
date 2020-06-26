@@ -16,7 +16,7 @@
 % --- Graphics ----------------------------------------------------------------
 \usepackage{tikz}
 \usepackage{graphicx}
-\graphicspath{{./figures/}}
+\graphicspath{{./figures/}{./icons/}{./logos/}}
 \usepackage[export]{adjustbox}
 
 % --- Framed boxes ------------------------------------------------------------
@@ -250,7 +250,7 @@
 
 \begin{multicols*}{5}
 
-  \includegraphics[width=\columnwidth]{logo.pdf}
+  \includegraphics[width=\columnwidth]{matplotlib.pdf}
   %\textbf{\Large \RobotoCon Matplotlib 3.2 cheat sheet}\\
   %{\ttfamily https://matplotlib.org} \hfill CC-BY 4.0
   % \bigskip
@@ -304,6 +304,12 @@
   
   % --- Getting help ----------------------------------------------------------
   \begin{myboxed}{Getting help}
+    \includegraphics[height=.75em]{www.png}
+    \href{https://matplotlib.org}
+         {matplotlib.org}\\
+    \includegraphics[height=.75em]{github.png}
+    \href{https://github.com/matplotlib/matplotlib/issues}
+         {github.com/matplotlib/matplotlib/issues}\\
     \includegraphics[height=.75em]{discourse.pdf}
     \href{https://discourse.matplotlib.org}
          {discourse.matplotlib.org}\\
@@ -776,7 +782,7 @@
   %
   \vspace{\fill}
   %
-  \begin{myboxed}{Text aligmnents \hfill
+  \begin{myboxed}{Text alignments \hfill
       \API{https://matplotlib.org/tutorials/text/text_props.html} }
     plt.\textbf{text}( …, ha=… , va=…, … )\\
 
@@ -886,15 +892,18 @@
 
   
   
-  \begin{myboxed}{Color names}
+  \begin{myboxed}{Color names \hfill
+      \API{https://matplotlib.org/api/colors_api.html} }
     \includegraphics[width=\columnwidth]{colornames.pdf}
   \end{myboxed}
   %
   \vspace{\fill}
   %
-  \begin{myboxed}{Image interpolation}
-    plt.\textbf{imshow}(…, interpolation=…)\\
-    plt.\textbf{contour[f]}(…, interpolation=…)\\
+  \begin{myboxed}{Image interpolation
+      \hfill \API{https://matplotlib.org/gallery/images_contours_and_fields/interpolation_methods.html} }
+        \smallskip
+%%    plt.\textbf{imshow}(…, interpolation=…)\\
+%%    plt.\textbf{contour[f]}(…, interpolation=…)\\
     \includegraphics[width=\columnwidth]{interpolations.pdf}
   \end{myboxed}
 
@@ -941,6 +950,8 @@
     \hspace*{2.5mm}~$\rightarrow$ ax.set\_xticks([])\\
     \textbf{… remove tick labels ?}\\
     \hspace*{2.5mm}~$\rightarrow$ ax.set\_[xy]ticklabels([])\\
+    \textbf{… rotate tick labels ?}\\
+    \hspace*{2.5mm}~$\rightarrow$ plt.[xy]ticks(rotation=90)\\
     \textbf{… hide top spine?}\\
     \hspace*{2.5mm}~$\rightarrow$ ax.spines['top'].set\_visible(False)\\
     \textbf{… hide legend border?}\\
@@ -958,32 +969,31 @@
     \textbf{… get a reversed colormap?}\\
     \hspace*{2.5mm}~$\rightarrow$ plt.get\_cmap(``viridis\_r'')\\
     \textbf{… get a discrete colormap?}\\
-    \hspace*{2.5mm}~$\rightarrow$ plt.get\_cmap(``viridis'', 10)
-%%    \textbf{… show a figure for one second?}\\
-%%    \hspace*{2.5mm}~$\rightarrow$ plt.show(block=False), time.sleep(1)
+    \hspace*{2.5mm}~$\rightarrow$ plt.get\_cmap(``viridis'', 10)\\
+    \textbf{… show a figure for one second?}\\
+    \hspace*{2.5mm}~$\rightarrow$ plt.show(block=False), time.sleep(1)
   \end{myboxed}
   %
   \vspace{\fill}
   %
   \begin{myboxed}{Performance tips}
+    \smallskip
     {\ttfamily \fontsize{6pt}{7pt}\selectfont
-    \textcolor{red}{ax.scatter(X, Y)  \hfill slow}\\
-    ax.plot(X, Y, marker="o", ls="")  \hfill fast\\
+    \textcolor{red}{scatter(X, Y)  \hfill slow}\\
+    plot(X, Y, marker="o", ls="")  \hfill fast\\
     \hrule \smallskip
-    \textcolor{red}{for i in range(0,n,2):  \hfill (very) slow}\\
-    \hspace*{2.5mm}~\textcolor{red}{plt.plot(X[i:i+2], Y[i:i+2])}\\
-
-    X0, Y0 = X[0::2], Y[0::2]         \hfill fast\\
-    X1, Y1 = X[1::2], Y[1::2]\\
-    S = [None]*len(X)\\
-    X = [v for t in zip(X0,X1,S) for v in t]\\
-    Y = [v for t in zip(Y0,Y1,S) for v in t]\\
-    plt.plot(X,Y)}
+    \textcolor{red}{for i in range(n): plot(X[i]) \hfill slow}\\
+    plot(sum([x+[None] for x in X],[])) \hfill fast\\
+    \hrule \smallskip
+    \textcolor{red}{cla(), imshow(…), canvas.draw() \hfill slow}\\
+    im.set\_data(…), canvas.draw() \hfill fast\smallskip
+    }
   \end{myboxed}
   %
   \vspace{\fill}
   %
   \begin{myboxed}{Beyond Matplotlib}
+        \smallskip
     \href{https://seaborn.pydata.org/}{\textbf{Seaborn}}: Statistical Data Visualization\\
     \href{https://scitools.org.uk/cartopy/docs/latest/}{\textbf{Cartopy}}: Geospatial Data Processing\\
     \href{https://yt-project.org/doc/index.html}{\textbf{yt}}: Volumetric data Visualization\\
@@ -991,7 +1001,14 @@
     \href{https://datashader.org/}{\textbf{Datashader}}: Large data processing pipeline\\
     \href{https://plotnine.readthedocs.io/en/latest/}{\textbf{plotnine}}: A Grammar of Graphics for Python
   \end{myboxed}
-
+  %
+  \begin{center}
+  \href{https://github.com/matplotlib/cheatsheets}{Matplotlib Cheatsheets} (c) 2020 Nicolas P. Rougier\\
+  Released under a CC-BY 4.0 International License\\
+  \smallskip
+  \includegraphics[width=\columnwidth]{numfocus.png}
+  \end{center}
+  
 \end{multicols*}
 \end{document}
 
