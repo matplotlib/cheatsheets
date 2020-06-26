@@ -931,8 +931,24 @@
       K: lower center / (.5,1.1) & L: lower left / (.1,1.1)
     \end{tabular}  
   \end{myboxed}
+  %
+  \vspace{\fill}
+  %
+  \begin{myboxed}{Annotation connection styles \hfill
+      \API{https://matplotlib.org/tutorials/text/annotations.html} }
+    \includegraphics[width=\columnwidth]{annotation-connection-styles.pdf}
+  \end{myboxed}
+  %
+  \vspace{\fill}
+  %
+  \begin{myboxed}{Annotation arrow styles \hfill
+      \API{https://matplotlib.org/tutorials/text/annotations.html} }
+    \includegraphics[width=\columnwidth]{annotation-arrow-styles.pdf}
+  \end{myboxed}
 
-  \vfill\null \columnbreak
+  %
+  \vspace{\fill}
+  %
   
   %
   \begin{myboxed}{How do I …}
@@ -960,10 +976,14 @@
     \hspace*{2.5mm}~$\rightarrow$ ax.fill\_between(X, Y+error, Y-error)\\
     \textbf{… draw a rectangle?}\\
     \hspace*{2.5mm}~$\rightarrow$  ax.add\_patch(plt.Rectangle((0, 0),1,1)\\
+    \textbf{… draw a vertical line?}\\
+    \hspace*{2.5mm}~$\rightarrow$  ax.axvline(x=0.5)\\
     \textbf{… draw outside frame?}\\
     \hspace*{2.5mm}~$\rightarrow$  ax.plot(…, clip\_on=False)\\
     \textbf{… use transparency?}\\
     \hspace*{2.5mm}~$\rightarrow$  ax.plot(…, alpha=0.25)\\
+    \textbf{… convert an RGB image into a gray image? }\\
+    \hspace*{2.5mm}~$\rightarrow$  gray = 0.2989*R+0.5870*G+0.1140*B\\
     \textbf{… set figure background color?}\\
     \hspace*{2.5mm}~$\rightarrow$ fig.patch.set\_facecolor(``grey'')\\
     \textbf{… get a reversed colormap?}\\
@@ -979,14 +999,18 @@
   \begin{myboxed}{Performance tips}
     \smallskip
     {\ttfamily \fontsize{6pt}{7pt}\selectfont
+     %
     \textcolor{red}{scatter(X, Y)  \hfill slow}\\
-    plot(X, Y, marker="o", ls="")  \hfill fast\\
-    \hrule \smallskip
+    plot(X, Y, marker="o", ls="")  \hfill fast%
+    \vskip.5\baselineskip
+    %
     \textcolor{red}{for i in range(n): plot(X[i]) \hfill slow}\\
-    plot(sum([x+[None] for x in X],[])) \hfill fast\\
-    \hrule \smallskip
+    plot(sum([x+[None] for x in X],[])) \hfill fast%
+    \vskip.5\baselineskip
+    %
     \textcolor{red}{cla(), imshow(…), canvas.draw() \hfill slow}\\
-    im.set\_data(…), canvas.draw() \hfill fast\smallskip
+    im.set\_data(…), canvas.draw() \hfill fast%
+    \vskip.1\baselineskip
     }
   \end{myboxed}
   %
