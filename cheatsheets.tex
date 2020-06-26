@@ -16,7 +16,7 @@
 % --- Graphics ----------------------------------------------------------------
 \usepackage{tikz}
 \usepackage{graphicx}
-\graphicspath{{./figures/}}
+\graphicspath{{./figures/}{./icons/}{./logos/}}
 \usepackage[export]{adjustbox}
 
 % --- Framed boxes ------------------------------------------------------------
@@ -250,7 +250,7 @@
 
 \begin{multicols*}{5}
 
-  \includegraphics[width=\columnwidth]{logo.pdf}
+  \includegraphics[width=\columnwidth]{matplotlib.pdf}
   %\textbf{\Large \RobotoCon Matplotlib 3.2 cheat sheet}\\
   %{\ttfamily https://matplotlib.org} \hfill CC-BY 4.0
   % \bigskip
@@ -304,6 +304,12 @@
   
   % --- Getting help ----------------------------------------------------------
   \begin{myboxed}{Getting help}
+    \includegraphics[height=.75em]{www.png}
+    \href{https://matplotlib.org}
+         {matplotlib.org}\\
+    \includegraphics[height=.75em]{github.png}
+    \href{https://github.com/matplotlib/matplotlib/issues}
+         {github.com/matplotlib/matplotlib/issues}\\
     \includegraphics[height=.75em]{discourse.pdf}
     \href{https://discourse.matplotlib.org}
          {discourse.matplotlib.org}\\
@@ -893,8 +899,8 @@
   \vspace{\fill}
   %
   \begin{myboxed}{Image interpolation}
-    plt.\textbf{imshow}(…, interpolation=…)\\
-    plt.\textbf{contour[f]}(…, interpolation=…)\\
+%%    plt.\textbf{imshow}(…, interpolation=…)\\
+%%    plt.\textbf{contour[f]}(…, interpolation=…)\\
     \includegraphics[width=\columnwidth]{interpolations.pdf}
   \end{myboxed}
 
@@ -958,9 +964,11 @@
     \textbf{… get a reversed colormap?}\\
     \hspace*{2.5mm}~$\rightarrow$ plt.get\_cmap(``viridis\_r'')\\
     \textbf{… get a discrete colormap?}\\
-    \hspace*{2.5mm}~$\rightarrow$ plt.get\_cmap(``viridis'', 10)
-%%    \textbf{… show a figure for one second?}\\
-%%    \hspace*{2.5mm}~$\rightarrow$ plt.show(block=False), time.sleep(1)
+    \hspace*{2.5mm}~$\rightarrow$ plt.get\_cmap(``viridis'', 10)\\
+    \textbf{… rotate tick labels ?}\\
+    \hspace*{2.5mm}~$\rightarrow$ plt.[xy]ticks(rotation=90)\\
+    \textbf{… show a figure for one second?}\\
+    \hspace*{2.5mm}~$\rightarrow$ plt.show(block=False), time.sleep(1)
   \end{myboxed}
   %
   \vspace{\fill}
@@ -991,7 +999,14 @@
     \href{https://datashader.org/}{\textbf{Datashader}}: Large data processing pipeline\\
     \href{https://plotnine.readthedocs.io/en/latest/}{\textbf{plotnine}}: A Grammar of Graphics for Python
   \end{myboxed}
-
+  %
+  \begin{center}
+  \href{https://github.com/matplotlib/cheatsheets}{Matplotlib Cheatsheets} (c) 2020 Nicolas P. Rougier\\
+  Released under a CC-BY 4.0 International License\\
+  \smallskip
+  \includegraphics[width=\columnwidth]{numfocus.png}
+  \end{center}
+  
 \end{multicols*}
 \end{document}
 
