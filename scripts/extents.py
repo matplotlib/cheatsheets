@@ -55,7 +55,7 @@ ax.set_xlim(-1, 11), ax.set_xticks([])
 ax.set_ylim(-1, 6), ax.set_yticks([])
 ax.text(9, 4.5, "(0,0)", ha="center", va="center", color="white", size="large")
 ax.text(1, 0.5, "(4,4)", ha="center", va="center", color="black", size="large")
-ax.text(5.0, 5.5, 'origin="lower"',
+ax.text(5.0, 5.5, 'origin="upper"',
         ha="center", va="center", color="black", size="large")
 ax.text(5.0, -0.5, "extent=[10,0,0,5]",
         ha="center", va="center", color="black", size="large")
