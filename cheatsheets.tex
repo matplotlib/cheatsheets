@@ -960,10 +960,14 @@
     \hspace*{2.5mm}~$\rightarrow$ ax.fill\_between(X, Y+error, Y-error)\\
     \textbf{… draw a rectangle?}\\
     \hspace*{2.5mm}~$\rightarrow$  ax.add\_patch(plt.Rectangle((0, 0),1,1)\\
+    \textbf{… draw a vertical line?}\\
+    \hspace*{2.5mm}~$\rightarrow$  ax.axvline(x=0.5)\\
     \textbf{… draw outside frame?}\\
     \hspace*{2.5mm}~$\rightarrow$  ax.plot(…, clip\_on=False)\\
     \textbf{… use transparency?}\\
     \hspace*{2.5mm}~$\rightarrow$  ax.plot(…, alpha=0.25)\\
+    \textbf{… convert an RGB image into a gray image? }\\
+    \hspace*{2.5mm}~$\rightarrow$  gray = 0.2989*R+0.5870*G+0.1140*B\\
     \textbf{… set figure background color?}\\
     \hspace*{2.5mm}~$\rightarrow$ fig.patch.set\_facecolor(``grey'')\\
     \textbf{… get a reversed colormap?}\\
