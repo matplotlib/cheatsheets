@@ -20,7 +20,7 @@ sorted_names = [name for hsv, name in by_hsv]
 
 n = len(sorted_names)
 ncols = 3
-nrows = n // ncols + 1
+nrows = n // ncols +1
 
 fig, ax = plt.subplots(figsize=(4.5, 6))
 
@@ -30,8 +30,8 @@ h = Y / (nrows + 1)
 w = X / ncols
 
 for i, name in enumerate(sorted_names):
-    col = i // nrows
-    row = i % nrows
+    col = i // (nrows-1)
+    row = i % (nrows-1)
     y = Y - (row * h) - h
 
     xi_line = w * (col + 0.05)
