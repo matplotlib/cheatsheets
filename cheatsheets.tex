@@ -217,15 +217,23 @@
 \newenvironment{myboxed}[1]
 {\begin{mdframed}[linecolor=black,
                   backgroundcolor=white,
-                  outerlinewidth=.1pt,
-                  roundcorner=0.25em,
+                  outerlinewidth=0.25pt,
+                  %roundcorner=0.25em,
                   innertopmargin=1ex,
+                  topline=true,
+                  rightline=true,
+                  leftline=true,
+                  bottomline=true,
+                  linecolor=black!10,
                   frametitleaboveskip=0.5em,
                   frametitlebelowskip=0.5em,
                   innerbottommargin=.5\baselineskip,
-                  innerrightmargin=.5em, innerleftmargin=.5em,
+                  innerrightmargin=.5em,
+                  innerleftmargin=.5em,
                   %userdefinedwidth=1\textwidth,
-                  frametitle={\sffamily \textbf{#1}},
+                  frametitle={\scshape \bfseries \sffamily #1},
+                  % frametitlerule=true,
+                  %frametitlerulecolor=red,
                   frametitlebackgroundcolor=black!10,
                   frametitlerulewidth=2pt]}
 {\end{mdframed}}
@@ -876,12 +884,21 @@
     \end{tabular}
   \end{myboxed}
 
+  
+  
   \begin{myboxed}{Color names}
     \includegraphics[width=\columnwidth]{colornames.pdf}
   \end{myboxed}
   %
   \vspace{\fill}
   %
+  \begin{myboxed}{Image interpolation}
+    plt.\textbf{imshow}(…, interpolation=…)\\
+    plt.\textbf{contour[f]}(…, interpolation=…)\\
+    \includegraphics[width=\columnwidth]{interpolations.pdf}
+  \end{myboxed}
+
+  
   \begin{myboxed}{Legend placement}
     \includegraphics[width=\columnwidth]{legend-placement.pdf}
     plt.\textbf{legend}(loc="string", bbox\_to\_anchor=(x,y))\\
@@ -903,23 +920,51 @@
       G: lower left / (1.1,.1) & H: left / (1.1,.5)\\
       I: upper left / (1.1,.9) & J: lower right / (.9,1.1)\\
       K: lower center / (.5,1.1) & L: lower left / (.1,1.1)
-    \end{tabular}
-    
+    \end{tabular}  
   \end{myboxed}
-  %
-  \vspace{\fill}
+
+  \vfill\null \columnbreak
+  
   %
   \begin{myboxed}{How do I …}
     \textbf{… resize a figure?}\\
     \hspace*{2.5mm}~$\rightarrow$ fig.set\_size\_inches(w,h)\\
     \textbf{… save a figure?}\\
     \hspace*{2.5mm}~$\rightarrow$ plt.savefig("figure.pdf")\\
+    \textbf{… save a transparent figure?}\\
+    \hspace*{2.5mm}~$\rightarrow$ plt.savefig("figure.pdf", transparent=True)\\
     \textbf{… clear a figure?}\\
     \hspace*{2.5mm}~$\rightarrow$ ax.clear()\\
     \textbf{… close all figures?}\\
-    \hspace*{2.5mm}~$\rightarrow$ plt.close("all")
+    \hspace*{2.5mm}~$\rightarrow$ plt.close("all")\\
+    \textbf{… remove ticks?}\\
+    \hspace*{2.5mm}~$\rightarrow$ ax.set\_xticks([])\\
+    \textbf{… remove tick labels ?}\\
+    \hspace*{2.5mm}~$\rightarrow$ ax.set\_[xy]ticklabels([])\\
+    \textbf{… hide top spine?}\\
+    \hspace*{2.5mm}~$\rightarrow$ ax.spines['top'].set\_visible(False)\\
+    \textbf{… hide legend border?}\\
+    \hspace*{2.5mm}~$\rightarrow$  plt.legend(frameon=False)\\
+    \textbf{… show error as shaded region?}\\
+    \hspace*{2.5mm}~$\rightarrow$ ax.fill\_between(X, Y+error, Y-error)\\
+    \textbf{… draw a rectangle?}\\
+    \hspace*{2.5mm}~$\rightarrow$  ax.add\_patch(plt.Rectangle((0, 0),1,1)\\
+    \textbf{… draw outside frame?}\\
+    \hspace*{2.5mm}~$\rightarrow$  ax.plot(…, clip\_on=False)\\
+    \textbf{… use transparency?}\\
+    \hspace*{2.5mm}~$\rightarrow$  ax.plot(…, alpha=0.25)\\
+    \textbf{… set figure background color?}\\
+    \hspace*{2.5mm}~$\rightarrow$ fig.patch.set\_facecolor(``grey'')\\
+    \textbf{… get a reversed colormap?}\\
+    \hspace*{2.5mm}~$\rightarrow$ plt.get\_cmap(``viridis\_r'')\\
+    \textbf{… get a discrete colormap?}\\
+    \hspace*{2.5mm}~$\rightarrow$ plt.get\_cmap(``viridis'', 10)
+%%    \textbf{… show a figure for one second?}\\
+%%    \hspace*{2.5mm}~$\rightarrow$ plt.show(block=False), time.sleep(1)
   \end{myboxed}
- 
+  %
+  \vspace{\fill}
+  %
   \begin{myboxed}{Performance tips}
     {\ttfamily \fontsize{6pt}{7pt}\selectfont
     \textcolor{red}{ax.scatter(X, Y)  \hfill slow}\\
@@ -933,8 +978,18 @@
     S = [None]*len(X)\\
     X = [v for t in zip(X0,X1,S) for v in t]\\
     Y = [v for t in zip(Y0,Y1,S) for v in t]\\
-    plt.plot(X,Y)
-}
+    plt.plot(X,Y)}
+  \end{myboxed}
+  %
+  \vspace{\fill}
+  %
+  \begin{myboxed}{Beyond Matplotlib}
+    \href{https://seaborn.pydata.org/}{\textbf{Seaborn}}: Statistical Data Visualization\\
+    \href{https://scitools.org.uk/cartopy/docs/latest/}{\textbf{Cartopy}}: Geospatial Data Processing\\
+    \href{https://yt-project.org/doc/index.html}{\textbf{yt}}: Volumetric data Visualization\\
+    \href{https://mpld3.github.io}{\textbf{mpld3}}: Bringing Matplotlib to the browser\\
+    \href{https://datashader.org/}{\textbf{Datashader}}: Large data processing pipeline\\
+    \href{https://plotnine.readthedocs.io/en/latest/}{\textbf{plotnine}}: A Grammar of Graphics for Python
   \end{myboxed}
 
 \end{multicols*}
