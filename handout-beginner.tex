@@ -1,0 +1,304 @@
+\documentclass[10pt,landscape,a4paper]{article}
+\usepackage[right=10mm, left=10mm, top=10mm, bottom=10mm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage[rm,light]{roboto}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\graphicspath{{./figures/}}
+\usepackage{multicol}
+\usepackage{colortbl}
+\usepackage{array}
+\setlength\parindent{0pt}
+\setlength{\tabcolsep}{2pt}
+\baselineskip=0pt
+\setlength\columnsep{1em}
+\definecolor{Gray}{gray}{0.85}
+
+% --- Listing -----------------------------------------------------------------
+\usepackage{listings}
+\lstset{
+  frame=tb, framesep=4pt, framerule=0pt,
+  backgroundcolor=\color{black!5},
+  basicstyle=\ttfamily,
+  commentstyle=\ttfamily\color{black!50},
+  breakatwhitespace=false,
+  breaklines=true,
+  extendedchars=true,
+  keepspaces=true,
+  language=Python,
+  rulecolor=\color{black},
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  tabsize=2,
+  %
+  emph = { plot, scatter, imshow, bar, contourf, pie,
+           errorbar, boxplot, hist, title, xlabel, ylabel, suptitle },
+  emphstyle = {\ttfamily\bfseries}
+}
+
+% --- Fonts -------------------------------------------------------------------
+\usepackage{fontspec}
+\usepackage[babel=true]{microtype}
+\defaultfontfeatures{Ligatures = TeX, Mapping = tex-text}
+\setsansfont{Roboto} [ Path           = fonts/roboto/Roboto-,
+                       Extension      = .ttf,
+                       UprightFont    = Light,
+                       ItalicFont     = LightItalic,
+                       BoldFont       = Regular,
+                       BoldItalicFont = Italic ]
+\setromanfont{RobotoSlab} [ Path           = fonts/roboto-slab/RobotoSlab-,
+                            Extension      = .ttf,
+                            UprightFont    = Light,
+                            BoldFont       = Bold ]
+\setmonofont{RobotoMono} [ Path           = fonts/roboto-mono/RobotoMono-,
+                           Extension      = .ttf,
+                           Scale          = 0.90,
+                           UprightFont    = Light,
+                           ItalicFont     = LightItalic,
+                           BoldFont       = Regular,
+                           BoldItalicFont = Italic ]
+\renewcommand{\familydefault}{\sfdefault}
+
+% -----------------------------------------------------------------------------
+\begin{document}
+\thispagestyle{empty}
+
+\section*{\LARGE \rmfamily
+          Matplotlib \textcolor{orange}{\mdseries for beginners}}
+
+\begin{multicols*}{3}
+
+Matplotlib is a library for making 2D plots in Python. It is designed
+with the philosophy that you should be able to create simple plots
+with just a few commands:\\
+
+\fbox{1} \textbf{Initialize}
+\begin{lstlisting}
+ import numpy as np
+ import matplotlib.pyplot as plt
+\end{lstlisting}
+%
+\fbox{2} \textbf{Prepare}
+\begin{lstlisting}
+ X = np.linspace(0, 4*np.pi, 1000)
+ Y = np.sin(X)
+\end{lstlisting}
+%
+\fbox{3} \textbf{Render}
+\begin{lstlisting}
+ plt.plot(X, Y)
+ plt.show()
+\end{lstlisting}
+%
+\fbox{4} \textbf{Observe} \medskip\\
+\includegraphics[width=\linewidth]{sine.pdf}
+
+% -----------------------------------------------------------------------------
+\subsection*{\rmfamily Choose}
+% -----------------------------------------------------------------------------
+
+Matplotlib offers several kind of plots (see Gallery): \medskip
+
+\begin{tabular}{@{}m{.821\linewidth}m{.169\linewidth}}
+\begin{lstlisting}[belowskip=-\baselineskip]
+ X = np.random.uniform(0, 1, 100)
+ Y = np.random.uniform(0, 1, 100)
+ plt.scatter(X, Y)
+\end{lstlisting}
+& \raisebox{-0.75em}{\includegraphics[width=\linewidth]{basic-scatter.pdf}}
+\end{tabular}
+% -----------------------------------------------------------------------------
+\begin{tabular}{@{}m{.821\linewidth}m{.169\linewidth}}
+\begin{lstlisting}[belowskip=-\baselineskip]
+ X = np.arange(10)
+ Y = np.random.uniform(1, 10, 10)
+ plt.bar(X, Y)
+\end{lstlisting}
+& \raisebox{-0.75em}{\includegraphics[width=\linewidth]{basic-bar.pdf}}
+\end{tabular}
+% -----------------------------------------------------------------------------
+\begin{tabular}{@{}m{.821\linewidth}m{.169\linewidth}}
+\begin{lstlisting}[belowskip=-\baselineskip]
+ Z = np.random.uniform(0, 1, (8,8)
+
+ plt.imshow(Z)
+\end{lstlisting}
+& \raisebox{-0.75em}{\includegraphics[width=\linewidth]{basic-imshow.pdf}}
+\end{tabular}
+% -----------------------------------------------------------------------------
+\begin{tabular}{@{}m{.821\linewidth}m{.169\linewidth}}
+\begin{lstlisting}[belowskip=-\baselineskip]
+ Z = np.random.uniform(0, 1, (8,8)
+
+ plt.contourf(Z)
+\end{lstlisting}
+& \raisebox{-0.75em}{\includegraphics[width=\linewidth]{basic-contour.pdf}}
+\end{tabular}
+% -----------------------------------------------------------------------------
+\begin{tabular}{@{}m{.821\linewidth}m{.169\linewidth}}
+\begin{lstlisting}[belowskip=-\baselineskip]
+ Z = np.random.uniform(0, 1, 4)
+
+ plt.pie(Z)
+\end{lstlisting}
+& \raisebox{-0.75em}{\includegraphics[width=\linewidth]{basic-pie.pdf}}
+\end{tabular}
+% -----------------------------------------------------------------------------
+\begin{tabular}{@{}m{.821\linewidth}m{.169\linewidth}}
+\begin{lstlisting}[belowskip=-\baselineskip]
+ Z = np.random.normal(0, 1, 100)
+
+ plt.hist(Z)
+\end{lstlisting}
+& \raisebox{-0.75em}{\includegraphics[width=\linewidth]{advanced-hist.pdf}}
+\end{tabular}
+% -----------------------------------------------------------------------------
+\begin{tabular}{@{}m{.821\linewidth}m{.169\linewidth}}
+\begin{lstlisting}[belowskip=-\baselineskip]
+ X = np.arange(5)
+ Y = np.random.uniform(0,1,5)
+ plt.errorbar(X, Y, Y/4)
+\end{lstlisting}
+& \raisebox{-0.75em}{\includegraphics[width=\linewidth]{advanced-errorbar.pdf}}
+\end{tabular}
+% -----------------------------------------------------------------------------
+\begin{tabular}{@{}m{.821\linewidth}m{.169\linewidth}}
+\begin{lstlisting}[belowskip=-\baselineskip]
+ Z = np.random.normal(0,1,(100,3))
+
+ plt.boxplot(Z)
+\end{lstlisting}
+& \raisebox{-0.75em}{\includegraphics[width=\linewidth]{advanced-boxplot.pdf}}
+\end{tabular}
+
+
+% -----------------------------------------------------------------------------
+\subsection*{\rmfamily Tweak}
+% -----------------------------------------------------------------------------
+You can modify pretty much anything in a plot, including limits,
+colors, markers, line width and styles, ticks and ticks labels,
+titles, etc. \medskip 
+
+% -----------------------------------------------------------------------------
+\begin{tabular}{@{}m{.821\linewidth}m{.169\linewidth}}
+\begin{lstlisting}[belowskip=-\baselineskip]
+ X = np.linspace(0,10,100)
+ Y = np.sin(X)
+ plt.plot(X, Y, color="black")
+\end{lstlisting}
+& \raisebox{-0.75em}{\includegraphics[width=\linewidth]{plot-color.pdf}}
+\end{tabular}
+% -----------------------------------------------------------------------------
+\begin{tabular}{@{}m{.821\linewidth}m{.169\linewidth}}
+\begin{lstlisting}[belowskip=-\baselineskip]
+ X = np.linspace(0,10,100)
+ Y = np.sin(X)
+ plt.plot(X, Y, linestyle="--")
+\end{lstlisting}
+& \raisebox{-0.75em}{\includegraphics[width=\linewidth]{plot-linestyle.pdf}}
+\end{tabular}
+% -----------------------------------------------------------------------------
+\begin{tabular}{@{}m{.821\linewidth}m{.169\linewidth}}
+\begin{lstlisting}[belowskip=-\baselineskip]
+ X = np.linspace(0,10,100)
+ Y = np.sin(X)
+ plt.plot(X, Y, linewidth=5)
+\end{lstlisting}
+& \raisebox{-0.75em}{\includegraphics[width=\linewidth]{plot-linewidth.pdf}}
+\end{tabular}
+% -----------------------------------------------------------------------------
+\begin{tabular}{@{}m{.821\linewidth}m{.169\linewidth}}
+\begin{lstlisting}[belowskip=-\baselineskip]
+ X = np.linspace(0,10,100)
+ Y = np.sin(X)
+ plt.plot(X, Y, marker="o")
+\end{lstlisting}
+& \raisebox{-0.75em}{\includegraphics[width=\linewidth]{plot-marker.pdf}}
+\end{tabular}
+
+
+% -----------------------------------------------------------------------------
+\subsection*{\rmfamily Organize}
+% -----------------------------------------------------------------------------
+
+You can plot several data on the the same figure but you can also
+split a figure in several subplots (named {\em Axes}): \medskip
+
+% -----------------------------------------------------------------------------
+\begin{tabular}{@{}m{.821\linewidth}m{.169\linewidth}}
+\begin{lstlisting}[belowskip=-\baselineskip]
+ X = np.linspace(0,10,100)
+ Y1, Y1 = np.sin(X), np.cos(X)
+ plt.plot(X, Y1, Y2)
+\end{lstlisting}
+& \raisebox{-0.75em}{\includegraphics[width=\linewidth]{plot-multi.pdf}}
+\end{tabular}
+% -----------------------------------------------------------------------------
+\begin{tabular}{@{}m{.821\linewidth}m{.169\linewidth}}
+\begin{lstlisting}[belowskip=-\baselineskip]
+ fig, (ax1, ax2) = plt.subplots((2,1))
+ ax1.plot(X, Y1, color="C1")
+ ax2.plot(X, Y2, color="C0")
+\end{lstlisting}
+& \raisebox{-0.75em}{\includegraphics[width=\linewidth]{plot-vsplit.pdf}}
+\end{tabular}
+% -----------------------------------------------------------------------------
+\begin{tabular}{@{}m{.821\linewidth}m{.169\linewidth}}
+\begin{lstlisting}[belowskip=-\baselineskip]
+ fig, (ax1, ax2) = plt.subplots((1,2))
+ ax1.plot(Y1, X, color="C1")
+ ax2.plot(Y2, X, color="C0")
+\end{lstlisting}
+& \raisebox{-0.75em}{\includegraphics[width=\linewidth]{plot-hsplit.pdf}}
+\end{tabular}
+
+% -----------------------------------------------------------------------------
+\subsection*{\rmfamily Label \mdseries (everything)}
+% -----------------------------------------------------------------------------
+% -----------------------------------------------------------------------------
+\begin{tabular}{@{}m{.821\linewidth}m{.169\linewidth}}
+\begin{lstlisting}[belowskip=-\baselineskip]
+ plt.plot(X, Y)
+ plt.suptitle(None)
+ plt.title("A Sine wave")
+\end{lstlisting}
+& \raisebox{-0.75em}{\includegraphics[width=\linewidth]{plot-title.pdf}}
+\end{tabular}
+% -----------------------------------------------------------------------------
+\begin{tabular}{@{}m{.821\linewidth}m{.169\linewidth}}
+\begin{lstlisting}[belowskip=-\baselineskip]
+ plt.plot(X, Y)
+ plt.ylabel(None)
+ plt.xlabel("Time")
+\end{lstlisting}
+& \raisebox{-0.75em}{\includegraphics[width=\linewidth]{plot-xlabel.pdf}}
+\end{tabular}
+
+% -----------------------------------------------------------------------------
+\subsection*{\rmfamily Explore}
+% -----------------------------------------------------------------------------
+
+Figures are shown with a graphical user interface that alllows to zoom
+and pan the figure, to navigate between the different views and to
+show the value under the mouse.
+
+% -----------------------------------------------------------------------------
+\subsection*{\rmfamily Save \mdseries (bitmap or vector format)}
+% -----------------------------------------------------------------------------
+\begin{lstlisting}[belowskip=-\baselineskip]
+ plt.savefif("my-first-figure.png", dpi=300)
+ plt.savefig("my-first-figure.pdf")
+\end{lstlisting}
+%
+\vfill
+%
+{\scriptsize Matplotlib handout for beginners. Copyright (c)
+  2020 Nicolas P. Rougier. Released under a CC-BY International 4.0
+  License. Supported by NumFocus Grant \#12345.\par}
+
+\end{multicols*}
+\end{document}
+

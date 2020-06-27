@@ -9,7 +9,12 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 
 fig = plt.figure(figsize=(0.4,0.4))
-ax = fig.add_axes([0,0,1,1])
+mpl.rcParams['axes.linewidth'] = 0.5
+mpl.rcParams['xtick.major.size'] = 0.0
+mpl.rcParams['ytick.major.size'] = 0.0
+d = 0.01
+ax = fig.add_axes([d,d,1-2*d,1-2*d])
+
 
 # Step plot
 # -----------------------------------------------------------------------------

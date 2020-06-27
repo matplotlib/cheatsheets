@@ -4,6 +4,10 @@
 
 ![](./cheatsheets-2.png)
 
+# Handouts
+
+![](./handout-beginner.png)
+
 # How to compile
 
 1. You need to create a `fonts` repository with:
