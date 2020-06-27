@@ -9,7 +9,11 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 
 fig = plt.figure(figsize=(0.4,0.4))
-ax = fig.add_axes([0,0,1,1])
+mpl.rcParams['axes.linewidth'] = 0.5
+mpl.rcParams['xtick.major.size'] = 0.0
+mpl.rcParams['ytick.major.size'] = 0.0
+d = 0.01
+ax = fig.add_axes([d,d,1-2*d,1-2*d])
 
 # Basic line plot
 # -----------------------------------------------------------------------------
@@ -20,6 +24,18 @@ ax.set_xlim(0, 8), ax.set_xticks(np.arange(1,8))
 ax.set_ylim(0, 8), ax.set_yticks(np.arange(1,8))
 ax.grid(linewidth=0.125)
 plt.savefig("../figures/basic-plot.pdf")
+ax.clear()
+
+
+# Basic line plot (color)
+# -----------------------------------------------------------------------------
+X = np.linspace(0, 10, 100)
+Y = 4+2*np.sin(2*X)
+ax.plot(X, Y, color="black", linewidth=0.75)
+ax.set_xlim(0, 8), ax.set_xticks(np.arange(1,8))
+ax.set_ylim(0, 8), ax.set_yticks(np.arange(1,8))
+ax.grid(linewidth=0.125)
+plt.savefig("../figures/basic-plot-color.pdf")
 ax.clear()
 
 # Basic scatter plot

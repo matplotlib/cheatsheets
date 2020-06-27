@@ -4,6 +4,8 @@
 
 ![](./cheatsheets-2.png)
 
+![](./handout-beginner.png)
+
 # How to compile
 
 1. You need to create a `fonts` repository with:
