@@ -4,6 +4,8 @@
 
 ![](./cheatsheets-2.png)
 
+# Handouts
+
 ![](./handout-beginner.png)
 
 # How to compile
