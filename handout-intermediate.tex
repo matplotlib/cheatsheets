@@ -36,7 +36,7 @@
   %
   emph = { plot, scatter, imshow, bar, contourf, pie, subplots, spines,
            add_gridspec, add_subplot, set_xscale, set_minor_locator,
-           set_minor_formatter, tick_params, fill_betweenx, text,
+           set_minor_formatter, tick_params, fill_betweenx, text, legend,
            errorbar, boxplot, hist, title, xlabel, ylabel, suptitle },
   emphstyle = {\ttfamily\bfseries}
 }
@@ -78,7 +78,7 @@ the actual figure. Each element can be modified. \medskip
   
 \includegraphics[width=\linewidth]{anatomy-cropped.pdf}
 
-\subsection*{Figure, axes \& spines}
+\subsection*{\rmfamily Figure, axes \& spines}
 
 % -----------------------------------------------------------------------------
 \begin{tabular}{@{}m{.821\linewidth}m{.169\linewidth}}
@@ -113,7 +113,7 @@ the actual figure. Each element can be modified. \medskip
 
 
 % -----------------------------------------------------------------------------
-\subsection*{Ticks \& labels}
+\subsection*{\rmfamily Ticks \& labels}
 
 \begin{lstlisting}[basicstyle=\ttfamily\small]
  from mpl.ticker import MultipleLocator as ML
@@ -125,7 +125,7 @@ the actual figure. Each element can be modified. \medskip
 \includegraphics[width=\linewidth]{tick-multiple-locator.pdf}
 
 % -----------------------------------------------------------------------------
-\subsection*{Lines \& markers}
+\subsection*{\rmfamily Lines \& markers}
 
 \begin{lstlisting}
  X = np.linspace(0.1, 10*np.pi, 1000)
@@ -135,7 +135,7 @@ the actual figure. Each element can be modified. \medskip
 \includegraphics[width=\linewidth]{sine-marker.pdf}
 
 % -----------------------------------------------------------------------------
-\subsection*{Scales \& Projections}
+\subsection*{\rmfamily Scales \& Projections}
 
 \begin{lstlisting}
  fig, ax = plt.subplots()
@@ -144,7 +144,7 @@ the actual figure. Each element can be modified. \medskip
 \end{lstlisting}
 \includegraphics[width=\linewidth]{sine-logscale.pdf}
 
-\subsection*{Text \& Ornaments}
+\subsection*{\rmfamily Text \& Ornaments}
 \begin{lstlisting}[]
  ax.fill_betweenx([-1,1],[0],[2*np.pi])
  ax.text(0, -1, r" Period $\Phi$")
@@ -153,12 +153,33 @@ the actual figure. Each element can be modified. \medskip
 
 
 % -----------------------------------------------------------------------------
-\subsection*{Size \& DPI}
+\subsection*{\rmfamily Legend}
+\begin{lstlisting}[]
+ ax.plot(X, np.sin(X), "C0", label="Sine")
+ ax.plot(X, np.cos(X), "C1", label="Cosine")
+ ax.legend(bbox_to_anchor=(0,1,1,.1),ncol=2,
+           mode="expand",  loc="lower left")
+\end{lstlisting}
+\includegraphics[width=\linewidth]{sine-legend.pdf}
+
+
+% -----------------------------------------------------------------------------
+\subsection*{\rmfamily Colors}
+
+Any color can be used but Matplotlib offers a set of colors:\\
+\includegraphics[width=\linewidth]{colors-cycle.pdf} \smallskip
+\includegraphics[width=\linewidth]{colors-grey.pdf}\\
+As well as nice colormaps (viridis an magma):\\
+\includegraphics[width=\linewidth]{colormap-viridis.pdf} \smallskip
+\includegraphics[width=\linewidth]{colormap-magma.pdf} \medskip
+
+% -----------------------------------------------------------------------------
+\subsection*{\rmfamily Size \& DPI}
 
 Consider a square figure to be included in a two-columns A4 paper with
 2cm margins on each side and a column separation of 1cm. The width of
 a figure is (21 - 2*2 - 1)/2 = 8cm. One inch being 2.54cm, figure size
-should be 3.15$\times$3.15 inches.
+should be 3.15$\times$3.15 in.
 \begin{lstlisting}[]
  fig = plt.figure(figsize=(3.15,3.15), dpi=50)
  plt.savefig("figure.pdf", dpi=600)
