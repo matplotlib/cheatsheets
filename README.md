@@ -8,6 +8,8 @@
 
 ![](./handout-beginner.png)
 
+![](./handout-intermediate.png)
+
 # How to compile
 
 1. You need to create a `fonts` repository with:
