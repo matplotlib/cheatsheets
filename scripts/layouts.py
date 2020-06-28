@@ -20,6 +20,25 @@ for i in range(nrows*ncols):
 plt.savefig("../figures/layout-subplot.pdf")
 fig.clear()
 
+# Subplots (colored)
+# -----------------------------------------------------------------------------
+nrows, ncols = 3,3
+for i in range(nrows*ncols):
+    ax = plt.subplot(ncols, nrows, i+1)
+    ax.set_xticks([]), ax.set_yticks([])
+    if i == 0: ax.set_facecolor("#ddddff")
+    if i == 8: ax.set_facecolor("#ffdddd")
+plt.savefig("../figures/layout-subplot-color.pdf")
+fig.clear()
+
+# Spines
+# -----------------------------------------------------------------------------
+ax = fig.add_subplot(1,1,1, xticks=[], yticks=[])
+ax.spines["top"].set_color("None")
+ax.spines["right"].set_color("None")
+plt.savefig("../figures/layout-spines.pdf")
+fig.clear()
+
 
 # Gridspec
 # -----------------------------------------------------------------------------
@@ -30,6 +49,18 @@ ax3 = fig.add_subplot(gs[1:, -1], xticks=[], yticks=[])
 ax4 = fig.add_subplot(gs[-1, 0], xticks=[], yticks=[])
 ax5 = fig.add_subplot(gs[-1, -2], xticks=[], yticks=[])
 plt.savefig("../figures/layout-gridspec.pdf")
+fig.clear()
+
+# Gridspec (colored)
+# -----------------------------------------------------------------------------
+gs = fig.add_gridspec(3, 3)
+ax1 = fig.add_subplot(gs[0, :], xticks=[], yticks=[])
+ax1.set_facecolor("#ddddff")
+ax2 = fig.add_subplot(gs[1, :-1], xticks=[], yticks=[])
+ax3 = fig.add_subplot(gs[1:, -1], xticks=[], yticks=[])
+ax4 = fig.add_subplot(gs[-1, 0], xticks=[], yticks=[])
+ax5 = fig.add_subplot(gs[-1, -2], xticks=[], yticks=[])
+plt.savefig("../figures/layout-gridspec-color.pdf")
 fig.clear()
 
 # Inset axes

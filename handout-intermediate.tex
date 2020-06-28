@@ -1,0 +1,207 @@
+\documentclass[10pt,landscape,a4paper]{article}
+\usepackage[right=10mm, left=10mm, top=10mm, bottom=10mm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage[rm,light]{roboto}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\graphicspath{{./figures/}}
+\usepackage{multicol}
+\usepackage{colortbl}
+\usepackage{array}
+\setlength\parindent{0pt}
+\setlength{\tabcolsep}{2pt}
+\baselineskip=0pt
+\setlength\columnsep{1em}
+\definecolor{Gray}{gray}{0.85}
+
+% --- Listing -----------------------------------------------------------------
+\usepackage{listings}
+\lstset{
+  frame=tb, framesep=4pt, framerule=0pt,
+  backgroundcolor=\color{black!5},
+  basicstyle=\ttfamily,
+  commentstyle=\ttfamily\color{black!50},
+  breakatwhitespace=false,
+  breaklines=true,
+  extendedchars=true,
+  keepspaces=true,
+  language=Python,
+  rulecolor=\color{black},
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  tabsize=2,
+  %
+  emph = { plot, scatter, imshow, bar, contourf, pie, subplots, spines,
+    add_gridspec, add_subplot, set_xscale, set_minor_locator,
+    annotate, set_minor_formatter, tick_params, fill_betweenx, text, legend,
+    errorbar, boxplot, hist, title, xlabel, ylabel, suptitle },
+  emphstyle = {\ttfamily\bfseries}
+}
+
+% --- Fonts -------------------------------------------------------------------
+\usepackage{fontspec}
+\usepackage[babel=true]{microtype}
+\defaultfontfeatures{Ligatures = TeX, Mapping = tex-text}
+\setsansfont{Roboto} [ Path           = fonts/roboto/Roboto-,
+                       Extension      = .ttf,
+                       UprightFont    = Light,
+                       ItalicFont     = LightItalic,
+                       BoldFont       = Regular,
+                       BoldItalicFont = Italic ]
+\setromanfont{RobotoSlab} [ Path           = fonts/roboto-slab/RobotoSlab-,
+                            Extension      = .ttf,
+                            UprightFont    = Light,
+                            BoldFont       = Bold ]
+\setmonofont{RobotoMono} [ Path           = fonts/roboto-mono/RobotoMono-,
+                           Extension      = .ttf,
+                           Scale          = 0.90,
+                           UprightFont    = Light,
+                           ItalicFont     = LightItalic,
+                           BoldFont       = Regular,
+                           BoldItalicFont = Italic ]
+\renewcommand{\familydefault}{\sfdefault}
+
+% -----------------------------------------------------------------------------
+\begin{document}
+\thispagestyle{empty}
+
+\section*{\LARGE \rmfamily
+          Matplotlib \textcolor{orange}{\mdseries for intermediate users}}
+
+\begin{multicols*}{3}
+
+A matplotlib figure is composed of a hierarchy of elements that forms
+the actual figure. Each element can be modified. \medskip
+  
+\includegraphics[width=\linewidth]{anatomy-cropped.pdf}
+
+\subsection*{\rmfamily Figure, axes \& spines}
+
+% -----------------------------------------------------------------------------
+\begin{tabular}{@{}m{.821\linewidth}m{.169\linewidth}}
+\begin{lstlisting}[belowskip=-\baselineskip]
+ fig, axs = plt.subplots((3,3))
+ axs[0,0].set_facecolor("#ddddff")
+ axs[2,2].set_facecolor("#ffffdd")
+\end{lstlisting}
+& \raisebox{-0.75em}{\includegraphics[width=\linewidth]{layout-subplot-color.pdf}}
+\end{tabular}
+
+% -----------------------------------------------------------------------------
+\begin{tabular}{@{}m{.821\linewidth}m{.169\linewidth}}
+\begin{lstlisting}[belowskip=-\baselineskip]
+ gs = fig.add_gridspec(3, 3)
+ ax = fig.add_subplot(gs[0, :])
+ ax.set_facecolor("#ddddff")
+\end{lstlisting}
+& \raisebox{-0.75em}{\includegraphics[width=\linewidth]{layout-gridspec-color.pdf}}
+\end{tabular}
+
+% -----------------------------------------------------------------------------
+\begin{tabular}{@{}m{.821\linewidth}m{.169\linewidth}}
+\begin{lstlisting}[belowskip=-\baselineskip]
+ fig, ax = plt.subplots()
+ ax.spines["top"].set_color("None")
+ ax.spines["right"].set_color("None")
+\end{lstlisting}
+& \raisebox{-0.75em}{\includegraphics[width=\linewidth]{layout-spines.pdf}}
+\end{tabular}
+
+
+
+% -----------------------------------------------------------------------------
+\subsection*{\rmfamily Ticks \& labels}
+
+\begin{lstlisting}[basicstyle=\ttfamily\small]
+ from mpl.ticker import MultipleLocator as ML
+ from mpl.ticker import ScalarFormatter as SF
+ ax.xaxis.set_minor_locator(ML(0.2))
+ ax.xaxis.set_minor_formatter(SF())
+ ax.tick_params(axis='x',which='minor',rotation=90)
+\end{lstlisting}
+\includegraphics[width=\linewidth]{tick-multiple-locator.pdf}
+
+% -----------------------------------------------------------------------------
+\subsection*{\rmfamily Lines \& markers}
+
+\begin{lstlisting}
+ X = np.linspace(0.1, 10*np.pi, 1000)
+ Y = np.sin(X)
+ ax.plot(X, Y, "C1o:", markevery=25, mec="1.0")
+\end{lstlisting}
+\includegraphics[width=\linewidth]{sine-marker.pdf}
+
+% -----------------------------------------------------------------------------
+\subsection*{\rmfamily Scales \& Projections}
+
+\begin{lstlisting}
+ fig, ax = plt.subplots()
+ ax.set_xscale("log")
+ ax.plot(X, Y, "C1o-", markevery=25, mec="1.0")
+\end{lstlisting}
+\includegraphics[width=\linewidth]{sine-logscale.pdf}
+
+\subsection*{\rmfamily Text \& Ornaments}
+\begin{lstlisting}[]
+ ax.fill_betweenx([-1,1],[0],[2*np.pi])
+ ax.text(0, -1, r" Period $\Phi$")
+\end{lstlisting}
+\includegraphics[width=\linewidth]{sine-period.pdf}
+
+
+% -----------------------------------------------------------------------------
+\subsection*{\rmfamily Legend}
+\begin{lstlisting}[]
+ ax.plot(X, np.sin(X), "C0", label="Sine")
+ ax.plot(X, np.cos(X), "C1", label="Cosine")
+ ax.legend(bbox_to_anchor=(0,1,1,.1),ncol=2,
+           mode="expand",  loc="lower left")
+\end{lstlisting}
+\includegraphics[width=\linewidth]{sine-legend.pdf}
+
+% -----------------------------------------------------------------------------
+\subsection*{\rmfamily Annotation}
+\begin{lstlisting}[]
+ ax.annotate("A", (X[250],Y[250]),(X[250],-1),
+   ha="center", va="center",arrowprops =
+   {"arrowstyle" : "->", "color": "C1"})
+\end{lstlisting}
+\includegraphics[width=\linewidth]{sine-annotate.pdf}
+
+% -----------------------------------------------------------------------------
+\subsection*{\rmfamily Colors}
+
+Any color can be used but Matplotlib offers sets of colors:\\
+\includegraphics[width=\linewidth]{colors-cycle.pdf} \smallskip
+\includegraphics[width=\linewidth]{colors-grey.pdf}\\
+%As well as nice colormaps (viridis an magma):\\
+%\includegraphics[width=\linewidth]{colormap-viridis.pdf} \smallskip
+%\includegraphics[width=\linewidth]{colormap-magma.pdf} \medskip
+
+% -----------------------------------------------------------------------------
+\subsection*{\rmfamily Size \& DPI}
+
+Consider a square figure to be included in a two-columns A4 paper with
+2cm margins on each side and a column separation of 1cm. The width of
+a figure is (21 - 2*2 - 1)/2 = 8cm. One inch being 2.54cm, figure size
+should be 3.15$\times$3.15 in.
+\begin{lstlisting}[]
+ fig = plt.figure(figsize=(3.15,3.15), dpi=50)
+ plt.savefig("figure.pdf", dpi=600)
+\end{lstlisting}
+
+
+\vfill
+%
+{\scriptsize Matplotlib 3.2 handout for intermediate users. Copyright
+  (c) 2020 Nicolas P. Rougier. Released under a CC-BY 4.0
+  License. Supported by NumFocus Grant \#12345.\par}
+
+
+
+\end{multicols*}
+\end{document}
+

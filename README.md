@@ -8,11 +8,14 @@
 
 ![](./handout-beginner.png)
 
+![](./handout-intermediate.png)
+
 # How to compile
 
 1. You need to create a `fonts` repository with:
 
 * `fonts/roboto/*`           : See https://fonts.google.com/specimen/Roboto
+* `fonts/roboto-slab/*`      : See https://fonts.google.com/specimen/Roboto+Slab
 * `fonts/source-code-pro/*`  : See https://fonts.google.com/specimen/Source+Code+Pro
 * `fonts/source-sans-pro/*`  : See https://fonts.google.com/specimen/Source+Sans+Pro
 * `fonts/source-serif-pro/*` : See https://fonts.google.com/specimen/Source+Serif+Pro
