@@ -35,9 +35,9 @@
   tabsize=2,
   %
   emph = { plot, scatter, imshow, bar, contourf, pie, subplots, spines,
-           add_gridspec, add_subplot, set_xscale, set_minor_locator,
-           set_minor_formatter, tick_params, fill_betweenx, text, legend,
-           errorbar, boxplot, hist, title, xlabel, ylabel, suptitle },
+    add_gridspec, add_subplot, set_xscale, set_minor_locator,
+    annotate, set_minor_formatter, tick_params, fill_betweenx, text, legend,
+    errorbar, boxplot, hist, title, xlabel, ylabel, suptitle },
   emphstyle = {\ttfamily\bfseries}
 }
 
@@ -162,16 +162,24 @@ the actual figure. Each element can be modified. \medskip
 \end{lstlisting}
 \includegraphics[width=\linewidth]{sine-legend.pdf}
 
+% -----------------------------------------------------------------------------
+\subsection*{\rmfamily Annotation}
+\begin{lstlisting}[]
+ ax.annotate("A", (X[250],Y[250]),(X[250],-1),
+   ha="center", va="center",arrowprops =
+   {"arrowstyle" : "->", "color": "C1"})
+\end{lstlisting}
+\includegraphics[width=\linewidth]{sine-annotate.pdf}
 
 % -----------------------------------------------------------------------------
 \subsection*{\rmfamily Colors}
 
-Any color can be used but Matplotlib offers a set of colors:\\
+Any color can be used but Matplotlib offers sets of colors:\\
 \includegraphics[width=\linewidth]{colors-cycle.pdf} \smallskip
 \includegraphics[width=\linewidth]{colors-grey.pdf}\\
-As well as nice colormaps (viridis an magma):\\
-\includegraphics[width=\linewidth]{colormap-viridis.pdf} \smallskip
-\includegraphics[width=\linewidth]{colormap-magma.pdf} \medskip
+%As well as nice colormaps (viridis an magma):\\
+%\includegraphics[width=\linewidth]{colormap-viridis.pdf} \smallskip
+%\includegraphics[width=\linewidth]{colormap-magma.pdf} \medskip
 
 % -----------------------------------------------------------------------------
 \subsection*{\rmfamily Size \& DPI}
@@ -185,29 +193,6 @@ should be 3.15$\times$3.15 in.
  plt.savefig("figure.pdf", dpi=600)
 \end{lstlisting}
 
-%% \begin{tabular}{@{}m{.821\linewidth}m{.169\linewidth}}
-%% \begin{lstlisting}[belowskip=-\baselineskip]
-%%  ax = plt.subplot(projection="polar")
-%%  ax.set_rorigin(-3)
-%%  plt.plot(X, Y, "C1-")
-%% \end{lstlisting}
-%% & \raisebox{-0.75em}{\includegraphics[width=\linewidth]{sine-polar.pdf}}
-%% \end{tabular}
-
-
-%% X = np.linspace(0, 2*np.pi, 10000)
-%% Y = np.sin(10*X)
-
-%% fig = plt.figure(figsize=(5,5))
-%% ax = plt.subplot(projection="polar")
-
-%% ax.set_xticks(np.linspace(0, 2*np.pi, 8+1 ))
-%% ax.set_xticklabels([])
-%% ax.set_yticklabels([])
-%% plt.ylim(-1.5, 1.5)
-%% plt.plot(X, Y, "C1o-", markevery=500,  mec="1.0", lw=2, ms=8.5, mew=2)
-%% plt.savefig("../figures/sine-polar.pdf", dpi=100)
-%% plt.show()
 
 \vfill
 %

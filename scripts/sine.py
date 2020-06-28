@@ -42,16 +42,31 @@ Y = np.sin(X)
 # plt.show()
 
 
+# fig = plt.figure(figsize=(7,1.5))
+# plt.plot(X, np.sin(X), "C0", lw=2, label="Sine")
+# plt.plot(X, np.cos(X), "C1", lw=2, label="Cosine")
+# plt.legend(bbox_to_anchor = (0.0, .9, 1.02, 0.1),
+#            frameon=False, mode="expand", ncol=2, loc="lower left")
+# plt.title("Sine and Cosine")
+# plt.xticks([]), plt.yticks([])
+# plt.ylim(-1.25, 1.25)
+# plt.tight_layout()
+# plt.savefig("../figures/sine-legend.pdf", dpi=100)
+# plt.show()
+
+
 fig = plt.figure(figsize=(7,1.5))
-plt.plot(X, np.sin(X), "C0", lw=2, label="Sine")
-plt.plot(X, np.cos(X), "C1", lw=2, label="Cosine")
-plt.legend(bbox_to_anchor = (0.0, .9, 1.02, 0.1),
-           frameon=False, mode="expand", ncol=2, loc="lower left")
-plt.title("Sine and Cosine")
-plt.xticks([]), plt.yticks([])
-plt.ylim(-1.25, 1.25)
+X = np.linspace(0, 10*np.pi, 1000)
+Y = np.sin(X)
+plt.plot(X, Y, "C1o-", markevery=50,  mec="1.0", lw=2, ms=8.5, mew=2)
+# plt.xticks([]), plt.yticks([])
+plt.ylim(-1.5, 1.5)
+plt.annotate(" ", (X[200],Y[200]), (X[250], -1), ha="center", va="center",
+             arrowprops = {"arrowstyle" : "->", "color": "C1"})
+plt.annotate("A", (X[250],Y[250]), (X[250], -1), ha="center", va="center",
+             arrowprops = {"arrowstyle" : "->", "color": "C1"})
+plt.annotate(" ", (X[300],Y[300]), (X[250], -1), ha="center", va="center",
+             arrowprops = {"arrowstyle" : "->", "color": "C1"})
 plt.tight_layout()
-plt.savefig("../figures/sine-legend.pdf", dpi=100)
-plt.show()
-
-
+plt.savefig("../figures/sine-annotate.pdf", dpi=100)
+# plt.show()
