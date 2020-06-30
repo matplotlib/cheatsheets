@@ -211,6 +211,32 @@ Condensed to save space on tick labels.
 \end{lstlisting}
 \includegraphics[width=\linewidth]{tip-font-family.pdf}
 
+\subsection*{\rmfamily Getting rid of margins}
+Once your figure is finished, you can call {\ttfamily tight\_layout()}
+to remove white margins. If there are remaining margins, you can use
+the {\ttfamily pdfcrop} utility (comes with TeX live).
+
+
+\subsection*{\rmfamily Hatching}
+You can achieve nice visual effect with thick hatch patterns.
+
+\begin{tabular}{@{}m{.774\linewidth}m{.216\linewidth}}
+\begin{lstlisting}[belowskip=-\baselineskip]
+ cmap = plt.get_cmap("Oranges")
+ plt.rcParams['hatch.color'] = cmap(0.2)
+ plt.rcParams['hatch.linewidth'] = 8
+ ax.bar(X, Y, color=cmap(0.6), hatch="/" )
+\end{lstlisting} &
+\raisebox{-0.75em}{\includegraphics[width=\linewidth]{tip-hatched.pdf}}
+\end{tabular}
+
+
+\subsection*{\rmfamily Read the documentation}
+
+Matplotlib comes with an extensive documenation explaining every
+detals of each command and is generally accompanied by examples
+with. Together with the huge online gallery, this documenation is a
+gold-mine.
 
 \vfill
 %
