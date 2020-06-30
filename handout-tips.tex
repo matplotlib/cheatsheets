@@ -1,0 +1,252 @@
+\documentclass[10pt,landscape,a4paper]{article}
+\usepackage[right=10mm, left=10mm, top=10mm, bottom=10mm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage[rm,light]{roboto}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\graphicspath{{./figures/}}
+\usepackage{multicol}
+\usepackage{colortbl}
+\usepackage{array}
+\setlength\parindent{0pt}
+\setlength{\tabcolsep}{2pt}
+\baselineskip=0pt
+\setlength\columnsep{1em}
+\definecolor{Gray}{gray}{0.85}
+
+% --- Listing -----------------------------------------------------------------
+\usepackage{listings}
+\lstset{
+  frame=tb, framesep=4pt, framerule=0pt,
+  backgroundcolor=\color{black!5},
+  basicstyle=\ttfamily\footnotesize,
+  commentstyle=\ttfamily\color{black!50},
+  breakatwhitespace=false,
+  breaklines=true,
+  extendedchars=true,
+  keepspaces=true,
+  language=Python,
+  rulecolor=\color{black},
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  tabsize=2,
+  %
+  emph = {
+    plot, scatter, imshow, bar, contourf, pie, subplots, spines,
+    add_gridspec, add_subplot, set_xscale, set_minor_locator, linestyle,
+    dash_capstyle, projection, Stroke, Normal, add_axes, label, savefig,
+    get_cmap, histtype, annotate, set_minor_formatter, tick_params,
+    fill_betweenx, text, legend, errorbar, boxplot, hist, title, xlabel,
+    ylabel, suptitle, fraction, pad, set_fontname, get_xticklabels},
+  emphstyle = {\ttfamily\bfseries}
+}
+
+% --- Fonts -------------------------------------------------------------------
+\usepackage{fontspec}
+\usepackage[babel=true]{microtype}
+\defaultfontfeatures{Ligatures = TeX, Mapping = tex-text}
+\setsansfont{Roboto} [ Path           = fonts/roboto/Roboto-,
+                       Extension      = .ttf,
+                       UprightFont    = Light,
+                       ItalicFont     = LightItalic,
+                       BoldFont       = Regular,
+                       BoldItalicFont = Italic ]
+\setromanfont{RobotoSlab} [ Path           = fonts/roboto-slab/RobotoSlab-,
+                            Extension      = .ttf,
+                            UprightFont    = Light,
+                            BoldFont       = Bold ]
+\setmonofont{RobotoMono} [ Path           = fonts/roboto-mono/RobotoMono-,
+                           Extension      = .ttf,
+                           Scale          = 0.90,
+                           UprightFont    = Light,
+                           ItalicFont     = LightItalic,
+                           BoldFont       = Regular,
+                           BoldItalicFont = Italic ]
+\renewcommand{\familydefault}{\sfdefault}
+
+% -----------------------------------------------------------------------------
+\begin{document}
+\thispagestyle{empty}
+
+\section*{\LARGE \rmfamily
+          Matplotlib \textcolor{orange}{\mdseries tips \& tricks}}
+
+\begin{multicols*}{3}
+
+
+% -----------------------------------------------------------------------------
+\subsection*{\rmfamily Transparency}
+
+Scatter plots can be enhanced by using transparency (alpha) in order
+to show area with higher density and multiple scatter plots can be
+used to delineate a frontier.
+
+\begin{tabular}{@{}m{.774\linewidth}m{.216\linewidth}}
+\begin{lstlisting}[belowskip=-\baselineskip]
+ X = np.random.normal(-1,1,500)
+ Y = np.random.normal(-1,1,500)  
+ ax.scatter(X, Y, 50, "0.0", lw=2) # optional
+ ax.scatter(X, Y, 50, "1.0", lw=0) # optional
+ ax.scatter(X, Y, 40, "C1",  lw=0, alpha=0.1)
+\end{lstlisting} &
+\raisebox{-0.75em}{\includegraphics[width=\linewidth]{tip-transparency.pdf}}
+\end{tabular}
+
+% -----------------------------------------------------------------------------
+\subsection*{\rmfamily Rasterization}
+If your figure is made of a lot graphical elements such as a huge
+scatter, you can rasterize them to save memory and keep other elements
+in vector format.
+\begin{lstlisting}
+ X = np.random.normal(-1, 1, 10_000)
+ Y = np.random.normal(-1, 1, 10_000)  
+ ax.scatter(X, Y, rasterized=True)
+ fig.savefig("rasterized-figure.pdf", dpi=600)
+\end{lstlisting}
+
+% -----------------------------------------------------------------------------
+\subsection*{\rmfamily Offline rendering}
+
+Use the Agg backend to render a figure directly in an array.
+\begin{lstlisting}
+ from matplotlib.backends.backend_agg import FigureCanvas
+ canvas = FigureCanvas(Figure()))
+ ... # draw som stuff
+ canvas.draw()
+ Z = np.array(canvas.renderer.buffer_rgba())
+\end{lstlisting} 
+
+% -----------------------------------------------------------------------------
+\subsection*{\rmfamily Range of continuous colors}
+You can use colormap to pick a range of continuous colors.
+\begin{tabular}{@{}m{.774\linewidth}m{.216\linewidth}}
+\begin{lstlisting}[belowskip=-\baselineskip]
+ X = np.random.randn(1000, 4)
+ cmap = plt.get_cmap("Blues")
+ colors = [cmap(i) for in in [.2,.4,.6,.8]]
+ 
+ ax.hist(X, 2, histtype='bar', color=colors)
+\end{lstlisting} &
+\raisebox{-0.75em}{\includegraphics[width=\linewidth]{tip-color-range.pdf}}
+\end{tabular}
+
+% -----------------------------------------------------------------------------
+\subsection*{\rmfamily Text outline}
+Use text outline to make text more visible.
+
+\begin{tabular}{@{}m{.774\linewidth}m{.216\linewidth}}
+\begin{lstlisting}[belowskip=-\baselineskip]
+ import matplotlib.patheffects as fx
+ text = ax.text(0.5, 0.1, "Label")
+ text.set_path_effects([
+   fx.Stroke(linewidth=3, foreground='1.0'),
+   fx.Normal()])
+\end{lstlisting} &
+\raisebox{-0.75em}{\includegraphics[width=\linewidth]{tip-outline.pdf}}
+\end{tabular}
+
+
+% -----------------------------------------------------------------------------
+\subsection*{\rmfamily Multiline plot}
+You can plot several lines at once using None as separator.
+
+\begin{lstlisting}
+ X,Y = [], []
+ for x in np.linspace(0, 10*np.pi, 100):
+   X.extend([x, x, None]), Y.extend([0, sin(x), None])
+ plt.plot(X, Y, "black")
+\end{lstlisting}
+\includegraphics[width=\linewidth]{tip-multiline.pdf}
+
+% -----------------------------------------------------------------------------
+\subsection*{\rmfamily Dotted lines}
+To have rounded dotted lines, use a custom {\ttfamily linestyle} and
+modify {\ttfamily dash\_capstyle}.
+\begin{lstlisting}
+ plt.plot([0,1], [0,0], "C1", 
+        linestyle = (0, (0.01, 1)), dash_capstyle="round")
+ plt.plot([0,1], [1,1], "C1", 
+        linestyle = (0, (0.01, 2)), dash_capstyle="round")
+\end{lstlisting}
+\includegraphics[width=\linewidth]{tip-dotted.pdf}
+
+% -----------------------------------------------------------------------------
+\subsection*{\rmfamily Combining axes}
+You can use overlaid axes with different projections.
+
+\begin{tabular}{@{}m{.774\linewidth}m{.216\linewidth}}
+\begin{lstlisting}[belowskip=-\baselineskip]
+ ax1 = fig.add_axes([0,0,1,1],
+                    label="cartesian")
+ ax2 = fig.add_axes([0,0,1,1],
+                    label="polar",
+                    projection="polar")
+\end{lstlisting} &
+\raisebox{-0.75em}{\includegraphics[width=\linewidth]{tip-dual-axis.pdf}}
+\end{tabular}
+
+\subsection*{\rmfamily Colorbar adjustment}
+You can adjust colorbar aspect when adding it.
+
+\begin{tabular}{@{}m{.754\linewidth}m{.236\linewidth}}
+\begin{lstlisting}[belowskip=-\baselineskip]
+ im = ax.imshow(Z)
+  
+ cb = plt.colorbar(im,
+         fraction=0.046, pad=0.04)
+ cb.set_ticks([])
+\end{lstlisting} &
+\raisebox{-0.75em}{\includegraphics[width=\linewidth]{tip-colorbar.pdf}}
+\end{tabular}
+
+\subsection*{\rmfamily Taking advantage of typography}
+You can use a condensed face such as Roboto
+Condensed to save space on tick labels.
+\begin{lstlisting}
+ for tick in ax.get_xticklabels(which='both'):
+     tick.set_fontname("Roboto Condensed")
+\end{lstlisting}
+\includegraphics[width=\linewidth]{tip-font-family.pdf}
+
+\subsection*{\rmfamily Getting rid of margins}
+Once your figure is finished, you can call {\ttfamily tight\_layout()}
+to remove white margins. If there are remaining margins, you can use
+the {\ttfamily pdfcrop} utility (comes with TeX live).
+
+
+\subsection*{\rmfamily Hatching}
+You can achieve nice visual effect with thick hatch patterns.
+
+\begin{tabular}{@{}m{.774\linewidth}m{.216\linewidth}}
+\begin{lstlisting}[belowskip=-\baselineskip]
+ cmap = plt.get_cmap("Oranges")
+ plt.rcParams['hatch.color'] = cmap(0.2)
+ plt.rcParams['hatch.linewidth'] = 8
+ ax.bar(X, Y, color=cmap(0.6), hatch="/" )
+\end{lstlisting} &
+\raisebox{-0.75em}{\includegraphics[width=\linewidth]{tip-hatched.pdf}}
+\end{tabular}
+
+
+\subsection*{\rmfamily Read the documentation}
+
+Matplotlib comes with an extensive documenation explaining every
+detals of each command and is generally accompanied by examples
+with. Together with the huge online gallery, this documenation is a
+gold-mine.
+
+\vfill
+%
+{\scriptsize Matplotlib 3.2 handout for tips \& tricks.
+             Copyright (c) 2020 Nicolas P. Rougier.
+             Released under a CC-BY 4.0 License.
+             Supported by NumFocus Grant \#12345.\par}
+
+
+
+\end{multicols*}
+\end{document}
+
