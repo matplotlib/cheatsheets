@@ -7,18 +7,19 @@
 import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
+import matplotlib.patheffects as path_effects
 
-fig = plt.figure(figsize=(2,2))
+fig = plt.figure(figsize=(2.15,2))
 mpl.rcParams['axes.linewidth'] = 1.5
 d = 0.01
-
 ax = fig.add_axes([d,d,1-2*d,1-2*d], xticks=[], yticks=[])
 
-X = np.random.seed(1)
-X = np.random.randn(1000, 4)
+np.random.seed(1)
+Z = np.random.uniform(0,1,(8,8))
 cmap = plt.get_cmap("Oranges")
-colors = [cmap(i) for i in [.1,.3,.5,.7]]
-ax.hist(X, 2, density=True, histtype='bar', color=colors)
+im = ax.imshow(Z, interpolation="nearest", cmap=cmap, vmin=0, vmax=2)
+cb = fig.colorbar(im, fraction=0.046, pad=0.04)
+cb.set_ticks([])
 
-plt.savefig("../figures/tip-color-range.pdf")
+plt.savefig("../figures/tip-colorbar.pdf")
 # plt.show()

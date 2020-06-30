@@ -40,7 +40,7 @@
     dash_capstyle, projection, Stroke, Normal, add_axes, label, savefig,
     get_cmap, histtype, annotate, set_minor_formatter, tick_params,
     fill_betweenx, text, legend, errorbar, boxplot, hist, title, xlabel,
-    ylabel, suptitle },
+    ylabel, suptitle, fraction, pad, set_fontname, get_xticklabels},
   emphstyle = {\ttfamily\bfseries}
 }
 
@@ -187,6 +187,29 @@ You can use overlaid axes with different projections.
 \end{lstlisting} &
 \raisebox{-0.75em}{\includegraphics[width=\linewidth]{tip-dual-axis.pdf}}
 \end{tabular}
+
+\subsection*{\rmfamily Colorbar adjustment}
+You can adjust colorbar aspect when adding it.
+
+\begin{tabular}{@{}m{.754\linewidth}m{.236\linewidth}}
+\begin{lstlisting}[belowskip=-\baselineskip]
+ im = ax.imshow(Z)
+  
+ cb = plt.colorbar(im,
+         fraction=0.046, pad=0.04)
+ cb.set_ticks([])
+\end{lstlisting} &
+\raisebox{-0.75em}{\includegraphics[width=\linewidth]{tip-colorbar.pdf}}
+\end{tabular}
+
+\subsection*{\rmfamily Take advantage of typography}
+You can use a condensed face such as Roboto
+Condensed to save space on tick labels.
+\begin{lstlisting}
+ for tick in ax.get_xticklabels():
+     tick.set_fontname("Roboto Condensed")
+\end{lstlisting}
+\includegraphics[width=\linewidth]{tip-font-family.pdf}
 
 
 \vfill
