@@ -163,7 +163,7 @@ You can plot several lines at once using None as separator.
 
 % -----------------------------------------------------------------------------
 \subsection*{\rmfamily Dotted lines}
-To have rounded dotted line, use custom {\ttfamily linestyle} and
+To have rounded dotted lines, use a custom {\ttfamily linestyle} and
 modify {\ttfamily dash\_capstyle}.
 \begin{lstlisting}
  plt.plot([0,1], [0,0], "C1", 
@@ -202,11 +202,11 @@ You can adjust colorbar aspect when adding it.
 \raisebox{-0.75em}{\includegraphics[width=\linewidth]{tip-colorbar.pdf}}
 \end{tabular}
 
-\subsection*{\rmfamily Take advantage of typography}
+\subsection*{\rmfamily Taking advantage of typography}
 You can use a condensed face such as Roboto
 Condensed to save space on tick labels.
 \begin{lstlisting}
- for tick in ax.get_xticklabels():
+ for tick in ax.get_xticklabels(which='both'):
      tick.set_fontname("Roboto Condensed")
 \end{lstlisting}
 \includegraphics[width=\linewidth]{tip-font-family.pdf}

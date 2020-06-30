@@ -40,7 +40,7 @@ ax.xaxis.set_major_formatter(ticker.ScalarFormatter())
 ax.xaxis.set_minor_formatter(ticker.ScalarFormatter())
 ax.tick_params(axis='x', which='minor', rotation=0)
 
-for tick in ax.get_xticklabels():
+for tick in ax.get_xticklabels(which='both'):
     tick.set_fontname("Roboto Condensed")
     
 plt.tight_layout()
