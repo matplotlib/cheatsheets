@@ -70,6 +70,11 @@
   UprightFont = Regular,
   ItalicFont = Italic,
   BoldFont = Bold ]  
+\newfontfamily\RobotoSlab{Robot Slab} [
+  Path           = fonts/roboto-slab/RobotoSlab-,
+  Extension      = .ttf,
+  UprightFont    = Light,
+  BoldFont       = Regular ]
 \newfontfamily\Roboto{Roboto}[
   Path = fonts/roboto/Roboto-, Extension = .ttf,
   UprightFont = Regular,
@@ -224,17 +229,18 @@
                   rightline=true,
                   leftline=true,
                   bottomline=true,
-                  linecolor=black!10,
+                  linecolor=black!0,
                   frametitleaboveskip=0.5em,
                   frametitlebelowskip=0.5em,
                   innerbottommargin=.5\baselineskip,
                   innerrightmargin=.5em,
                   innerleftmargin=.5em,
                   %userdefinedwidth=1\textwidth,
-                  frametitle={\scshape \bfseries \sffamily #1},
+                  % frametitle={\scshape \bfseries \sffamily #1},
+                  frametitle={\footnotesize \RobotoSlab \bfseries \hspace*{0mm} #1},
                   % frametitlerule=true,
                   %frametitlerulecolor=red,
-                  frametitlebackgroundcolor=black!10,
+                  frametitlebackgroundcolor=black!5,
                   frametitlerulewidth=2pt]}
 {\end{mdframed}}
 

@@ -34,8 +34,8 @@
   showtabs=false,
   tabsize=2,
   %
-  emph = { plot, scatter, imshow, bar, contourf, pie, subplots,
-           errorbar, boxplot, hist, title, xlabel, ylabel, suptitle },
+  emph = { plot, scatter, imshow, bar, contourf, pie, subplots, show, savefig,
+           errorbar, boxplot, hist, set_title, set_xlabel, set_ylabel, suptitle,  },
   emphstyle = {\ttfamily\bfseries}
 }
 
@@ -89,8 +89,9 @@ with just a few commands:\\
 %
 \fbox{3} \textbf{Render}
 \begin{lstlisting}
- plt.plot(X, Y)
- plt.show()
+ fig, ax = plt.subplots()
+ ax.plot(X, Y)
+ fig.show()
 \end{lstlisting}
 %
 \fbox{4} \textbf{Observe} \medskip\\
@@ -106,7 +107,7 @@ Matplotlib offers several kind of plots (see Gallery): \medskip
 \begin{lstlisting}[belowskip=-\baselineskip]
  X = np.random.uniform(0, 1, 100)
  Y = np.random.uniform(0, 1, 100)
- plt.scatter(X, Y)
+ ax.scatter(X, Y)
 \end{lstlisting}
 & \raisebox{-0.75em}{\includegraphics[width=\linewidth]{basic-scatter.pdf}}
 \end{tabular}
@@ -115,7 +116,7 @@ Matplotlib offers several kind of plots (see Gallery): \medskip
 \begin{lstlisting}[belowskip=-\baselineskip]
  X = np.arange(10)
  Y = np.random.uniform(1, 10, 10)
- plt.bar(X, Y)
+ ax.bar(X, Y)
 \end{lstlisting}
 & \raisebox{-0.75em}{\includegraphics[width=\linewidth]{basic-bar.pdf}}
 \end{tabular}
@@ -124,7 +125,7 @@ Matplotlib offers several kind of plots (see Gallery): \medskip
 \begin{lstlisting}[belowskip=-\baselineskip]
  Z = np.random.uniform(0, 1, (8,8)
 
- plt.imshow(Z)
+ ax.imshow(Z)
 \end{lstlisting}
 & \raisebox{-0.75em}{\includegraphics[width=\linewidth]{basic-imshow.pdf}}
 \end{tabular}
@@ -133,7 +134,7 @@ Matplotlib offers several kind of plots (see Gallery): \medskip
 \begin{lstlisting}[belowskip=-\baselineskip]
  Z = np.random.uniform(0, 1, (8,8)
 
- plt.contourf(Z)
+ ax.contourf(Z)
 \end{lstlisting}
 & \raisebox{-0.75em}{\includegraphics[width=\linewidth]{basic-contour.pdf}}
 \end{tabular}
@@ -142,7 +143,7 @@ Matplotlib offers several kind of plots (see Gallery): \medskip
 \begin{lstlisting}[belowskip=-\baselineskip]
  Z = np.random.uniform(0, 1, 4)
 
- plt.pie(Z)
+ ax.pie(Z)
 \end{lstlisting}
 & \raisebox{-0.75em}{\includegraphics[width=\linewidth]{basic-pie.pdf}}
 \end{tabular}
@@ -151,7 +152,7 @@ Matplotlib offers several kind of plots (see Gallery): \medskip
 \begin{lstlisting}[belowskip=-\baselineskip]
  Z = np.random.normal(0, 1, 100)
 
- plt.hist(Z)
+ ax.hist(Z)
 \end{lstlisting}
 & \raisebox{-0.75em}{\includegraphics[width=\linewidth]{advanced-hist.pdf}}
 \end{tabular}
@@ -160,7 +161,7 @@ Matplotlib offers several kind of plots (see Gallery): \medskip
 \begin{lstlisting}[belowskip=-\baselineskip]
  X = np.arange(5)
  Y = np.random.uniform(0,1,5)
- plt.errorbar(X, Y, Y/4)
+ ax.errorbar(X, Y, Y/4)
 \end{lstlisting}
 & \raisebox{-0.75em}{\includegraphics[width=\linewidth]{advanced-errorbar.pdf}}
 \end{tabular}
@@ -169,7 +170,7 @@ Matplotlib offers several kind of plots (see Gallery): \medskip
 \begin{lstlisting}[belowskip=-\baselineskip]
  Z = np.random.normal(0,1,(100,3))
 
- plt.boxplot(Z)
+ ax.boxplot(Z)
 \end{lstlisting}
 & \raisebox{-0.75em}{\includegraphics[width=\linewidth]{advanced-boxplot.pdf}}
 \end{tabular}
@@ -187,7 +188,7 @@ titles, etc. \medskip
 \begin{lstlisting}[belowskip=-\baselineskip]
  X = np.linspace(0,10,100)
  Y = np.sin(X)
- plt.plot(X, Y, color="black")
+ ax.plot(X, Y, color="black")
 \end{lstlisting}
 & \raisebox{-0.75em}{\includegraphics[width=\linewidth]{plot-color.pdf}}
 \end{tabular}
@@ -196,7 +197,7 @@ titles, etc. \medskip
 \begin{lstlisting}[belowskip=-\baselineskip]
  X = np.linspace(0,10,100)
  Y = np.sin(X)
- plt.plot(X, Y, linestyle="--")
+ ax.plot(X, Y, linestyle="--")
 \end{lstlisting}
 & \raisebox{-0.75em}{\includegraphics[width=\linewidth]{plot-linestyle.pdf}}
 \end{tabular}
@@ -205,7 +206,7 @@ titles, etc. \medskip
 \begin{lstlisting}[belowskip=-\baselineskip]
  X = np.linspace(0,10,100)
  Y = np.sin(X)
- plt.plot(X, Y, linewidth=5)
+ ax.plot(X, Y, linewidth=5)
 \end{lstlisting}
 & \raisebox{-0.75em}{\includegraphics[width=\linewidth]{plot-linewidth.pdf}}
 \end{tabular}
@@ -214,7 +215,7 @@ titles, etc. \medskip
 \begin{lstlisting}[belowskip=-\baselineskip]
  X = np.linspace(0,10,100)
  Y = np.sin(X)
- plt.plot(X, Y, marker="o")
+ ax.plot(X, Y, marker="o")
 \end{lstlisting}
 & \raisebox{-0.75em}{\includegraphics[width=\linewidth]{plot-marker.pdf}}
 \end{tabular}
@@ -232,7 +233,7 @@ split a figure in several subplots (named {\em Axes}): \medskip
 \begin{lstlisting}[belowskip=-\baselineskip]
  X = np.linspace(0,10,100)
  Y1, Y1 = np.sin(X), np.cos(X)
- plt.plot(X, Y1, Y2)
+ ax.plot(X, Y1, Y2)
 \end{lstlisting}
 & \raisebox{-0.75em}{\includegraphics[width=\linewidth]{plot-multi.pdf}}
 \end{tabular}
@@ -261,18 +262,18 @@ split a figure in several subplots (named {\em Axes}): \medskip
 % -----------------------------------------------------------------------------
 \begin{tabular}{@{}m{.821\linewidth}m{.169\linewidth}}
 \begin{lstlisting}[belowskip=-\baselineskip]
- plt.plot(X, Y)
- plt.suptitle(None)
- plt.title("A Sine wave")
+ ax.plot(X, Y)
+ fig.suptitle(None)
+ ax.set_title("A Sine wave")
 \end{lstlisting}
 & \raisebox{-0.75em}{\includegraphics[width=\linewidth]{plot-title.pdf}}
 \end{tabular}
 % -----------------------------------------------------------------------------
 \begin{tabular}{@{}m{.821\linewidth}m{.169\linewidth}}
 \begin{lstlisting}[belowskip=-\baselineskip]
- plt.plot(X, Y)
- plt.ylabel(None)
- plt.xlabel("Time")
+ ax.plot(X, Y)
+ ax.set_ylabel(None)
+ ax.set_xlabel("Time")
 \end{lstlisting}
 & \raisebox{-0.75em}{\includegraphics[width=\linewidth]{plot-xlabel.pdf}}
 \end{tabular}
@@ -289,8 +290,8 @@ show the value under the mouse.
 \subsection*{\rmfamily Save \mdseries (bitmap or vector format)}
 % -----------------------------------------------------------------------------
 \begin{lstlisting}[belowskip=-\baselineskip]
- plt.savefif("my-first-figure.png", dpi=300)
- plt.savefig("my-first-figure.pdf")
+ fig.savefig("my-first-figure.png", dpi=300)
+ fig.savefig("my-first-figure.pdf")
 \end{lstlisting}
 %
 \vfill
