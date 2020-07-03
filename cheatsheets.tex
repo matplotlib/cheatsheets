@@ -70,6 +70,11 @@
   UprightFont = Regular,
   ItalicFont = Italic,
   BoldFont = Bold ]  
+\newfontfamily\RobotoSlab{Robot Slab} [
+  Path           = fonts/roboto-slab/RobotoSlab-,
+  Extension      = .ttf,
+  UprightFont    = Light,
+  BoldFont       = Regular ]
 \newfontfamily\Roboto{Roboto}[
   Path = fonts/roboto/Roboto-, Extension = .ttf,
   UprightFont = Regular,
@@ -224,17 +229,18 @@
                   rightline=true,
                   leftline=true,
                   bottomline=true,
-                  linecolor=black!10,
+                  linecolor=black!0,
                   frametitleaboveskip=0.5em,
                   frametitlebelowskip=0.5em,
                   innerbottommargin=.5\baselineskip,
                   innerrightmargin=.5em,
                   innerleftmargin=.5em,
                   %userdefinedwidth=1\textwidth,
-                  frametitle={\scshape \bfseries \sffamily #1},
+                  % frametitle={\scshape \bfseries \sffamily #1},
+                  frametitle={\footnotesize \RobotoSlab \bfseries \hspace*{0mm} #1},
                   % frametitlerule=true,
                   %frametitlerulecolor=red,
-                  frametitlebackgroundcolor=black!10,
+                  frametitlebackgroundcolor=black!5,
                   frametitlerulewidth=2pt]}
 {\end{mdframed}}
 
@@ -273,8 +279,8 @@
   fig, ax = plt.subplots()\\
   ax.plot(X,Y,color='C1')\\
   \\
-  plt.savefig(``figure.pdf'')\\
-  plt.show() }
+  fig.savefig(``figure.pdf'')\\
+  fig.show() }
   \end{myboxed}
   \vspace{\fill}
     
@@ -707,7 +713,7 @@
     ax.\textbf{tick\_params}(width=10, …)\\
     ax.\textbf{set\_axis\_[on|off]}()\\
     \\
-    plt.\textbf{tight\_layout}()\\
+    ax.\textbf{tight\_layout}()\\
     plt.\textbf{gcf}(), plt.\textbf{gca}()\\
     mpl.\textbf{rc}('axes', linewidth=1, …)\\
     fig.patch.\textbf{set\_alpha}(0)\\
@@ -775,7 +781,7 @@
   %
   \begin{myboxed}{Extent \& origin \hfill
       \API{https://matplotlib.org/tutorials/intermediate/imshow_extent.html} }
-    plt.\textbf{imshow}( extent=…, origin=… )\\
+    ax.\textbf{imshow}( extent=…, origin=… )\\
 
     \includegraphics[width=\columnwidth]{extents.pdf}
   \end{myboxed}
@@ -784,7 +790,7 @@
   %
   \begin{myboxed}{Text alignments \hfill
       \API{https://matplotlib.org/tutorials/text/text_props.html} }
-    plt.\textbf{text}( …, ha=… , va=…, … )\\
+    ax.\textbf{text}( …, ha=… , va=…, … )\\
 
     \includegraphics[width=\columnwidth]{text-alignments.pdf}
   \end{myboxed}
@@ -793,8 +799,8 @@
   %
   \begin{myboxed}{Text parameters  \hfill
       \API{https://matplotlib.org/tutorials/text/text_props.html}}
-    plt.\textbf{text}( …, family=… , size=…, weight = …)\\
-    plt.\textbf{text}( …, fontproperties = … )\\
+    ax.\textbf{text}( …, family=… , size=…, weight = …)\\
+    ax.\textbf{text}( …, fontproperties = … )\\
 
     \includegraphics[width=\columnwidth]{fonts.pdf}
   \end{myboxed}
@@ -910,7 +916,7 @@
   
   \begin{myboxed}{Legend placement}
     \includegraphics[width=\columnwidth]{legend-placement.pdf}
-    plt.\textbf{legend}(loc="string", bbox\_to\_anchor=(x,y))\\
+    ax.\textbf{legend}(loc="string", bbox\_to\_anchor=(x,y))\\
     \begin{tabular}{@{}p{0.33\columnwidth}
                        p{0.33\columnwidth}
                        p{0.33\columnwidth}@{}}
@@ -955,9 +961,9 @@
     \textbf{… resize a figure?}\\
     \hspace*{2.5mm}~$\rightarrow$ fig.set\_size\_inches(w,h)\\
     \textbf{… save a figure?}\\
-    \hspace*{2.5mm}~$\rightarrow$ plt.savefig("figure.pdf")\\
+    \hspace*{2.5mm}~$\rightarrow$ fig.savefig("figure.pdf")\\
     \textbf{… save a transparent figure?}\\
-    \hspace*{2.5mm}~$\rightarrow$ plt.savefig("figure.pdf", transparent=True)\\
+    \hspace*{2.5mm}~$\rightarrow$ fig.savefig("figure.pdf", transparent=True)\\
     \textbf{… clear a figure?}\\
     \hspace*{2.5mm}~$\rightarrow$ ax.clear()\\
     \textbf{… close all figures?}\\
@@ -967,11 +973,11 @@
     \textbf{… remove tick labels ?}\\
     \hspace*{2.5mm}~$\rightarrow$ ax.set\_[xy]ticklabels([])\\
     \textbf{… rotate tick labels ?}\\
-    \hspace*{2.5mm}~$\rightarrow$ plt.[xy]ticks(rotation=90)\\
+    \hspace*{2.5mm}~$\rightarrow$ ax.set\_[xy]ticks(rotation=90)\\
     \textbf{… hide top spine?}\\
     \hspace*{2.5mm}~$\rightarrow$ ax.spines['top'].set\_visible(False)\\
     \textbf{… hide legend border?}\\
-    \hspace*{2.5mm}~$\rightarrow$  plt.legend(frameon=False)\\
+    \hspace*{2.5mm}~$\rightarrow$  ax.legend(frameon=False)\\
     \textbf{… show error as shaded region?}\\
     \hspace*{2.5mm}~$\rightarrow$ ax.fill\_between(X, Y+error, Y-error)\\
     \textbf{… draw a rectangle?}\\
@@ -991,7 +997,7 @@
     \textbf{… get a discrete colormap?}\\
     \hspace*{2.5mm}~$\rightarrow$ plt.get\_cmap(``viridis'', 10)\\
     \textbf{… show a figure for one second?}\\
-    \hspace*{2.5mm}~$\rightarrow$ plt.show(block=False), time.sleep(1)
+    \hspace*{2.5mm}~$\rightarrow$ fig.show(block=False), time.sleep(1)
   \end{myboxed}
   %
   \vspace{\fill}

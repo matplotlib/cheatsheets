@@ -157,7 +157,7 @@ You can plot several lines at once using None as separator.
  X,Y = [], []
  for x in np.linspace(0, 10*np.pi, 100):
    X.extend([x, x, None]), Y.extend([0, sin(x), None])
- plt.plot(X, Y, "black")
+ ax.plot(X, Y, "black")
 \end{lstlisting}
 \includegraphics[width=\linewidth]{tip-multiline.pdf}
 
@@ -166,9 +166,9 @@ You can plot several lines at once using None as separator.
 To have rounded dotted lines, use a custom {\ttfamily linestyle} and
 modify {\ttfamily dash\_capstyle}.
 \begin{lstlisting}
- plt.plot([0,1], [0,0], "C1", 
+ ax.plot([0,1], [0,0], "C1", 
         linestyle = (0, (0.01, 1)), dash_capstyle="round")
- plt.plot([0,1], [1,1], "C1", 
+ ax.plot([0,1], [1,1], "C1", 
         linestyle = (0, (0.01, 2)), dash_capstyle="round")
 \end{lstlisting}
 \includegraphics[width=\linewidth]{tip-dotted.pdf}
