@@ -81,7 +81,7 @@
 \subsection*{\rmfamily Transparency}
 
 Scatter plots can be enhanced by using transparency (alpha) in order
-to show area with higher density and multiple scatter plots can be
+to show area with higher density. Multiple scatter plots can be
 used to delineate a frontier.
 
 \begin{tabular}{@{}m{.774\linewidth}m{.216\linewidth}}
@@ -97,7 +97,7 @@ used to delineate a frontier.
 
 % -----------------------------------------------------------------------------
 \subsection*{\rmfamily Rasterization}
-If your figure is made of a lot graphical elements such as a huge
+If your figure has many graphical elements such as a huge
 scatter, you can rasterize them to save memory and keep other elements
 in vector format.
 \begin{lstlisting}
@@ -121,11 +121,11 @@ Use the Agg backend to render a figure directly in an array.
 
 % -----------------------------------------------------------------------------
 \subsection*{\rmfamily Range of continuous colors}
-You can use colormap to pick a range of continuous colors.
+You can use colormap to pick from a range of continuous colors.
 \begin{tabular}{@{}m{.774\linewidth}m{.216\linewidth}}
 \begin{lstlisting}[belowskip=-\baselineskip]
  X = np.random.randn(1000, 4)
- cmap = plt.get_cmap("Blues")
+ cmap = plt.get_cmap("Oranges")
  colors = [cmap(i) for in in [.2,.4,.6,.8]]
  
  ax.hist(X, 2, histtype='bar', color=colors)
@@ -189,7 +189,7 @@ You can use overlaid axes with different projections.
 \end{tabular}
 
 \subsection*{\rmfamily Colorbar adjustment}
-You can adjust colorbar aspect when adding it.
+You can adjust a colorbar's size when adding it.
 
 \begin{tabular}{@{}m{.754\linewidth}m{.236\linewidth}}
 \begin{lstlisting}[belowskip=-\baselineskip]
@@ -203,7 +203,7 @@ You can adjust colorbar aspect when adding it.
 \end{tabular}
 
 \subsection*{\rmfamily Taking advantage of typography}
-You can use a condensed face such as Roboto
+You can use a condensed font such as Roboto
 Condensed to save space on tick labels.
 \begin{lstlisting}
  for tick in ax.get_xticklabels(which='both'):
@@ -218,7 +218,7 @@ the {\ttfamily pdfcrop} utility (comes with TeX live).
 
 
 \subsection*{\rmfamily Hatching}
-You can achieve nice visual effect with thick hatch patterns.
+You can achieve a nice visual effect with thick hatch patterns.
 
 \begin{tabular}{@{}m{.774\linewidth}m{.216\linewidth}}
 \begin{lstlisting}[belowskip=-\baselineskip]
@@ -249,4 +249,3 @@ gold-mine.
 
 \end{multicols*}
 \end{document}
-
