@@ -126,7 +126,7 @@ You can use colormap to pick from a range of continuous colors.
 \begin{lstlisting}[belowskip=-\baselineskip]
  X = np.random.randn(1000, 4)
  cmap = plt.get_cmap("Oranges")
- colors = [cmap(i) for in in [.2,.4,.6,.8]]
+ colors = cmap([0.2, 0.4, 0.6, 0.8])
  
  ax.hist(X, 2, histtype='bar', color=colors)
 \end{lstlisting} &
