@@ -292,11 +292,11 @@
   % --- Layout ---------------------------------------------------------------
   \begin{myboxed}{Subplots layout \hfill
       \API{https://matplotlib.org/tutorials/intermediate/gridspec.html} }
-  \plot{layout-subplot.pdf}{\textbf{subplot[s]}(cols,rows,…)}
+  \plot{layout-subplot.pdf}{\textbf{subplot[s]}(rows,cols,…)}
        {https://matplotlib.org/api/_as_gen/matplotlib.pyplot.subplots.html}
        {\ttfamily fig, axs = plt.subplots(3,3)}
        {}
-  \plot{layout-gridspec.pdf}{G = \textbf{gridspec}(cols,rows,…)}
+  \plot{layout-gridspec.pdf}{G = \textbf{gridspec}(rows,cols,…)}
        {https://matplotlib.org/api/_as_gen/matplotlib.gridspec.GridSpec.html}
        {\ttfamily ax = G[0,:]}{}
   \plot{layout-inset.pdf}{ax.\textbf{inset\_axes}(extent)}
