@@ -24,7 +24,7 @@ ax.clear()
 
 # Log scale
 # -----------------------------------------------------------------------------
-ax.set_xscale("log", basex=10)
+ax.set_xscale("log", base=10)
 ax.plot(X, Y, color="C1", linewidth=0.75)
 ax.set_ylim(-2.5,1.5)
 ax.text(0, 0.12, "0", ha="left", va="bottom", size=3, transform=ax.transAxes)
@@ -36,7 +36,7 @@ ax.clear()
 
 # Symlog scale
 # -----------------------------------------------------------------------------
-ax.set_xscale("symlog", basex=10, linthreshx=1)
+ax.set_xscale("symlog", base=10, linthresh=1)
 ax.plot(X, Y, color="C1", linewidth=0.75)
 ax.set_ylim(-2.5,1.5)
 ax.text(0, 0.12, "-∞", ha="left", va="bottom", size=3, transform=ax.transAxes)
