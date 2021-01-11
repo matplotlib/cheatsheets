@@ -1,4 +1,4 @@
-fonts*
+fonts/*
 *.upa
 *.log
 *.out
