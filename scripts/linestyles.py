@@ -32,8 +32,8 @@ for x0,x1,style in zip(X0,X1,styles):
     else:                      text = '%s' % str(style)
     text = text.replace(' ','')
     ax.text((x0+x1)/2, y-0.2, text,
-            size=8, ha="center", va="top", family="Source code pro")
-ax.text(X0[0]-0.25, y+0.2, "linestyle or ls", family = "Source code pro",
+            size=8, ha="center", va="top", family="Source Code Pro")
+ax.text(X0[0]-0.25, y+0.2, "linestyle or ls", family = "Source Code Pro",
         size=14, ha="left", va="baseline")
 y -= 1
 
@@ -46,9 +46,9 @@ for x0,x1,style in zip(X0,X1,styles):
             linewidth=7, linestyle="--", alpha=.25)
     ax.plot([x0,x1],[y,y], color="C1", linewidth=7,
             linestyle="--", dash_capstyle=style)
-    ax.text((x0+x1)/2, y-0.2, '"%s"' % style, family = "Source code pro",
+    ax.text((x0+x1)/2, y-0.2, '"%s"' % style, family = "Source Code Pro",
             size=10, ha="center", va="top")
-ax.text(X0[0]-0.25, y+0.2, "capstyle or dash_capstyle", family = "Source code pro",
+ax.text(X0[0]-0.25, y+0.2, "capstyle or dash_capstyle", family = "Source Code Pro",
         size=14, ha="left", va="baseline")
 
 
