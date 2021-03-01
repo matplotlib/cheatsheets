@@ -28,9 +28,9 @@ def point(x, y):
 d = .1
 e = .15/2
 
-text(  d,   d, "1"), text( 0.5,   d, "2"), text(1-d,   d, "3")
-text(  d, 0.5, "4"), text( 0.5, 0.5, "5"), text(1-d, 0.5, "6")
-text(  d, 1-d, "7"), text( 0.5, 1-d, "8"), text(1-d, 1-d, "9")
+text(  d,   d, "3"), text( 0.5,   d, "8"), text(1-d,   d, "4")
+text(  d, 0.5, "6"), text( 0.5, 0.5, "10"), text(1-d, 0.5, "7")
+text(  d, 1-d, "2"), text( 0.5, 1-d, "9"), text(1-d, 1-d, "1")
 
 text( -d, 1-d, "A"), text( -d, 0.5, "B"), text(  -d,   d, "C")
 point(-d+e, 1-d+e), point(-d+e, 0.5), point(-d+e, d-e),
