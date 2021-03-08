@@ -51,35 +51,40 @@
 \usepackage[babel=true]{microtype}
 \defaultfontfeatures{Ligatures=TeX}
 \setmainfont{Source Serif Pro}[
-  Path = fonts/source-serif-pro/SourceSerifPro-, Extension = .otf,
-  UprightFont= Light,
-  ItalicFont = LightIt,
-  BoldFont   = Regular,
-  BoldItalicFont = It]
-\setsansfont{Roboto}[
-  Path = fonts/roboto/Roboto-, Extension = .ttf,
-  UprightFont = Light,
-  ItalicFont = LightItalic,
-  BoldFont = Regular ]
-\setmonofont{Source Code Pro}[
-  Path = fonts/source-code-pro/SourceCodePro-, Extension = .otf,
-  UprightFont = Light,
-  BoldFont = Regular ]
-\newfontfamily\RobotoCon{Roboto Condensed}[
-  Path = fonts/roboto/RobotoCondensed-, Extension = .ttf,
-  UprightFont = Regular,
-  ItalicFont = Italic,
-  BoldFont = Bold ]  
-\newfontfamily\RobotoSlab{Robot Slab} [
-  Path           = fonts/roboto-slab/RobotoSlab-,
-  Extension      = .ttf,
+  Path           = fonts/source-serif-pro/SourceSerifPro-,
+  Extension      = .otf,
   UprightFont    = Light,
-  BoldFont       = Regular ]
-\newfontfamily\Roboto{Roboto}[
-  Path = fonts/roboto/Roboto-, Extension = .ttf,
+  ItalicFont     = LightIt,
+  BoldFont       = Regular,
+  BoldItalicFont = It ]
+\setsansfont{Roboto}[
+  Path        = fonts/roboto/Roboto-,
+  Extension   = .ttf,
+  UprightFont = Light,
+  ItalicFont  = LightItalic,
+  BoldFont    = Regular ]
+\setmonofont{Source Code Pro}[
+  Path        = fonts/source-code-pro/SourceCodePro-,
+  Extension   = .otf,
+  UprightFont = Light,
+  BoldFont    = Regular ]
+\newfontfamily\RobotoCon{Roboto Condensed}[
+  Path        = fonts/roboto/RobotoCondensed-,
+  Extension   = .ttf,
   UprightFont = Regular,
-  ItalicFont = Italic,
-  BoldFont = Black ]  
+  ItalicFont  = Italic,
+  BoldFont    = Bold ]
+\newfontfamily\RobotoSlab{Roboto Slab}[
+  Path        = fonts/roboto-slab/RobotoSlab-,
+  Extension   = .ttf,
+  UprightFont = Light,
+  BoldFont    = Regular ]
+\newfontfamily\Roboto{Roboto}[
+  Path        = fonts/roboto/Roboto-,
+  Extension   = .ttf,
+  UprightFont = Regular,
+  ItalicFont  = Italic,
+  BoldFont    = Black ]
 
 % --- Arrays ------------------------------------------------------------------
 \usepackage{multicol}
@@ -153,7 +158,7 @@
   \pdftooltip{\parameter{#1}{X}}
   {Horizontal coordinates of data point. 1D array like or scalar. }
 }
-  
+
 \newcommand{\paramy}[1]{%
   \pdftooltip{\parameter{#1}{Y}}%
   {Vertical coordinates of data point. 1D array like or scalar. }
@@ -181,7 +186,7 @@
   {Set line style.}
 }
 
-  
+
   \newcommand{\interpolation}[1]{%
   \pdftooltip{\parameter{#1}{interpolation}}
   {None, 'none', 'nearest', 'bilinear', 'bicubic', 'spline16', 'spline36',
@@ -283,7 +288,7 @@
   fig.show() }
   \end{myboxed}
   \vspace{\fill}
-    
+
   % --- Figure anatomy --------------------------------------------------------
   \begin{myboxed}{Anatomy of a figure}
   \includegraphics[width=\columnwidth]{anatomy.pdf}
@@ -293,21 +298,21 @@
   \begin{myboxed}{Subplots layout \hfill
       \API{https://matplotlib.org/tutorials/intermediate/gridspec.html} }
   \plot{layout-subplot.pdf}{\textbf{subplot[s]}(rows,cols,…)}
-       {https://matplotlib.org/api/_as_gen/matplotlib.pyplot.subplots.html}
+       {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html}
        {\ttfamily fig, axs = plt.subplots(3,3)}
        {}
   \plot{layout-gridspec.pdf}{G = \textbf{gridspec}(rows,cols,…)}
-       {https://matplotlib.org/api/_as_gen/matplotlib.gridspec.GridSpec.html}
+       {https://matplotlib.org/stable/api/_as_gen/matplotlib.gridspec.GridSpec.html}
        {\ttfamily ax = G[0,:]}{}
   \plot{layout-inset.pdf}{ax.\textbf{inset\_axes}(extent)}
-       {https://matplotlib.org/api/_as_gen/matplotlib.axes.Axes.inset_axes.html}
+       {https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.inset_axes.html}
        {}{}
   \plot{layout-divider.pdf}{d=\textbf{make\_axes\_locatable}(ax)}
        {https://matplotlib.org/mpl_toolkits/axes_grid/users/axes_divider.html}
        {\ttfamily ax=d.new\_horizontal('10\%')}{}
   \end{myboxed}
   \vspace{\fill}
-  
+
   % --- Getting help ----------------------------------------------------------
   \begin{myboxed}{Getting help}
     \includegraphics[height=.75em]{www.png}
@@ -333,11 +338,11 @@
          {Matplotlib users mailing list}
   \end{myboxed}
 
-    
+
   % --- Basic plots -----------------------------------------------------------
   \begin{myboxed}{Basic plots}
   \plot{basic-plot.pdf}{\textbf{plot}([X],Y,[fmt],…)}
-       {https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html}
+       {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html}
        {\optional{X},
         \mandatory{Y},
         \optional{fmt},
@@ -346,7 +351,7 @@
         \optional{linestyle}}
        {}
   \plot{basic-scatter.pdf}{\textbf{scatter}(X,Y,…)}
-       {https://matplotlib.org/api/_as_gen/matplotlib.pyplot.scatter.html}
+       {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.scatter.html}
        {\mandatory{X},
         \mandatory{Y},
         \optional{[s]izes},
@@ -355,7 +360,7 @@
         \optional{cmap}}
        {}
   \plot{basic-bar.pdf}{\textbf{bar[h]}(x,height,…)}
-       {https://matplotlib.org/api/_as_gen/matplotlib.pyplot.bar.html}
+       {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.bar.html}
        { \mandatory{x},
          \mandatory{height},
          \optional{width},
@@ -363,7 +368,7 @@
          \optional{align},
          \optional{color} }{}
   \plot{basic-imshow.pdf}{\textbf{imshow}(Z,[cmap],…)}
-       {https://matplotlib.org/api/_as_gen/matplotlib.pyplot.imshow.html}
+       {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imshow.html}
        { \mandatory{Z},
          \optional{cmap},
          \optional{interpolation},
@@ -371,7 +376,7 @@
          \optional{origin} }
        {}
   \plot{basic-contour.pdf}{\textbf{contour[f]}([X],[Y],Z,,…)}
-       {https://matplotlib.org/api/_as_gen/matplotlib.pyplot.contour.html}
+       {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.contour.html}
        { \optional{X},
          \optional{Y},
          \mandatory{Z},
@@ -381,7 +386,7 @@
          \optional{origin} }
        {}
   \plot{basic-quiver.pdf}{\textbf{quiver}([X],[Y],U,V,…)}
-     {https://matplotlib.org/api/_as_gen/matplotlib.pyplot.quiver.html}
+     {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.quiver.html}
      { \optional{X},
        \optional{Y},
        \mandatory{U},
@@ -391,7 +396,7 @@
        \optional{angles} }
      {}
   \plot{basic-pie.pdf}{\textbf{pie}(X,[explode],…)}
-       {https://matplotlib.org/api/_as_gen/matplotlib.pyplot.pie.html}
+       {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.pie.html}
        {\mandatory{Z},
          \optional{explode},
          \optional{labels},
@@ -399,7 +404,7 @@
          \optional{radius}}
        {}
    \plot{basic-text.pdf}{\textbf{text}(x,y,text,…)}
-       {https://matplotlib.org/api/_as_gen/matplotlib.pyplot.text.html}
+       {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.text.html}
        {\mandatory{x},
         \mandatory{y},
         \mandatory{text},
@@ -410,7 +415,7 @@
         \optional{transform} }
        {}
    \plot{basic-fill.pdf}{\textbf{fill[\_between][x]}( … )}
-       {https://matplotlib.org/api/_as_gen/matplotlib.pyplot.pie.html}
+       {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.fill.html}
        {\mandatory{X},
         \optional{Y1},
         \optional{Y2},
@@ -422,7 +427,7 @@
   % --- Advanced plots --------------------------------------------------------
   \begin{myboxed}{Advanced plots}
   \plot{advanced-step.pdf}{\textbf{step}(X,Y,[fmt],…)}
-     {https://matplotlib.org/api/_as_gen/matplotlib.pyplot.step.html}
+     {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.step.html}
      {\mandatory{X},
       \mandatory{Y},
       \optional{fmt},
@@ -431,7 +436,7 @@
       \optional{where} }
      {}
   \plot{advanced-boxplot.pdf}{\textbf{boxplot}(X,…)}
-     {https://matplotlib.org/api/_as_gen/matplotlib.pyplot.boxplot.html}
+     {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.boxplot.html}
      { \mandatory{X},
        \optional{notch},
        \optional{sym},
@@ -439,7 +444,7 @@
        \optional{widths} }
      {}
   \plot{advanced-errorbar.pdf}{\textbf{errorbar}(X,Y,xerr,yerr,…)}
-     {https://matplotlib.org/api/_as_gen/matplotlib.pyplot.errorbar.html}
+     {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.errorbar.html}
      { \mandatory{X},
        \mandatory{Y},
        \optional{xerr},
@@ -447,7 +452,7 @@
        \optional{fmt} }
      {}
   \plot{advanced-hist.pdf}{\textbf{hist}(X, bins, …)}
-     {https://matplotlib.org/api/_as_gen/matplotlib.pyplot.hist.html}
+     {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hist.html}
      {\mandatory{X},
       \optional{bins},
       \optional{range},
@@ -455,14 +460,14 @@
       \optional{weights}}
      {}
   \plot{advanced-violin.pdf}{\textbf{violinplot}(D,…)}
-     {https://matplotlib.org/api/_as_gen/matplotlib.axes.Axes.violinplot.html}
+     {https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.violinplot.html}
      {\mandatory{D},
       \optional{positions},
       \optional{widths},
       \optional{vert} }
      {}
   \plot{advanced-barbs.pdf}{\textbf{barbs}([X],[Y], U, V, …)}
-     {https://matplotlib.org/api/_as_gen/matplotlib.axes.Axes.violinplot.html}
+     {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.barbs.html}
      { \optional{X},
        \optional{Y},
        \mandatory{U},
@@ -473,13 +478,13 @@
        \optional{sizes} }
      {}
   \plot{advanced-event.pdf}{\textbf{eventplot}(positions,…)}
-     {https://matplotlib.org/api/_as_gen/matplotlib.pyplot.eventplot.html}
+     {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.eventplot.html}
      {\mandatory{positions},
        \optional{orientation},
        \optional{lineoffsets} }
      {}
   \plot{advanced-hexbin.pdf}{\textbf{hexbin}(X,Y,C,…)}
-     {https://matplotlib.org/api/_as_gen/matplotlib.pyplot.hexbin.html}
+     {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hexbin.html}
      {\mandatory{X},
       \mandatory{Y},
       \optional{C},
@@ -487,7 +492,7 @@
        \optional{bins} }
      {}
   \plot{advanced-xcorr.pdf}{\textbf{xcorr}(X,Y,…)}
-     {https://matplotlib.org/api/_as_gen/matplotlib.pyplot.xcorr.html}
+     {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.xcorr.html}
      {\mandatory{X},
       \mandatory{Y},
       \optional{normed},
@@ -498,7 +503,7 @@
 
   % --- Scale ---------------------------------------------------------------
   \begin{myboxed}{Scales \hfill
-    \API{https://matplotlib.org/api/scale_api.html}}
+    \API{https://matplotlib.org/stable/api/scale_api.html}}
   {\ttfamily ax.\textbf{set\_[xy]scale}(scale,…)}
   \smallskip
   \scale{scale-linear.pdf}{\textbf{linear}}{any values}
@@ -511,20 +516,20 @@
   %
   % --- Projections -----------------------------------------------------------
   \begin{myboxed}{Projections \hfill
-      \API{https://matplotlib.org/api/projections_api.html}}
+      \API{https://matplotlib.org/stable/api/projections_api.html}}
   {\ttfamily \textbf{subplot}(…,projection=p)}
   \smallskip
   \scale{projection-polar.pdf}{p='polar'}{}
   \scale{projection-3d.pdf}{p='3d'}{}
-%       {https://matplotlib.org/api/projections_api.html}
+%       {https://matplotlib.org/stable/api/projections_api.html}
 %       {}
 %       {}
   %% \plot{projection-3d.pdf}{p='3d'}
-  %%      {https://matplotlib.org/api/toolkits/mplot3d.html}
+  %%      {https://matplotlib.org/stable/api/toolkits/mplot3d.html}
   %%      {}
   %%      {}
   \plot{projection-cartopy.pdf}{p=Orthographic()}
-       {https://matplotlib.org/api/toolkits/mplot3d.html}
+       {https://matplotlib.org/stable/api/toolkits/mplot3d.html}
        {from cartopy.crs import Cartographic}
        {}
   \end{myboxed}
@@ -541,7 +546,7 @@
   %
   % --- Markers ---------------------------------------------------------------
   \begin{myboxed}{Markers \hfill
-                \API{https://matplotlib.org/api/markers_api.html}}
+                \API{https://matplotlib.org/stable/api/markers_api.html}}
       \includegraphics[width=\columnwidth]{markers.pdf}
   \end{myboxed}
   %
@@ -564,7 +569,7 @@
   %
   \vspace{\fill}
   %
-  
+
 
   % --- Colormaps -------------------------------------------------------------
   \begin{myboxed}{Colormaps \hfill
@@ -591,7 +596,7 @@
 
   % --- Ticks locators --------------------------------------------------------
   \begin{myboxed}{Tick locators \hfill
-    \API{https://matplotlib.org/api/ticker_api.html}}
+    \API{https://matplotlib.org/stable/api/ticker_api.html}}
     {\tiny \ttfamily
       from matplotlib import ticker\\
       ax.[xy]axis.set\_[minor|major]\_locator(\textbf{locator})\par
@@ -603,7 +608,7 @@
   \vspace{\fill}
   %
   \begin{myboxed}{Tick formatters \hfill
-    \API{https://matplotlib.org/api/ticker_api.html}}
+    \API{https://matplotlib.org/stable/api/ticker_api.html}}
     {\tiny \ttfamily
       from matplotlib import ticker\\
       ax.[xy]axis.set\_[minor|major]\_formatter(\textbf{formatter})\par
@@ -616,19 +621,19 @@
   %
   \begin{myboxed}{Ornaments}
     {\ttfamily ax.\textbf{legend}(…) \hfill
-    \api{https://matplotlib.org/api/_as_gen/matplotlib.pyplot.legend.html}}\\
+    \api{https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.legend.html}}\\
      handles, labels, loc, title, frameon\smallskip\\
     \includegraphics[width=0.9\columnwidth]{legend.pdf}
     \medskip\\
     %
     {\ttfamily ax.\textbf{colorbar}(…)} \hfill
-    \api{https://matplotlib.org/api/_as_gen/matplotlib.pyplot.colorbar.html}\\
+    \api{https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.colorbar.html}\\
     mappable, ax, cax, orientation \smallskip\\
     \includegraphics[width=\columnwidth]{colorbar.pdf}\\
     \medskip\\
     %
     {\ttfamily ax.\textbf{annotate}(…)} \hfill
-    \api{https://matplotlib.org/api/_as_gen/matplotlib.pyplot.annotate.html}\\
+    \api{https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.annotate.html}\\
     \mandatory{text},
     \mandatory{xy},
     \mandatory{xytext},
@@ -658,7 +663,7 @@
   % \vspace{\fill}
   %
   \begin{myboxed}{Animation \hfill
-      \API{https://matplotlib.org/api/animation_api.html}}
+      \API{https://matplotlib.org/stable/api/animation_api.html}}
   {\ttfamily \scriptsize
   import matplotlib.animation as mpla\par
   ~\par
@@ -766,12 +771,12 @@
     8. Avoid “Chartjunk”\\
     9. Message Trumps Beauty\\
     10. Get the Right Tool
-  \end{myboxed} 
+  \end{myboxed}
 \end{multicols*}
 
 \begin{multicols*}{5}
   \begin{myboxed}{Axes adjustments\hfill
-      \API{https://matplotlib.org/api/_as_gen/matplotlib.pyplot.subplots_adjust.html}}
+      \API{https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots_adjust.html}}
     plt.\textbf{subplots\_adjust}( … )\\
 
     \includegraphics[width=\columnwidth]{adjustments.pdf}
@@ -896,10 +901,10 @@
     \end{tabular}
   \end{myboxed}
 
-  
-  
+
+
   \begin{myboxed}{Color names \hfill
-      \API{https://matplotlib.org/api/colors_api.html} }
+      \API{https://matplotlib.org/stable/api/colors_api.html} }
     \includegraphics[width=\columnwidth]{colornames.pdf}
   \end{myboxed}
   %
@@ -913,7 +918,7 @@
     \includegraphics[width=\columnwidth]{interpolations.pdf}
   \end{myboxed}
 
-  
+
   \begin{myboxed}{Legend placement}
     \includegraphics[width=\columnwidth]{legend-placement.pdf}
     ax.\textbf{legend}(loc="string", bbox\_to\_anchor=(x,y))\\
@@ -935,7 +940,7 @@
       \tiny G: lower left /   {\ttfamily (1.1,0.1)} & \tiny H: center left /  {\ttfamily (1.1,0.5)}\\
       \tiny I: upper left /   {\ttfamily (1.1,0.9)} & \tiny J: lower right /  {\ttfamily (0.9,1.1)}\\
       \tiny K: lower center / {\ttfamily (0.5,1.1)} & \tiny L: lower left /   {\ttfamily (0.1,1.1)}
-    \end{tabular}  
+    \end{tabular}
   \end{myboxed}
   %
   \vspace{\fill}
@@ -955,7 +960,7 @@
   %
   \vspace{\fill}
   %
-  
+
   %
   \begin{myboxed}{How do I …}
     \textbf{… resize a figure?}\\
@@ -1038,7 +1043,6 @@
   \smallskip
   \includegraphics[width=\columnwidth]{numfocus.png}
   \end{center}
-  
+
 \end{multicols*}
 \end{document}
-
