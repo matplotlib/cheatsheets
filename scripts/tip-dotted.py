@@ -18,4 +18,4 @@ plt.plot([0,1], [0,0], "black", clip_on=False, lw=8,
 plt.plot([0,1], [1,1], "black", clip_on=False, lw=8,
          ls=(-.5,(epsilon, 2)), dash_capstyle="round")
 plt.savefig("../figures/tip-dotted.pdf")
-plt.show()
+# plt.show()

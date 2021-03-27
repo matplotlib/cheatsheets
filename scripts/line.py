@@ -82,4 +82,4 @@ ax.text(X1[-1]+0.25, y+0.2, "linestyle / ls", color="blue",
 y -= 1
 
 plt.savefig("line.pdf", dpi=200)
-plt.show()
+# plt.show()

@@ -63,4 +63,4 @@ plt.tight_layout()
 
 
 plt.savefig("../figures/extents.pdf", dpi=600)
-plt.show()
+# plt.show()

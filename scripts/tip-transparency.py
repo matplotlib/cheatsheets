@@ -20,4 +20,4 @@ ax.scatter(X, Y, s=40, c="C1", lw=0, alpha=0.1)
 ax.set_xlim([-1, 1]), ax.set_xticks([]),
 ax.set_ylim([-1, 1]), ax.set_yticks([])
 plt.savefig("../figures/tip-transparency.pdf")
-plt.show()
+# plt.show()

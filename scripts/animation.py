@@ -9,4 +9,4 @@ def animate(i):
     line.set_ydata(np.sin(T+i/50))
 a=animation.FuncAnimation(
     plt.gcf(), animate, interval=5)
-plt.show()
+# plt.show()

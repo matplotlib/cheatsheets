@@ -22,4 +22,4 @@ ax2.set_xticklabels([])
 ax2.set_yticklabels([])
 
 plt.savefig("../figures/tip-dual-axis.pdf")
-plt.show()
+# plt.show()

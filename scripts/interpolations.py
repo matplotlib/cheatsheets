@@ -19,4 +19,4 @@ for ax, interp_method in zip(axs.flat, methods):
 
 plt.tight_layout()
 plt.savefig("../figures/interpolations.pdf", dpi=600)
-plt.show()
+# plt.show()
