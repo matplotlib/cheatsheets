@@ -3,7 +3,7 @@
 # Released under the BSD License
 # -----------------------------------------------------------------------------
 
-# Scripts to generate all the basic plots 
+# Scripts to generate all the basic plots
 import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
@@ -56,7 +56,7 @@ ax.clear()
 np.random.seed(3)
 X = 0.5 + np.arange(8)
 Y = np.random.uniform(2, 7, len(X))
-ax.bar(X, Y, bottom=0, width=1, 
+ax.bar(X, Y, bottom=0, width=1,
        edgecolor="white", facecolor="C1", linewidth=0.25)
 ax.set_xlim(0, 8), ax.set_xticks(np.arange(1,8))
 ax.set_ylim(0, 8), ax.set_yticks(np.arange(1,8))
@@ -110,9 +110,9 @@ ax.set_xlim(0, 8), ax.set_xticks(np.arange(1,8))
 ax.set_ylim(0, 8), ax.set_yticks(np.arange(1,8))
 ax.set_axisbelow(True)
 ax.grid(linewidth=0.25, color="0.75")
-ax.pie(X, colors=["white",]*len(X), radius=3, center=(4,4), 
+ax.pie(X, colors=["white",]*len(X), radius=3, center=(4,4),
         wedgeprops = {"linewidth": 0.25, "edgecolor": "white"}, frame=True)
-ax.pie(X, colors=colors, radius=3, center=(4,4), 
+ax.pie(X, colors=colors, radius=3, center=(4,4),
         wedgeprops = {"linewidth": 0.25, "edgecolor": "white"}, frame=True)
 plt.savefig("../figures/basic-pie.pdf")
 ax.clear()
@@ -158,4 +158,3 @@ ax.set_axisbelow(True)
 ax.grid(linewidth=0.125, color="0.75")
 plt.savefig("../figures/basic-quiver.pdf")
 ax.clear()
-

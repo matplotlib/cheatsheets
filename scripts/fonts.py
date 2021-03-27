@@ -59,7 +59,7 @@ for i,family in enumerate(families):
             "%s" % (families[family]),
             color="0.25", va="center", ha="right",
             size="small", family = "Source Code Pro", weight = 400)
-    y += 1.65 
+    y += 1.65
 y += 1
 
 
@@ -98,7 +98,7 @@ text = "The quick brown fox"
 for i,size in enumerate(sizes.keys()):
     ax.text(1, y, text, size=size,
             ha="left", va="center", family = "Source Sans Pro", weight="light")
-    
+
     ax.text(39, y, "%s (%.2f)" % (size, sizes[size]),
             color="0.25", va="center", ha="right",
             size="small", family = "Source Code Pro", weight = 400)

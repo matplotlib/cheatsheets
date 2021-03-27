@@ -14,14 +14,14 @@ np.random.seed(1)
 X = np.random.uniform(0,1,n)
 Y = np.random.uniform(0,1,n)
 
-start = time.perf_counter() 
+start = time.perf_counter()
 ax.plot(X, Y, marker="o", ls="")
 end = time.perf_counter()
 print(f"Time: {end-start}s")
 
 ax.clear()
 
-start = time.perf_counter() 
+start = time.perf_counter()
 ax.scatter(X, Y)
 end = time.perf_counter()
 print(f"Time: {end-start}s")
@@ -54,4 +54,3 @@ ax.plot(sum([list(x)+[None] for x in X],[]))
 # plt.plot(X,Y)
 end = time.perf_counter()
 print(f"Time: {end-start}s")
-

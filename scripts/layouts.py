@@ -83,4 +83,3 @@ cax = divider.new_horizontal(size="10%", pad=0.025)
 fig.add_axes(cax)
 cax.set_xticks([]), cax.set_yticks([])
 plt.savefig("../figures/layout-divider.pdf")
-

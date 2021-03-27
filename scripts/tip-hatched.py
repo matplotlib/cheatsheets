@@ -25,7 +25,7 @@ for i in range(len(x2)):
     plt.annotate("%d%%" % y2[i],  (x2[i], y2[i]), xytext=(0,1),
                  fontsize="x-small", color=color2,
                  textcoords="offset points", va="bottom", ha="center")
-    
+
 ax.set_yticks([])
 ax.set_xticks(0.5+np.arange(0,6,3))
 ax.set_xticklabels(["2018", "2019"])

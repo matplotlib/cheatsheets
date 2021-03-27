@@ -3,7 +3,7 @@
 # Released under the BSD License
 # -----------------------------------------------------------------------------
 
-# Scripts to generate all the basic plots 
+# Scripts to generate all the basic plots
 import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
@@ -149,4 +149,3 @@ ax.text(4, -1, "Time", transform=ax.transData, clip_on=False,
 # plt.show()
 plt.savefig("../figures/plot-xlabel.pdf")
 fig.clear()
-

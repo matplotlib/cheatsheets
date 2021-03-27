@@ -15,7 +15,7 @@ def setup(ax):
     ax.spines['top'].set_color('none')
 
     ax.spines['bottom'].set_position("center")
-    
+
     ax.xaxis.set_ticks_position('bottom')
     ax.tick_params(which='major', width=1.00)
     ax.tick_params(which='major', length=5)

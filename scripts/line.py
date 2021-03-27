@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 fig = plt.figure(figsize=(4.25,4*.45))
 ax = fig.add_axes([0,0,1,1], xlim=[0,11], ylim=[0.5,4.5], frameon=False,
-                      xticks=[], yticks=[]) 
+                      xticks=[], yticks=[])
 y = 4
 
 def split(n_segment):
@@ -28,7 +28,7 @@ for x0,x1,lw in zip(X0,X1,LW):
 ax.text(X0[0]-0.25, y+0.2, "Line width", size="small", ha="left", va="baseline")
 ax.text(X1[-1]+0.25, y+0.2, "linewidth / lw", color="blue",
          size="small", ha="right", va="baseline", family="monospace")
-y -= 1 
+y -= 1
 
 # Solid capstyle
 # ----------------------------------------------------------------------------
@@ -45,7 +45,7 @@ for x0,x1,style in zip(X0,X1,styles):
 ax.text(X0[0]-0.25, y+0.2, "Cap style", size="small", ha="left", va="baseline")
 ax.text(X1[-1]+0.25, y+0.2, "solid_capstyle", color="blue",
          size="small", ha="right", va="baseline", family="monospace")
-y -= 1 
+y -= 1
 
 # Dash capstyle
 # ----------------------------------------------------------------------------
@@ -61,7 +61,7 @@ for x0,x1,style in zip(X0,X1,styles):
 ax.text(X0[0]-0.25, y+0.2, "Dash cap style", size="small", ha="left", va="baseline")
 ax.text(X1[-1]+0.25, y+0.2, "dash_capstyle", color="blue",
          size="small", ha="right", va="baseline", family="monospace")
-y -= 1 
+y -= 1
 
 # Line style
 # ----------------------------------------------------------------------------
@@ -79,7 +79,7 @@ for x0,x1,style in zip(X0,X1,styles):
 ax.text(X0[0]-0.25, y+0.2, "Line style", size="small", ha="left", va="baseline")
 ax.text(X1[-1]+0.25, y+0.2, "linestyle / ls", color="blue",
          size="small", ha="right", va="baseline", family="monospace")
-y -= 1 
+y -= 1
 
 plt.savefig("line.pdf", dpi=200)
 plt.show()

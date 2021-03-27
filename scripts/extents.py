@@ -3,7 +3,7 @@
 # Released under the BSD License
 # -----------------------------------------------------------------------------
 
-# Scripts to generate all the basic plots 
+# Scripts to generate all the basic plots
 import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
@@ -64,6 +64,3 @@ plt.tight_layout()
 
 plt.savefig("../figures/extents.pdf", dpi=600)
 plt.show()
-
-
-
