@@ -28,8 +28,21 @@
                                 or https://github.com/adobe-fonts/source-serif-pro/tree/release/OTF
 * `fonts/delicious-123/*`    : See https://www.exljbris.com/delicious.html
 
+On Linux, with `make` installed, the fonts can be set up with the following command:
+```shell
+make -C fonts
+```
 
+The fonts can be made discoverable by `matplotlib` (through `fontconfig`) by creating the following in `$HOME/.config/fontconfig/fonts.conf` (see [here](https://www.freedesktop.org/software/fontconfig/fontconfig-user.html)):
 
+```xml
+<?xml version="1.0"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<fontconfig>
+<dir>/path/to/cheatsheets/fonts/</dir>
+...
+</fontconfig>
+```
 
 
 2. You need to generate all the figures:
