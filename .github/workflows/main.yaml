@@ -9,3 +9,43 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
       - uses: pre-commit/action@v2.0.0
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.6
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install \
+            fontconfig    \
+            libgeos++-dev \
+            libproj-dev
+          python -m pip install --upgrade pip
+          pip install -r requirements/requirements-base.txt
+          pip install -r requirements/requirements.txt
+      - name: Install Tex Live
+        run: |
+          sudo apt-get update
+          sudo apt-get install \
+            texlive-base              \
+            texlive-latex-base        \
+            texlive-latex-extra       \
+            texlive-latex-recommended \
+            texlive-fonts-recommended \
+            texlive-xetex
+      - name: Build artifacts
+        run: |
+          rm *.pdf
+          make -C fonts/
+          cp -r fonts/ /usr/share/fonts/
+          fc-cache
+          make figures cheatsheets
+      - uses: actions/upload-artifact@v2
+        with:
+          name: build
+          path: |
+            cheatsheets.pdf
+            handout-*.pdf

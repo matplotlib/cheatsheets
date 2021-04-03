@@ -1,0 +1,9 @@
+-c ./requirements-base.txt
+
+cartopy
+fonttools[woff]
+matplotlib
+pre-commit
+scipy
+
+--no-binary shapely
