@@ -15,7 +15,7 @@ def setup(ax):
     ax.spines['top'].set_color('none')
 
     ax.spines['bottom'].set_position("center")
-    
+
     ax.xaxis.set_ticks_position('bottom')
     ax.tick_params(which='major', width=1.00)
     ax.tick_params(which='major', length=5)
@@ -42,7 +42,7 @@ ax.tick_params(axis='x', which='minor', rotation=0)
 
 for tick in ax.get_xticklabels(which='both'):
     tick.set_fontname("Roboto Condensed")
-    
+
 plt.tight_layout()
 plt.savefig("../figures/tip-font-family.pdf", transparent=True)
 # plt.show()

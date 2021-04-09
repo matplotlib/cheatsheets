@@ -17,5 +17,3 @@ for style in ['default'] + plt.style.available:
         plt.tight_layout()
         plt.savefig("../figures/style-%s.pdf" % style)
         plt.close(fig)
-
-

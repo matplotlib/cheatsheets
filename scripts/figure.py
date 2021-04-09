@@ -64,7 +64,7 @@ def ext_arrow(p0,p1,p2,p3):
     p0, p1 = np.asarray(p0), np.asarray(p1)
     p2, p3 = np.asarray(p2), np.asarray(p3)
     ax.arrow(*p0, *(p1-p0), zorder=20, linewidth=0,
-             length_includes_head=True, width=.4, 
+             length_includes_head=True, width=.4,
              head_width=2, head_length=2, color="black")
     ax.arrow(*p3, *(p2-p3), zorder=20, linewidth=0,
              length_includes_head=True, width=.4,
@@ -74,13 +74,13 @@ def ext_arrow(p0,p1,p2,p3):
 def int_arrow(p0,p1):
     p0, p1 = np.asarray(p0), np.asarray(p1)
     ax.arrow(*((p0+p1)/2), *((p1-p0)/2), zorder=20, linewidth=0,
-             length_includes_head=True, width=.4, 
+             length_includes_head=True, width=.4,
              head_width=2, head_length=2, color="black")
     ax.arrow(*((p0+p1)/2), *(-(p1-p0)/2), zorder=20, linewidth=0,
-             length_includes_head=True, width=.4, 
+             length_includes_head=True, width=.4,
              head_width=2, head_length=2, color="black")
 
-    
+
 
 x = 0
 y = 10

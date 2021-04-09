@@ -3,7 +3,7 @@
 # Released under the BSD License
 # -----------------------------------------------------------------------------
 
-# Scripts to generate all the basic plots 
+# Scripts to generate all the basic plots
 import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
@@ -149,4 +149,3 @@ ax.set_axisbelow(True)
 ax.grid(linewidth=0.125)
 plt.savefig("../figures/advanced-xcorr.pdf")
 ax.clear()
-

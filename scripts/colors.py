@@ -35,6 +35,6 @@ for name, colors in palettes.items():
         text = str(colors[i]).replace(' ', '')
         ax.text((i+0.5)*dx, (ymin+ymax)/2, text, color=color, zorder=10,
                 family = "Source Code Pro", size=9, ha="center", va="center")
-         
+
     plt.savefig("../figures/colors-%s.pdf" % name)
     ax.clear()

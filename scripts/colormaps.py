@@ -11,7 +11,7 @@ xmin, xmax = 0, figsize[0]/figsize[1]
 # Uniform colormaps
 # -----------------------------------------------------------------------------
 cmaps = ('viridis', 'plasma', 'inferno', 'magma', 'cividis',
-         
+
          'PRGn', 'PiYG', 'RdYlGn', 'BrBG', 'RdGy', 'PuOr', 'RdBu',
          'RdYlBu',  'Spectral', 'coolwarm', 'bwr', 'seismic',
 
@@ -23,7 +23,7 @@ cmaps = ('viridis', 'plasma', 'inferno', 'magma', 'cividis',
          'PuRd', 'RdPu', 'BuPu', 'Purples', 'YlGnBu', 'Blues',
          'PuBu', 'GnBu', 'PuBuGn', 'BuGn','Greens', 'YlGn',
 
-         'bone', 'gray', 'pink', 'afmhot', 'hot', 'gist_heat', 'copper', 
+         'bone', 'gray', 'pink', 'afmhot', 'hot', 'gist_heat', 'copper',
          'Wistia', 'autumn', 'summer', 'spring', 'cool', 'winter',
 
          'twilight', 'twilight_shifted', 'hsv',
@@ -41,7 +41,7 @@ for cmap in cmaps:
     if cmap in ['Set3']: n = 12
     if cmap in ['Greys']: n = 11
     Z = np.linspace(0,1,n).reshape(1,n)
-        
+
     ax.imshow(Z, extent=[xmin, xmax, ymin, ymax], cmap=plt.get_cmap(cmap))
     ax.set_xlim(xmin, xmax), ax.set_xticks([])
     ax.set_ylim(ymin, ymax), ax.set_yticks([])
@@ -61,6 +61,6 @@ for cmap in cmaps:
             ax.text(x[i], (ymin+ymax)/2, text, color=color, zorder=10,
                     family = "Source Pro Serif", size=10, ha="center", va="center")
     """
-    
+
     plt.savefig("../figures/colormap-%s.pdf" % cmap)
     ax.clear()
