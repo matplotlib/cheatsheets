@@ -31,10 +31,12 @@ jobs:
           sudo apt-get update
           sudo apt-get install \
             texlive-base              \
+            texlive-extra-utils       \
+            texlive-fonts-extra       \
+            texlive-fonts-recommended \
             texlive-latex-base        \
             texlive-latex-extra       \
             texlive-latex-recommended \
-            texlive-fonts-recommended \
             texlive-xetex
       - name: Build artifacts
         run: |
@@ -42,7 +44,7 @@ jobs:
           make -C fonts/
           cp -r fonts/ /usr/share/fonts/
           fc-cache
-          make figures cheatsheets
+          make figures cheatsheets handouts
       - uses: actions/upload-artifact@v2
         with:
           name: build

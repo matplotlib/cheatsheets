@@ -8,7 +8,12 @@ all: figures cheatsheets
 
 .PHONY: figures
 figures:
+	# generate the figures
 	cd scripts && for script in *.py; do echo $$script; python $$script; done
+	# crop the figures
+	cd figures && for figure in *.pdf; do echo $$figure; pdfcrop $$figure $$figure; done
+	# regenerate some figures that should not be cropped
+	cd scripts && python styles.py
 
 .PHONY: cheatsheets
 cheatsheets:
@@ -16,8 +21,8 @@ cheatsheets:
 
 .PHONY: handouts
 handouts:
-	# xelatex handout-beginner.tex
-	# xelatex handout-intermediate.tex
+	xelatex handout-beginner.tex
+	xelatex handout-intermediate.tex
 	xelatex handout-tips.tex
 
 .PHONY: fonts
@@ -26,7 +31,7 @@ fonts:
 
 .PHONY: clean
 clean: $(SRC)
-	git clean -f ./figures/
+	git clean -f -X ./figures/
 	git clean -f ./scripts/*.pdf
 	latexmk -c $^
 
