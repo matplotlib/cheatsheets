@@ -1,6 +1,6 @@
-fonts/*
-*.upa
+*.aux
 *.log
 *.out
-*.aux
+*.upa
 figures/*.pdf
+fonts/**/*.[ot]tf

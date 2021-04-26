@@ -136,4 +136,4 @@ ax.annotate('', xy=(3.15, 0.0), xytext=(3.45, 0.45), color=color,
                             color=color))
 
 plt.savefig("../figures/anatomy.pdf")
-plt.show()
+# plt.show()

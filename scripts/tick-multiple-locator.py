@@ -48,4 +48,4 @@ ax.tick_params(axis='x', which='minor', rotation=90)
 
 plt.tight_layout()
 plt.savefig("../figures/tick-multiple-locator.pdf", transparent=True)
-plt.show()
+# plt.show()

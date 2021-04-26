@@ -125,4 +125,4 @@ ax.text(62.5, 35, "axes height", backgroundcolor="white", zorder=30,
         rotation = "vertical", ha="center", va="center", size="x-small")
 
 plt.savefig("figure.pdf")
-plt.show()
+# plt.show()
