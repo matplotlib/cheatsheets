@@ -160,7 +160,7 @@ Matplotlib offers several kind of plots (see Gallery): \medskip
 \begin{tabular}{@{}m{.821\linewidth}m{.169\linewidth}}
 \begin{lstlisting}[belowskip=-\baselineskip]
  X = np.arange(5)
- Y = np.random.uniform(0,1,5)
+ Y = np.random.uniform(0, 1, 5)
  ax.errorbar(X, Y, Y/4)
 \end{lstlisting}
 & \raisebox{-0.75em}{\includegraphics[width=\linewidth]{advanced-errorbar.pdf}}
@@ -168,7 +168,7 @@ Matplotlib offers several kind of plots (see Gallery): \medskip
 % -----------------------------------------------------------------------------
 \begin{tabular}{@{}m{.821\linewidth}m{.169\linewidth}}
 \begin{lstlisting}[belowskip=-\baselineskip]
- Z = np.random.normal(0,1,(100,3))
+ Z = np.random.normal(0, 1, (100,3))
 
  ax.boxplot(Z)
 \end{lstlisting}
@@ -186,7 +186,7 @@ titles, etc. \medskip
 % -----------------------------------------------------------------------------
 \begin{tabular}{@{}m{.821\linewidth}m{.169\linewidth}}
 \begin{lstlisting}[belowskip=-\baselineskip]
- X = np.linspace(0,10,100)
+ X = np.linspace(0, 10, 100)
  Y = np.sin(X)
  ax.plot(X, Y, color="black")
 \end{lstlisting}
@@ -195,7 +195,7 @@ titles, etc. \medskip
 % -----------------------------------------------------------------------------
 \begin{tabular}{@{}m{.821\linewidth}m{.169\linewidth}}
 \begin{lstlisting}[belowskip=-\baselineskip]
- X = np.linspace(0,10,100)
+ X = np.linspace(0, 10, 100)
  Y = np.sin(X)
  ax.plot(X, Y, linestyle="--")
 \end{lstlisting}
@@ -204,7 +204,7 @@ titles, etc. \medskip
 % -----------------------------------------------------------------------------
 \begin{tabular}{@{}m{.821\linewidth}m{.169\linewidth}}
 \begin{lstlisting}[belowskip=-\baselineskip]
- X = np.linspace(0,10,100)
+ X = np.linspace(0, 10, 100)
  Y = np.sin(X)
  ax.plot(X, Y, linewidth=5)
 \end{lstlisting}
@@ -213,7 +213,7 @@ titles, etc. \medskip
 % -----------------------------------------------------------------------------
 \begin{tabular}{@{}m{.821\linewidth}m{.169\linewidth}}
 \begin{lstlisting}[belowskip=-\baselineskip]
- X = np.linspace(0,10,100)
+ X = np.linspace(0, 10, 100)
  Y = np.sin(X)
  ax.plot(X, Y, marker="o")
 \end{lstlisting}
@@ -231,7 +231,7 @@ split a figure in several subplots (named {\em Axes}): \medskip
 % -----------------------------------------------------------------------------
 \begin{tabular}{@{}m{.821\linewidth}m{.169\linewidth}}
 \begin{lstlisting}[belowskip=-\baselineskip]
- X = np.linspace(0,10,100)
+ X = np.linspace(0, 10, 100)
  Y1, Y2 = np.sin(X), np.cos(X)
  ax.plot(X, Y1, Y2)
 \end{lstlisting}
