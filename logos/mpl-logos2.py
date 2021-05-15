@@ -97,12 +97,27 @@ def create_text_axes(fig, height_px):
     path = TextPath((0, 0), "matplotlib", size=height_px * 0.8,
                     prop=get_font_properties())
 
+    fp = get_font_properties()
+    fp.set_weight('light')
+    path1 = TextPath((80, -13), 'Cheat sheet', size=height_px * 0.12,
+                     prop=fp)
+    path2 = TextPath((310, -13), f'Version {matplotlib. __version__}',
+                     size=height_px * 0.12,
+                     prop=fp)
+
     angle = 4.25  # degrees
     trans = mtrans.Affine2D().skew_deg(angle, 0)
 
     patch = PathPatch(path, transform=trans + ax.transData, color=MPL_BLUE,
                       lw=0)
+    patch1 = PathPatch(path1, transform=trans + ax.transData, color=MPL_BLUE,
+                       lw=0)
+    patch2 = PathPatch(path2, color=MPL_BLUE,
+                       lw=0)
+
     ax.add_patch(patch)
+    ax.add_patch(patch1)
+    ax.add_patch(patch2)
     ax.autoscale()
 
 
@@ -136,6 +151,8 @@ def make_logo(height_px, lw_bars, lw_grid, lw_border, rgrid, with_text=False):
     ax_pos = (0.535, 0.12, .17, 0.75) if with_text else (0.03, 0.03, .94, .94)
     ax = create_icon_axes(fig, ax_pos, lw_bars, lw_grid, lw_border, rgrid)
 
+    fig.savefig('mpl-logo2.pdf')
+
     return fig, ax
 
 ##############################################################################
@@ -154,4 +171,4 @@ make_logo(height_px=32, lw_bars=0.3, lw_grid=0.3, lw_border=0.3, rgrid=[5])
 
 make_logo(height_px=110, lw_bars=0.7, lw_grid=0.5, lw_border=1,
           rgrid=[1, 3, 5, 7], with_text=True)
-plt.show()
+# plt.show()

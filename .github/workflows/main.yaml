@@ -44,7 +44,7 @@ jobs:
           make -C fonts/
           cp -r fonts/ /usr/share/fonts/
           fc-cache
-          make figures cheatsheets handouts
+          make all
       - name: Check layouts
         run: |
           set -x

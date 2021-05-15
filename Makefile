@@ -4,7 +4,11 @@ SRC := $(wildcard *.tex)
 default: all
 
 .PHONY: all
-all: figures cheatsheets
+all: logos figures cheatsheets handouts
+
+.PHONY: logos
+logos:
+	cd logos && python mpl-logos2.py && pdfcrop mpl-logo2.pdf mpl-logo2.pdf
 
 .PHONY: figures
 figures:
@@ -31,6 +35,7 @@ fonts:
 
 .PHONY: clean
 clean: $(SRC)
+	- rm ./logos/mpl-logo2.pdf
 	git clean -f -X ./figures/
 	git clean -f ./scripts/*.pdf
 	latexmk -c $^
