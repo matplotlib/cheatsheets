@@ -1,8 +1,6 @@
--c ./requirements-base.txt
-
-cartopy
-fonttools[woff]
-matplotlib
+cartopy==0.19.0.post1
+matplotlib==3.4.2
+pip-tools
 pre-commit
 scipy
 
