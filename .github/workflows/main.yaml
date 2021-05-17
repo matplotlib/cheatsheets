@@ -18,18 +18,19 @@ jobs:
           python-version: 3.6
       - name: Install dependencies
         run: |
-          sudo apt-get update
-          sudo apt-get install \
+          sudo apt update
+          sudo apt install \
             fontconfig    \
             libgeos++-dev \
-            libproj-dev
+            libproj-dev   \
+            poppler-utils
           python -m pip install --upgrade pip
           pip install -r requirements/requirements-base.txt
           pip install -r requirements/requirements.txt
       - name: Install Tex Live
         run: |
-          sudo apt-get update
-          sudo apt-get install \
+          sudo apt update
+          sudo apt install \
             texlive-base              \
             texlive-extra-utils       \
             texlive-fonts-extra       \
@@ -45,7 +46,15 @@ jobs:
           cp -r fonts/ /usr/share/fonts/
           fc-cache
           make figures cheatsheets handouts
+      - name: Check layouts
+        run: |
+          set -x
+          [[ "$(pdfinfo cheatsheets.pdf          | grep Pages | awk '{print $2}')" == "2" ]] || exit 1
+          [[ "$(pdfinfo handout-tips.pdf         | grep Pages | awk '{print $2}')" == "1" ]] || exit 1
+          [[ "$(pdfinfo handout-beginner.pdf     | grep Pages | awk '{print $2}')" == "1" ]] || exit 1
+          [[ "$(pdfinfo handout-intermediate.pdf | grep Pages | awk '{print $2}')" == "1" ]] || exit 1
       - uses: actions/upload-artifact@v2
+        if: ${{ always() }}
         with:
           name: build
           path: |
