@@ -1,6 +1,11 @@
+# TeX auxiliary files
+# ----------------------------------
 *.aux
 *.log
 *.out
 *.upa
+
+# generated figures
+# ----------------------------------
 figures/*.pdf
 fonts/**/*.[ot]tf

@@ -5,6 +5,9 @@ default: all
 
 .PHONY: all
 all: logos figures cheatsheets handouts
+	mkdir -p ./build/
+	cp cheatsheets*.p* ./build/
+	cp handout-*.p* ./build/
 
 .PHONY: logos
 logos:
@@ -22,12 +25,16 @@ figures:
 .PHONY: cheatsheets
 cheatsheets:
 	xelatex cheatsheets.tex
+	convert -density 150 cheatsheets.pdf -scene 1 cheatsheets.png
 
 .PHONY: handouts
 handouts:
 	xelatex handout-beginner.tex
 	xelatex handout-intermediate.tex
 	xelatex handout-tips.tex
+	convert -density 150 handout-tips.pdf handout-tips.png
+	convert -density 150 handout-beginner.pdf handout-beginner.png
+	convert -density 150 handout-intermediate.pdf handout-intermediate.png
 
 .PHONY: fonts
 fonts:
@@ -35,10 +42,14 @@ fonts:
 
 .PHONY: clean
 clean: $(SRC)
+	latexmk -c $^
+	- rm -rf ./build/
+
+.PHONY: clean-all
+clean-all: clean
 	- rm ./logos/mpl-logo2.pdf
 	git clean -f -X ./figures/
 	git clean -f ./scripts/*.pdf
-	latexmk -c $^
 
 .PHONY: requirements
 requirements:

@@ -4,7 +4,7 @@ on: [push, pull_request]
 
 jobs:
   pre-commit:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
@@ -21,6 +21,7 @@ jobs:
           sudo apt update
           sudo apt install \
             fontconfig    \
+            imagemagick   \
             libgeos++-dev \
             libproj-dev   \
             poppler-utils
@@ -40,7 +41,7 @@ jobs:
             texlive-xetex
       - name: Build artifacts
         run: |
-          rm *.pdf
+          sudo sed -i '/disable ghostscript format types/,+6d' /etc/ImageMagick-6/policy.xml
           make -C fonts/
           cp -r fonts/ /usr/share/fonts/
           fc-cache
@@ -59,3 +60,10 @@ jobs:
           path: |
             cheatsheets.pdf
             handout-*.pdf
+      - name: Publish cheatsheets and handouts
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build/
+          force_orphan: true
