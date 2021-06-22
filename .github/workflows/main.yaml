@@ -41,7 +41,12 @@ jobs:
             texlive-xetex
       - name: Build artifacts
         run: |
+          # adjust the ImageMagick policies to convert PDF to PNG
+          # remove all policies restricting Ghostscript ability to process files
+          # https://stackoverflow.com/q/52998331
+          # https://stackoverflow.com/a/59193253
           sudo sed -i '/disable ghostscript format types/,+6d' /etc/ImageMagick-6/policy.xml
+          #
           make -C fonts/
           cp -r fonts/ /usr/share/fonts/
           fc-cache
