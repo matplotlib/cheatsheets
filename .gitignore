@@ -1,3 +1,8 @@
+# built cheatsheets and handouts
+# ----------------------------------
+cheatsheets*.p[dn][fg]
+handout-*.p[dn][fg]
+
 # TeX auxiliary files
 # ----------------------------------
 *.aux
