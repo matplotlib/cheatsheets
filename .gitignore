@@ -1,3 +1,10 @@
+# built cheatsheets and handouts
+# ----------------------------------
+cheatsheets*.pdf
+cheatsheets*.png
+handout-*.pdf
+handout-*.png
+
 # TeX auxiliary files
 # ----------------------------------
 *.aux

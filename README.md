@@ -1,16 +1,16 @@
 # Cheatsheets
 
-![](./cheatsheets-1.png)
+![](https://matplotlib.org/cheatsheets/cheatsheets-1.png)
 
-![](./cheatsheets-2.png)
+![](https://matplotlib.org/cheatsheets/cheatsheets-2.png)
 
 # Handouts
 
-![](./handout-beginner.png)
+![](https://matplotlib.org/cheatsheets/handout-beginner.png)
 
-![](./handout-intermediate.png)
+![](https://matplotlib.org/cheatsheets/handout-intermediate.png)
 
-![](./handout-tips.png)
+![](https://matplotlib.org/cheatsheets/handout-tips.png)
 
 # How to compile
 
