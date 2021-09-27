@@ -1,18 +1,19 @@
-# Cheatsheets
+# Cheatsheets for Matplotlib users
 
-![](https://matplotlib.org/cheatsheets/cheatsheets-1.png)
+## Cheatsheets
+Cheatsheet [(download pdf)](https://matplotlib.org/cheatsheets/cheatsheets.pdf) | |
+:------------------------------------------------------------------------------:|:----------------------------------------------------------:
+![](https://matplotlib.org/cheatsheets/cheatsheets-1.png)                       | ![](https://matplotlib.org/cheatsheets/cheatsheets-2.png) 
 
-![](https://matplotlib.org/cheatsheets/cheatsheets-2.png)
+## Handouts
 
-# Handouts
+Beginner handout [(download pdf)](https://matplotlib.org/cheatsheets/handout-beginner.pdf) | Intermediate handout [(download pdf)](https://matplotlib.org/cheatsheets/handout-intermediate.pdf) | Tips handout [(download pdf)](https://matplotlib.org/cheatsheets/handout-tips.pdf)
+:-----------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------:
+![](https://matplotlib.org/cheatsheets/handout-beginner.png)                               | ![](https://matplotlib.org/cheatsheets/handout-intermediate.png)                                   | ![](https://matplotlib.org/cheatsheets/handout-tips.png)
 
-![](https://matplotlib.org/cheatsheets/handout-beginner.png)
+# For contributors to the cheatsheets
 
-![](https://matplotlib.org/cheatsheets/handout-intermediate.png)
-
-![](https://matplotlib.org/cheatsheets/handout-tips.png)
-
-# How to compile
+## How to compile
 
 1. You need to create a `fonts` repository with:
 
