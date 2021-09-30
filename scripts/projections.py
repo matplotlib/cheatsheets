@@ -3,9 +3,20 @@
 # Released under the BSD License
 # -----------------------------------------------------------------------------
 import numpy as np
-import cartopy.crs
+import cartopy
 import matplotlib as mpl
 import matplotlib.pyplot as plt
+
+
+CARTOPY_SOURCE_TEMPLATE = 'https://naturalearth.s3.amazonaws.com/{resolution}_{category}/ne_{resolution}_{name}.zip'
+
+
+# Configures cartopy to download NaturalEarth shapefiles from S3 instead of naciscdn
+# Taken from https://github.com/SciTools/cartopy/issues/1325#issuecomment-904343657
+target_path_template = cartopy.io.shapereader.NEShpDownloader.default_downloader().target_path_template
+downloader = cartopy.io.shapereader.NEShpDownloader(url_template=CARTOPY_SOURCE_TEMPLATE,
+                                target_path_template=target_path_template)
+cartopy.config['downloaders'][('shapefiles', 'natural_earth')] = downloader
 
 
 # Polar plot
