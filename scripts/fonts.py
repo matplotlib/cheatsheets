@@ -2,8 +2,10 @@
 # Matplotlib cheat sheet
 # Released under the BSD License
 # -----------------------------------------------------------------------------
+import pathlib
+
 import matplotlib.pyplot as plt
-from matplotlib.font_manager import FontProperties
+
 
 fig = plt.figure(figsize=(4.25, 3.8))
 ax = fig.add_axes([0,0,1,1], frameon=False, xticks=[], yticks=[],
@@ -13,14 +15,14 @@ y = 1
 
 # -----------------------------------------------------------------------------
 variants = {
-    "normal" : "../fonts/delicious-123/Delicious-Roman.otf",
-    "small-caps" : "../fonts/delicious-123/Delicious-SmallCaps.otf"
+    "normal" : "../fonts/eb-garamond/EBGaramond08-Regular.otf",
+    "small-caps" : "../fonts/eb-garamond/EBGaramondSC08-Regular.otf"
 }
 
 text = "The quick brown fox jumps over the lazy dog"
 for i,variant in enumerate(variants.keys()):
     ax.text(1, y, text, size=9, va="center",
-            fontproperties = FontProperties(fname=variants[variant]))
+            font=pathlib.Path(variants[variant]).resolve())
 
     ax.text(39, y, variant,
             color="0.25", va="center", ha="right",
