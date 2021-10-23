@@ -11,7 +11,11 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 
 
-mpl.style.use(pathlib.Path(__file__).parent/'../styles/plotlet.mplstyle')
+mpl.style.use([
+    pathlib.Path(__file__).parent/'../styles/base.mplstyle',
+    pathlib.Path(__file__).parent/'../styles/plotlet.mplstyle',
+])
+
 
 fig = plt.figure()
 d = 0.01

@@ -1,0 +1,10 @@
+figure.constrained_layout.h_pad:  0.04
+figure.constrained_layout.w_pad:  0.04
+figure.constrained_layout.hspace: 0.04
+figure.constrained_layout.wspace: 0.04
+
+font.family: Source Code Pro
+font.size: 5
+
+xtick.major.size: 0.0
+ytick.major.size: 0.0
