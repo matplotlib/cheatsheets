@@ -38,10 +38,10 @@ handouts:
 
 .PHONY: check
 check:
-	./check-layout.sh cheatsheets.pdf 2
-	./check-layout.sh handout-tips.pdf 1
-	./check-layout.sh handout-beginner.pdf 1
-	./check-layout.sh handout-intermediate.pdf 1
+	./check-num-pages.sh cheatsheets.pdf 2
+	./check-num-pages.sh handout-tips.pdf 1
+	./check-num-pages.sh handout-beginner.pdf 1
+	./check-num-pages.sh handout-intermediate.pdf 1
 	./check-links.py cheatsheets.pdf
 
 .PHONY: fonts

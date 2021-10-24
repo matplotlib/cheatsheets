@@ -5,6 +5,6 @@
 #   check-num-pages.sh [pdffile] [num_pages]
 
 set -x
-# pdffile=$1
-# num_pages=$1
+pdffile=$1
+num_pages=$2
 [[ "$(pdfinfo $pdffile | grep Pages | awk '{print $2}')" == "$num_pages" ]] || exit 1
