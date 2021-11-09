@@ -5,5 +5,7 @@ pdfx
 pip-tools
 pre-commit
 scipy
+sphinx
+mpl-sphinx-theme
 
 --no-binary shapely

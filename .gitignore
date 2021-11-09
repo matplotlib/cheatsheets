@@ -16,3 +16,9 @@ handout-*.png
 # ----------------------------------
 figures/*.pdf
 fonts/**/*.[ot]tf
+
+# html build
+docs/_build/*
+
+# OS specific
+.DS_Store

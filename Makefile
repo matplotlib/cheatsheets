@@ -4,10 +4,7 @@ SRC := $(wildcard *.tex)
 default: all
 
 .PHONY: all
-all: logos figures cheatsheets handouts
-	mkdir -p ./build/
-	cp cheatsheets*.p* ./build/
-	cp handout-*.p* ./build/
+all: logos figures cheatsheets handouts docs
 
 .PHONY: logos
 logos:
@@ -16,11 +13,11 @@ logos:
 .PHONY: figures
 figures:
 	# generate the figures
-	cd scripts && for script in *.py; do echo $$script; python $$script; done
+	cd scripts && for script in *.py; do echo $$script; MPLBACKEND="agg" python $$script; done
 	# crop the figures
 	cd figures && for figure in *.pdf; do echo $$figure; pdfcrop $$figure $$figure; done
 	# regenerate some figures that should not be cropped
-	cd scripts && python styles.py
+	cd scripts && MPLBACKEND="agg" python styles.py
 
 .PHONY: cheatsheets
 cheatsheets:
@@ -43,6 +40,13 @@ check:
 	./check-num-pages.sh handout-beginner.pdf 1
 	./check-num-pages.sh handout-intermediate.pdf 1
 	./check-links.py cheatsheets.pdf
+
+.PHONY: docs
+docs:
+	make -C docs/ html
+	cp ./cheatsheets*.p* ./docs/_build/html
+	cp ./handout-*.p* ./docs/_build/html
+
 
 .PHONY: fonts
 fonts:

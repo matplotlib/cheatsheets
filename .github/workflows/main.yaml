@@ -61,10 +61,11 @@ jobs:
           path: |
             cheatsheets.pdf
             handout-*.pdf
+            ./docs/_build/html/
       - name: Publish cheatsheets and handouts
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build/
+          publish_dir: ./docs/_build/html/
           force_orphan: true
