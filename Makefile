@@ -36,6 +36,14 @@ handouts:
 	convert -density 150 handout-beginner.pdf handout-beginner.png
 	convert -density 150 handout-intermediate.pdf handout-intermediate.png
 
+.PHONY: check
+check:
+	./check-num-pages.sh cheatsheets.pdf 2
+	./check-num-pages.sh handout-tips.pdf 1
+	./check-num-pages.sh handout-beginner.pdf 1
+	./check-num-pages.sh handout-intermediate.pdf 1
+	./check-links.py cheatsheets.pdf
+
 .PHONY: fonts
 fonts:
 	make -C fonts/
