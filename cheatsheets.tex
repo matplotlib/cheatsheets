@@ -16,6 +16,7 @@
 % --- Graphics ----------------------------------------------------------------
 \usepackage{tikz}
 \usepackage{graphicx}
+\usepackage[percent]{overpic}
 \graphicspath{{./figures/}{./icons/}{./logos/}}
 \usepackage[export]{adjustbox}
 
@@ -260,8 +261,10 @@
 \scriptsize
 
 \begin{multicols*}{5}
-
-  \includegraphics[width=\columnwidth]{mpl-logo2.pdf}
+  \begin{overpic}[width=\columnwidth,tics=6,trim=12 6 18 6, clip]{logo2.png}
+    \put (16.5,1.5) {\scriptsize\RobotoCon \textcolor[HTML]{11557c}{Cheat sheet}}
+    \put (80,1.5) {\tiny\Roboto \textcolor[HTML]{11557c}{Version 3.4.2}}
+   \end{overpic}
   %\textbf{\Large \RobotoCon Matplotlib 3.2 cheat sheet}\\
   %{\ttfamily https://matplotlib.org} \hfill CC-BY 4.0
   % \bigskip

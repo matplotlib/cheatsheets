@@ -11,7 +11,7 @@ all: logos figures cheatsheets handouts
 
 .PHONY: logos
 logos:
-	cd logos && python mpl-logos2.py && pdfcrop mpl-logo2.pdf mpl-logo2.pdf
+	wget https://github.com/matplotlib/matplotlib/raw/v3.4.2/doc/_static/logo2.png -O ./logos/logo2.png
 
 .PHONY: figures
 figures:
