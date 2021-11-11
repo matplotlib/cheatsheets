@@ -5,10 +5,15 @@ orbs:
 
 jobs:
   build_docs:
-    executor: python/default
+    docker:
+      - image: koppor/texlive
     steps:
       - checkout
-      - python/install-deps
+      - setup_remote_docker:
+          docker_layer_caching: true      
+      - run:
+          command: pip install -r requirements/requirements.txt
+          name: Install Deps
       - run:
           name: Build cheatsheets and docs
           command: make all
