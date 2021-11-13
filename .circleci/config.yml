@@ -5,6 +5,8 @@ orbs:
 
 jobs:
   build_docs:
+    docker:
+      - image: circleci/python:3.9
     steps:
       - checkout
       - run:
