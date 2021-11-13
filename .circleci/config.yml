@@ -5,24 +5,11 @@ orbs:
 
 jobs:
   build_docs:
-    docker:
-      - image: koppor/texlive
     steps:
       - checkout
-      - setup_remote_docker:
-          docker_layer_caching: true      
       - run:
-          command: pip install -r requirements/requirements.txt
-          name: Install Deps
-      - run:
-          name: Build cheatsheets and docs
-          command: make all
-      - persist_to_workspace:
-          root: docs/_build/html
-          paths: .
-      - store_artifacts:
-          path: docs/_build/html/
-
+          command: echo "placeholder"
+    
 workflows:
   main:
     jobs:
