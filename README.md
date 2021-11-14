@@ -3,7 +3,7 @@
 ## Cheatsheets
 Cheatsheet [(download pdf)](https://matplotlib.org/cheatsheets/cheatsheets.pdf) | |
 :------------------------------------------------------------------------------:|:----------------------------------------------------------:
-![](https://matplotlib.org/cheatsheets/cheatsheets-1.png)                       | ![](https://matplotlib.org/cheatsheets/cheatsheets-2.png) 
+![](https://matplotlib.org/cheatsheets/cheatsheets-1.png)                       | ![](https://matplotlib.org/cheatsheets/cheatsheets-2.png)
 
 ## Handouts
 

@@ -23,7 +23,7 @@ Cheatsheets
          :width: 270px
          :align: center
          :alt: image of second page of cheatsheets
-         
+
 
 `Cheatsheets [pdf] <./cheatsheets.pdf>`_
 
@@ -62,4 +62,3 @@ Handouts
          :alt: image of tips handout
 
       `Tips [pdf] <./handout-tips.pdf>`_
-
