@@ -3,15 +3,17 @@
 # Released under the BSD License
 # -----------------------------------------------------------------------------
 
-# Scripts to generate all the basic plots
+# Script to generate all the advanced plots
+import pathlib
+
 import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 
-fig = plt.figure(figsize=(0.4, 0.4))
-mpl.rcParams['axes.linewidth'] = 0.5
-mpl.rcParams['xtick.major.size'] = 0.0
-mpl.rcParams['ytick.major.size'] = 0.0
+
+mpl.style.use(pathlib.Path(__file__).parent/'../styles/plotlet.mplstyle')
+
+fig = plt.figure()
 d = 0.01
 ax = fig.add_axes([d, d, 1-2*d, 1-2*d])
 
@@ -19,7 +21,7 @@ ax = fig.add_axes([d, d, 1-2*d, 1-2*d])
 # -----------------------------------------------------------------------------
 X = np.linspace(0, 10, 16)
 Y = 4 + 2*np.sin(2*X)
-ax.step(X, Y, color="C1", linewidth=0.75)
+ax.step(X, Y, color="C1")
 ax.set_xlim(0, 8), ax.set_xticks(np.arange(1, 8))
 ax.set_ylim(0, 8), ax.set_yticks(np.arange(1, 8))
 ax.grid(linewidth=0.125)

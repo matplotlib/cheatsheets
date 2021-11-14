@@ -3,15 +3,17 @@
 # Released under the BSD License
 # -----------------------------------------------------------------------------
 
-# Scripts to generate all the basic plots
+# Script to generate all the basic plots
+import pathlib
+
 import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 
-fig = plt.figure(figsize=(0.4, 0.4))
-mpl.rcParams['axes.linewidth'] = 0.5
-mpl.rcParams['xtick.major.size'] = 0.0
-mpl.rcParams['ytick.major.size'] = 0.0
+
+mpl.style.use(pathlib.Path(__file__).parent/'../styles/plotlet.mplstyle')
+
+fig = plt.figure()
 d = 0.01
 ax = fig.add_axes([d, d, 1 - 2 * d, 1 - 2 * d])
 
@@ -19,10 +21,10 @@ ax = fig.add_axes([d, d, 1 - 2 * d, 1 - 2 * d])
 # -----------------------------------------------------------------------------
 X = np.linspace(0, 10, 100)
 Y = 4 + 2*np.sin(2*X)
-ax.plot(X, Y, color="C1", linewidth=0.75)
+ax.plot(X, Y, color="C1")
 ax.set_xlim(0, 8), ax.set_xticks(np.arange(1, 8))
 ax.set_ylim(0, 8), ax.set_yticks(np.arange(1, 8))
-ax.grid(linewidth=0.125)
+ax.grid()
 plt.savefig("../figures/basic-plot.pdf")
 ax.clear()
 
@@ -30,11 +32,11 @@ ax.clear()
 
 # -----------------------------------------------------------------------------
 X = np.linspace(0, 10, 100)
-Y = 4 + 2 * np.sin(2 * X)
-ax.plot(X, Y, color="black", linewidth=0.75)
+Y = 4 + 2*np.sin(2*X)
+ax.plot(X, Y, color="black")
 ax.set_xlim(0, 8), ax.set_xticks(np.arange(1, 8))
 ax.set_ylim(0, 8), ax.set_yticks(np.arange(1, 8))
-ax.grid(linewidth=0.125)
+ax.grid()
 plt.savefig("../figures/basic-plot-color.pdf")
 ax.clear()
 
@@ -47,7 +49,7 @@ ax.scatter(X, Y, 5, zorder=10,
            edgecolor="white", facecolor="C1", linewidth=0.25)
 ax.set_xlim(0, 8), ax.set_xticks(np.arange(1, 8))
 ax.set_ylim(0, 8), ax.set_yticks(np.arange(1, 8))
-ax.grid(linewidth=0.125)
+ax.grid()
 plt.savefig("../figures/basic-scatter.pdf")
 ax.clear()
 
@@ -61,7 +63,7 @@ ax.bar(X, Y, bottom=0, width=1,
 ax.set_xlim(0, 8), ax.set_xticks(np.arange(1, 8))
 ax.set_ylim(0, 8), ax.set_yticks(np.arange(1, 8))
 ax.set_axisbelow(True)
-ax.grid(linewidth=0.125)
+ax.grid()
 plt.savefig("../figures/basic-bar.pdf")
 ax.clear()
 
@@ -142,7 +144,7 @@ plt.plot(X, (Y1+Y2)/2, color="C1", linewidth=0.5)
 ax.set_xlim(0, 8), ax.set_xticks(np.arange(1, 8))
 ax.set_ylim(0, 8), ax.set_yticks(np.arange(1, 8))
 ax.set_axisbelow(True)
-ax.grid(linewidth=0.125, color="0.75")
+ax.grid(color="0.75")
 plt.savefig("../figures/basic-fill.pdf")
 ax.clear()
 
@@ -157,6 +159,6 @@ plt.quiver(X, Y, U, V, color="C1",
 ax.set_xlim(0, 8), ax.set_xticks(np.arange(1, 8))
 ax.set_ylim(0, 8), ax.set_yticks(np.arange(1, 8))
 ax.set_axisbelow(True)
-ax.grid(linewidth=0.125, color="0.75")
+ax.grid(color="0.75")
 plt.savefig("../figures/basic-quiver.pdf")
 ax.clear()
