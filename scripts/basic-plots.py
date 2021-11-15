@@ -101,8 +101,6 @@ plt.contour(Z, len(colors), extent=[0,8,0,8], colors="white", linewidths=0.125,
             nchunk=10)
 ax.set_xlim(0, 8), ax.set_xticks(np.arange(1,8))
 ax.set_ylim(0, 8), ax.set_yticks(np.arange(1,8))
-# ax.set_axisbelow(True)
-# ax.grid(linewidth=0.125, color="0.75")
 plt.savefig("../figures/basic-contour.pdf")
 ax.clear()
 
