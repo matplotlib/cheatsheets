@@ -5,19 +5,13 @@ orbs:
 
 jobs:
   build_docs:
-    executor: python/default
+    docker:
+      - image: circleci/python:3.9
     steps:
       - checkout
-      - python/install-deps
       - run:
-          name: Build cheatsheets and docs
-          command: make all
-      - persist_to_workspace:
-          root: docs/_build/html
-          paths: .
-      - store_artifacts:
-          path: docs/_build/html/
-
+          command: echo "placeholder"
+    
 workflows:
   main:
     jobs:
