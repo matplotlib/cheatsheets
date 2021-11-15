@@ -88,8 +88,6 @@ Z = Z - Z.min()
 plt.pcolormesh(X, Y, Z, cmap='Oranges', shading='auto')
 ax.set_xlim(-3, 3), ax.set_xticks(np.arange(-3, 4))
 ax.set_ylim(-3, 3), ax.set_yticks(np.arange(-3,4))
-# ax.set_axisbelow(True)
-# ax.grid(linewidth=0.125, color="0.75")
 plt.savefig("../figures/basic-pcolormesh.pdf")
 ax.clear()
 
