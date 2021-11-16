@@ -34,7 +34,9 @@ html_theme_options = {
     "logo_link": "https://matplotlib.org/stable/",
     "native_site": False,
 }
-
+html_sidebars = {
+    "**": []
+}
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the theme static files,
 # so a file named "default.css" will overwrite the theme's "default.css".
