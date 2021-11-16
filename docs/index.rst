@@ -62,3 +62,9 @@ Handouts
          :alt: image of tips handout
 
       `Tips [pdf] <./handout-tips.pdf>`_
+
+Contribute
+**********
+
+Issues, suggestions, or pull-requests gratefully accepted at
+`matplotlib/cheatsheets <https://github.com/matplotlib/cheatsheets>`_
