@@ -79,13 +79,20 @@ ax.grid(linewidth=0.25, color="white")
 plt.savefig("../figures/basic-imshow.pdf")
 ax.clear()
 
-
-# Basic contour plot
+# Basic pcolormesh plot
 # -----------------------------------------------------------------------------
 np.random.seed(1)
 X, Y = np.meshgrid(np.linspace(-3, 3, 256), np.linspace(-3, 3, 256))
 Z = (1 - X/2. + X**5 + Y**3)*np.exp(-X**2-Y**2)
 Z = Z - Z.min()
+plt.pcolormesh(X, Y, Z, cmap='Oranges', shading='auto')
+ax.set_xlim(-3, 3), ax.set_xticks(np.arange(-3, 4))
+ax.set_ylim(-3, 3), ax.set_yticks(np.arange(-3,4))
+plt.savefig("../figures/basic-pcolormesh.pdf")
+ax.clear()
+
+# Basic contour plot
+# -----------------------------------------------------------------------------
 colors = np.zeros((5,4))
 colors[:] = mpl.colors.to_rgba("C1")
 colors[:,3] = np.linspace(0.15, 0.85, len(colors))
@@ -94,8 +101,6 @@ plt.contour(Z, len(colors), extent=[0,8,0,8], colors="white", linewidths=0.125,
             nchunk=10)
 ax.set_xlim(0, 8), ax.set_xticks(np.arange(1,8))
 ax.set_ylim(0, 8), ax.set_yticks(np.arange(1,8))
-# ax.set_axisbelow(True)
-# ax.grid(linewidth=0.125, color="0.75")
 plt.savefig("../figures/basic-contour.pdf")
 ax.clear()
 

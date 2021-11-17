@@ -11,7 +11,7 @@ jobs:
       - checkout
       - run:
           command: echo "placeholder"
-    
+
 workflows:
   main:
     jobs:
