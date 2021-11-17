@@ -286,7 +286,7 @@
   Y = np.cos(X)\\
   \\
   fig, ax = plt.subplots()\\
-  ax.plot(X,Y,color='C1')\\
+  ax.plot(X, Y, color='green')\\
   \\
   fig.savefig(``figure.pdf'')\\
   fig.show() }
@@ -303,7 +303,7 @@
       \API{https://matplotlib.org/tutorials/intermediate/gridspec.html} }
   \plot{layout-subplot.pdf}{\textbf{subplot[s]}(rows,cols,…)}
        {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html}
-       {\ttfamily fig, axs = plt.subplots(3,3)}
+       {\ttfamily fig, axs = plt.subplots(3, 3)}
        {}
   \plot{layout-gridspec.pdf}{G = \textbf{gridspec}(rows,cols,…)}
        {https://matplotlib.org/stable/api/_as_gen/matplotlib.gridspec.GridSpec.html}
@@ -313,7 +313,7 @@
        {}{}
   \plot{layout-divider.pdf}{d=\textbf{make\_axes\_locatable}(ax)}
        {https://matplotlib.org/mpl_toolkits/axes_grid/users/axes_divider.html}
-       {\ttfamily ax=d.new\_horizontal('10\%')}{}
+       {\ttfamily ax = d.new\_horizontal('10\%')}{}
   \end{myboxed}
   \vspace{\fill}
 
@@ -364,7 +364,7 @@
          \optional{bottom},
          \optional{align},
          \optional{color} }{}
-  \plot{basic-imshow.pdf}{\textbf{imshow}(Z,[cmap],…)}
+  \plot{basic-imshow.pdf}{\textbf{imshow}(Z,…)}
        {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imshow.html}
        { \mandatory{Z},
          \optional{cmap},
@@ -372,7 +372,7 @@
          \optional{extent},
          \optional{origin} }
        {}
-  \plot{basic-contour.pdf}{\textbf{contour[f]}([X],[Y],Z,,…)}
+  \plot{basic-contour.pdf}{\textbf{contour[f]}([X],[Y],Z,…)}
        {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.contour.html}
        { \optional{X},
          \optional{Y},
@@ -401,7 +401,7 @@
        \optional{units},
        \optional{angles} }
      {}
-  \plot{basic-pie.pdf}{\textbf{pie}(X,[explode],…)}
+  \plot{basic-pie.pdf}{\textbf{pie}(X,…)}
        {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.pie.html}
        {\mandatory{Z},
          \optional{explode},
@@ -420,7 +420,7 @@
         \optional{weight},
         \optional{transform} }
        {}
-   \plot{basic-fill.pdf}{\textbf{fill[\_between][x]}( … )}
+   \plot{basic-fill.pdf}{\textbf{fill[\_between][x]}(…)}
        {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.fill.html}
        {\mandatory{X},
         \optional{Y1},
@@ -666,13 +666,13 @@
   {\ttfamily \scriptsize
   import matplotlib.animation as mpla\par
   ~\par
-  T = np.linspace(0,2*np.pi,100)\par
+  T = np.linspace(0, 2*np.pi, 100)\par
   S = np.sin(T)\par
   line, = plt.plot(T, S)\par
   def animate(i):\par
-  ~~line.set\_ydata(np.sin(T+i/50))\par
+  ~~~~line.set\_ydata(np.sin(T+i/50))\par
   anim = mpla.FuncAnimation(\par
-  ~~plt.gcf(), animate, interval=5)\par
+  ~~~~plt.gcf(), animate, interval=5)\par
   plt.show()\par
   }
   \end{myboxed}
@@ -794,7 +794,7 @@
   %
   \begin{myboxed}{Text alignments \hfill
       \API{https://matplotlib.org/tutorials/text/text_props.html} }
-    ax.\textbf{text}( …, ha=… , va=…, … )\\
+    ax.\textbf{text}( …, ha=… , va=…, …)\\
 
     \includegraphics[width=\columnwidth]{text-alignments.pdf}
   \end{myboxed}
@@ -803,8 +803,8 @@
   %
   \begin{myboxed}{Text parameters  \hfill
       \API{https://matplotlib.org/tutorials/text/text_props.html}}
-    ax.\textbf{text}( …, family=… , size=…, weight = …)\\
-    ax.\textbf{text}( …, fontproperties = … )\\
+    ax.\textbf{text}(…, family=…, size=…, weight=…)\\
+    ax.\textbf{text}(…, fontproperties=…)\\
 
     \includegraphics[width=\columnwidth]{fonts.pdf}
   \end{myboxed}
@@ -963,7 +963,7 @@
   %
   \begin{myboxed}{How do I …}
     \textbf{… resize a figure?}\\
-    \hspace*{2.5mm}~$\rightarrow$ fig.set\_size\_inches(w,h)\\
+    \hspace*{2.5mm}~$\rightarrow$ fig.set\_size\_inches(w, h)\\
     \textbf{… save a figure?}\\
     \hspace*{2.5mm}~$\rightarrow$ fig.savefig("figure.pdf")\\
     \textbf{… save a transparent figure?}\\
@@ -985,7 +985,7 @@
     \textbf{… show error as shaded region?}\\
     \hspace*{2.5mm}~$\rightarrow$ ax.fill\_between(X, Y+error, Y-error)\\
     \textbf{… draw a rectangle?}\\
-    \hspace*{2.5mm}~$\rightarrow$  ax.add\_patch(plt.Rectangle((0, 0),1,1)\\
+    \hspace*{2.5mm}~$\rightarrow$  ax.add\_patch(plt.Rectangle((0, 0), 1, 1)\\
     \textbf{… draw a vertical line?}\\
     \hspace*{2.5mm}~$\rightarrow$  ax.axvline(x=0.5)\\
     \textbf{… draw outside frame?}\\
@@ -993,7 +993,7 @@
     \textbf{… use transparency?}\\
     \hspace*{2.5mm}~$\rightarrow$  ax.plot(…, alpha=0.25)\\
     \textbf{… convert an RGB image into a gray image? }\\
-    \hspace*{2.5mm}~$\rightarrow$  gray = 0.2989*R+0.5870*G+0.1140*B\\
+    \hspace*{2.5mm}~$\rightarrow$  gray = 0.2989*R + 0.5870*G + 0.1140*B\\
     \textbf{… set figure background color?}\\
     \hspace*{2.5mm}~$\rightarrow$ fig.patch.set\_facecolor(``grey'')\\
     \textbf{… get a reversed colormap?}\\
