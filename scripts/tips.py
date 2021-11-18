@@ -18,13 +18,13 @@ rect = [margin, margin, 1-2*margin, 1-2*margin]
 
 # color range
 # -----------------------------------------------------------------------------
-fig = plt.figure(figsize=(2,2))
+fig = plt.figure(figsize=(2, 2))
 ax = fig.add_axes(rect, xticks=[], yticks=[])
 
-X = np.random.seed(1)
+np.random.seed(1)
 X = np.random.randn(1000, 4)
 cmap = plt.get_cmap("Oranges")
-colors = [cmap(i) for i in [.1,.3,.5,.7]]
+colors = [cmap(i) for i in [0.1, 0.3, 0.5, 0.7]]
 ax.hist(X, 2, density=True, histtype='bar', color=colors)
 
 plt.savefig("../figures/tip-color-range.pdf")
@@ -32,11 +32,11 @@ plt.savefig("../figures/tip-color-range.pdf")
 
 # colorbar
 # -----------------------------------------------------------------------------
-fig = plt.figure(figsize=(2.15,2))
+fig = plt.figure(figsize=(2.15, 2))
 ax = fig.add_axes(rect, xticks=[], yticks=[])
 
 np.random.seed(1)
-Z = np.random.uniform(0,1,(8,8))
+Z = np.random.uniform(0, 1, (8, 8))
 cmap = plt.get_cmap("Oranges")
 im = ax.imshow(Z, interpolation="nearest", cmap=cmap, vmin=0, vmax=2)
 cb = fig.colorbar(im, fraction=0.046, pad=0.04)
@@ -47,10 +47,11 @@ plt.savefig("../figures/tip-colorbar.pdf")
 
 # dotted
 # -----------------------------------------------------------------------------
-fig = plt.figure(figsize=(5,.25))
+fig = plt.figure(figsize=(5, 0.25))
 
-ax = fig.add_axes([0,0,1,1], frameon=False,
-                  xticks=[], yticks=[],  xlim=[0,1], ylim=[-.5,1.5])
+ax = fig.add_axes(
+    [0, 0, 1, 1], frameon=False, xticks=[], yticks=[], xlim=[0, 1], ylim=[-0.5, 1.5]
+)
 
 epsilon=1e-12
 plt.plot([0,1], [0,0], "black", clip_on=False, lw=8,
@@ -62,16 +63,16 @@ plt.savefig("../figures/tip-dotted.pdf")
 
 # dual axis
 # -----------------------------------------------------------------------------
-fig = plt.figure(figsize=(2,2))
+fig = plt.figure(figsize=(2, 2))
 ax1 = fig.add_axes(rect, label="cartesian")
 ax2 = fig.add_axes(rect, projection="polar", label="polar")
 
-ax1.set_xticks([]) #np.linspace(0.0, 0.4, 5))
-ax1.set_yticks([]) #np.linspace(0.0, 1.0, 11))
+ax1.set_xticks([])  # np.linspace(0.0, 0.4, 5))
+ax1.set_yticks([])  # np.linspace(0.0, 1.0, 11))
 
 ax2.set_rorigin(0)
 ax2.set_thetamax(90)
-ax2.set_ylim(0.5,1.0)
+ax2.set_ylim(0.5, 1.0)
 ax2.set_xticks(np.linspace(0, np.pi/2, 10))
 ax2.set_yticks(np.linspace(0.5, 1.0, 5))
 
@@ -103,7 +104,7 @@ def setup(ax):
     ax.patch.set_alpha(0.0)
 
 
-fig = plt.figure(figsize=(5, .5))
+fig = plt.figure(figsize=(5, 0.5))
 fig.patch.set_alpha(0.0)
 n = 1
 
@@ -132,12 +133,12 @@ color1, color2 = cmap(0.3), cmap(0.5)
 plt.rcParams['hatch.color'] = color1
 plt.rcParams['hatch.linewidth'] = 8
 
-fig = plt.figure(figsize=(2,2))
+fig = plt.figure(figsize=(2, 2))
 ax = plt.subplot()
 np.random.seed(123)
 
-x1,y1 = 3*np.arange(2), np.random.randint(25,50,2)
-x2,y2 = x1+1,           np.random.randint(25,75,2)
+x1, y1 = 3 * np.arange(2), np.random.randint(25, 50, 2)
+x2, y2 = x1 + 1, np.random.randint(25, 75, 2)
 
 ax.bar(x1, y1, color=color2)
 for i in range(len(x1)):
@@ -145,14 +146,14 @@ for i in range(len(x1)):
                  fontsize="x-small", color=color2,
                  textcoords="offset points", va="bottom", ha="center")
 
-ax.bar(x2, y2, color=color2, hatch="/" )
+ax.bar(x2, y2, color=color2, hatch="/")
 for i in range(len(x2)):
     plt.annotate("%d%%" % y2[i],  (x2[i], y2[i]), xytext=(0,1),
                  fontsize="x-small", color=color2,
                  textcoords="offset points", va="bottom", ha="center")
 
 ax.set_yticks([])
-ax.set_xticks(0.5+np.arange(0,6,3))
+ax.set_xticks(0.5 + np.arange(0, 6, 3))
 ax.set_xticklabels(["2018", "2019"])
 ax.tick_params('x', length=0, labelsize="small", which='major')
 
@@ -166,17 +167,17 @@ plt.savefig("../figures/tip-hatched.pdf")
 
 # multiline
 # -----------------------------------------------------------------------------
-fig = plt.figure(figsize=(8,1.5))
-dx,dy = 0.0025, 0.01
+fig = plt.figure(figsize=(8, 1.5))
+dx, dy = 0.0025, 0.01
 ax = fig.add_axes([dx, dy, 1-2*dx, 1-2*dy], frameon=False)
-X,Y = [], []
+X, Y = [], []
 for x in np.linspace(0.01, 10*np.pi-0.01, 100):
-    X.extend([x, x,None])
+    X.extend([x, x, None])
     Y.extend([0, np.sin(x), None])
 print(X[:10], Y[:10])
 plt.plot(X, Y, "black")
 plt.xticks([]), plt.yticks([])
-plt.xlim(-0.25, 10*np.pi+.25)
+plt.xlim(-0.25, 10*np.pi+0.25)
 plt.ylim(-1.5, 1.5)
 plt.tight_layout()
 plt.savefig("../figures/tip-multiline.pdf", dpi=100)
@@ -184,12 +185,11 @@ plt.savefig("../figures/tip-multiline.pdf", dpi=100)
 
 # outline
 # -----------------------------------------------------------------------------
-fig = plt.figure(figsize=(2,2))
-
+fig = plt.figure(figsize=(2, 2))
 ax = fig.add_axes(rect, xticks=[], yticks=[])
 
 np.random.seed(1)
-Z = np.random.uniform(0,1,(8,8))
+Z = np.random.uniform(0, 1, (8, 8))
 cmap = plt.get_cmap("Oranges")
 ax.imshow(Z, interpolation="nearest", cmap=cmap, vmin=0, vmax=2)
 
@@ -208,8 +208,8 @@ n = 500
 np.random.seed(5)
 X = np.random.normal(0, 0.25, n)
 Y = np.random.normal(0, 0.25, n)
-ax.scatter(X, Y, s=50, c="k",  lw=2)
-ax.scatter(X, Y, s=50, c="w",  lw=0)
+ax.scatter(X, Y, s=50, c="k", lw=2)
+ax.scatter(X, Y, s=50, c="w", lw=0)
 ax.scatter(X, Y, s=40, c="C1", lw=0, alpha=0.1)
 
 ax.set_xlim([-1, 1]), ax.set_xticks([]),
