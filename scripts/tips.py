@@ -7,17 +7,19 @@
 import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
-import matplotlib.ticker as ticker
 import matplotlib.patheffects as path_effects
+
+
+mpl.rcParams['axes.linewidth'] = 1.5
+
+margin = 0.01
+rect = [margin, margin, 1-2*margin, 1-2*margin]
 
 
 # color range
 # -----------------------------------------------------------------------------
 fig = plt.figure(figsize=(2,2))
-mpl.rcParams['axes.linewidth'] = 1.5
-d = 0.01
-
-ax = fig.add_axes([d,d,1-2*d,1-2*d], xticks=[], yticks=[])
+ax = fig.add_axes(rect, xticks=[], yticks=[])
 
 X = np.random.seed(1)
 X = np.random.randn(1000, 4)
@@ -31,9 +33,7 @@ plt.savefig("../figures/tip-color-range.pdf")
 # colorbar
 # -----------------------------------------------------------------------------
 fig = plt.figure(figsize=(2.15,2))
-mpl.rcParams['axes.linewidth'] = 1.5
-d = 0.01
-ax = fig.add_axes([d,d,1-2*d,1-2*d], xticks=[], yticks=[])
+ax = fig.add_axes(rect, xticks=[], yticks=[])
 
 np.random.seed(1)
 Z = np.random.uniform(0,1,(8,8))
@@ -62,13 +62,9 @@ plt.savefig("../figures/tip-dotted.pdf")
 
 # dual axis
 # -----------------------------------------------------------------------------
-mpl.rcParams['axes.linewidth'] = 1.5
-
-
 fig = plt.figure(figsize=(2,2))
-d = 0.01
-ax1 = fig.add_axes([d,d,1-2*d,1-2*d], label="cartesian")
-ax2 = fig.add_axes([d,d,1-2*d,1-2*d], projection="polar", label="polar")
+ax1 = fig.add_axes(rect, label="cartesian")
+ax2 = fig.add_axes(rect, projection="polar", label="polar")
 
 ax1.set_xticks([]) #np.linspace(0.0, 0.4, 5))
 ax1.set_yticks([]) #np.linspace(0.0, 1.0, 11))
@@ -91,9 +87,10 @@ plt.savefig("../figures/tip-dual-axis.pdf")
 def setup(ax):
     ax.spines['right'].set_color('none')
     ax.spines['left'].set_color('none')
-    ax.yaxis.set_major_locator(ticker.NullLocator())
+    ax.yaxis.set_major_locator(mpl.ticker.NullLocator())
     ax.spines['top'].set_color('none')
 
+    ax.spines['bottom'].set_linewidth(1)
     ax.spines['bottom'].set_position("center")
 
     ax.xaxis.set_ticks_position('bottom')
@@ -114,10 +111,10 @@ fontsize = 18
 ax = plt.subplot(n, 1, 1)
 ax.tick_params(axis='both', which='minor', labelsize=6)
 setup(ax)
-ax.xaxis.set_major_locator(ticker.MultipleLocator(1.0))
-ax.xaxis.set_minor_locator(ticker.MultipleLocator(0.2))
-ax.xaxis.set_major_formatter(ticker.ScalarFormatter())
-ax.xaxis.set_minor_formatter(ticker.ScalarFormatter())
+ax.xaxis.set_major_locator(mpl.ticker.MultipleLocator(1.0))
+ax.xaxis.set_minor_locator(mpl.ticker.MultipleLocator(0.2))
+ax.xaxis.set_major_formatter(mpl.ticker.ScalarFormatter())
+ax.xaxis.set_minor_formatter(mpl.ticker.ScalarFormatter())
 ax.tick_params(axis='x', which='minor', rotation=0)
 
 for tick in ax.get_xticklabels(which='both'):
@@ -169,8 +166,6 @@ plt.savefig("../figures/tip-hatched.pdf")
 
 # multiline
 # -----------------------------------------------------------------------------
-mpl.rcParams['axes.linewidth'] = 1.5
-
 fig = plt.figure(figsize=(8,1.5))
 dx,dy = 0.0025, 0.01
 ax = fig.add_axes([dx, dy, 1-2*dx, 1-2*dy], frameon=False)
@@ -190,10 +185,8 @@ plt.savefig("../figures/tip-multiline.pdf", dpi=100)
 # outline
 # -----------------------------------------------------------------------------
 fig = plt.figure(figsize=(2,2))
-mpl.rcParams['axes.linewidth'] = 1.5
-d = 0.01
 
-ax = fig.add_axes([d,d,1-2*d,1-2*d], xticks=[], yticks=[])
+ax = fig.add_axes(rect, xticks=[], yticks=[])
 
 np.random.seed(1)
 Z = np.random.uniform(0,1,(8,8))
@@ -209,12 +202,10 @@ plt.savefig("../figures/tip-outline.pdf")
 
 # transparency
 # -----------------------------------------------------------------------------
-mpl.rc('axes', linewidth=1.5)
-
 fig = plt.figure(figsize=(2, 2), dpi=100)
-margin = 0.01
-ax = fig.add_axes([margin, margin, 1-2*margin, 1-2*margin])
+ax = fig.add_axes(rect)
 n = 500
+np.random.seed(5)
 X = np.random.normal(0, 0.25, n)
 Y = np.random.normal(0, 0.25, n)
 ax.scatter(X, Y, s=50, c="k",  lw=2)
