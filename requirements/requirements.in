@@ -1,11 +1,13 @@
+autopep8
 bump2version
 cartopy==0.19.0.post1
+flake8
 matplotlib==3.4.2
+mpl-sphinx-theme
 pdfx
 pip-tools
 pre-commit
 scipy
 sphinx
-mpl-sphinx-theme
 
 --no-binary shapely
