@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 figsize = 4.0, 0.25
 fig = plt.figure(figsize=figsize)
-ax = fig.add_axes([0,0,1,1], frameon=False, aspect=1)
+ax = fig.add_axes([0, 0, 1, 1], frameon=False, aspect=1)
 ymin, ymax=  0, 1
 xmin, xmax = 0, figsize[0]/figsize[1]
 
@@ -13,15 +13,15 @@ xmin, xmax = 0, figsize[0]/figsize[1]
 cmaps = ('viridis', 'plasma', 'inferno', 'magma', 'cividis',
 
          'PRGn', 'PiYG', 'RdYlGn', 'BrBG', 'RdGy', 'PuOr', 'RdBu',
-         'RdYlBu',  'Spectral', 'coolwarm', 'bwr', 'seismic',
+         'RdYlBu', 'Spectral', 'coolwarm', 'bwr', 'seismic',
 
          'tab10', 'tab20', 'tab20b', 'tab20c',
          'Pastel1', 'Pastel2', 'Paired',
          'Set1', 'Set2', 'Set3', 'Accent', 'Dark2',
 
-         'Greys', 'Reds','Oranges', 'YlOrBr', 'YlOrRd', 'OrRd',
+         'Greys', 'Reds', 'Oranges', 'YlOrBr', 'YlOrRd', 'OrRd',
          'PuRd', 'RdPu', 'BuPu', 'Purples', 'YlGnBu', 'Blues',
-         'PuBu', 'GnBu', 'PuBuGn', 'BuGn','Greens', 'YlGn',
+         'PuBu', 'GnBu', 'PuBuGn', 'BuGn', 'Greens', 'YlGn',
 
          'bone', 'gray', 'pink', 'afmhot', 'hot', 'gist_heat', 'copper',
          'Wistia', 'autumn', 'summer', 'spring', 'cool', 'winter',
@@ -29,7 +29,7 @@ cmaps = ('viridis', 'plasma', 'inferno', 'magma', 'cividis',
          'twilight', 'twilight_shifted', 'hsv',
 
          'terrain', 'ocean', 'gist_earth', 'cubehelix', 'rainbow'
-)
+         )
 
 for cmap in cmaps:
     n = 512
@@ -40,7 +40,7 @@ for cmap in cmaps:
     if cmap in ['Pastel2', 'Accent', 'Dark2', 'Set2']: n = 8
     if cmap in ['Set3']: n = 12
     if cmap in ['Greys']: n = 11
-    Z = np.linspace(0,1,n).reshape(1,n)
+    Z = np.linspace(0, 1, n).reshape(1, n)
 
     ax.imshow(Z, extent=[xmin, xmax, ymin, ymax], cmap=plt.get_cmap(cmap))
     ax.set_xlim(xmin, xmax), ax.set_xticks([])

@@ -8,6 +8,8 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 
 # Setup a plot such that only the bottom spine is shown
+
+
 def setup(ax):
     ax.spines['right'].set_color('none')
     ax.spines['left'].set_color('none')
