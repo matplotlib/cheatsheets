@@ -27,7 +27,7 @@ cmap = plt.get_cmap("Oranges")
 colors = [cmap(i) for i in [0.1, 0.3, 0.5, 0.7]]
 ax.hist(X, 2, density=True, histtype='bar', color=colors)
 
-plt.savefig("../figures/tip-color-range.pdf")
+fig.savefig("../figures/tip-color-range.pdf")
 
 
 # colorbar
@@ -42,7 +42,7 @@ im = ax.imshow(Z, interpolation="nearest", cmap=cmap, vmin=0, vmax=2)
 cb = fig.colorbar(im, fraction=0.046, pad=0.04)
 cb.set_ticks([])
 
-plt.savefig("../figures/tip-colorbar.pdf")
+fig.savefig("../figures/tip-colorbar.pdf")
 
 
 # dotted
@@ -54,11 +54,11 @@ ax = fig.add_axes(
 )
 
 epsilon=1e-12
-plt.plot([0,1], [0,0], "black", clip_on=False, lw=8,
+ax.plot([0,1], [0,0], "black", clip_on=False, lw=8,
          ls=(.5,(epsilon, 1)), dash_capstyle="round")
-plt.plot([0,1], [1,1], "black", clip_on=False, lw=8,
+ax.plot([0,1], [1,1], "black", clip_on=False, lw=8,
          ls=(-.5,(epsilon, 2)), dash_capstyle="round")
-plt.savefig("../figures/tip-dotted.pdf")
+fig.savefig("../figures/tip-dotted.pdf")
 
 
 # dual axis
@@ -79,7 +79,7 @@ ax2.set_yticks(np.linspace(0.5, 1.0, 5))
 ax2.set_xticklabels([])
 ax2.set_yticklabels([])
 
-plt.savefig("../figures/tip-dual-axis.pdf")
+fig.savefig("../figures/tip-dual-axis.pdf")
 
 
 # font family
@@ -121,8 +121,8 @@ ax.tick_params(axis='x', which='minor', rotation=0)
 for tick in ax.get_xticklabels(which='both'):
     tick.set_fontname("Roboto Condensed")
 
-plt.tight_layout()
-plt.savefig("../figures/tip-font-family.pdf", transparent=True)
+fig.tight_layout()
+fig.savefig("../figures/tip-font-family.pdf", transparent=True)
 
 
 # hatched
@@ -130,8 +130,8 @@ plt.savefig("../figures/tip-font-family.pdf", transparent=True)
 cmap = plt.get_cmap("Oranges")
 color1, color2 = cmap(0.3), cmap(0.5)
 
-plt.rcParams['hatch.color'] = color1
-plt.rcParams['hatch.linewidth'] = 8
+mpl.rcParams['hatch.color'] = color1
+mpl.rcParams['hatch.linewidth'] = 8
 
 fig = plt.figure(figsize=(2, 2))
 ax = plt.subplot()
@@ -142,13 +142,13 @@ x2, y2 = x1 + 1, np.random.randint(25, 75, 2)
 
 ax.bar(x1, y1, color=color2)
 for i in range(len(x1)):
-    plt.annotate("%d%%" % y1[i],  (x1[i], y1[i]), xytext=(0,1),
+    ax.annotate("%d%%" % y1[i],  (x1[i], y1[i]), xytext=(0,1),
                  fontsize="x-small", color=color2,
                  textcoords="offset points", va="bottom", ha="center")
 
 ax.bar(x2, y2, color=color2, hatch="/")
 for i in range(len(x2)):
-    plt.annotate("%d%%" % y2[i],  (x2[i], y2[i]), xytext=(0,1),
+    ax.annotate("%d%%" % y2[i],  (x2[i], y2[i]), xytext=(0,1),
                  fontsize="x-small", color=color2,
                  textcoords="offset points", va="bottom", ha="center")
 
@@ -161,8 +161,8 @@ ax.spines['right'].set_visible(False)
 ax.spines['left'].set_visible(False)
 ax.spines['top'].set_visible(False)
 
-plt.tight_layout()
-plt.savefig("../figures/tip-hatched.pdf")
+fig.tight_layout()
+fig.savefig("../figures/tip-hatched.pdf")
 
 
 # multiline
@@ -175,12 +175,12 @@ for x in np.linspace(0.01, 10*np.pi-0.01, 100):
     X.extend([x, x, None])
     Y.extend([0, np.sin(x), None])
 print(X[:10], Y[:10])
-plt.plot(X, Y, "black")
-plt.xticks([]), plt.yticks([])
-plt.xlim(-0.25, 10*np.pi+0.25)
-plt.ylim(-1.5, 1.5)
-plt.tight_layout()
-plt.savefig("../figures/tip-multiline.pdf", dpi=100)
+ax.plot(X, Y, "black")
+ax.set_xticks([]), ax.set_yticks([])
+ax.set_xlim(-0.25, 10*np.pi+0.25)
+ax.set_ylim(-1.5, 1.5)
+fig.tight_layout()
+fig.savefig("../figures/tip-multiline.pdf", dpi=100)
 
 
 # outline
@@ -197,7 +197,7 @@ text = ax.text(0.5, 0.1, "Label", transform=ax.transAxes,
              color=cmap(0.9), size=32, weight="bold", ha="center", va="bottom")
 text.set_path_effects([path_effects.Stroke(linewidth=5, foreground='white'),
                        path_effects.Normal()])
-plt.savefig("../figures/tip-outline.pdf")
+fig.savefig("../figures/tip-outline.pdf")
 
 
 # transparency
@@ -214,4 +214,4 @@ ax.scatter(X, Y, s=40, c="C1", lw=0, alpha=0.1)
 
 ax.set_xlim([-1, 1]), ax.set_xticks([]),
 ax.set_ylim([-1, 1]), ax.set_yticks([])
-plt.savefig("../figures/tip-transparency.pdf")
+fig.savefig("../figures/tip-transparency.pdf")
