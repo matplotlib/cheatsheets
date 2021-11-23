@@ -54,10 +54,10 @@ ax = fig.add_axes(
 )
 
 epsilon=1e-12
-ax.plot([0,1], [0,0], "black", clip_on=False, lw=8,
-         ls=(.5,(epsilon, 1)), dash_capstyle="round")
-ax.plot([0,1], [1,1], "black", clip_on=False, lw=8,
-         ls=(-.5,(epsilon, 2)), dash_capstyle="round")
+ax.plot([0, 1], [0, 0], "black", clip_on=False, lw=8,
+        ls=(.5, (epsilon, 1)), dash_capstyle="round")
+ax.plot([0, 1], [1, 1], "black", clip_on=False, lw=8,
+        ls=(-.5, (epsilon, 2)), dash_capstyle="round")
 fig.savefig("../figures/tip-dotted.pdf")
 
 
@@ -142,15 +142,15 @@ x2, y2 = x1 + 1, np.random.randint(25, 75, 2)
 
 ax.bar(x1, y1, color=color2)
 for i in range(len(x1)):
-    ax.annotate("%d%%" % y1[i],  (x1[i], y1[i]), xytext=(0,1),
-                 fontsize="x-small", color=color2,
-                 textcoords="offset points", va="bottom", ha="center")
+    ax.annotate("%d%%" % y1[i], (x1[i], y1[i]), xytext=(0, 1),
+                fontsize="x-small", color=color2,
+                textcoords="offset points", va="bottom", ha="center")
 
 ax.bar(x2, y2, color=color2, hatch="/")
 for i in range(len(x2)):
-    ax.annotate("%d%%" % y2[i],  (x2[i], y2[i]), xytext=(0,1),
-                 fontsize="x-small", color=color2,
-                 textcoords="offset points", va="bottom", ha="center")
+    ax.annotate("%d%%" % y2[i], (x2[i], y2[i]), xytext=(0, 1),
+                fontsize="x-small", color=color2,
+                textcoords="offset points", va="bottom", ha="center")
 
 ax.set_yticks([])
 ax.set_xticks(0.5 + np.arange(0, 6, 3))
@@ -194,7 +194,7 @@ cmap = plt.get_cmap("Oranges")
 ax.imshow(Z, interpolation="nearest", cmap=cmap, vmin=0, vmax=2)
 
 text = ax.text(0.5, 0.1, "Label", transform=ax.transAxes,
-             color=cmap(0.9), size=32, weight="bold", ha="center", va="bottom")
+               color=cmap(0.9), size=32, weight="bold", ha="center", va="bottom")
 text.set_path_effects([path_effects.Stroke(linewidth=5, foreground='white'),
                        path_effects.Normal()])
 fig.savefig("../figures/tip-outline.pdf")
