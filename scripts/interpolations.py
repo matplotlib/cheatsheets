@@ -6,14 +6,14 @@ methods = [None, 'none', 'nearest', 'bilinear', 'bicubic', 'spline16',
            'catrom', 'gaussian', 'bessel', 'mitchell', 'sinc', 'lanczos']
 
 np.random.seed(1)
-Z = np.random.uniform(0,1,(3,3))
+Z = np.random.uniform(0, 1, (3, 3))
 
 
-fig, axs = plt.subplots(nrows=6, ncols=3, figsize=(4.5,9),
+fig, axs = plt.subplots(nrows=6, ncols=3, figsize=(4.5, 9),
                         subplot_kw={'xticks': [], 'yticks': []})
 for ax, interp_method in zip(axs.flat, methods):
     ax.imshow(Z, interpolation=interp_method, cmap='viridis',
-              extent=[0,9,0,9], rasterized=True)
+              extent=[0, 9, 0, 9], rasterized=True)
     ax.text(4.5, 1, str(interp_method), weight="bold", color="white", size=12,
             transform=ax.transData, ha="center", va="center")
 

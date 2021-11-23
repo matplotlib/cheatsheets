@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 
+
 def demo_con_style(ax, connectionstyle):
     x1, y1 = 0.3, 0.2
     x2, y2 = 0.8, 0.6
@@ -15,6 +16,7 @@ def demo_con_style(ax, connectionstyle):
     ax.text(.05, .95, connectionstyle.replace(",", ",\n"),
             family="Source Code Pro",
             transform=ax.transAxes, ha="left", va="top", size="x-small")
+
 
 fig, axs = plt.subplots(3, 3, figsize=(5, 5))
 demo_con_style(axs[0, 0], "arc3,rad=0")

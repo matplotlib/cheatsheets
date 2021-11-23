@@ -23,6 +23,7 @@ def minor_tick(x, pos):
         return ""
     return "%.2f" % x
 
+
 ax.xaxis.set_major_locator(MultipleLocator(1.000))
 ax.xaxis.set_minor_locator(AutoMinorLocator(4))
 ax.yaxis.set_major_locator(MultipleLocator(1.000))
@@ -124,13 +125,13 @@ text(-0.3, 0.45, "Figure")
 
 color = '#000099'
 ax.annotate('Spines', xy=(4.0, 0.35), xytext=(3.3, 0.5), color=color,
-            weight='regular', # fontsize="large", fontname="Yanone Kaffeesatz",
+            weight='regular',  # fontsize="large", fontname="Yanone Kaffeesatz",
             arrowprops=dict(arrowstyle='->',
                             connectionstyle="arc3",
                             color=color))
 
 ax.annotate('', xy=(3.15, 0.0), xytext=(3.45, 0.45), color=color,
-            weight='regular', # fontsize="large", fontname="Yanone Kaffeesatz",
+            weight='regular',  # fontsize="large", fontname="Yanone Kaffeesatz",
             arrowprops=dict(arrowstyle='->',
                             connectionstyle="arc3",
                             color=color))

@@ -1,0 +1,5 @@
+[flake8]
+ignore = E20,E22,E501,E701,F401,W
+
+[pep8]
+select = E12,E231,E241,E251,E26,E30

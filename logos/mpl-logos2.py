@@ -155,6 +155,7 @@ def make_logo(height_px, lw_bars, lw_grid, lw_border, rgrid, with_text=False):
 
     return fig, ax
 
+
 ##############################################################################
 # A large logo:
 
