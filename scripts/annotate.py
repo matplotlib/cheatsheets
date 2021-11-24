@@ -17,10 +17,10 @@ plt.scatter([5.5], [0.75], s=100, c="k")
 plt.xlim(0, 6), plt.ylim(0, 1)
 plt.xticks([]), plt.yticks([])
 
-plt.annotate("Annotation", (5.5, .75), (0.1, .75), size=16, va="center",
+plt.annotate("text", (5.5, .75), (0.75, .75), size=16, va="center", ha="center",
              arrowprops=dict(facecolor='black', shrink=0.05))
 
-plt.text( 5.5, 0.6, "xy\nycoords", size=10, va="top", ha="center", color=".5")
+plt.text( 5.5, 0.6, "xy\nxycoords", size=10, va="top", ha="center", color=".5")
 plt.text( .75, 0.6, "xytext\ntextcoords", size=10, va="top", ha="center", color=".5")
 
 plt.savefig("../figures/annotate.pdf")
