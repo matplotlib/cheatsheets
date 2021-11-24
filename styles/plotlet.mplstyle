@@ -13,3 +13,9 @@ lines.linewidth: 0.75
 
 xtick.major.size: 0.0
 ytick.major.size: 0.0
+
+xtick.labeltop: False
+xtick.labelbottom: False
+
+ytick.labelleft: False
+ytick.labelright: False

@@ -5,22 +5,27 @@ Visualizing named colors
 
 Simple plot example with the named colors and its visual representation.
 """
-from __future__ import division
+import pathlib
 
+import matplotlib as mpl
 import matplotlib.pyplot as plt
-from matplotlib import colors as mcolors
 
 
-colors = dict(mcolors.BASE_COLORS, **mcolors.CSS4_COLORS)
+mpl.style.use([
+    pathlib.Path(__file__).parent/'../styles/base.mplstyle',
+])
+mpl.rc('figure.constrained_layout', h_pad=0, w_pad=0, hspace=0, wspace=0)
+
+colors = dict(mpl.colors.BASE_COLORS, **mpl.colors.CSS4_COLORS)
 
 # Sort colors by hue, saturation, value and name.
-by_hsv = sorted((tuple(mcolors.rgb_to_hsv(mcolors.to_rgba(color)[:3])), name)
+by_hsv = sorted((tuple(mpl.colors.rgb_to_hsv(mpl.colors.to_rgba(color)[:3])), name)
                 for name, color in colors.items())
 sorted_names = [name for hsv, name in by_hsv]
 
 n = len(sorted_names)
 ncols = 3
-nrows = n // ncols +1
+nrows = n // ncols
 
 fig, ax = plt.subplots(figsize=(4.5, 6))
 
@@ -30,8 +35,8 @@ h = Y / (nrows + 1)
 w = X / ncols
 
 for i, name in enumerate(sorted_names):
-    col = i // (nrows-1)
-    row = i % (nrows-1)
+    col = i // nrows
+    row = i % nrows
     y = Y - (row * h) - h
 
     xi_line = w * (col + 0.05)
@@ -49,9 +54,4 @@ ax.set_xlim(0, X)
 ax.set_ylim(0, Y)
 ax.set_axis_off()
 
-fig.subplots_adjust(left=0, right=1,
-                    top=1, bottom=0,
-                    hspace=0, wspace=0)
-
 plt.savefig("../figures/colornames.pdf")
-# plt.show()

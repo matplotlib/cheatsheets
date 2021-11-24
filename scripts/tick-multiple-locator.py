@@ -3,51 +3,31 @@
 # Author:  Nicolas P. Rougier
 # License: BSD
 # ----------------------------------------------------------------------------
+import pathlib
+
 import numpy as np
+import matplotlib as mpl
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 
-# Setup a plot such that only the bottom spine is shown
+
+mpl.style.use([
+    pathlib.Path(__file__).parent/'../styles/base.mplstyle',
+    pathlib.Path(__file__).parent/'../styles/ticks.mplstyle',
+])
 
 
-def setup(ax):
-    ax.spines['right'].set_color('none')
-    ax.spines['left'].set_color('none')
-    ax.yaxis.set_major_locator(ticker.NullLocator())
-    ax.spines['top'].set_color('none')
+subplots_kw = dict(
+    figsize=(5.7/2.54, 0.4/2.54),
+    subplot_kw=dict(xlim=(0, 5), ylim=(0, 1)),
+)
 
-    ax.spines['bottom'].set_position("center")
-
-    ax.xaxis.set_ticks_position('bottom')
-    ax.tick_params(which='major', width=1.00)
-    ax.tick_params(which='major', length=5)
-    ax.tick_params(which='minor', width=0.75)
-    ax.tick_params(which='minor', length=2.5)
-    ax.set_xlim(0, 5)
-    ax.set_ylim(0, 1)
-    ax.patch.set_alpha(0.0)
-
-
-fig = plt.figure(figsize=(5, .5))
-fig.patch.set_alpha(0.0)
-n = 1
-
-fontsize = 18
-family = "Source Code Pro"
-
-# Null Locator
-ax = plt.subplot(n, 1, 1)
-# ax.tick_params(axis='both', which='major',
-#                labelsize=10, family="Roboto Condensed")
-ax.tick_params(axis='both', which='minor', labelsize=6)
-
-setup(ax)
+(fig, ax) = plt.subplots(**subplots_kw)
 ax.xaxis.set_major_locator(ticker.MultipleLocator(1.0))
 ax.xaxis.set_minor_locator(ticker.MultipleLocator(0.2))
 ax.xaxis.set_major_formatter(ticker.ScalarFormatter())
 ax.xaxis.set_minor_formatter(ticker.ScalarFormatter())
+ax.tick_params(axis='both', which='major', labelsize=5)
 ax.tick_params(axis='x', which='minor', rotation=90)
 
-plt.tight_layout()
 plt.savefig("../figures/tick-multiple-locator.pdf", transparent=True)
-# plt.show()
