@@ -3,7 +3,6 @@
 # Author:  Nicolas P. Rougier
 # License: BSD
 # ----------------------------------------------------------------------------
-import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 
@@ -11,6 +10,7 @@ import matplotlib.ticker as ticker
 
 
 def setup(ax):
+    """Set up Axes with just an x-Axis."""
     ax.spines['right'].set_color('none')
     ax.spines['left'].set_color('none')
     ax.yaxis.set_major_locator(ticker.NullLocator())
@@ -43,20 +43,18 @@ ax.text(0.0, 0.1, "ticker.NullFormatter()", family=family,
 # Fixed formatter
 ax = fig.add_subplot(n, 1, 2)
 setup(ax)
-ax.xaxis.set_major_locator(ticker.MultipleLocator(1.0))
 ax.xaxis.set_minor_locator(ticker.MultipleLocator(0.25))
-majors = ["", "0", "1", "2", "3", "4", "5"]
+ax.xaxis.set_major_locator(ticker.FixedLocator(range(6)))
+majors = ["zero", "one", "two", "three", "four", "five"]
 ax.xaxis.set_major_formatter(ticker.FixedFormatter(majors))
-minors = [""] + ["%.2f" % (x-int(x)) if (x-int(x))
-                 else "" for x in np.arange(0, 5, 0.25)]
-ax.xaxis.set_minor_formatter(ticker.FixedFormatter(minors))
-ax.text(0.0, 0.1, "ticker.FixedFormatter(['', '0', '1', ...])",
+ax.text(0.0, 0.1, "ticker.FixedFormatter(['zero', 'one', 'two', …])",
         family=family, fontsize=fontsize, transform=ax.transAxes)
 
 
 # FuncFormatter can be used as a decorator
 @ticker.FuncFormatter
 def major_formatter(x, pos):
+    """Return formatted value with 2 decimal places."""
     return "[%.2f]" % x
 
 
