@@ -1,4 +1,4 @@
-FONT_DIRS := eb-garamond roboto roboto-mono roboto-slab source-code-pro source-sans-pro source-serif-pro
+FONT_DIRS := eb-garamond roboto roboto-mono roboto-slab source-code-pro source-sans-pro source-serif-pro pacifico
 
 EB_GARAMOND_ZIP      := https://bitbucket.org/georgd/eb-garamond/downloads/EBGaramond-0.016.zip
 ROBOTO_ZIP           := https://github.com/googlefonts/roboto/releases/download/v2.138/roboto-unhinted.zip
@@ -7,6 +7,7 @@ ROBOTO_SLAB_ZIP      := https://github.com/googlefonts/robotoslab/archive/a65e6d
 SOURCE_CODE_PRO_ZIP  := https://github.com/adobe-fonts/source-code-pro/releases/download/2.038R-ro%2F1.058R-it%2F1.018R-VAR/OTF-source-code-pro-2.038R-ro-1.058R-it.zip
 SOURCE_SANS_PRO_ZIP  := https://github.com/adobe-fonts/source-sans/releases/download/2.045R-ro%2F1.095R-it/source-sans-pro-2.045R-ro-1.095R-it.zip
 SOURCE_SERIF_PRO_ZIP := https://github.com/adobe-fonts/source-serif/releases/download/3.001R/source-serif-pro-3.001R.zip
+PACIFICO_ZIP         := https://fonts.google.com/download?family=Pacifico
 
 UNZIP_FLAGS := -x "__MACOSX/*"
 
@@ -24,6 +25,7 @@ all: sources
 	cd source-code-pro && unzip -j /tmp/source-code-pro.zip "*.otf" $(UNZIP_FLAGS)
 	cd source-sans-pro && unzip -j /tmp/source-sans-pro.zip "source-sans-pro-2.045R-ro-1.095R-it/OTF/*.otf" $(UNZIP_FLAGS)
 	cd source-serif-pro && unzip -j /tmp/source-serif-pro.zip "source-serif-pro-3.001R/OTF/*.otf" $(UNZIP_FLAGS)
+	cd pacifico && unzip -j /tmp/pacifico.zip "*.ttf" $(UNZIP_FLAGS)
 
 .PHONY: sources
 sources:
@@ -34,6 +36,7 @@ sources:
 	wget $(SOURCE_CODE_PRO_ZIP) -O /tmp/source-code-pro.zip
 	wget $(SOURCE_SANS_PRO_ZIP) -O /tmp/source-sans-pro.zip
 	wget $(SOURCE_SERIF_PRO_ZIP) -O /tmp/source-serif-pro.zip
+	wget $(PACIFICO_ZIP) -O /tmp/pacifico.zip
 
 .PHONY: clean
 clean:

@@ -27,7 +27,8 @@ Beginner handout [(download pdf)](https://matplotlib.org/cheatsheets/handout-beg
                                 or https://github.com/adobe-fonts/source-sans-pro/tree/release/OTF
 * `fonts/source-serif-pro/*` : See https://fonts.google.com/specimen/Source+Serif+Pro
                                 or https://github.com/adobe-fonts/source-serif-pro/tree/release/OTF
-* `fonts/delicious-123/*`    : See https://www.exljbris.com/delicious.html
+* `fonts/eb-garamond/*`      : See https://bitbucket.org/georgd/eb-garamond/src/master
+* `fonts/pacifico/*`         : See https://fonts.google.com/download?family=Pacifico
 
 On Linux, with `make` installed, the fonts can be set up with the following command:
 ```shell
