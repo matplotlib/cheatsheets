@@ -8,7 +8,7 @@ all: logos figures cheatsheets handouts docs
 
 .PHONY: logos
 logos:
-	wget https://github.com/matplotlib/matplotlib/raw/v3.4.2/doc/_static/logo2.png -O ./logos/logo2.png
+	wget https://github.com/matplotlib/matplotlib/raw/v3.5.0/doc/_static/logo2.png -O ./logos/logo2.png
 
 .PHONY: figures
 figures:
@@ -35,6 +35,7 @@ handouts:
 
 .PHONY: check
 check:
+	./check-matplotlib-version.py
 	./check-num-pages.sh cheatsheets.pdf 2
 	./check-num-pages.sh handout-tips.pdf 1
 	./check-num-pages.sh handout-beginner.pdf 1
