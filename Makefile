@@ -35,6 +35,7 @@ handouts:
 
 .PHONY: check
 check:
+	./check-matplotlib-version.py
 	./check-num-pages.sh cheatsheets.pdf 2
 	./check-num-pages.sh handout-tips.pdf 1
 	./check-num-pages.sh handout-beginner.pdf 1
