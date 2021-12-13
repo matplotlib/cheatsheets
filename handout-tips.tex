@@ -114,7 +114,7 @@ Use the Agg backend to render a figure directly in an array.
 \begin{lstlisting}
  from matplotlib.backends.backend_agg import FigureCanvas
  canvas = FigureCanvas(Figure()))
- ... # draw som stuff
+ ... # draw some stuff
  canvas.draw()
  Z = np.array(canvas.renderer.buffer_rgba())
 \end{lstlisting}
