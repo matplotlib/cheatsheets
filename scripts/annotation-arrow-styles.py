@@ -10,7 +10,7 @@ def demo_con_style(ax, connectionstyle):
             transform=ax.transAxes, ha="left", va="top", size="x-small")
 
 
-(fig, axes) = plt.subplots(5, 3, figsize=(4, 2.5), frameon=False)
+(fig, axes) = plt.subplots(4, 4, figsize=(4, 2.5), frameon=False)
 for ax in axes.flatten():
     ax.axis("off")
 for i, (ax, style) in enumerate(zip(axes.flatten(), mpatches.ArrowStyle.get_styles())):
