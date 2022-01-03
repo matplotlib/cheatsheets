@@ -8,6 +8,7 @@ mpl.style.use([
     pathlib.Path(__file__).parent/'../styles/base.mplstyle',
     pathlib.Path(__file__).parent/'../styles/plotlet-grid.mplstyle',
 ])
+mpl.rc('lines', markersize=3)
 
 
 def demo_con_style(ax, connectionstyle):
@@ -17,8 +18,8 @@ def demo_con_style(ax, connectionstyle):
     ax.annotate("",
                 xy=(x1, y1), xycoords='data',
                 xytext=(x2, y2), textcoords='data',
-                arrowprops=dict(arrowstyle="->", color="0.5",
-                                shrinkA=2, shrinkB=2,
+                arrowprops=dict(arrowstyle="->", lw=0.5, color="0.5",
+                                shrinkA=3, shrinkB=3,
                                 patchA=None, patchB=None,
                                 connectionstyle=connectionstyle),
                 )
@@ -41,4 +42,3 @@ for ax in axs.flat:
     ax.set(xlim=(0, 1), ylim=(0, 1), xticks=[], yticks=[], aspect=1)
 
 plt.savefig("../figures/annotation-connection-styles.pdf")
-# plt.show()
