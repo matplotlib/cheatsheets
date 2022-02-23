@@ -4,6 +4,7 @@ cartopy==0.19.0.post1
 flake8
 matplotlib==3.5.0
 mpl-sphinx-theme
+pillow>=9
 pdfx
 pip-tools
 pre-commit
