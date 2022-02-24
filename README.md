@@ -60,3 +60,24 @@ $ cd ..
 $ xelatex cheatsheets.tex
 $ xelatex cheatsheets.tex
 ```
+
+## Update Matplotlib version
+
+The version of Matplotlib is hard-coded a number of places throughout the
+cheatsheets.  To ensure that they are all consistent (and consistent with the
+version of Matplotlib actually used) use the tool `bump2version` to update.
+For patch releases do
+
+```
+$ bump2release --new-version x.y.Z patch
+$ cd requirements
+$ pip-compile requirements.in > requirements.txt
+```
+
+and for a new minor versions do
+
+```
+$ bump2release --new-version x.Y.0 minor
+$ cd requirements
+$ pip-compile requirements.in > requirements.txt
+```
