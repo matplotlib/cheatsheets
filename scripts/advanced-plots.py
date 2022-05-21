@@ -3,7 +3,7 @@
 # Released under the BSD License
 # -----------------------------------------------------------------------------
 
-# Scripts to generate all the basic plots
+# Scripts to generate all the advanced plots
 import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
@@ -15,15 +15,17 @@ mpl.rcParams['ytick.major.size'] = 0.0
 d = 0.01
 ax = fig.add_axes([d, d, 1-2*d, 1-2*d])
 
-# Step plot
+# Stairs plot
 # -----------------------------------------------------------------------------
-X = np.linspace(0, 10, 16)
-Y = 4 + 2*np.sin(2*X)
-ax.step(X, Y, color="C1", linewidth=0.75)
+X = np.linspace(0, 2*np.pi, 9)
+Y = 2*np.sin(3*X)
+Y[7:] = 0
+ax.stairs(Y, color="C1", linewidth=0.75)
 ax.set_xlim(0, 8), ax.set_xticks(np.arange(1, 8))
-ax.set_ylim(0, 8), ax.set_yticks(np.arange(1, 8))
+ax.set_ylim(-4, 4), ax.set_yticks(np.arange(-4, 4))
+ax.set_axisbelow(True)
 ax.grid(linewidth=0.125)
-plt.savefig("../figures/advanced-step.pdf")
+plt.savefig("../figures/advanced-stairs.pdf")
 ax.clear()
 
 # Violin plot
