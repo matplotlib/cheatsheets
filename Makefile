@@ -1,4 +1,5 @@
 SRC := $(wildcard *.tex)
+CONVERTFLAGS = -density 150 -alpha remove -depth 8
 
 .PHONY: default
 default: all
@@ -22,16 +23,16 @@ figures:
 .PHONY: cheatsheets
 cheatsheets:
 	xelatex cheatsheets.tex
-	convert -density 150 cheatsheets.pdf -scene 1 cheatsheets.png
+	convert $(CONVERTFLAGS) cheatsheets.pdf -scene 1 cheatsheets.png
 
 .PHONY: handouts
 handouts:
 	xelatex handout-beginner.tex
 	xelatex handout-intermediate.tex
 	xelatex handout-tips.tex
-	convert -density 150 handout-tips.pdf handout-tips.png
-	convert -density 150 handout-beginner.pdf handout-beginner.png
-	convert -density 150 handout-intermediate.pdf handout-intermediate.png
+	convert $(CONVERTFLAGS) handout-tips.pdf handout-tips.png
+	convert $(CONVERTFLAGS) handout-beginner.pdf handout-beginner.png
+	convert $(CONVERTFLAGS) handout-intermediate.pdf handout-intermediate.png
 
 .PHONY: check
 check:
