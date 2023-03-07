@@ -519,17 +519,11 @@
   {\ttfamily \textbf{subplot}(…,projection=p)}
   \smallskip
   \scale{projection-polar.pdf}{p='polar'}{}
-  \scale{projection-3d.pdf}{p='3d'}{}
-%       {https://matplotlib.org/stable/api/projections_api.html}
-%       {}
-%       {}
-  %% \plot{projection-3d.pdf}{p='3d'}
-  %%      {https://matplotlib.org/stable/api/toolkits/mplot3d.html}
-  %%      {}
-  %%      {}
-  \plot{projection-cartopy.pdf}{p=Orthographic()}
-       {https://matplotlib.org/stable/api/toolkits/mplot3d.html}
-       {from cartopy.crs import Cartographic}
+  \scale{projection-3d.pdf}
+      {p='3d'\hfill\api{https://matplotlib.org/stable/api/toolkits/mplot3d.html}}{}
+  \plot{projection-cartopy.pdf}{p=ccrs.Orthographic()}
+       {https://scitools.org.uk/cartopy/docs/latest/reference/projections.html}
+       {import cartopy.crs as ccrs}
        {}
   \end{myboxed}
   %
