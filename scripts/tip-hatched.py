@@ -15,14 +15,14 @@ x1, y1 = 3*np.arange(2), np.random.randint(25, 50, 2)
 x2, y2 = x1+1, np.random.randint(25, 75, 2)
 
 ax.bar(x1, y1, color=color2)
-for i in range(len(x1)):
-    plt.annotate("%d%%" % y1[i], (x1[i], y1[i]), xytext=(0, 1),
+for x, y in zip(x1, y1):
+    plt.annotate(f"{y:d}%", (x, y), xytext=(0, 1),
                  fontsize="x-small", color=color2,
                  textcoords="offset points", va="bottom", ha="center")
 
 ax.bar(x2, y2, color=color2, hatch="/" )
-for i in range(len(x2)):
-    plt.annotate("%d%%" % y2[i], (x2[i], y2[i]), xytext=(0, 1),
+for x, y in zip(x2, y2):
+    plt.annotate(f"{y:d}%", (x, y), xytext=(0, 1),
                  fontsize="x-small", color=color2,
                  textcoords="offset points", va="bottom", ha="center")
 
