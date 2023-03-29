@@ -62,6 +62,18 @@ jobs:
             cheatsheets.pdf
             handout-*.pdf
             ./docs/_build/html/
+      - uses: actions/upload-artifact@v4
+        id: diffs-artifact-upload
+        if: ${{ always() }}
+        with:
+          name: diffs
+          path: |
+            diffs/
+      - name: Output artifacts URL
+        run: |
+          echo 'Artifact URL:' \
+            '${{ steps.diffs-artifact-upload.outputs.artifact-url }}' \
+            >> $GITHUB_STEP_SUMMARY
       - name: Publish cheatsheets and handouts
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
         uses: peaceiris/actions-gh-pages@v3
