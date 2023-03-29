@@ -48,8 +48,6 @@ jobs:
           sudo sed -i '/disable ghostscript format types/,+6d' /etc/ImageMagick-6/policy.xml
           #
           make -C fonts/
-          cp -r fonts/ /usr/share/fonts/
-          fc-cache
           make all
       - name: Run checks
         run: |

@@ -4,6 +4,7 @@
 # -----------------------------------------------------------------------------
 
 # Scripts to generate all the basic plots
+import sys
 import pathlib
 
 import numpy as np
@@ -13,6 +14,9 @@ import matplotlib.patheffects as path_effects
 
 
 ROOT_DIR = pathlib.Path(__file__).parent.parent
+sys.path.append(str(ROOT_DIR / "fonts"))
+import custom_fonts  # noqa
+
 
 fig = plt.figure(figsize=(2, 2))
 mpl.rcParams['axes.linewidth'] = 1.5

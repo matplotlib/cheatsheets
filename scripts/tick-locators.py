@@ -3,6 +3,7 @@
 # Author:  Nicolas P. Rougier
 # License: BSD
 # ----------------------------------------------------------------------------
+import sys
 import pathlib
 
 import numpy as np
@@ -11,6 +12,8 @@ import matplotlib.ticker as ticker
 
 
 ROOT_DIR = pathlib.Path(__file__).parent.parent
+sys.path.append(str(ROOT_DIR / "fonts"))
+import custom_fonts  # noqa
 
 
 # Setup a plot such that only the bottom spine is shown

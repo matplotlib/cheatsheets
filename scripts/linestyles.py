@@ -2,6 +2,7 @@
 # Matplotlib cheat sheet
 # Released under the BSD License
 # -----------------------------------------------------------------------------
+import sys
 import pathlib
 
 import numpy as np
@@ -9,6 +10,9 @@ import matplotlib.pyplot as plt
 
 
 ROOT_DIR = pathlib.Path(__file__).parent.parent
+sys.path.append(str(ROOT_DIR / "fonts"))
+import custom_fonts  # noqa
+
 
 fig = plt.figure(figsize=(4.25, 2*.55))
 ax = fig.add_axes([0, 0, 1, 1], xlim=[0.75, 10.25], ylim=[0.5, 2.5], frameon=False,

@@ -3,6 +3,7 @@
 # Author:  Nicolas P. Rougier
 # License: BSD
 # ----------------------------------------------------------------------------
+import sys
 import pathlib
 
 import numpy as np
@@ -12,6 +13,9 @@ from matplotlib.ticker import AutoMinorLocator, MultipleLocator, FuncFormatter
 
 
 ROOT_DIR = pathlib.Path(__file__).parent.parent
+sys.path.append(str(ROOT_DIR / "fonts"))
+import custom_fonts  # noqa
+
 
 mpl.style.use([
     ROOT_DIR / 'styles/base.mplstyle',

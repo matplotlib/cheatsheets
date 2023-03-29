@@ -1,3 +1,4 @@
+import sys
 import pathlib
 
 import numpy as np
@@ -8,6 +9,9 @@ from scipy.ndimage import gaussian_filter
 
 
 ROOT_DIR = pathlib.Path(__file__).parent.parent
+sys.path.append(str(ROOT_DIR / "fonts"))
+import custom_fonts  # noqa
+
 
 # First pass for drop-shadow
 fig = Figure(figsize=(6, 1.5))
