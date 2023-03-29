@@ -7,6 +7,8 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 mpl.rc('axes', linewidth=1.5)
 
+np.random.seed(123)
+
 fig = plt.figure(figsize=(2, 2), dpi=100)
 margin = 0.01
 ax = fig.add_axes([margin, margin, 1-2*margin, 1-2*margin])
