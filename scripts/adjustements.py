@@ -48,16 +48,16 @@ plt.scatter(X, Y, s=75, zorder=10,
 
 # Window size extension
 X, Y = [0, 0], [0, -8]
-plt.plot(X, Y, color="black", linestyle=":", linewidth=1, clip_on=False)
+plt.plot(X, Y, color="gray", zorder=0, linewidth=1, clip_on=False)
 
 X, Y = [100, 100], [0, -8]
-plt.plot(X, Y, color="black", linestyle=":", linewidth=1, clip_on=False)
+plt.plot(X, Y, color="gray", zorder=0, linewidth=1, clip_on=False)
 
 X, Y = [100, 108], [0, 0]
-plt.plot(X, Y, color="black", linestyle=":", linewidth=1, clip_on=False)
+plt.plot(X, Y, color="gray", zorder=0, linewidth=1, clip_on=False)
 
 X, Y = [100, 108], [75, 75]
-plt.plot(X, Y, color="black", linestyle=":", linewidth=1, clip_on=False)
+plt.plot(X, Y, color="gray", zorder=0, linewidth=1, clip_on=False)
 
 
 def ext_arrow(p0, p1, p2, p3):
@@ -65,21 +65,21 @@ def ext_arrow(p0, p1, p2, p3):
     p2, p3 = np.asarray(p2), np.asarray(p3)
     ax.arrow(*p0, *(p1-p0), zorder=20, linewidth=0,
              length_includes_head=True, width=.4,
-             head_width=2, head_length=2, color="black")
+             head_width=2, head_length=2, color="gray")
     ax.arrow(*p3, *(p2-p3), zorder=20, linewidth=0,
              length_includes_head=True, width=.4,
-             head_width=2, head_length=2, color="black")
-    plt.plot([p1[0], p2[0]], [p1[1], p2[1]], linewidth=.9, color="black")
+             head_width=2, head_length=2, color="gray")
+    plt.plot([p1[0], p2[0]], [p1[1], p2[1]], zorder=20, linewidth=.9, color="gray")
 
 
 def int_arrow(p0, p1):
     p0, p1 = np.asarray(p0), np.asarray(p1)
     ax.arrow(*((p0+p1)/2), *((p1-p0)/2), zorder=20, linewidth=0,
              length_includes_head=True, width=.4,
-             head_width=2, head_length=2, color="black")
+             head_width=2, head_length=2, color="gray")
     ax.arrow(*((p0+p1)/2), *(-(p1-p0)/2), zorder=20, linewidth=0,
              length_includes_head=True, width=.4,
-             head_width=2, head_length=2, color="black")
+             head_width=2, head_length=2, color="gray")
 
 
 x = 0
@@ -91,12 +91,13 @@ x += 50
 ext_arrow( (x-4, y), (x, y), (x+5, y), (x+9, y) )
 ax.text(x-4.5, y, "wspace", ha="right", va="center", size="x-small", zorder=20)
 
-x += 45
-ext_arrow( (x-4, y), (x, y), (x+5, y), (x+9, y) )
-ax.text(x-4.5, y, "right", ha="right", va="center", size="x-small", zorder=20)
+y=20
+int_arrow( (0, y), (95, y))
+ax.text(80, y, "right", backgroundcolor="white", ha="right", va="center",
+        size="x-small", zorder=30)
 
 y = 0
-x = 25
+x = 22.5
 ext_arrow( (x, y-4), (x, y), (x, y+5), (x, y+9) )
 ax.text(x, y+9.5, "bottom", ha="center", va="bottom", size="x-small", zorder=20)
 
@@ -104,9 +105,10 @@ y += 35
 ext_arrow( (x, y-4), (x, y), (x, y+5), (x, y+9) )
 ax.text(x, y-4.5, "hspace", ha="center", va="top", size="x-small", zorder=20)
 
-y += 35
-ext_arrow( (x, y-4), (x, y), (x, y+5), (x, y+9) )
-ax.text(x, y-4.5, "top", ha="center", va="top", size="x-small", zorder=20)
+x = 31
+int_arrow( (x, 0), (x, 70))
+ax.text(x, 55, "top", backgroundcolor="white", rotation="vertical",
+        ha="center", va="center", size="x-small", zorder=30)
 
 int_arrow((0, -5), (100, -5))
 ax.text(50, -5, "figure width", backgroundcolor="white", zorder=30,
