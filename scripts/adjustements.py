@@ -11,8 +11,10 @@ import matplotlib.patches as mpatches
 from matplotlib.collections import PatchCollection
 
 
+ROOT_DIR = pathlib.Path(__file__).parent.parent
+
 mpl.style.use([
-    pathlib.Path(__file__).parent/'../styles/base.mplstyle',
+    ROOT_DIR / 'styles/base.mplstyle',
 ])
 mpl.rc('font', size=4)
 mpl.rc('lines', linewidth=0.5)
@@ -32,7 +34,6 @@ subplots_kw = dict(
 )
 
 (fig, ax) = plt.subplots(**subplots_kw)
-
 
 box = mpatches.FancyBboxPatch(
     (0, 0), 100, 83, mpatches.BoxStyle("Round", pad=0, rounding_size=2),
@@ -145,4 +146,4 @@ ax.text(62.5, 35, "axes height", backgroundcolor="white", zorder=30,
         rotation="vertical", ha="center", va="center")
 
 
-plt.savefig("../figures/adjustments.pdf")
+fig.savefig(ROOT_DIR / "figures/adjustments.pdf")

@@ -1,5 +1,10 @@
+import pathlib
+
 import numpy as np
 import matplotlib.pyplot as plt
+
+
+ROOT_DIR = pathlib.Path(__file__).parent.parent
 
 fig = plt.figure(figsize=(0.4, 2/3*0.4))
 ax = fig.add_axes([0, 0, 1, 1], frameon=False)
@@ -19,7 +24,7 @@ ax.text(0, 0.12, "-∞", ha="left", va="bottom", size=3, transform=ax.transAxes)
 ax.text(0, 0.15, "⇤", ha="left", va="top", size=4, transform=ax.transAxes)
 ax.text(1, 0.12, "+∞", ha="right", va="bottom", size=3, transform=ax.transAxes)
 ax.text(1, 0.15, "⇥", ha="right", va="top", size=4, transform=ax.transAxes)
-plt.savefig("../figures/scale-linear.pdf")
+fig.savefig(ROOT_DIR / "figures/scale-linear.pdf")
 ax.clear()
 
 # Log scale
@@ -31,7 +36,7 @@ ax.text(0, 0.12, "0", ha="left", va="bottom", size=3, transform=ax.transAxes)
 ax.text(0, 0.15, "⇤", ha="left", va="top", size=4, transform=ax.transAxes)
 ax.text(1, 0.12, "+∞", ha="right", va="bottom", size=3, transform=ax.transAxes)
 ax.text(1, 0.15, "⇥", ha="right", va="top", size=4, transform=ax.transAxes)
-plt.savefig("../figures/scale-log.pdf")
+fig.savefig(ROOT_DIR / "figures/scale-log.pdf")
 ax.clear()
 
 # Symlog scale
@@ -43,7 +48,7 @@ ax.text(0, 0.12, "-∞", ha="left", va="bottom", size=3, transform=ax.transAxes)
 ax.text(0, 0.15, "⇤", ha="left", va="top", size=4, transform=ax.transAxes)
 ax.text(1, 0.12, "+∞", ha="right", va="bottom", size=3, transform=ax.transAxes)
 ax.text(1, 0.15, "⇥", ha="right", va="top", size=4, transform=ax.transAxes)
-plt.savefig("../figures/scale-symlog.pdf")
+fig.savefig(ROOT_DIR / "figures/scale-symlog.pdf")
 ax.clear()
 
 # Symlog scale
@@ -55,5 +60,5 @@ ax.text(0, 0.12, "0", ha="left", va="bottom", size=3, transform=ax.transAxes)
 ax.text(0, 0.15, "⇤", ha="left", va="top", size=4, transform=ax.transAxes)
 ax.text(1, 0.12, "1", ha="right", va="bottom", size=3, transform=ax.transAxes)
 ax.text(1, 0.15, "⇥", ha="right", va="top", size=4, transform=ax.transAxes)
-plt.savefig("../figures/scale-logit.pdf")
+fig.savefig(ROOT_DIR / "figures/scale-logit.pdf")
 ax.clear()

@@ -2,9 +2,15 @@
 # Author:  Nicolas P. Rougier
 # License: BSD
 # ----------------------------------------------------------------------------
+import pathlib
+
 import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
+
+
+ROOT_DIR = pathlib.Path(__file__).parent.parent
+
 mpl.rcParams['axes.linewidth'] = 1.5
 
 fig = plt.figure(figsize=(8, 1.5))
@@ -20,5 +26,5 @@ plt.xticks([]), plt.yticks([])
 plt.xlim(-0.25, 10*np.pi+.25)
 plt.ylim(-1.5, 1.5)
 plt.tight_layout()
-plt.savefig("../figures/tip-multiline.pdf", dpi=100)
+fig.savefig(ROOT_DIR / "figures/tip-multiline.pdf", dpi=100)
 # plt.show()

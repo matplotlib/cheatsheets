@@ -1,8 +1,13 @@
+import pathlib
+
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_agg import FigureCanvas
 from scipy.ndimage import gaussian_filter
+
+
+ROOT_DIR = pathlib.Path(__file__).parent.parent
 
 # First pass for drop-shadow
 fig = Figure(figsize=(6, 1.5))
@@ -23,5 +28,5 @@ ax.imshow(Z, extent=[0, 1, 0, 1], cmap=plt.cm.gray, alpha=0.65, aspect='auto')
 ax.text(0.5, 0.5, "Matplotlib", transform=ax.transAxes,
         ha="center", va="center", size=64, color="black")
 
-plt.savefig("../figures/tip-post-processing.pdf", dpi=600)
+fig.savefig(ROOT_DIR / "figures/tip-post-processing.pdf", dpi=600)
 # plt.show()

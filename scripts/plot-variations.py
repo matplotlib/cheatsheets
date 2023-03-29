@@ -10,9 +10,11 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 
 
+ROOT_DIR = pathlib.Path(__file__).parent.parent
+
 mpl.style.use([
-    pathlib.Path(__file__).parent/'../styles/base.mplstyle',
-    pathlib.Path(__file__).parent/'../styles/plotlet.mplstyle',
+    ROOT_DIR / 'styles/base.mplstyle',
+    ROOT_DIR / 'styles/plotlet.mplstyle',
 ])
 mpl.rc('axes', titlepad=1)
 
@@ -29,7 +31,7 @@ X = np.linspace(0, 10, 100)
 Y = 4+2*np.sin(2*X)
 ax.plot(X, Y, color="black", linewidth=0.75)
 ax.grid()
-fig.savefig("../figures/plot-color.pdf")
+fig.savefig(ROOT_DIR / "figures/plot-color.pdf")
 
 # Basic line plot (linestyle)
 # -----------------------------------------------------------------------------
@@ -38,7 +40,7 @@ X = np.linspace(0, 10, 100)
 Y = 4+2*np.sin(2*X)
 ax.plot(X, Y, color="C1", linewidth=0.75, linestyle="--")
 ax.grid()
-fig.savefig("../figures/plot-linestyle.pdf")
+fig.savefig(ROOT_DIR / "figures/plot-linestyle.pdf")
 
 # Basic line plot (linewidth)
 # -----------------------------------------------------------------------------
@@ -48,6 +50,7 @@ Y = 4+2*np.sin(2*X)
 ax.plot(X, Y, color="C1", linewidth=1.5)
 ax.grid()
 fig.savefig("../figures/plot-linewidth.pdf")
+fig.savefig(ROOT_DIR / "figures/plot-linewidth.pdf")
 
 # Basic line plot (marker)
 # -----------------------------------------------------------------------------
@@ -56,7 +59,7 @@ X = np.linspace(0, 10, 100)
 Y = 4+2*np.sin(2*X)
 ax.plot(X, Y, color="C1", linewidth=0.75, marker="o", markevery=5, markersize=2)
 ax.grid()
-fig.savefig("../figures/plot-marker.pdf")
+fig.savefig(ROOT_DIR / "figures/plot-marker.pdf")
 
 # Basic line plot (multi)
 # -----------------------------------------------------------------------------
@@ -67,7 +70,7 @@ Y2 = 4+2*np.cos(2*X)
 ax.plot(X, Y1, color="C1", linewidth=0.75)
 ax.plot(X, Y2, color="C0", linewidth=0.75)
 ax.grid()
-fig.savefig("../figures/plot-multi.pdf")
+fig.savefig(ROOT_DIR / "figures/plot-multi.pdf")
 
 # Basic line plot (vsplit)
 # -----------------------------------------------------------------------------
@@ -85,7 +88,7 @@ ax2.plot(X, Y2, color="C0", linewidth=0.75)
 ax2.set_ylim(0, 4), ax2.set_yticks(np.arange(1, 4))
 ax2.grid()
 ax2.tick_params(axis=u'both', which=u'both', length=0)
-fig.savefig("../figures/plot-vsplit.pdf")
+fig.savefig(ROOT_DIR / "figures/plot-vsplit.pdf")
 
 # Basic line plot (hsplit)
 # -----------------------------------------------------------------------------
@@ -103,7 +106,7 @@ ax2.plot(Y2, X, color="C0", linewidth=0.75)
 ax2.set_xlim(0, 4), ax2.set_xticks(np.arange(1, 4))
 ax2.grid()
 ax2.tick_params(axis=u'both', which=u'both', length=0)
-fig.savefig("../figures/plot-hsplit.pdf")
+fig.savefig(ROOT_DIR / "figures/plot-hsplit.pdf")
 
 # Basic line plot (title)
 # -----------------------------------------------------------------------------
@@ -114,7 +117,7 @@ ax.plot(X, Y, color="C1", linewidth=0.75)
 ax.set_ylim(0, 6), ax.set_yticks(np.arange(1, 6))
 ax.grid()
 ax.set_title("A Sine wave", size=4, weight="bold")
-fig.savefig("../figures/plot-title.pdf")
+fig.savefig(ROOT_DIR / "figures/plot-title.pdf")
 
 # Basic line plot (xlabel)
 # -----------------------------------------------------------------------------
@@ -126,4 +129,4 @@ ax.set_ylim(0, 6), ax.set_yticks(np.arange(1, 6)), ax.set_yticklabels([])
 ax.grid()
 ax.text(4, -1, "Time", transform=ax.transData, clip_on=False,
         size=3.5, ha="center", va="center")
-fig.savefig("../figures/plot-xlabel.pdf")
+fig.savefig(ROOT_DIR / "figures/plot-xlabel.pdf")

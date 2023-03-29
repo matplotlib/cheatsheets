@@ -3,13 +3,17 @@
 # Author:  Nicolas P. Rougier
 # License: BSD
 # ----------------------------------------------------------------------------
+import pathlib
+
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 
+
+ROOT_DIR = pathlib.Path(__file__).parent.parent
+
+
 # Setup a plot such that only the bottom spine is shown
-
-
 def setup(ax):
     ax.spines['right'].set_color('none')
     ax.spines['left'].set_color('none')
@@ -46,5 +50,5 @@ for tick in ax.get_xticklabels(which='both'):
     tick.set_fontname("Roboto Condensed")
 
 plt.tight_layout()
-plt.savefig("../figures/tip-font-family.pdf", transparent=True)
+fig.savefig(ROOT_DIR / "figures/tip-font-family.pdf", transparent=True)
 # plt.show()

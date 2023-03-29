@@ -2,8 +2,13 @@
 # Matplotlib cheat sheet
 # Released under the BSD License
 # -----------------------------------------------------------------------------
+import pathlib
+
 import numpy as np
 import matplotlib.pyplot as plt
+
+
+ROOT_DIR = pathlib.Path(__file__).parent.parent
 
 dpi = 100
 fig = plt.figure(figsize=(4.25, 1.5), dpi=dpi)
@@ -66,5 +71,5 @@ plt.text(P[3, 0]+epsilon, P[3, 1]-epsilon, "(0,0)",
 plt.text(P[8, 0]-epsilon, P[8, 1]+epsilon, "(1,1)",
          color=color, ha="right", va="bottom", size="x-small")
 
-plt.savefig("../figures/text-alignments.pdf")
+fig.savefig(ROOT_DIR / "figures/text-alignments.pdf")
 # plt.show()

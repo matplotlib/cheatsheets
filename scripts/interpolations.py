@@ -5,11 +5,12 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-mpl.style.use([
-    pathlib.Path(__file__).parent/'../styles/base.mplstyle',
-    pathlib.Path(__file__).parent/'../styles/plotlet-grid.mplstyle',
-])
+ROOT_DIR = pathlib.Path(__file__).parent.parent
 
+mpl.style.use([
+    ROOT_DIR / 'styles/base.mplstyle',
+    ROOT_DIR / 'styles/plotlet-grid.mplstyle',
+])
 
 methods = [None, 'none', 'nearest', 'bilinear', 'bicubic', 'spline16',
            'spline36', 'hanning', 'hamming', 'hermite', 'kaiser', 'quadric',
@@ -28,5 +29,5 @@ for ax, interp_method in zip(axs.flat, methods):
     ax.text(0.5, 0.1, str(interp_method), weight="bold", color="white", size=6,
             ha="center", va="center")
 
-plt.savefig("../figures/interpolations.pdf", dpi=600)
+fig.savefig(ROOT_DIR / "figures/interpolations.pdf", dpi=600)
 # plt.show()

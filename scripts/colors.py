@@ -2,10 +2,15 @@
 # Matplotlib cheat sheet
 # Released under the BSD License
 # -----------------------------------------------------------------------------
+
+import pathlib
+
 import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 
+
+ROOT_DIR = pathlib.Path(__file__).parent.parent
 
 figsize = 4.0, 0.25
 fig = plt.figure(figsize=figsize)
@@ -36,5 +41,5 @@ for name, colors in palettes.items():
         ax.text((i+0.5)*dx, (ymin+ymax)/2, text, color=color, zorder=10,
                 family="Source Code Pro", size=9, ha="center", va="center")
 
-    plt.savefig("../figures/colors-%s.pdf" % name)
+    fig.savefig(ROOT_DIR / f"figures/colors-{name}.pdf")
     ax.clear()

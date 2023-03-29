@@ -7,6 +7,8 @@ import pathlib
 import matplotlib.pyplot as plt
 
 
+ROOT_DIR = pathlib.Path(__file__).parent.parent
+
 fig = plt.figure(figsize=(4.25, 3.8))
 ax = fig.add_axes([0, 0, 1, 1], frameon=False, xticks=[], yticks=[],
                   xlim=[0, 40], ylim=[0, 38])
@@ -105,5 +107,5 @@ for i, (size, scaling) in enumerate(sizes.items()):
     y += 1.65* max(sizes[size], sizes["small"])
 
 
-plt.savefig("../figures/fonts.pdf")
+fig.savefig(ROOT_DIR / "figures/fonts.pdf")
 # plt.show()

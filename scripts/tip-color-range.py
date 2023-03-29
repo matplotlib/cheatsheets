@@ -4,9 +4,14 @@
 # -----------------------------------------------------------------------------
 
 # Scripts to generate all the basic plots
+import pathlib
+
 import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
+
+
+ROOT_DIR = pathlib.Path(__file__).parent.parent
 
 fig = plt.figure(figsize=(2, 2))
 mpl.rcParams['axes.linewidth'] = 1.5
@@ -20,5 +25,5 @@ cmap = plt.get_cmap("Oranges")
 colors = [cmap(i) for i in [.1, .3, .5, .7]]
 ax.hist(X, 2, density=True, histtype='bar', color=colors)
 
-plt.savefig("../figures/tip-color-range.pdf")
+fig.savefig(ROOT_DIR / "figures/tip-color-range.pdf")
 # plt.show()

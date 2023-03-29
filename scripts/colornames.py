@@ -11,8 +11,10 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 
 
+ROOT_DIR = pathlib.Path(__file__).parent.parent
+
 mpl.style.use([
-    pathlib.Path(__file__).parent/'../styles/base.mplstyle',
+    ROOT_DIR / 'styles/base.mplstyle',
 ])
 mpl.rc('figure.constrained_layout', h_pad=0, w_pad=0, hspace=0, wspace=0)
 
@@ -54,4 +56,4 @@ ax.set_xlim(0, X)
 ax.set_ylim(0, Y)
 ax.set_axis_off()
 
-plt.savefig("../figures/colornames.pdf")
+fig.savefig(ROOT_DIR / "figures/colornames.pdf")

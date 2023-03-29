@@ -1,8 +1,13 @@
+import pathlib
+
 import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
-mpl.rcParams['axes.linewidth'] = 1.5
 
+
+ROOT_DIR = pathlib.Path(__file__).parent.parent
+
+mpl.rcParams['axes.linewidth'] = 1.5
 
 fig = plt.figure(figsize=(2, 2))
 d = 0.01
@@ -21,5 +26,5 @@ ax2.set_yticks(np.linspace(0.5, 1.0, 5))
 ax2.set_xticklabels([])
 ax2.set_yticklabels([])
 
-plt.savefig("../figures/tip-dual-axis.pdf")
+fig.savefig(ROOT_DIR / "figures/tip-dual-axis.pdf")
 # plt.show()

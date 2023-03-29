@@ -2,10 +2,15 @@
 # Matplotlib cheat sheet
 # Released under the BSD License
 # -----------------------------------------------------------------------------
+
+import pathlib
+
 import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 
+
+ROOT_DIR = pathlib.Path(__file__).parent.parent
 
 fig = plt.figure(figsize=(6, .65))
 # ax = plt.subplot(111, frameon=False, aspect=.1)
@@ -19,5 +24,5 @@ sm.set_array([])
 plt.colorbar(sm, cax=ax, ticks=np.linspace(0, 1, 11),
              orientation="horizontal")
 
-plt.savefig("../figures/colorbar.pdf")
+fig.savefig(ROOT_DIR / "figures/colorbar.pdf")
 # plt.show()

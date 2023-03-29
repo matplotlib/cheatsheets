@@ -1,5 +1,10 @@
+import pathlib
+
 import numpy as np
 import matplotlib.pyplot as plt
+
+
+ROOT_DIR = pathlib.Path(__file__).parent.parent
 
 cmap = plt.get_cmap("Oranges")
 color1, color2 = cmap(0.3), cmap(0.5)
@@ -36,5 +41,5 @@ ax.spines['left'].set_visible(False)
 ax.spines['top'].set_visible(False)
 
 plt.tight_layout()
-plt.savefig("../figures/tip-hatched.pdf")
+fig.savefig(ROOT_DIR / "figures/tip-hatched.pdf")
 # plt.show()

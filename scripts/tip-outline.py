@@ -4,10 +4,15 @@
 # -----------------------------------------------------------------------------
 
 # Scripts to generate all the basic plots
+import pathlib
+
 import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import matplotlib.patheffects as path_effects
+
+
+ROOT_DIR = pathlib.Path(__file__).parent.parent
 
 fig = plt.figure(figsize=(2, 2))
 mpl.rcParams['axes.linewidth'] = 1.5
@@ -24,4 +29,4 @@ text = ax.text(0.5, 0.1, "Label", transform=ax.transAxes,
                color=cmap(0.9), size=32, weight="bold", ha="center", va="bottom")
 text.set_path_effects([path_effects.Stroke(linewidth=5, foreground='white'),
                        path_effects.Normal()])
-plt.savefig("../figures/tip-outline.pdf")
+fig.savefig(ROOT_DIR / "figures/tip-outline.pdf")

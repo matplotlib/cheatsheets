@@ -9,11 +9,12 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 
 
-mpl.style.use([
-    pathlib.Path(__file__).parent/'../styles/base.mplstyle',
-    pathlib.Path(__file__).parent/'../styles/sine-plot.mplstyle',
-])
+ROOT_DIR = pathlib.Path(__file__).parent.parent
 
+mpl.style.use([
+    ROOT_DIR / 'styles/base.mplstyle',
+    ROOT_DIR / 'styles/sine-plot.mplstyle',
+])
 
 X = np.linspace(0.1, 10*np.pi, 10000)
 Y = np.sin(X)
@@ -21,19 +22,19 @@ Y = np.sin(X)
 (fig, ax) = plt.subplots(figsize=(5.7/2.54, 1.2/2.54))
 ax.set_yticks(np.linspace(-1, 1, 5))
 ax.plot(X, Y, color="orange")
-plt.savefig("../figures/sine.pdf")
+fig.savefig(ROOT_DIR / "figures/sine.pdf")
 
 (fig, ax) = plt.subplots(figsize=(5.7/2.54, 1.0/2.54))
 ax.plot(X, Y, "C1o:", markevery=500, mec="1.0")
 ax.set_ylim(-1.5, 1.5)
-fig.savefig("../figures/sine-marker.pdf")
+fig.savefig(ROOT_DIR / "figures/sine-marker.pdf")
 
 fig, ax = plt.subplots(figsize=(5.7/2.54, 1.0/2.54))
 ax.set_xscale("log")
 ax.plot(X, Y, "-")
 ax.plot(X, Y, "C1o-", markevery=500, mec="1.0")
 ax.set_ylim(-1.5, 1.5)
-fig.savefig("../figures/sine-logscale.pdf")
+fig.savefig(ROOT_DIR / "figures/sine-logscale.pdf")
 
 
 (fig, ax) = plt.subplots(figsize=(5.7/2.54, 1.0/2.54))
@@ -41,7 +42,7 @@ ax.plot(X, Y, "C1")
 ax.fill_betweenx([-1.5, 1.5], [0], [2*np.pi], color=".9")
 ax.text(0, -1, r" Period $\Phi$", va="top")
 ax.set_ylim(-1.5, 1.5)
-fig.savefig("../figures/sine-period.pdf")
+fig.savefig(ROOT_DIR / "figures/sine-period.pdf")
 
 
 (fig, ax) = plt.subplots(figsize=(5.7/2.54, 1.0/2.54))
@@ -52,7 +53,7 @@ ax.legend(bbox_to_anchor=(0.0, .9, 1.02, 0.1),
 ax.set_title("Sine and Cosine")
 ax.set_xticks([]), ax.set_yticks([])
 ax.set_ylim(-1.25, 1.25)
-fig.savefig("../figures/sine-legend.pdf")
+fig.savefig(ROOT_DIR / "figures/sine-legend.pdf")
 
 
 (fig, ax) = plt.subplots(figsize=(5.7/2.54, 1.0/2.54))
@@ -66,4 +67,4 @@ ax.annotate("A", (X[250], Y[250]), (X[250], -1), ha="center", va="center",
             arrowprops=dict(arrowstyle="->", color="C1", linewidth=0.5, patchA=None, shrinkA=4, shrinkB=0.5))
 ax.annotate(" ", (X[300], Y[300]), (X[250], -1), ha="center", va="center",
             arrowprops=dict(arrowstyle="->", color="C1", linewidth=0.5, patchA=None, shrinkA=4, shrinkB=0.5))
-fig.savefig("../figures/sine-annotate.pdf")
+fig.savefig(ROOT_DIR / "figures/sine-annotate.pdf")

@@ -3,12 +3,16 @@
 # Author:  Nicolas P. Rougier
 # License: BSD
 # ----------------------------------------------------------------------------
+import pathlib
+
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 
+
+ROOT_DIR = pathlib.Path(__file__).parent.parent
+
+
 # Setup a plot such that only the bottom spine is shown
-
-
 def setup(ax):
     """Set up Axes with just an x-Axis."""
     ax.spines['right'].set_color('none')
@@ -107,5 +111,5 @@ ax.text(0.0, 0.1, "ticker.PercentFormatter(xmax=5)",
 # bottom spine.
 fig.subplots_adjust(left=0.05, right=0.95, bottom=0.05, top=1.05)
 
-plt.savefig("../figures/tick-formatters.pdf", transparent=True)
+fig.savefig(ROOT_DIR / "figures/tick-formatters.pdf", transparent=True)
 # plt.show()

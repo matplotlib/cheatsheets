@@ -11,10 +11,11 @@ import matplotlib.pyplot as plt
 from matplotlib.ticker import AutoMinorLocator, MultipleLocator, FuncFormatter
 
 
-mpl.style.use([
-    pathlib.Path(__file__).parent/'../styles/base.mplstyle',
-])
+ROOT_DIR = pathlib.Path(__file__).parent.parent
 
+mpl.style.use([
+    ROOT_DIR / 'styles/base.mplstyle',
+])
 
 np.random.seed(123)
 
@@ -144,5 +145,5 @@ ax.annotate('', xy=(3.15, 0.0), xytext=(3.45, 0.45), color=color,
                             connectionstyle="arc3",
                             color=color))
 
-plt.savefig("../figures/anatomy.pdf")
+fig.savefig(ROOT_DIR / "figures/anatomy.pdf")
 # plt.show()

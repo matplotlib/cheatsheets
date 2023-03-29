@@ -2,9 +2,13 @@
 # Matplotlib cheat sheet
 # Released under the BSD License
 # -----------------------------------------------------------------------------
+import pathlib
+
 import numpy as np
 import matplotlib.pyplot as plt
 
+
+ROOT_DIR = pathlib.Path(__file__).parent.parent
 
 fig = plt.figure(figsize=(4.25, 2*.55))
 ax = fig.add_axes([0, 0, 1, 1], xlim=[0.75, 10.25], ylim=[0.5, 2.5], frameon=False,
@@ -53,5 +57,5 @@ ax.text(X0[0]-0.25, y+0.2, "capstyle or dash_capstyle", family="Source Code Pro"
         size=14, ha="left", va="baseline")
 
 
-plt.savefig("../figures/linestyles.pdf", dpi=200)
+fig.savefig(ROOT_DIR / "figures/linestyles.pdf", dpi=200)
 # plt.show()

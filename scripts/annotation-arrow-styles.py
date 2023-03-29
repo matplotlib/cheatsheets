@@ -1,5 +1,10 @@
+import pathlib
+
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
+
+
+ROOT_DIR = pathlib.Path(__file__).parent.parent
 
 styles = mpatches.ArrowStyle.get_styles()
 
@@ -29,5 +34,5 @@ for i, (ax, style) in enumerate(zip(axes.flatten(), mpatches.ArrowStyle.get_styl
              transform=ax.transAxes,
              family="Source Code Pro", ha="center", va="top")
 
-plt.savefig("../figures/annotation-arrow-styles.pdf")
+fig.savefig(ROOT_DIR / "figures/annotation-arrow-styles.pdf")
 # plt.show()

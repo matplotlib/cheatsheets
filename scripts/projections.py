@@ -10,11 +10,12 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 
 
-mpl.style.use([
-    pathlib.Path(__file__).parent/'../styles/base.mplstyle',
-    pathlib.Path(__file__).parent/'../styles/plotlet.mplstyle',
-])
+ROOT_DIR = pathlib.Path(__file__).parent.parent
 
+mpl.style.use([
+    ROOT_DIR / 'styles/base.mplstyle',
+    ROOT_DIR / 'styles/plotlet.mplstyle',
+])
 
 CARTOPY_SOURCE_TEMPLATE = 'https://naturalearth.s3.amazonaws.com/{resolution}_{category}/ne_{resolution}_{name}.zip'
 
@@ -39,7 +40,7 @@ ax.set_yticks(np.linspace(0, 2, 8))
 ax.set_yticklabels([])
 ax.set_ylim(0, 2)
 ax.grid(linewidth=0.2)
-plt.savefig("../figures/projection-polar.pdf")
+fig.savefig(ROOT_DIR / "figures/projection-polar.pdf")
 fig.clear()
 
 # 3D plot
@@ -57,7 +58,7 @@ ax.set_zlim(0, 1)
 ax.set_xticks([])
 ax.set_yticks([])
 ax.set_zticks([])
-plt.savefig("../figures/projection-3d.pdf")
+fig.savefig(ROOT_DIR / "figures/projection-3d.pdf")
 fig.clear()
 
 # Cartopy plot
@@ -67,4 +68,4 @@ ax = fig.add_subplot(frameon=False,
                      projection=cartopy.crs.Orthographic())
 ax.add_feature(cartopy.feature.LAND, zorder=0,
                facecolor="C1", edgecolor="0.0", linewidth=0)
-plt.savefig("../figures/projection-cartopy.pdf")
+fig.savefig(ROOT_DIR / "figures/projection-cartopy.pdf")
