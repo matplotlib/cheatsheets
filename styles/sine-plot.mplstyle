@@ -1,0 +1,24 @@
+font.size: 4
+
+axes.titlesize: 4
+axes.titlepad: 2
+axes.linewidth: 0.2
+
+lines.linewidth: 0.5
+lines.markersize: 3
+
+xtick.labelsize: 3
+xtick.major.pad: 1
+xtick.major.width: 0.2
+xtick.major.size: 1
+xtick.minor.width: 0.1
+xtick.minor.size: 0.5
+
+ytick.labelsize: 3
+ytick.major.pad: 1
+ytick.major.width: 0.2
+ytick.major.size: 1
+ytick.minor.width: 0.1
+ytick.minor.size: 0.5
+
+legend.fontsize: 3

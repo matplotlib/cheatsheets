@@ -1,0 +1,20 @@
+savefig.transparent: True
+
+font.size: 5
+
+axes.linewidth: 0.5
+axes.spines.right:  False
+axes.spines.top:    False
+axes.spines.left:   False
+axes.spines.bottom: True
+
+xtick.labelsize: 3
+xtick.major.size: 2
+xtick.major.width: 0.2
+xtick.major.pad: 2
+xtick.minor.size: 1
+xtick.minor.width: 0.2
+xtick.minor.pad: 2
+
+ytick.left: False
+ytick.labelleft: False

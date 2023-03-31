@@ -1,0 +1,7 @@
+font.family: Source Code Pro
+font.size: 5
+
+axes.linewidth: 0.5
+
+xtick.major.size: 0.0
+ytick.major.size: 0.0

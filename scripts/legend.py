@@ -2,14 +2,30 @@
 # Matplotlib cheat sheet
 # Released under the BSD License
 # -----------------------------------------------------------------------------
+import pathlib
+
 import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 
 
-fig = plt.figure(figsize=(4, 4))
-ax = fig.add_axes([0.15, 0.15, .7, .7], frameon=True, aspect=1,
-                  xticks=[], yticks=[])
+mpl.style.use([
+    pathlib.Path(__file__).parent/'../styles/base.mplstyle',
+])
+mpl.rc('font', size=6)
+mpl.rc('lines', markersize=4)
+
+
+subplots_kw = dict(
+    figsize=(5.7/2.54, 5.7/2.54),
+    subplot_kw=dict(
+        aspect=1, frameon=True,
+        xlim=(0, 1), ylim=(0, 1),
+        xticks=[], yticks=[],
+    ),
+)
+
+(fig, ax) = plt.subplots(**subplots_kw)
 
 
 def text(x, y, _text):
@@ -47,7 +63,4 @@ point(1+d-e, d-e), point(1+d-e, .5), point(1+d-e, 1-d+e),
 text(1-d, 1+d, "J"), text(0.5, 1+d, "K"), text(   d, 1+d, "L")
 point(1-d+e, 1+d-e), point(0.5, 1+d-e), point(d-e, 1+d-e),
 
-plt.xlim(0, 1), plt.ylim(0, 1)
-
-plt.savefig("../figures/legend-placement.pdf")
-# plt.show()
+fig.savefig("../figures/legend-placement.pdf")

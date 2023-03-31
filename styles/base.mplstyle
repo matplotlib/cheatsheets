@@ -1,0 +1,5 @@
+figure.constrained_layout.use: True
+figure.constrained_layout.h_pad:  0.01
+figure.constrained_layout.w_pad:  0.01
+figure.constrained_layout.hspace: 0.1
+figure.constrained_layout.wspace: 0.1

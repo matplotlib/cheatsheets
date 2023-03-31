@@ -15,10 +15,19 @@ logos:
 figures:
 	# generate the figures
 	cd scripts && for script in *.py; do echo $$script; MPLBACKEND="agg" python $$script; done
-	# crop the figures
-	cd figures && for figure in *.pdf; do echo $$figure; pdfcrop $$figure $$figure; done
-	# regenerate some figures that should not be cropped
-	cd scripts && MPLBACKEND="agg" python styles.py
+	# crop some of the figures
+	cd figures && pdfcrop adjustments.pdf adjustments.pdf
+	cd figures && pdfcrop annotate.pdf annotate.pdf
+	cd figures && pdfcrop annotation-arrow-styles.pdf annotation-arrow-styles.pdf
+	cd figures && pdfcrop anatomy.pdf anatomy.pdf
+	cd figures && pdfcrop colornames.pdf colornames.pdf
+	cd figures && pdfcrop fonts.pdf fonts.pdf
+	cd figures && pdfcrop markers.pdf markers.pdf
+	cd figures && pdfcrop text-alignments.pdf text-alignments.pdf
+	cd figures && pdfcrop tick-formatters.pdf tick-formatters.pdf
+	cd figures && pdfcrop tick-locators.pdf tick-locators.pdf
+	cd figures && pdfcrop tip-font-family.pdf tip-font-family.pdf
+	cd figures && pdfcrop tip-hatched.pdf tip-hatched.pdf
 
 .PHONY: cheatsheets
 cheatsheets:
