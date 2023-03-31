@@ -17,10 +17,9 @@ mpl.rc('figure.constrained_layout', wspace=0.05)
 
 Z = np.arange(5*5).reshape(5, 5)
 
-fig = plt.figure(figsize=(8, 5))
-gs = fig.add_gridspec(2, 2)
+(fig, axs) = plt.subplots(figsize=(8, 5), nrows=2, ncols=2)
 
-ax = fig.add_subplot(gs[0, 0])
+ax = axs[0, 0]
 ax.imshow(Z, extent=[0, 10, 0, 5], interpolation="nearest", origin="upper")
 ax.set_xlim(-1, 11), ax.set_xticks([])
 ax.set_ylim(-1, 6), ax.set_yticks([0, 5])
@@ -31,7 +30,7 @@ ax.text(5.0, 5.5, 'origin="upper"',
 ax.text(5.0, -0.5, "extent=[0,10,0,5]",
         ha="center", va="center", color="black", size="large")
 
-ax = fig.add_subplot(gs[1, 0])
+ax = axs[1, 0]
 ax.imshow(Z, extent=[0, 10, 0, 5], interpolation="nearest", origin="lower")
 ax.set_xlim(-1, 11), ax.set_xticks([0, 10])
 ax.set_ylim(-1, 6), ax.set_yticks([0, 5])
@@ -43,7 +42,7 @@ ax.text(5.0, 5.5, 'origin="lower"',
 ax.text(5.0, -0.5, "extent=[0,10,0,5]",
         ha="center", va="center", color="black", size="large")
 
-ax = fig.add_subplot(gs[1, 1])
+ax = axs[1, 1]
 ax.imshow(Z, extent=[10, 0, 0, 5], interpolation="nearest", origin="lower")
 ax.set_xlim(-1, 11), ax.set_xticks([0, 10])
 ax.set_ylim(-1, 6), ax.set_yticks([])
@@ -54,7 +53,7 @@ ax.text(5.0, 5.5, 'origin="lower"',
 ax.text(5.0, -0.5, "extent=[10,0,0,5]",
         ha="center", va="center", color="black", size="large")
 
-ax = fig.add_subplot(gs[0, 1])
+ax = axs[0, 1]
 ax.imshow(Z, extent=[10, 0, 0, 5], interpolation="nearest", origin="upper")
 ax.set_xlim(-1, 11), ax.set_xticks([])
 ax.set_ylim(-1, 6), ax.set_yticks([])
