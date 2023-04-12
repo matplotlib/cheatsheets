@@ -20,9 +20,8 @@ variants = {
 }
 
 text = "The quick brown fox jumps over the lazy dog"
-for i, variant in enumerate(variants.keys()):
-    ax.text(1, y, text, size=9, va="center",
-            font=pathlib.Path(variants[variant]).resolve())
+for i, (variant, file) in enumerate(variants.items()):
+    ax.text(1, y, text, size=9, va="center", font=pathlib.Path(file).resolve())
 
     ax.text(39, y, variant,
             color="0.25", va="center", ha="right",
@@ -53,12 +52,11 @@ families = {
     "Source Code Pro" : "monospace" }
 
 text = "The quick brown fox jumps over the lazy dog"
-for i, family in enumerate(families):
+for i, (family, label) in enumerate(families.items()):
     ax.text(1, y, text,
             va="center", size=9, family=family, weight="regular")
 
-    ax.text(39, y,
-            "%s" % (families[family]),
+    ax.text(39, y, label,
             color="0.25", va="center", ha="right",
             size="small", family="Source Code Pro", weight=400)
     y += 1.65
@@ -81,7 +79,7 @@ for i, weight in enumerate(["ultralight", "normal", "semibold", "bold", "black"]
     ax.text(1, y, text, size=9,
             va="center", family="Source Sans Pro", weight=weight)
 
-    ax.text(39, y, "%s (%d)" % (weight, weights[weight]),
+    ax.text(39, y, f"{weight} ({weights[weight]:d})",
             color="0.25", va="center", ha="right",
             size="small", family="Source Code Pro", weight=400)
     y += 1.65
@@ -97,11 +95,11 @@ sizes = { "xx-small" : 0.579,
           "xx-large" : 1.728 }
 
 text = "The quick brown fox"
-for i, size in enumerate(sizes.keys()):
+for i, (size, scaling) in enumerate(sizes.items()):
     ax.text(1, y, text, size=size,
             ha="left", va="center", family="Source Sans Pro", weight="light")
 
-    ax.text(39, y, "%s (%.2f)" % (size, sizes[size]),
+    ax.text(39, y, f"{size} ({scaling:.2f})",
             color="0.25", va="center", ha="right",
             size="small", family="Source Code Pro", weight=400)
     y += 1.65* max(sizes[size], sizes["small"])
