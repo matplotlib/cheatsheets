@@ -1,4 +1,4 @@
-# Cheatsheets para usuários do Matplotlib
+# Folhas de dicas para usuários do Matplotlib
 
 ## Observação
 O conteúdo original dessa folha de dicas é do repositório [oficial do
@@ -8,14 +8,14 @@ do `matplotlib`.
 
 Façam bom uso!
 
-## Cheatsheets
+## Folhas de dicas
 Cheatsheet [(baixe o pdf)](https://matplotlib.org/cheatsheets/cheatsheets.pdf) | |
 :------------------------------------------------------------------------------:|:----------------------------------------------------------:
 ![](https://matplotlib.org/cheatsheets/cheatsheets-1.png)                       | ![](https://matplotlib.org/cheatsheets/cheatsheets-2.png)
 
-## Handouts
+## Folhetos
 
-Beginner handout [(download pdf)](https://matplotlib.org/cheatsheets/handout-beginner.pdf) | Intermediate handout [(download pdf)](https://matplotlib.org/cheatsheets/handout-intermediate.pdf) | Tips handout [(download pdf)](https://matplotlib.org/cheatsheets/handout-tips.pdf)
+Folheto iniciante [(download pdf)](https://matplotlib.org/cheatsheets/handout-beginner.pdf) | Folheto intermediário[(download pdf)](https://matplotlib.org/cheatsheets/handout-intermediate.pdf) | Folheto de dicas [(download pdf)](https://matplotlib.org/cheatsheets/handout-tips.pdf)
 :-----------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------:
 ![](https://matplotlib.org/cheatsheets/handout-beginner.png)                               | ![](https://matplotlib.org/cheatsheets/handout-intermediate.png)                                   | ![](https://matplotlib.org/cheatsheets/handout-tips.png)
 
