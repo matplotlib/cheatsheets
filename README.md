@@ -1,29 +1,21 @@
-# Folhas de dicas para usuários do Matplotlib
+# Cheatsheets for Matplotlib users
 
-## Observação
-O conteúdo original dessa folha de dicas é do repositório [oficial do
-`matplotlib`](https://github.com/matplotlib/cheatsheets). Essa tradução
-não-oficial visa tornar mais acessível as dicas para os usuários e usuárias
-do `matplotlib`.
-
-Façam bom uso!
-
-## Folhas de dicas
-Cheatsheet [(baixe o pdf)](https://matplotlib.org/cheatsheets/cheatsheets.pdf) | |
+## Cheatsheets
+Cheatsheet [(download pdf)](https://matplotlib.org/cheatsheets/cheatsheets.pdf) | |
 :------------------------------------------------------------------------------:|:----------------------------------------------------------:
 ![](https://matplotlib.org/cheatsheets/cheatsheets-1.png)                       | ![](https://matplotlib.org/cheatsheets/cheatsheets-2.png)
 
-## Folhetos
+## Handouts
 
-Folheto iniciante [(download pdf)](https://matplotlib.org/cheatsheets/handout-beginner.pdf) | Folheto intermediário[(download pdf)](https://matplotlib.org/cheatsheets/handout-intermediate.pdf) | Folheto de dicas [(download pdf)](https://matplotlib.org/cheatsheets/handout-tips.pdf)
+Beginner handout [(download pdf)](https://matplotlib.org/cheatsheets/handout-beginner.pdf) | Intermediate handout [(download pdf)](https://matplotlib.org/cheatsheets/handout-intermediate.pdf) | Tips handout [(download pdf)](https://matplotlib.org/cheatsheets/handout-tips.pdf)
 :-----------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------:
 ![](https://matplotlib.org/cheatsheets/handout-beginner.png)                               | ![](https://matplotlib.org/cheatsheets/handout-intermediate.png)                                   | ![](https://matplotlib.org/cheatsheets/handout-tips.png)
 
-# Para contribuídores das dicas
+# For contributors to the cheatsheets
 
-## Como compilar
+## How to compile
 
-1. Você precisa criar um repositório `fonts`com:
+1. You need to create a `fonts` repository with:
 
 * `fonts/roboto/*`           : See https://fonts.google.com/specimen/Roboto
                                 or https://github.com/googlefonts/roboto/tree/master/src/hinted
@@ -38,14 +30,12 @@ Folheto iniciante [(download pdf)](https://matplotlib.org/cheatsheets/handout-be
 * `fonts/eb-garamond/*`      : See https://bitbucket.org/georgd/eb-garamond/src/master
 * `fonts/pacifico/*`         : See https://fonts.google.com/download?family=Pacifico
 
-No Linux, com o `make` instalado, as fontes podem ser configuradas com o seguinte comando:
-
+On Linux, with `make` installed, the fonts can be set up with the following command:
 ```shell
 make -C fonts
 ```
 
-As fontes podem ser descobertas pelo `matplotlib` (por via do `fontconfig`) ao
-criar o seguinte `$HOME/.config/fontconfig/fonts.conf` (veja [aqui](https://www.freedesktop.org/software/fontconfig/fontconfig-user.html)):
+The fonts can be made discoverable by `matplotlib` (through `fontconfig`) by creating the following in `$HOME/.config/fontconfig/fonts.conf` (see [here](https://www.freedesktop.org/software/fontconfig/fontconfig-user.html)):
 
 ```xml
 <?xml version="1.0"?>
@@ -57,7 +47,7 @@ criar o seguinte `$HOME/.config/fontconfig/fonts.conf` (veja [aqui](https://www.
 ```
 
 
-2. Você precisa gerar todas as figuras:
+2. You need to generate all the figures:
 
 ```
 $ cd scripts
@@ -65,7 +55,7 @@ $ for script in *.py; do python $script; done
 $ cd ..
 ```
 
-3. Compile a folha
+3. Compile the sheet
 ```
 $ xelatex cheatsheets.tex
 $ xelatex cheatsheets.tex
