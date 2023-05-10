@@ -73,7 +73,7 @@
 
 \begin{multicols*}{3}
 
-Uma matplotlib figure é composta por uma hierarquia de elementos que formam
+Uma figura matplotlib é composta por uma hierarquia de elementos que formam
 a figura atual. Cada elemento pode ser modificado. \medskip
 
 \includegraphics[width=\linewidth]{anatomy.pdf}
@@ -174,7 +174,7 @@ a figura atual. Cada elemento pode ser modificado. \medskip
 % -----------------------------------------------------------------------------
 \subsection*{\rmfamily Colors}
 
-Any color can be used, but Matplotlib offers sets of colors:\\
+Qualquer cor pode ser usada, mas o Matplotlib oferece um conjunto de cores:\\
 \includegraphics[width=\linewidth]{colors-cycle.pdf} \smallskip
 \includegraphics[width=\linewidth]{colors-grey.pdf}\\
 %As well as nice colormaps (viridis an magma):\\
@@ -185,10 +185,10 @@ Any color can be used, but Matplotlib offers sets of colors:\\
 \vspace{-1em}
 \subsection*{\rmfamily Size \& DPI}
 
-Consider a square figure to be included in a two-columns A4 paper with
-2cm margins on each side and a column separation of 1cm. The width of
-a figure is (21 - 2*2 - 1)/2 = 8cm. One inch being 2.54cm, figure size
-should be 3.15$\times$3.15 in.
+Considere uma figura quadradada a ser incluída em uma folha de papel A4 de duas colunas com
+margem de 2cm em cada lado e uma coluna de separação de 1cm. A largura de um figura é
+(21 - 2*2 - 1)/2 = 8cm. Uma polegada sendo 2.54cm, tamanho da figura deve ser
+3.15$\times$3.15 in.
 \begin{lstlisting}[]
  fig = plt.figure(figsize=(3.15,3.15), dpi=50)
  plt.savefig("figure.pdf", dpi=600)
