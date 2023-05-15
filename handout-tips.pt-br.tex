@@ -72,17 +72,17 @@
 \thispagestyle{empty}
 
 \section*{\LARGE \rmfamily
-          Matplotlib \textcolor{orange}{\mdseries tips \& tricks}}
+          Matplotlib \textcolor{orange}{\mdseries dicas \& truques}}
 
 \begin{multicols*}{3}
 
 
 % -----------------------------------------------------------------------------
-\subsection*{\rmfamily Transparency}
+\subsection*{\rmfamily Transparência}
 
-Scatter plots can be enhanced by using transparency (alpha) in order
-to show area with higher density. Multiple scatter plots can be
-used to delineate a frontier.
+Gráficos de dispersão podem ser melhorados ao usar a transparência (alpha) para
+mostrar uma área com maior densidade. Múltiplos gráficos de dispersão podem ser
+usados para delinear uma fronteira.
 
 \begin{tabular}{@{}m{.774\linewidth}m{.216\linewidth}}
 \begin{lstlisting}[belowskip=-\baselineskip]
@@ -96,10 +96,10 @@ used to delineate a frontier.
 \end{tabular}
 
 % -----------------------------------------------------------------------------
-\subsection*{\rmfamily Rasterization}
-If your figure has many graphical elements, such as a huge
-scatter, you can rasterize them to save memory and keep other elements
-in vector format.
+\subsection*{\rmfamily Rasterização}
+Se a sua figura tem muitos elementos gráficos, como um gráfico de dispersão
+gigante, você pode rasterizá-los para salvar memória e manter outros elementos
+em formato vetorial.
 \begin{lstlisting}
  X = np.random.normal(-1, 1, 10_000)
  Y = np.random.normal(-1, 1, 10_000)
@@ -108,9 +108,9 @@ in vector format.
 \end{lstlisting}
 
 % -----------------------------------------------------------------------------
-\subsection*{\rmfamily Offline rendering}
+\subsection*{\rmfamily Renderização offline}
 
-Use the Agg backend to render a figure directly in an array.
+Use o backend Agg para renderizar a figura diretamente em um array.
 \begin{lstlisting}
  from matplotlib.backends.backend_agg import FigureCanvas
  canvas = FigureCanvas(Figure()))
@@ -120,9 +120,10 @@ Use the Agg backend to render a figure directly in an array.
 \end{lstlisting}
 
 % -----------------------------------------------------------------------------
-\subsection*{\rmfamily Range of continuous colors}
+\subsection*{\rmfamily Faixa contínua de cores}
 
-You can use colormap to pick from a range of continuous colors.
+Você pode usar um mapa de cor (colormap) para escolher de uma faixa de cores
+contínuas.
 
 \begin{tabular}{@{}m{.774\linewidth}m{.216\linewidth}}
 \begin{lstlisting}[belowskip=-\baselineskip]
@@ -136,8 +137,8 @@ You can use colormap to pick from a range of continuous colors.
 \end{tabular}
 
 % -----------------------------------------------------------------------------
-\subsection*{\rmfamily Text outline}
-Use text outline to make text more visible.
+\subsection*{\rmfamily Contorno de texto}
+Use o contorno de texto para deixar o texto mais visível.
 
 \begin{tabular}{@{}m{.774\linewidth}m{.216\linewidth}}
 \begin{lstlisting}[belowskip=-\baselineskip]
@@ -152,8 +153,8 @@ Use text outline to make text more visible.
 
 
 % -----------------------------------------------------------------------------
-\subsection*{\rmfamily Multiline plot}
-You can plot several lines at once using None as separator.
+\subsection*{\rmfamily Plot multilinhas}
+Você pode plotar várias linhas ao mesmo tempo usando None como separador.
 
 \begin{lstlisting}
  X,Y = [], []
@@ -164,9 +165,9 @@ You can plot several lines at once using None as separator.
 \includegraphics[width=\linewidth]{tip-multiline.pdf}
 
 % -----------------------------------------------------------------------------
-\subsection*{\rmfamily Dotted lines}
-To have rounded dotted lines, use a custom {\ttfamily linestyle} and
-modify {\ttfamily dash\_capstyle}.
+\subsection*{\rmfamily Linhas pontilhadas}
+Para obter linhas pontilhadas arredondadas, use o {\ttfamily linestyle}
+customizado e modifique o {\ttfamily dash\_capstyle}.
 \begin{lstlisting}
  ax.plot([0,1], [0,0], "C1",
         linestyle = (0, (0.01, 1)), dash_capstyle="round")
@@ -176,8 +177,8 @@ modify {\ttfamily dash\_capstyle}.
 \includegraphics[width=\linewidth]{tip-dotted.pdf}
 
 % -----------------------------------------------------------------------------
-\subsection*{\rmfamily Combining axes}
-You can use overlaid axes with different projections.
+\subsection*{\rmfamily Eixos combinados}
+Você pode usar eixos sobrepostos com diferentes projeções.
 
 \begin{tabular}{@{}m{.774\linewidth}m{.216\linewidth}}
 \begin{lstlisting}[belowskip=-\baselineskip]
@@ -221,8 +222,8 @@ para remover as margens brancas. Se houver alguma margem adicional, você pode
 usar a utilidade do {\ttfamily pdfcrop} (vem com o TeX live).
 
 
-\subsection*{\rmfamily Hatching}
-You can achieve a nice visual effect with thick hatch patterns.
+\subsection*{\rmfamily Hachuras}
+Você pode alcançar um efeito visual legal com padrões de hachuras.
 
 \begin{tabular}{@{}m{.774\linewidth}m{.216\linewidth}}
 \begin{lstlisting}[belowskip=-\baselineskip]

@@ -11,6 +11,10 @@ Beginner handout [(download pdf)](https://matplotlib.org/cheatsheets/handout-beg
 :-----------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------:
 ![](https://matplotlib.org/cheatsheets/handout-beginner.png)                               | ![](https://matplotlib.org/cheatsheets/handout-intermediate.png)                                   | ![](https://matplotlib.org/cheatsheets/handout-tips.png)
 
+# Translations
+This document is translated in the following languages:
+* [Português Brasileiro](README.pt-br.md)
+
 # For contributors to the cheatsheets
 
 ## How to compile
