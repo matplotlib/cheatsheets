@@ -69,7 +69,7 @@
 \thispagestyle{empty}
 
 \section*{\LARGE \rmfamily
-          Matplotlib \textcolor{orange}{\mdseries for intermediate users}}
+          Matplotlib \textcolor{orange}{\mdseries para usuários intermediários}}
 
 \begin{multicols*}{3}
 
@@ -113,7 +113,7 @@ a figura atual. Cada elemento pode ser modificado. \medskip
 
 
 % -----------------------------------------------------------------------------
-\subsection*{\rmfamily Ticks \& labels}
+\subsection*{\rmfamily Ticks \& rótulos}
 
 \begin{lstlisting}[basicstyle=\ttfamily\small]
  from mpl.ticker import MultipleLocator as ML
@@ -125,7 +125,7 @@ a figura atual. Cada elemento pode ser modificado. \medskip
 \includegraphics[width=\linewidth]{tick-multiple-locator.pdf}
 
 % -----------------------------------------------------------------------------
-\subsection*{\rmfamily Lines \& markers}
+\subsection*{\rmfamily Linhas \& marcadores}
 
 \begin{lstlisting}
  X = np.linspace(0.1, 10*np.pi, 1000)
@@ -135,7 +135,7 @@ a figura atual. Cada elemento pode ser modificado. \medskip
 \includegraphics[width=\linewidth]{sine-marker.pdf}
 
 % -----------------------------------------------------------------------------
-\subsection*{\rmfamily Scales \& projections}
+\subsection*{\rmfamily Escalas \& projeções}
 
 \begin{lstlisting}
  fig, ax = plt.subplots()
@@ -144,7 +144,7 @@ a figura atual. Cada elemento pode ser modificado. \medskip
 \end{lstlisting}
 \includegraphics[width=\linewidth]{sine-logscale.pdf}
 
-\subsection*{\rmfamily Text \& ornaments}
+\subsection*{\rmfamily Texto \& ornamentos}
 \begin{lstlisting}[]
  ax.fill_betweenx([-1,1],[0],[2*np.pi])
  ax.text(0, -1, r" Period $\Phi$")
@@ -153,7 +153,7 @@ a figura atual. Cada elemento pode ser modificado. \medskip
 
 
 % -----------------------------------------------------------------------------
-\subsection*{\rmfamily Legend}
+\subsection*{\rmfamily Legenda}
 \begin{lstlisting}[]
  ax.plot(X, np.sin(X), "C0", label="Sine")
  ax.plot(X, np.cos(X), "C1", label="Cosine")
@@ -163,7 +163,7 @@ a figura atual. Cada elemento pode ser modificado. \medskip
 \includegraphics[width=\linewidth]{sine-legend.pdf}
 
 % -----------------------------------------------------------------------------
-\subsection*{\rmfamily Annotation}
+\subsection*{\rmfamily Anotação}
 \begin{lstlisting}[]
  ax.annotate("A", (X[250],Y[250]),(X[250],-1),
    ha="center", va="center",arrowprops =
@@ -172,7 +172,7 @@ a figura atual. Cada elemento pode ser modificado. \medskip
 \includegraphics[width=\linewidth]{sine-annotate.pdf}
 
 % -----------------------------------------------------------------------------
-\subsection*{\rmfamily Colors}
+\subsection*{\rmfamily Cores}
 
 Qualquer cor pode ser usada, mas o Matplotlib oferece um conjunto de cores:\\
 \includegraphics[width=\linewidth]{colors-cycle.pdf} \smallskip
@@ -183,7 +183,7 @@ Qualquer cor pode ser usada, mas o Matplotlib oferece um conjunto de cores:\\
 
 % -----------------------------------------------------------------------------
 \vspace{-1em}
-\subsection*{\rmfamily Size \& DPI}
+\subsection*{\rmfamily Tamanho \& DPI}
 
 Considere uma figura quadradada a ser incluída em uma folha de papel A4 de duas colunas com
 margem de 2cm em cada lado e uma coluna de separação de 1cm. A largura de um figura é
