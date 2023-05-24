@@ -3,8 +3,7 @@
 ## Observação
 O conteúdo original dessa folha de dicas é do repositório [oficial do
 `matplotlib`](https://github.com/matplotlib/cheatsheets). Essa tradução
-não-oficial visa tornar mais acessível as dicas para os usuários e usuárias
-do `matplotlib`.
+não-oficial visa tornar as dicas mais acessíveis para pessoas que usam a Matplotlib.
 
 Façam bom uso!
 
