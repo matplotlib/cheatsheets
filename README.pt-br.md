@@ -44,7 +44,7 @@ make -C fonts
 ```
 
 As fontes podem ser descobertas pelo `matplotlib` (por via do `fontconfig`) ao
-criar o seguinte `$HOME/.config/fontconfig/fonts.conf` (veja [aqui](https://www.freedesktop.org/software/fontconfig/fontconfig-user.html)):
+criar o arquivo `$HOME/.config/fontconfig/fonts.conf` com o seguinte conteúdo (veja [aqui](https://www.freedesktop.org/software/fontconfig/fontconfig-user.html)):
 
 ```xml
 <?xml version="1.0"?>
