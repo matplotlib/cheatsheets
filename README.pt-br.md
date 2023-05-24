@@ -25,18 +25,18 @@ Folheto iniciante [(download pdf)](https://matplotlib.org/cheatsheets/handout-be
 
 1. Você precisa criar um repositório `fonts`com:
 
-* `fonts/roboto/*`           : See https://fonts.google.com/specimen/Roboto
-                                or https://github.com/googlefonts/roboto/tree/master/src/hinted
-* `fonts/roboto-slab/*`      : See https://fonts.google.com/specimen/Roboto+Slab
-                                or https://github.com/googlefonts/robotoslab/tree/master/fonts/static
-* `fonts/source-code-pro/*`  : See https://fonts.google.com/specimen/Source+Code+Pro
-                                or https://github.com/adobe-fonts/source-code-pro/tree/release/OTF
-* `fonts/source-sans-pro/*`  : See https://fonts.google.com/specimen/Source+Sans+Pro
-                                or https://github.com/adobe-fonts/source-sans-pro/tree/release/OTF
-* `fonts/source-serif-pro/*` : See https://fonts.google.com/specimen/Source+Serif+Pro
-                                or https://github.com/adobe-fonts/source-serif-pro/tree/release/OTF
-* `fonts/eb-garamond/*`      : See https://bitbucket.org/georgd/eb-garamond/src/master
-* `fonts/pacifico/*`         : See https://fonts.google.com/download?family=Pacifico
+* `fonts/roboto/*`           : Veja https://fonts.google.com/specimen/Roboto
+                                ou https://github.com/googlefonts/roboto/tree/master/src/hinted
+* `fonts/roboto-slab/*`      : Veja https://fonts.google.com/specimen/Roboto+Slab
+                                ou https://github.com/googlefonts/robotoslab/tree/master/fonts/static
+* `fonts/source-code-pro/*`  : Veja https://fonts.google.com/specimen/Source+Code+Pro
+                                ou https://github.com/adobe-fonts/source-code-pro/tree/release/OTF
+* `fonts/source-sans-pro/*`  : Veja https://fonts.google.com/specimen/Source+Sans+Pro
+                                ou https://github.com/adobe-fonts/source-sans-pro/tree/release/OTF
+* `fonts/source-serif-pro/*` : Veja https://fonts.google.com/specimen/Source+Serif+Pro
+                                ou https://github.com/adobe-fonts/source-serif-pro/tree/release/OTF
+* `fonts/eb-garamond/*`      : Veja https://bitbucket.org/georgd/eb-garamond/src/master
+* `fonts/pacifico/*`         : Veja https://fonts.google.com/download?family=Pacifico
 
 No Linux, com o `make` instalado, as fontes podem ser configuradas com o seguinte comando:
 
