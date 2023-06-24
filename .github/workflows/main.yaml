@@ -7,15 +7,25 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
-      - uses: pre-commit/action@v2.0.0
-  build:
-    runs-on: ubuntu-20.04
-    steps:
-      - uses: actions/checkout@v3
+
       - uses: actions/setup-python@v4
         with:
           python-version: "3.10"
+
+      - uses: pre-commit/action@v2.0.0
+        with:
+          extra_args: --all-files
+
+  build:
+    runs-on: ubuntu-20.04
+    needs: pre-commit
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
       - name: Install dependencies
         run: |
           sudo apt update
@@ -27,6 +37,7 @@ jobs:
             poppler-utils
           python -m pip install --upgrade pip
           pip install -r requirements/requirements.txt
+
       - name: Install Tex Live
         run: |
           sudo apt update
@@ -39,6 +50,7 @@ jobs:
             texlive-latex-extra       \
             texlive-latex-recommended \
             texlive-xetex
+
       - name: Build artifacts
         run: |
           # adjust the ImageMagick policies to convert PDF to PNG
@@ -51,9 +63,11 @@ jobs:
           cp -r fonts/ /usr/share/fonts/
           fc-cache
           make all
+
       - name: Run checks
         run: |
           make check
+
       - uses: actions/upload-artifact@v3
         if: ${{ always() }}
         with:
@@ -62,6 +76,7 @@ jobs:
             cheatsheets.pdf
             handout-*.pdf
             ./docs/_build/html/
+
       - name: Publish cheatsheets and handouts
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
         uses: peaceiris/actions-gh-pages@v3
