@@ -14,7 +14,7 @@ Cheatsheet [(baixe o pdf)](https://matplotlib.org/cheatsheets/cheatsheets.pdf) |
 
 ## Folhetos
 
-Folheto iniciante [(download pdf)](https://matplotlib.org/cheatsheets/handout-beginner.pdf) | Folheto intermediário[(download pdf)](https://matplotlib.org/cheatsheets/handout-intermediate.pdf) | Folheto de dicas [(download pdf)](https://matplotlib.org/cheatsheets/handout-tips.pdf)
+Folheto iniciante [(download pdf)](https://matplotlib.org/cheatsheets/handout-beginner.pdf) | Folheto intermediário [(download pdf)](https://matplotlib.org/cheatsheets/handout-intermediate.pdf) | Folheto de dicas [(download pdf)](https://matplotlib.org/cheatsheets/handout-tips.pdf)
 :-----------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------:
 ![](https://matplotlib.org/cheatsheets/handout-beginner.png)                               | ![](https://matplotlib.org/cheatsheets/handout-intermediate.png)                                   | ![](https://matplotlib.org/cheatsheets/handout-tips.png)
 
