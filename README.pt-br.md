@@ -18,7 +18,7 @@ Folheto iniciante [(download pdf)](https://matplotlib.org/cheatsheets/handout-be
 :-----------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------:
 ![](https://matplotlib.org/cheatsheets/handout-beginner.png)                               | ![](https://matplotlib.org/cheatsheets/handout-intermediate.png)                                   | ![](https://matplotlib.org/cheatsheets/handout-tips.png)
 
-# Para contribuídores das dicas
+# Para contribuidores das dicas
 
 ## Como compilar
 
