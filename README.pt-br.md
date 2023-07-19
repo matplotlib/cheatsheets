@@ -22,7 +22,7 @@ Folheto iniciante [(download pdf)](https://matplotlib.org/cheatsheets/handout-be
 
 ## Como compilar
 
-1. Você precisa criar um repositório `fonts`com:
+1. Você precisa criar um repositório `fonts` com:
 
 * `fonts/roboto/*`           : Veja https://fonts.google.com/specimen/Roboto
                                 ou https://github.com/googlefonts/roboto/tree/master/src/hinted
