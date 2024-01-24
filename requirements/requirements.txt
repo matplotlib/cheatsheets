@@ -154,6 +154,9 @@ sphinx==7.2.6
     # via
     #   -r requirements.in
     #   pydata-sphinx-theme
+    #   sphinx-design
+sphinx-design==0.5.0
+    # via -r requirements.in
 sphinxcontrib-applehelp==1.0.8
     # via sphinx
 sphinxcontrib-devhelp==1.0.6

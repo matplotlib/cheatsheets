@@ -9,6 +9,7 @@ pip-tools
 pre-commit
 scipy
 # Docs
-mpl-sphinx-theme==3.8.0
+mpl-sphinx-theme~=3.8
 pydata-sphinx-theme==0.13.3
 sphinx
+sphinx-design
