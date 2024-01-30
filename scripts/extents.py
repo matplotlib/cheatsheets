@@ -9,11 +9,12 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 
 
+ROOT_DIR = pathlib.Path(__file__).parent.parent
+
 mpl.style.use([
-    pathlib.Path(__file__).parent/'../styles/base.mplstyle',
+    ROOT_DIR / 'styles/base.mplstyle',
 ])
 mpl.rc('figure.constrained_layout', wspace=0.05)
-
 
 Z = np.arange(5*5).reshape(5, 5)
 
@@ -64,4 +65,4 @@ ax.text(5.0, 5.5, 'origin="upper"',
 ax.text(5.0, -0.5, "extent=[10,0,0,5]",
         ha="center", va="center", color="black", size="large")
 
-plt.savefig("../figures/extents.pdf", dpi=600)
+fig.savefig(ROOT_DIR / "figures/extents.pdf", dpi=600)

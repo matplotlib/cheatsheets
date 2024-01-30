@@ -2,10 +2,15 @@
 # Matplotlib cheat sheet
 # Released under the BSD License
 # -----------------------------------------------------------------------------
+import pathlib
+
 import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 from mpl_toolkits.axes_grid1 import make_axes_locatable
+
+
+ROOT_DIR = pathlib.Path(__file__).parent.parent
 
 fig = plt.figure(figsize=(0.4, 0.4))
 margin = 0.01
@@ -18,7 +23,7 @@ nrows, ncols = 3, 3
 for i in range(nrows*ncols):
     ax = plt.subplot(ncols, nrows, i+1)
     ax.set_xticks([]), ax.set_yticks([])
-plt.savefig("../figures/layout-subplot.pdf")
+fig.savefig(ROOT_DIR / "figures/layout-subplot.pdf")
 fig.clear()
 
 # Subplots (colored)
@@ -29,7 +34,7 @@ for i in range(nrows*ncols):
     ax.set_xticks([]), ax.set_yticks([])
     if i == 0: ax.set_facecolor("#ddddff")
     if i == 8: ax.set_facecolor("#ffdddd")
-plt.savefig("../figures/layout-subplot-color.pdf")
+fig.savefig(ROOT_DIR / "figures/layout-subplot-color.pdf")
 fig.clear()
 
 # Spines
@@ -37,7 +42,7 @@ fig.clear()
 ax = fig.add_subplot(1, 1, 1, xticks=[], yticks=[])
 ax.spines["top"].set_color("None")
 ax.spines["right"].set_color("None")
-plt.savefig("../figures/layout-spines.pdf")
+fig.savefig(ROOT_DIR / "figures/layout-spines.pdf")
 fig.clear()
 
 
@@ -49,7 +54,7 @@ ax2 = fig.add_subplot(gs[1, :-1], xticks=[], yticks=[])
 ax3 = fig.add_subplot(gs[1:, -1], xticks=[], yticks=[])
 ax4 = fig.add_subplot(gs[-1, 0], xticks=[], yticks=[])
 ax5 = fig.add_subplot(gs[-1, -2], xticks=[], yticks=[])
-plt.savefig("../figures/layout-gridspec.pdf")
+fig.savefig(ROOT_DIR / "figures/layout-gridspec.pdf")
 fig.clear()
 
 # Gridspec (colored)
@@ -61,7 +66,7 @@ ax2 = fig.add_subplot(gs[1, :-1], xticks=[], yticks=[])
 ax3 = fig.add_subplot(gs[1:, -1], xticks=[], yticks=[])
 ax4 = fig.add_subplot(gs[-1, 0], xticks=[], yticks=[])
 ax5 = fig.add_subplot(gs[-1, -2], xticks=[], yticks=[])
-plt.savefig("../figures/layout-gridspec-color.pdf")
+fig.savefig(ROOT_DIR / "figures/layout-gridspec-color.pdf")
 fig.clear()
 
 # Inset axes
@@ -70,7 +75,7 @@ mpl.rc('axes', linewidth=.5)
 margin = 0.0125
 ax1 = fig.add_axes([margin, margin, 1-2*margin, 1-2*margin], xticks=[], yticks=[])
 ax2 = ax1.inset_axes([0.5, 0.5, 0.4, 0.4], xticks=[], yticks=[])
-plt.savefig("../figures/layout-inset.pdf")
+fig.savefig(ROOT_DIR / "figures/layout-inset.pdf")
 fig.clear()
 
 
@@ -82,4 +87,4 @@ divider = make_axes_locatable(ax)
 cax = divider.new_horizontal(size="10%", pad=0.025)
 fig.add_axes(cax)
 cax.set_xticks([]), cax.set_yticks([])
-plt.savefig("../figures/layout-divider.pdf")
+fig.savefig(ROOT_DIR / "figures/layout-divider.pdf")

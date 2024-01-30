@@ -3,13 +3,17 @@
 # Author:  Nicolas P. Rougier
 # License: BSD
 # ----------------------------------------------------------------------------
+import pathlib
+
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 
+
+ROOT_DIR = pathlib.Path(__file__).parent.parent
+
+
 # Setup a plot such that only the bottom spine is shown
-
-
 def setup(ax):
     ax.spines['right'].set_color('none')
     ax.spines['left'].set_color('none')
@@ -103,5 +107,5 @@ ax.text(0.0, 0.1, "ticker.LogLocator(base=10, numticks=15)",
 # bottom spine.
 plt.subplots_adjust(left=0.05, right=0.95, bottom=0.05, top=1.05)
 
-plt.savefig("../figures/tick-locators.pdf", transparent=True)
+fig.savefig(ROOT_DIR / "figures/tick-locators.pdf", transparent=True)
 # plt.show()

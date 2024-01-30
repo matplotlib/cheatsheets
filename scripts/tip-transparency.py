@@ -2,9 +2,14 @@
 # Matplotlib cheat sheet
 # Released under the BSD License
 # -----------------------------------------------------------------------------
+import pathlib
+
 import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
+
+ROOT_DIR = pathlib.Path(__file__).parent.parent
+
 mpl.rc('axes', linewidth=1.5)
 
 np.random.seed(123)
@@ -21,5 +26,5 @@ ax.scatter(X, Y, s=40, c="C1", lw=0, alpha=0.1)
 
 ax.set_xlim([-1, 1]), ax.set_xticks([]),
 ax.set_ylim([-1, 1]), ax.set_yticks([])
-plt.savefig("../figures/tip-transparency.pdf")
+fig.savefig(ROOT_DIR / "figures/tip-transparency.pdf")
 # plt.show()

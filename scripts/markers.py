@@ -2,9 +2,13 @@
 # Matplotlib cheat sheet
 # Released under the BSD License
 # -----------------------------------------------------------------------------
+import pathlib
+
 import numpy as np
 import matplotlib.pyplot as plt
 
+
+ROOT_DIR = pathlib.Path(__file__).parent.parent
 
 # Markers
 # -----------------------------------------------------------------------------
@@ -52,4 +56,4 @@ for x0, mark in zip(X0, marks):
 
 plt.text(.7, 1, "markevery",
          size="medium", ha="left", va="center", family="Source Code Pro")
-plt.savefig("../figures/markers.pdf", dpi=600)
+fig.savefig(ROOT_DIR / "figures/markers.pdf", dpi=600)

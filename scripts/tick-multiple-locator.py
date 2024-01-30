@@ -11,9 +11,11 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 
 
+ROOT_DIR = pathlib.Path(__file__).parent.parent
+
 mpl.style.use([
-    pathlib.Path(__file__).parent/'../styles/base.mplstyle',
-    pathlib.Path(__file__).parent/'../styles/ticks.mplstyle',
+    ROOT_DIR / 'styles/base.mplstyle',
+    ROOT_DIR / 'styles/ticks.mplstyle',
 ])
 
 
@@ -30,4 +32,4 @@ ax.xaxis.set_minor_formatter(ticker.ScalarFormatter())
 ax.tick_params(axis='both', which='major', labelsize=5)
 ax.tick_params(axis='x', which='minor', rotation=90)
 
-plt.savefig("../figures/tick-multiple-locator.pdf", transparent=True)
+fig.savefig(ROOT_DIR / "figures/tick-multiple-locator.pdf", transparent=True)

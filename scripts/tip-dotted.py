@@ -4,9 +4,15 @@
 # -----------------------------------------------------------------------------
 
 # Scripts to generate all the basic plots
+import pathlib
+
 import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
+
+
+ROOT_DIR = pathlib.Path(__file__).parent.parent
+
 fig = plt.figure(figsize=(5, .25))
 
 ax = fig.add_axes([0, 0, 1, 1], frameon=False,
@@ -17,5 +23,5 @@ plt.plot([0, 1], [0, 0], "black", clip_on=False, lw=8,
          ls=(.5, (epsilon, 1)), dash_capstyle="round")
 plt.plot([0, 1], [1, 1], "black", clip_on=False, lw=8,
          ls=(-.5, (epsilon, 2)), dash_capstyle="round")
-plt.savefig("../figures/tip-dotted.pdf")
+fig.savefig(ROOT_DIR / "figures/tip-dotted.pdf")
 # plt.show()

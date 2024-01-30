@@ -11,9 +11,11 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 
 
+ROOT_DIR = pathlib.Path(__file__).parent.parent
+
 mpl.style.use([
-    pathlib.Path(__file__).parent/'../styles/base.mplstyle',
-    pathlib.Path(__file__).parent/'../styles/plotlet.mplstyle',
+    ROOT_DIR / 'styles/base.mplstyle',
+    ROOT_DIR / 'styles/plotlet.mplstyle',
 ])
 
 
@@ -29,7 +31,7 @@ X = np.linspace(0, 10, 100)
 Y = 4 + 2*np.sin(2*X)
 ax.plot(X, Y, color="C1")
 ax.grid()
-fig.savefig("../figures/basic-plot.pdf")
+fig.savefig(ROOT_DIR / "figures/basic-plot.pdf")
 
 # Basic line plot (color)
 # -----------------------------------------------------------------------------
@@ -38,7 +40,7 @@ X = np.linspace(0, 10, 100)
 Y = 4 + 2*np.sin(2*X)
 ax.plot(X, Y, color="black")
 ax.grid()
-fig.savefig("../figures/basic-plot-color.pdf")
+fig.savefig(ROOT_DIR / "figures/basic-plot-color.pdf")
 
 # Basic scatter plot
 # -----------------------------------------------------------------------------
@@ -49,7 +51,7 @@ Y = 4 + np.random.normal(0, 1.25, len(X))
 ax.scatter(X, Y, 5, zorder=10,
            edgecolor="white", facecolor="C1", linewidth=0.25)
 ax.grid()
-fig.savefig("../figures/basic-scatter.pdf")
+fig.savefig(ROOT_DIR / "figures/basic-scatter.pdf")
 
 # Basic bar plot
 # -----------------------------------------------------------------------------
@@ -61,7 +63,7 @@ ax.bar(X, Y, bottom=0, width=1,
        edgecolor="white", facecolor="C1", linewidth=0.25)
 ax.set_axisbelow(True)
 ax.grid()
-fig.savefig("../figures/basic-bar.pdf")
+fig.savefig(ROOT_DIR / "figures/basic-bar.pdf")
 
 # Basic imshow plot
 # -----------------------------------------------------------------------------
@@ -72,7 +74,7 @@ Z[:, :] = mpl.colors.to_rgba("C1")
 Z[..., 3] = np.random.uniform(0.25, 1.0, (8, 8))
 ax.imshow(Z, extent=[0, 8, 0, 8], interpolation="nearest")
 ax.grid(linewidth=0.25, color="white")
-fig.savefig("../figures/basic-imshow.pdf")
+fig.savefig(ROOT_DIR / "figures/basic-imshow.pdf")
 
 # Basic pcolormesh plot
 # -----------------------------------------------------------------------------
@@ -84,7 +86,7 @@ Z = Z - Z.min()
 plt.pcolormesh(X, Y, Z, cmap='Oranges', shading='auto')
 ax.set_xlim(-3, 3), ax.set_xticks(np.arange(-3, 4))
 ax.set_ylim(-3, 3), ax.set_yticks(np.arange(-3, 4))
-fig.savefig("../figures/basic-pcolormesh.pdf")
+fig.savefig(ROOT_DIR / "figures/basic-pcolormesh.pdf")
 
 # Basic contour plot
 # -----------------------------------------------------------------------------
@@ -95,7 +97,7 @@ colors[:, 3] = np.linspace(0.15, 0.85, len(colors))
 plt.contourf(Z, len(colors), extent=[0, 8, 0, 8], colors=colors)
 plt.contour(Z, len(colors), extent=[0, 8, 0, 8], colors="white",
             linewidths=0.125, nchunk=10)
-fig.savefig("../figures/basic-contour.pdf")
+fig.savefig(ROOT_DIR / "figures/basic-contour.pdf")
 
 # Basic pie plot
 # -----------------------------------------------------------------------------
@@ -110,7 +112,7 @@ ax.pie(X, colors=["white"] * len(X), radius=3, center=(4, 4),
        wedgeprops={"linewidth": 0.25, "edgecolor": "white"}, frame=True)
 ax.pie(X, colors=colors, radius=3, center=(4, 4),
        wedgeprops={"linewidth": 0.25, "edgecolor": "white"}, frame=True)
-fig.savefig("../figures/basic-pie.pdf")
+fig.savefig(ROOT_DIR / "figures/basic-pie.pdf")
 
 # Basic text plot
 # -----------------------------------------------------------------------------
@@ -119,7 +121,7 @@ ax.set_axisbelow(True)
 ax.grid(linewidth=0.25, color="0.75")
 ax.text(4, 4, "TEXT", color="C1", size=8, weight="bold",
         ha="center", va="center", rotation=25)
-fig.savefig("../figures/basic-text.pdf")
+fig.savefig(ROOT_DIR / "figures/basic-text.pdf")
 
 # Basic fill plot
 # -----------------------------------------------------------------------------
@@ -132,7 +134,7 @@ plt.fill_between(X, Y1, Y2, color="C1", alpha=.5, linewidth=0)
 plt.plot(X, (Y1+Y2)/2, color="C1", linewidth=0.5)
 ax.set_axisbelow(True)
 ax.grid(color="0.75")
-fig.savefig("../figures/basic-fill.pdf")
+fig.savefig(ROOT_DIR / "figures/basic-fill.pdf")
 
 # Basic quiver plot
 # -----------------------------------------------------------------------------
@@ -145,4 +147,4 @@ plt.quiver(X, Y, U, V, color="C1",
            angles='xy', scale_units='xy', scale=0.5, width=.05)
 ax.set_axisbelow(True)
 ax.grid(color="0.75")
-fig.savefig("../figures/basic-quiver.pdf")
+fig.savefig(ROOT_DIR / "figures/basic-quiver.pdf")

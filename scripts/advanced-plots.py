@@ -11,9 +11,11 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 
 
+ROOT_DIR = pathlib.Path(__file__).parent.parent
+
 mpl.style.use([
-    pathlib.Path(__file__).parent/'../styles/base.mplstyle',
-    pathlib.Path(__file__).parent/'../styles/plotlet.mplstyle',
+    ROOT_DIR / 'styles/base.mplstyle',
+    ROOT_DIR / 'styles/plotlet.mplstyle',
 ])
 
 
@@ -29,7 +31,7 @@ X = np.linspace(0, 10, 16)
 Y = 4 + 2*np.sin(2*X)
 ax.step(X, Y, color="C1")
 ax.grid()
-fig.savefig("../figures/advanced-step.pdf")
+fig.savefig(ROOT_DIR / "figures/advanced-step.pdf")
 
 # Violin plot
 # -----------------------------------------------------------------------------
@@ -43,7 +45,7 @@ for body in VP['bodies']:
     body.set_alpha(1)
 ax.set_axisbelow(True)
 ax.grid()
-fig.savefig("../figures/advanced-violin.pdf")
+fig.savefig(ROOT_DIR / "figures/advanced-violin.pdf")
 
 # Boxplot
 # -----------------------------------------------------------------------------
@@ -63,7 +65,7 @@ VP = ax.boxplot(D, positions=[2, 4, 6], widths=1.5, patch_artist=True,
                           "linewidth": 0.75})
 ax.set_axisbelow(True)
 ax.grid()
-fig.savefig("../figures/advanced-boxplot.pdf")
+fig.savefig(ROOT_DIR / "figures/advanced-boxplot.pdf")
 
 # Barbs plot
 # -----------------------------------------------------------------------------
@@ -76,7 +78,7 @@ V = -np.ones((1, 3)) * np.linspace(50, 100, 3)
 ax.barbs(X, Y, U, V, barbcolor="C1", flagcolor="C1", length=5, linewidth=0.5)
 ax.set_axisbelow(True)
 ax.grid()
-fig.savefig("../figures/advanced-barbs.pdf")
+fig.savefig(ROOT_DIR / "figures/advanced-barbs.pdf")
 
 # Event plot
 # -----------------------------------------------------------------------------
@@ -88,7 +90,7 @@ ax.eventplot(D, colors="C1", orientation="vertical", lineoffsets=X,
              linewidth=0.25)
 ax.set_axisbelow(True)
 ax.grid()
-fig.savefig("../figures/advanced-event.pdf")
+fig.savefig(ROOT_DIR / "figures/advanced-event.pdf")
 
 # Errorbar plot
 # -----------------------------------------------------------------------------
@@ -100,7 +102,7 @@ E = np.random.uniform(0.5, 1.5, 3)
 ax.errorbar(X, Y, E, color="C1", linewidth=0.75, capsize=1)
 ax.set_axisbelow(True)
 ax.grid()
-fig.savefig("../figures/advanced-errorbar.pdf")
+fig.savefig(ROOT_DIR / "figures/advanced-errorbar.pdf")
 
 # Hexbin plot
 # -----------------------------------------------------------------------------
@@ -113,7 +115,7 @@ ax.hexbin(X, Y, C, gridsize=4, linewidth=0.25, edgecolor="white",
           cmap=plt.get_cmap("Wistia"), alpha=1.0)
 ax.set_axisbelow(True)
 ax.grid()
-fig.savefig("../figures/advanced-hexbin.pdf")
+fig.savefig(ROOT_DIR / "figures/advanced-hexbin.pdf")
 
 # Hist plot
 # -----------------------------------------------------------------------------
@@ -124,7 +126,7 @@ ax.hist(X, bins=8, facecolor="C1", linewidth=0.25, edgecolor="white")
 ax.set_ylim(0, 80), ax.set_yticks(np.arange(1, 80, 10))
 ax.set_axisbelow(True)
 ax.grid()
-fig.savefig("../figures/advanced-hist.pdf")
+fig.savefig(ROOT_DIR / "figures/advanced-hist.pdf")
 
 # Xcorr plot
 # -----------------------------------------------------------------------------
@@ -138,4 +140,4 @@ ax.set_xlim(-8, 8), ax.set_xticks(np.arange(-8, 8, 2))
 ax.set_ylim(-.25, .25), ax.set_yticks(np.linspace(-.25, .25, 9))
 ax.set_axisbelow(True)
 ax.grid()
-fig.savefig("../figures/advanced-xcorr.pdf")
+fig.savefig(ROOT_DIR / "figures/advanced-xcorr.pdf")

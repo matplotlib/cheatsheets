@@ -1,6 +1,10 @@
+import pathlib
+
 import numpy as np
 import matplotlib.pyplot as plt
 
+
+ROOT_DIR = pathlib.Path(__file__).parent.parent
 
 figsize = 4.0, 0.25
 fig = plt.figure(figsize=figsize)
@@ -62,5 +66,5 @@ for cmap in cmaps:
                     family = "Source Pro Serif", size=10, ha="center", va="center")
     """
 
-    plt.savefig("../figures/colormap-%s.pdf" % cmap)
+    fig.savefig(ROOT_DIR / f"figures/colormap-{cmap}.pdf")
     ax.clear()

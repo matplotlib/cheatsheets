@@ -4,10 +4,15 @@
 # -----------------------------------------------------------------------------
 
 # Scripts to generate all the basic plots
+import pathlib
+
 import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import matplotlib.patheffects as path_effects
+
+
+ROOT_DIR = pathlib.Path(__file__).parent.parent
 
 fig = plt.figure(figsize=(2.15, 2))
 mpl.rcParams['axes.linewidth'] = 1.5
@@ -21,5 +26,5 @@ im = ax.imshow(Z, interpolation="nearest", cmap=cmap, vmin=0, vmax=2)
 cb = fig.colorbar(im, fraction=0.046, pad=0.04)
 cb.set_ticks([])
 
-plt.savefig("../figures/tip-colorbar.pdf")
+fig.savefig(ROOT_DIR / "figures/tip-colorbar.pdf")
 # plt.show()

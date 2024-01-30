@@ -4,9 +4,11 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 
 
+ROOT_DIR = pathlib.Path(__file__).parent.parent
+
 mpl.style.use([
-    pathlib.Path(__file__).parent/'../styles/base.mplstyle',
-    pathlib.Path(__file__).parent/'../styles/plotlet-grid.mplstyle',
+    ROOT_DIR / 'styles/base.mplstyle',
+    ROOT_DIR / 'styles/plotlet-grid.mplstyle',
 ])
 mpl.rc('lines', markersize=3)
 
@@ -41,4 +43,4 @@ demo_con_style(axs[2, 2], "bar,angle=180,fraction=-0.2")
 for ax in axs.flat:
     ax.set(xlim=(0, 1), ylim=(0, 1), xticks=[], yticks=[], aspect=1)
 
-plt.savefig("../figures/annotation-connection-styles.pdf")
+fig.savefig(ROOT_DIR / "figures/annotation-connection-styles.pdf")

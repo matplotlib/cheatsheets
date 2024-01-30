@@ -2,9 +2,14 @@
 # Matplotlib cheat sheet
 # Released under the BSD License
 # -----------------------------------------------------------------------------
+import pathlib
+
 import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
+
+
+ROOT_DIR = pathlib.Path(__file__).parent.parent
 
 for style in ['default'] + plt.style.available:
     with plt.style.context(style):
@@ -15,5 +20,5 @@ for style in ['default'] + plt.style.available:
         ax.plot(X, Y)
         plt.title(style, family="Source Serif Pro", size=32)
         plt.tight_layout()
-        plt.savefig("../figures/style-%s.pdf" % style)
+        fig.savefig(ROOT_DIR / f"figures/style-{style}.pdf")
         plt.close(fig)

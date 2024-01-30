@@ -9,8 +9,10 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 
 
+ROOT_DIR = pathlib.Path(__file__).parent.parent
+
 mpl.style.use([
-    pathlib.Path(__file__).parent/'../styles/base.mplstyle',
+    ROOT_DIR / 'styles/base.mplstyle',
 ])
 mpl.rc('font', size=6)
 mpl.rc('lines', markersize=4)
@@ -63,4 +65,4 @@ point(1+d-e, d-e), point(1+d-e, .5), point(1+d-e, 1-d+e),
 text(1-d, 1+d, "J"), text(0.5, 1+d, "K"), text(   d, 1+d, "L")
 point(1-d+e, 1+d-e), point(0.5, 1+d-e), point(d-e, 1+d-e),
 
-fig.savefig("../figures/legend-placement.pdf")
+fig.savefig(ROOT_DIR / "figures/legend-placement.pdf")
