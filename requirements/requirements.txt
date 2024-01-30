@@ -117,7 +117,7 @@ pyparsing==3.0.7
     #   packaging
 pyproj==3.6.1
     # via cartopy
-pyshp==2.2.0
+pyshp==2.3.1
     # via cartopy
 python-dateutil==2.8.2
     # via matplotlib
