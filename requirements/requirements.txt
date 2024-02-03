@@ -68,7 +68,7 @@ kiwisolver==1.4.5
     # via matplotlib
 markupsafe==2.1.4
     # via jinja2
-matplotlib==3.7.4
+matplotlib==3.8.2
     # via
     #   -r requirements.in
     #   cartopy
