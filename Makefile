@@ -5,11 +5,7 @@ CONVERTFLAGS = -density 150 -alpha remove -depth 8
 default: all
 
 .PHONY: all
-all: logos figures cheatsheets handouts docs
-
-.PHONY: logos
-logos:
-	wget https://github.com/matplotlib/matplotlib/raw/v3.8.2/doc/_static/logo2.png -O ./logos/logo2.png
+all: figures cheatsheets handouts docs
 
 .PHONY: figures
 figures:
