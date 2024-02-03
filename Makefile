@@ -9,7 +9,7 @@ all: logos figures cheatsheets handouts docs
 
 .PHONY: logos
 logos:
-	wget https://github.com/matplotlib/matplotlib/raw/v3.6.3/doc/_static/logo2.png -O ./logos/logo2.png
+	wget https://github.com/matplotlib/matplotlib/raw/v3.7.4/doc/_static/logo2.png -O ./logos/logo2.png
 
 .PHONY: figures
 figures:

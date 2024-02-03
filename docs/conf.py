@@ -31,8 +31,7 @@ html_css_files = ['css/normalize.css', 'css/landing.css']
 html_theme = "mpl_sphinx_theme"
 html_favicon = "_static/favicon.ico"
 html_theme_options = {
-    "logo_link": "https://matplotlib.org/stable/",
-    "native_site": False,
+    "navbar_links": ("absolute", "server-stable"),
 }
 html_sidebars = {
     "**": []

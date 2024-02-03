@@ -2,4 +2,4 @@
 import matplotlib as mpl
 
 
-assert mpl.__version__ == '3.6.3'
+assert mpl.__version__ == '3.7.4'
