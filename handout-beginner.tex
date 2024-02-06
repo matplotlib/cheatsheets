@@ -83,7 +83,7 @@ with just a few commands:\\
 %
 \fbox{2} \textbf{Prepare}
 \begin{lstlisting}
- X = np.linspace(0, 4*np.pi, 1000)
+ X = np.linspace(0, 10*np.pi, 1000)
  Y = np.sin(X)
 \end{lstlisting}
 %
@@ -123,7 +123,7 @@ Matplotlib offers several kind of plots (see Gallery): \medskip
 % -----------------------------------------------------------------------------
 \begin{tabular}{@{}m{.821\linewidth}m{.169\linewidth}}
 \begin{lstlisting}[belowskip=-\baselineskip]
- Z = np.random.uniform(0, 1, (8,8))
+ Z = np.random.uniform(0, 1, (8, 8))
 
  ax.imshow(Z)
 \end{lstlisting}
@@ -132,7 +132,7 @@ Matplotlib offers several kind of plots (see Gallery): \medskip
 % -----------------------------------------------------------------------------
 \begin{tabular}{@{}m{.821\linewidth}m{.169\linewidth}}
 \begin{lstlisting}[belowskip=-\baselineskip]
- Z = np.random.uniform(0, 1, (8,8))
+ Z = np.random.uniform(0, 1, (8, 8))
 
  ax.contourf(Z)
 \end{lstlisting}
@@ -168,7 +168,7 @@ Matplotlib offers several kind of plots (see Gallery): \medskip
 % -----------------------------------------------------------------------------
 \begin{tabular}{@{}m{.821\linewidth}m{.169\linewidth}}
 \begin{lstlisting}[belowskip=-\baselineskip]
- Z = np.random.normal(0, 1, (100,3))
+ Z = np.random.normal(0, 1, (100, 3))
 
  ax.boxplot(Z)
 \end{lstlisting}
@@ -225,8 +225,8 @@ titles, etc. \medskip
 \subsection*{\rmfamily Organize}
 % -----------------------------------------------------------------------------
 
-You can plot several data on the the same figure, but you can also
-split a figure in several subplots (named {\em Axes}): \medskip
+You can plot several data on the same figure, but you can also split a figure
+in several subplots (named {\em Axes}): \medskip
 
 % -----------------------------------------------------------------------------
 \begin{tabular}{@{}m{.821\linewidth}m{.169\linewidth}}
@@ -240,7 +240,7 @@ split a figure in several subplots (named {\em Axes}): \medskip
 % -----------------------------------------------------------------------------
 \begin{tabular}{@{}m{.821\linewidth}m{.169\linewidth}}
 \begin{lstlisting}[belowskip=-\baselineskip]
- fig, (ax1, ax2) = plt.subplots(2,1)
+ fig, (ax1, ax2) = plt.subplots(2, 1)
  ax1.plot(X, Y1, color="C1")
  ax2.plot(X, Y2, color="C0")
 \end{lstlisting}
@@ -249,7 +249,7 @@ split a figure in several subplots (named {\em Axes}): \medskip
 % -----------------------------------------------------------------------------
 \begin{tabular}{@{}m{.821\linewidth}m{.169\linewidth}}
 \begin{lstlisting}[belowskip=-\baselineskip]
- fig, (ax1, ax2) = plt.subplots(1,2)
+ fig, (ax1, ax2) = plt.subplots(1, 2)
  ax1.plot(Y1, X, color="C1")
  ax2.plot(Y2, X, color="C0")
 \end{lstlisting}

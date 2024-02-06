@@ -83,9 +83,9 @@ the actual figure. Each element can be modified. \medskip
 % -----------------------------------------------------------------------------
 \begin{tabular}{@{}m{.821\linewidth}m{.169\linewidth}}
 \begin{lstlisting}[belowskip=-\baselineskip]
- fig, axs = plt.subplots(3,3)
- axs[0,0].set_facecolor("#ddddff")
- axs[2,2].set_facecolor("#ffffdd")
+ fig, axs = plt.subplots(3, 3)
+ axs[0, 0].set_facecolor("#ddddff")
+ axs[2, 2].set_facecolor("#ffffdd")
 \end{lstlisting}
 & \raisebox{-0.75em}{\includegraphics[width=\linewidth]{layout-subplot-color.pdf}}
 \end{tabular}
@@ -130,7 +130,7 @@ the actual figure. Each element can be modified. \medskip
 \begin{lstlisting}
  X = np.linspace(0.1, 10*np.pi, 1000)
  Y = np.sin(X)
- ax.plot(X, Y, "C1o:", markevery=25, mec="1.0")
+ ax.plot(X, Y, "C1o:", markevery=50, mec="1.0")
 \end{lstlisting}
 \includegraphics[width=\linewidth]{sine-marker.pdf}
 
@@ -140,13 +140,13 @@ the actual figure. Each element can be modified. \medskip
 \begin{lstlisting}
  fig, ax = plt.subplots()
  ax.set_xscale("log")
- ax.plot(X, Y, "C1o-", markevery=25, mec="1.0")
+ ax.plot(X, Y, "C1o-", markevery=50, mec="1.0")
 \end{lstlisting}
 \includegraphics[width=\linewidth]{sine-logscale.pdf}
 
 \subsection*{\rmfamily Text \& ornaments}
 \begin{lstlisting}[]
- ax.fill_betweenx([-1,1],[0],[2*np.pi])
+ ax.fill_betweenx([-1, 1], [0], [2*np.pi])
  ax.text(0, -1, r" Period $\Phi$")
 \end{lstlisting}
 \includegraphics[width=\linewidth]{sine-period.pdf}
@@ -157,17 +157,17 @@ the actual figure. Each element can be modified. \medskip
 \begin{lstlisting}[]
  ax.plot(X, np.sin(X), "C0", label="Sine")
  ax.plot(X, np.cos(X), "C1", label="Cosine")
- ax.legend(bbox_to_anchor=(0,1,1,.1),ncol=2,
-           mode="expand",  loc="lower left")
+ ax.legend(bbox_to_anchor=(0,1,1,.1), ncol=2,
+           mode="expand", loc="lower left")
 \end{lstlisting}
 \includegraphics[width=\linewidth]{sine-legend.pdf}
 
 % -----------------------------------------------------------------------------
 \subsection*{\rmfamily Annotation}
 \begin{lstlisting}[]
- ax.annotate("A", (X[250],Y[250]),(X[250],-1),
-   ha="center", va="center",arrowprops =
-   {"arrowstyle" : "->", "color": "C1"})
+ ax.annotate("A", (X[250],Y[250]), (X[250],-1),
+   ha="center", va="center", arrowprops={
+     "arrowstyle": "->", "color": "C1"})
 \end{lstlisting}
 \includegraphics[width=\linewidth]{sine-annotate.pdf}
 
@@ -185,12 +185,12 @@ Any color can be used, but Matplotlib offers sets of colors:\\
 \vspace{-1em}
 \subsection*{\rmfamily Size \& DPI}
 
-Consider a square figure to be included in a two-columns A4 paper with
-2cm margins on each side and a column separation of 1cm. The width of
-a figure is (21 - 2*2 - 1)/2 = 8cm. One inch being 2.54cm, figure size
-should be 3.15$\times$3.15 in.
+Consider a square figure to be included in a two-column A4 paper with
+2\,cm margins on each side and a column separation of 1\,cm. The width of
+a figure is (21 - 2*2 - 1)/2 = 8\,cm. One inch being 2.54\,cm, figure size
+should be 3.15$\times$3.15\,in.
 \begin{lstlisting}[]
- fig = plt.figure(figsize=(3.15,3.15), dpi=50)
+ fig = plt.figure(figsize=(3.15, 3.15), dpi=50)
  plt.savefig("figure.pdf", dpi=600)
 \end{lstlisting}
 

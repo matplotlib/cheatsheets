@@ -153,7 +153,7 @@ Use text outline to make text more visible.
 
 % -----------------------------------------------------------------------------
 \subsection*{\rmfamily Multiline plot}
-You can plot several lines at once using None as separator.
+You can plot several lines at once using {\em None} as separator.
 
 \begin{lstlisting}
  X,Y = [], []
@@ -168,10 +168,10 @@ You can plot several lines at once using None as separator.
 To have rounded dotted lines, use a custom {\ttfamily linestyle} and
 modify {\ttfamily dash\_capstyle}.
 \begin{lstlisting}
- ax.plot([0,1], [0,0], "C1",
-        linestyle = (0, (0.01, 1)), dash_capstyle="round")
- ax.plot([0,1], [1,1], "C1",
-        linestyle = (0, (0.01, 2)), dash_capstyle="round")
+ ax.plot([0, 1], [0, 0], "C1",
+        linestyle=(0, (0.01, 1)), dash_capstyle="round")
+ ax.plot([0, 1], [1, 1], "C1",
+        linestyle=(0, (0.01, 2)), dash_capstyle="round")
 \end{lstlisting}
 \includegraphics[width=\linewidth]{tip-dotted.pdf}
 
@@ -181,9 +181,9 @@ You can use overlaid axes with different projections.
 
 \begin{tabular}{@{}m{.774\linewidth}m{.216\linewidth}}
 \begin{lstlisting}[belowskip=-\baselineskip]
- ax1 = fig.add_axes([0,0,1,1],
+ ax1 = fig.add_axes([0, 0, 1, 1],
                     label="cartesian")
- ax2 = fig.add_axes([0,0,1,1],
+ ax2 = fig.add_axes([0, 0, 1, 1],
                     label="polar",
                     projection="polar")
 \end{lstlisting} &
@@ -227,7 +227,7 @@ You can achieve a nice visual effect with thick hatch patterns.
  cmap = plt.get_cmap("Oranges")
  plt.rcParams['hatch.color'] = cmap(0.2)
  plt.rcParams['hatch.linewidth'] = 8
- ax.bar(X, Y, color=cmap(0.6), hatch="/" )
+ ax.bar(X, Y, color=cmap(0.6), hatch="/")
 \end{lstlisting} &
 \raisebox{-0.75em}{\includegraphics[width=\linewidth]{tip-hatched.pdf}}
 \end{tabular}
