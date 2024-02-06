@@ -301,13 +301,13 @@
   % --- Layout ---------------------------------------------------------------
   \begin{myboxed}{Subplots layout \hfill
       \API{https://matplotlib.org/tutorials/intermediate/gridspec.html} }
-  \plot{layout-subplot.pdf}{\textbf{subplot[s]}(rows,cols,…)}
+  \plot{layout-subplot.pdf}{\textbf{subplot[s]}(rows, cols, …)}
        {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html}
        {\ttfamily fig, axs = plt.subplots(3, 3)}
        {}
-  \plot{layout-gridspec.pdf}{G = \textbf{gridspec}(rows,cols,…)}
+  \plot{layout-gridspec.pdf}{G = \textbf{gridspec}(rows,cols, …)}
        {https://matplotlib.org/stable/api/_as_gen/matplotlib.gridspec.GridSpec.html}
-       {\ttfamily ax = G[0,:]}{}
+       {\ttfamily ax = G[0, :]}{}
   \plot{layout-inset.pdf}{ax.\textbf{inset\_axes}(extent)}
        {https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.inset_axes.html}
        {}{}
@@ -338,7 +338,7 @@
 
   % --- Basic plots -----------------------------------------------------------
   \begin{myboxed}{Basic plots}
-  \plot{basic-plot.pdf}{\textbf{plot}([X],Y,[fmt],…)}
+  \plot{basic-plot.pdf}{\textbf{plot}([X], Y, [fmt], …)}
        {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html}
        {\optional{X},
         \mandatory{Y},
@@ -347,7 +347,7 @@
         \optional{marker},
         \optional{linestyle}}
        {}
-  \plot{basic-scatter.pdf}{\textbf{scatter}(X,Y,…)}
+  \plot{basic-scatter.pdf}{\textbf{scatter}(X, Y, …)}
        {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.scatter.html}
        {\mandatory{X},
         \mandatory{Y},
@@ -356,7 +356,7 @@
         \optional{marker},
         \optional{cmap}}
        {}
-  \plot{basic-bar.pdf}{\textbf{bar[h]}(x,height,…)}
+  \plot{basic-bar.pdf}{\textbf{bar[h]}(x, height, …)}
        {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.bar.html}
        { \mandatory{x},
          \mandatory{height},
@@ -364,7 +364,7 @@
          \optional{bottom},
          \optional{align},
          \optional{color} }{}
-  \plot{basic-imshow.pdf}{\textbf{imshow}(Z,…)}
+  \plot{basic-imshow.pdf}{\textbf{imshow}(Z, …)}
        {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imshow.html}
        { \mandatory{Z},
          \optional{cmap},
@@ -372,7 +372,7 @@
          \optional{extent},
          \optional{origin} }
        {}
-  \plot{basic-contour.pdf}{\textbf{contour[f]}([X],[Y],Z,…)}
+  \plot{basic-contour.pdf}{\textbf{contour[f]}([X], [Y], Z, …)}
        {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.contour.html}
        { \optional{X},
          \optional{Y},
@@ -382,7 +382,7 @@
          \optional{extent},
          \optional{origin} }
        {}
-  \plot{basic-pcolormesh.pdf}{\textbf{pcolormesh}([X],[Y],Z,…)}
+  \plot{basic-pcolormesh.pdf}{\textbf{pcolormesh}([X], [Y], Z, …)}
        {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.pcolormesh.html}
        { \optional{X},
          \optional{Y},
@@ -391,7 +391,7 @@
          \optional{vmax},
          \optional{cmap}}
        {}
-  \plot{basic-quiver.pdf}{\textbf{quiver}([X],[Y],U,V,…)}
+  \plot{basic-quiver.pdf}{\textbf{quiver}([X], [Y], U, V, …)}
      {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.quiver.html}
      { \optional{X},
        \optional{Y},
@@ -401,7 +401,7 @@
        \optional{units},
        \optional{angles} }
      {}
-  \plot{basic-pie.pdf}{\textbf{pie}(X,…)}
+  \plot{basic-pie.pdf}{\textbf{pie}(X, …)}
        {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.pie.html}
        {\mandatory{Z},
          \optional{explode},
@@ -409,7 +409,7 @@
          \optional{colors},
          \optional{radius}}
        {}
-   \plot{basic-text.pdf}{\textbf{text}(x,y,text,…)}
+   \plot{basic-text.pdf}{\textbf{text}(x, y, text, …)}
        {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.text.html}
        {\mandatory{x},
         \mandatory{y},
@@ -432,7 +432,7 @@
   \vspace{\fill}
   % --- Advanced plots --------------------------------------------------------
   \begin{myboxed}{Advanced plots}
-  \plot{advanced-step.pdf}{\textbf{step}(X,Y,[fmt],…)}
+  \plot{advanced-step.pdf}{\textbf{step}(X, Y, [fmt], …)}
      {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.step.html}
      {\mandatory{X},
       \mandatory{Y},
@@ -441,7 +441,7 @@
       \optional{marker},
       \optional{where} }
      {}
-  \plot{advanced-boxplot.pdf}{\textbf{boxplot}(X,…)}
+  \plot{advanced-boxplot.pdf}{\textbf{boxplot}(X, …)}
      {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.boxplot.html}
      { \mandatory{X},
        \optional{notch},
@@ -449,7 +449,7 @@
        \optional{bootstrap},
        \optional{widths} }
      {}
-  \plot{advanced-errorbar.pdf}{\textbf{errorbar}(X,Y,xerr,yerr,…)}
+  \plot{advanced-errorbar.pdf}{\textbf{errorbar}(X,Y,xerr,yerr, …)}
      {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.errorbar.html}
      { \mandatory{X},
        \mandatory{Y},
@@ -465,14 +465,14 @@
       \optional{density},
       \optional{weights}}
      {}
-  \plot{advanced-violin.pdf}{\textbf{violinplot}(D,…)}
+  \plot{advanced-violin.pdf}{\textbf{violinplot}(D, …)}
      {https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.violinplot.html}
      {\mandatory{D},
       \optional{positions},
       \optional{widths},
       \optional{vert} }
      {}
-  \plot{advanced-barbs.pdf}{\textbf{barbs}([X],[Y], U, V, …)}
+  \plot{advanced-barbs.pdf}{\textbf{barbs}([X], [Y], U, V, …)}
      {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.barbs.html}
      { \optional{X},
        \optional{Y},
@@ -483,13 +483,13 @@
        \optional{pivot},
        \optional{sizes} }
      {}
-  \plot{advanced-event.pdf}{\textbf{eventplot}(positions,…)}
+  \plot{advanced-event.pdf}{\textbf{eventplot}(positions, …)}
      {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.eventplot.html}
      {\mandatory{positions},
        \optional{orientation},
        \optional{lineoffsets} }
      {}
-  \plot{advanced-hexbin.pdf}{\textbf{hexbin}(X,Y,C,…)}
+  \plot{advanced-hexbin.pdf}{\textbf{hexbin}(X, Y, C, …)}
      {https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hexbin.html}
      {\mandatory{X},
       \mandatory{Y},
@@ -503,7 +503,7 @@
   % --- Scale ---------------------------------------------------------------
   \begin{myboxed}{Scales \hfill
     \API{https://matplotlib.org/stable/api/scale_api.html}}
-  {\ttfamily ax.\textbf{set\_[xy]scale}(scale,…)}
+  {\ttfamily ax.\textbf{set\_[xy]scale}(scale, …)}
   \smallskip
   \scale{scale-linear.pdf}{\textbf{linear}}{any values}
   \scale{scale-log.pdf}{\textbf{log}}{values > 0}
@@ -516,7 +516,7 @@
   % --- Projections -----------------------------------------------------------
   \begin{myboxed}{Projections \hfill
       \API{https://matplotlib.org/stable/api/projections_api.html}}
-  {\ttfamily \textbf{subplot}(…,projection=p)}
+  {\ttfamily \textbf{subplot}(…, projection=p)}
   \smallskip
   \scale{projection-polar.pdf}{p='polar'}{}
   \scale{projection-3d.pdf}
@@ -906,7 +906,7 @@
 
   \begin{myboxed}{Legend placement}
     \includegraphics[width=\columnwidth]{legend-placement.pdf}
-    ax.\textbf{legend}(loc="string", bbox\_to\_anchor=(x,y))\\
+    ax.\textbf{legend}(loc="string", bbox\_to\_anchor=(x, y))\\
     \begin{tabular}{@{}p{0.33\columnwidth}
                        p{0.33\columnwidth}
                        p{0.33\columnwidth}@{}}
@@ -919,12 +919,12 @@
     \begin{tabular}{@{}p{0.495\columnwidth}
                        p{0.495\columnwidth}@{}}
       \scriptsize \rule{0pt}{1.25em}\noindent
-      \tiny A: upper right /  {\ttfamily (-0.1,0.9)} & \tiny B: center right / {\ttfamily (-0.1,0.5)}\\
-      \tiny C: lower right /  {\ttfamily (-0.1,0.1)} & \tiny D: upper left /   {\ttfamily (0.1,-0.1)}\\
-      \tiny E: upper center / {\ttfamily (0.5,-0.1)} & \tiny F: upper right /  {\ttfamily (0.9,-0.1)}\\
-      \tiny G: lower left /   {\ttfamily (1.1,0.1)} & \tiny H: center left /  {\ttfamily (1.1,0.5)}\\
-      \tiny I: upper left /   {\ttfamily (1.1,0.9)} & \tiny J: lower right /  {\ttfamily (0.9,1.1)}\\
-      \tiny K: lower center / {\ttfamily (0.5,1.1)} & \tiny L: lower left /   {\ttfamily (0.1,1.1)}
+      \tiny A: upper right /  {\ttfamily (-0.1, 0.9)} & \tiny B: center right / {\ttfamily (-0.1, 0.5)}\\
+      \tiny C: lower right /  {\ttfamily (-0.1, 0.1)} & \tiny D: upper left /   {\ttfamily (0.1, -0.1)}\\
+      \tiny E: upper center / {\ttfamily (0.5, -0.1)} & \tiny F: upper right /  {\ttfamily (0.9, -0.1)}\\
+      \tiny G: lower left /   {\ttfamily (1.1, 0.1)} & \tiny H: center left /  {\ttfamily (1.1, 0.5)}\\
+      \tiny I: upper left /   {\ttfamily (1.1, 0.9)} & \tiny J: lower right /  {\ttfamily (0.9, 1.1)}\\
+      \tiny K: lower center / {\ttfamily (0.5, 1.1)} & \tiny L: lower left /   {\ttfamily (0.1, 1.1)}
     \end{tabular}
   \end{myboxed}
   %
