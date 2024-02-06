@@ -33,12 +33,19 @@ palettes = {
 for name, colors in palettes.items():
     C = mpl.colors.to_rgba_array(colors).reshape((1, len(colors), 4))
     ax.imshow(C, extent=[xmin, xmax, ymin, ymax])
+
+    # Drop alpha by assuming we're on a white background PDF.
+    alpha = C[0, :, 3]
+    rgb = C[0, :, :3] * alpha[:, np.newaxis] + (1 - alpha[:, np.newaxis])
+    # Same calculation for luminance as
+    # https://matplotlib.org/stable/users/explain/colors/colors.html#comparison-between-x11-css4-and-xkcd-colors
+    luma = 0.299 * rgb[:, 0] + 0.587 * rgb[:, 1] + 0.114 * rgb[:, 2]
+
     dx = (xmax-xmin)/len(colors)
     for i in range(len(colors)):
-        color = "white"
-        if colors[i] in ['1.0', 'w']: color = "black"
+        text_color = "black" if luma[i] > 0.5 else "white"
         text = str(colors[i]).replace(' ', '')
-        ax.text((i+0.5)*dx, (ymin+ymax)/2, text, color=color, zorder=10,
+        ax.text((i+0.5)*dx, (ymin+ymax)/2, text, color=text_color, zorder=10,
                 family="Source Code Pro", size=9, ha="center", va="center")
 
     fig.savefig(ROOT_DIR / f"figures/colors-{name}.pdf")
