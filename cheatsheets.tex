@@ -1000,12 +1000,12 @@
     plot(X, Y, marker="o", ls="")  \hfill fast%
     \vskip.5\baselineskip
     %
-    \textcolor{red}{for i in range(n): plot(X[i]) \hfill slow}\\
-    plot(sum([x+[None] for x in X],[])) \hfill fast%
+    \textcolor{red}{for i in range(n): plot(i, X[i], "o") \hfill slow}\\
+    plot(X, marker="o", ls="") \hfill fast%
     \vskip.5\baselineskip
     %
-    \textcolor{red}{cla(), imshow(…), canvas.draw() \hfill slow}\\
-    im.set\_data(…), canvas.draw() \hfill fast%
+    \textcolor{red}{cla(); imshow(…); canvas.draw() \hfill slow}\\
+    im.set\_data(…); canvas.draw() \hfill fast%
     \vskip.1\baselineskip
     }
   \end{myboxed}
