@@ -130,7 +130,7 @@ the actual figure. Each element can be modified. \medskip
 \begin{lstlisting}
  X = np.linspace(0.1, 10*np.pi, 1000)
  Y = np.sin(X)
- ax.plot(X, Y, "C1o:", markevery=25, mec="1.0")
+ ax.plot(X, Y, "C1o:", markevery=50, mec="1.0")
 \end{lstlisting}
 \includegraphics[width=\linewidth]{sine-marker.pdf}
 
@@ -140,7 +140,7 @@ the actual figure. Each element can be modified. \medskip
 \begin{lstlisting}
  fig, ax = plt.subplots()
  ax.set_xscale("log")
- ax.plot(X, Y, "C1o-", markevery=25, mec="1.0")
+ ax.plot(X, Y, "C1o-", markevery=50, mec="1.0")
 \end{lstlisting}
 \includegraphics[width=\linewidth]{sine-logscale.pdf}
 
