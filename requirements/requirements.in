@@ -10,5 +10,3 @@ pip-tools
 pre-commit
 scipy
 sphinx
-
---no-binary shapely

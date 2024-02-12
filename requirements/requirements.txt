@@ -4,8 +4,6 @@
 #
 #    pip-compile requirements.in
 #
---no-binary shapely
-
 accessible-pygments==0.0.4
     # via pydata-sphinx-theme
 alabaster==0.7.16

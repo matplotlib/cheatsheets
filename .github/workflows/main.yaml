@@ -22,8 +22,6 @@ jobs:
           sudo apt install \
             fontconfig    \
             imagemagick   \
-            libgeos++-dev \
-            libproj-dev   \
             poppler-utils
           python -m pip install --upgrade pip
           pip install -r requirements/requirements.txt
