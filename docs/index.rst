@@ -30,7 +30,7 @@ Cheatsheets
 Handouts
 ********
 
-.. grid:: 3
+.. grid:: 1 2 3 3
 
     .. grid-item::
 
