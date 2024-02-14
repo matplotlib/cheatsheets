@@ -75,7 +75,7 @@ matplotlib==3.7.4
     #   mpl-sphinx-theme
 mccabe==0.7.0
     # via flake8
-mpl-sphinx-theme==3.7.1
+mpl-sphinx-theme==3.8.0
     # via -r requirements.in
 nodeenv==1.8.0
     # via pre-commit
@@ -113,8 +113,10 @@ pycodestyle==2.11.1
     #   flake8
 pycparser==2.21
     # via cffi
-pydata-sphinx-theme==0.15.2
-    # via mpl-sphinx-theme
+pydata-sphinx-theme==0.13.3
+    # via
+    #   -r requirements.in
+    #   mpl-sphinx-theme
 pyflakes==3.2.0
     # via flake8
 pygments==2.17.2
@@ -152,6 +154,9 @@ sphinx==7.2.6
     # via
     #   -r requirements.in
     #   pydata-sphinx-theme
+    #   sphinx-design
+sphinx-design==0.5.0
+    # via -r requirements.in
 sphinxcontrib-applehelp==1.0.8
     # via sphinx
 sphinxcontrib-devhelp==1.0.6

@@ -7,23 +7,21 @@ Matplotlib cheatsheets and handouts
 Cheatsheets
 ***********
 
-.. container:: twocol
+.. grid:: 2
 
-    .. container::
+    .. grid-item::
 
-      .. image:: ../cheatsheets-1.png
-         :width: 270px
-         :align: center
-         :alt: image of first page of cheatsheets
+        .. image:: ../cheatsheets-1.png
+            :width: 270px
+            :align: center
+            :alt: image of first page of cheatsheets
 
+    .. grid-item::
 
-    .. container::
-
-      .. image:: ../cheatsheets-2.png
-         :width: 270px
-         :align: center
-         :alt: image of second page of cheatsheets
-
+        .. image:: ../cheatsheets-2.png
+            :width: 270px
+            :align: center
+            :alt: image of second page of cheatsheets
 
 `Cheatsheets [pdf] <./cheatsheets.pdf>`_
 
@@ -32,36 +30,34 @@ Cheatsheets
 Handouts
 ********
 
-.. container:: twocol
+.. grid:: 1 2 3 3
 
-   .. container::
+    .. grid-item::
 
-      .. image:: ../handout-beginner.png
-         :width: 270px
-         :align: center
-         :alt: image of beginner handout
+        .. image:: ../handout-beginner.png
+            :width: 270px
+            :align: center
+            :alt: image of beginner handout
 
-      `Beginner [pdf] <./handout-beginner.pdf>`_
+        `Beginner [pdf] <./handout-beginner.pdf>`_
 
+    .. grid-item::
 
-   .. container::
+        .. image:: ../handout-intermediate.png
+            :width: 270px
+            :align: center
+            :alt: image of intermediate handout
 
-      .. image:: ../handout-intermediate.png
-         :width: 270px
-         :align: center
-         :alt: image of intermediate handout
+        `Intermediate [pdf] <./handout-intermediate.pdf>`_
 
-      `Intermediate [pdf] <./handout-intermediate.pdf>`_
+    .. grid-item::
 
+        .. image:: ../handout-tips.png
+            :width: 270px
+            :align: center
+            :alt: image of tips handout
 
-   .. container::
-
-      .. image:: ../handout-tips.png
-         :width: 270px
-         :align: center
-         :alt: image of tips handout
-
-      `Tips [pdf] <./handout-tips.pdf>`_
+        `Tips [pdf] <./handout-tips.pdf>`_
 
 Contribute
 **********

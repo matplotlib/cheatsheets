@@ -3,10 +3,13 @@ bump2version
 cartopy==0.22.0
 flake8
 matplotlib==3.7.4
-mpl-sphinx-theme~=3.7.1
 pillow>=9
 pdfx
 pip-tools
 pre-commit
 scipy
+# Docs
+mpl-sphinx-theme~=3.8.0
+pydata-sphinx-theme==0.13.3
 sphinx
+sphinx-design
