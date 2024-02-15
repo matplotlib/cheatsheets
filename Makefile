@@ -50,8 +50,8 @@ check:
 	./check-num-pages.sh handout-tips.pdf 1
 	./check-num-pages.sh handout-beginner.pdf 1
 	./check-num-pages.sh handout-intermediate.pdf 1
-	./check-links.py cheatsheets.pdf
 	./check-diffs.py
+	./check-links.py cheatsheets.pdf
 
 .PHONY: docs
 docs:
