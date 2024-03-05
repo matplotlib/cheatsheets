@@ -40,7 +40,7 @@ click==8.1.7
     # via pip-tools
 contourpy==1.2.0
     # via matplotlib
-cryptography==42.0.2
+cryptography==42.0.4
     # via pdfminer-six
 cycler==0.12.1
     # via matplotlib
