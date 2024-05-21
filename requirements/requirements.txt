@@ -136,7 +136,7 @@ python-dateutil==2.8.2
     # via matplotlib
 pyyaml==6.0.1
     # via pre-commit
-requests==2.31.0
+requests==2.32.0
     # via sphinx
 scipy==1.12.0
     # via -r requirements.in
