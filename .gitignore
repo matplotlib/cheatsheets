@@ -16,6 +16,7 @@ handout-*.png
 # ----------------------------------
 figures/*.pdf
 fonts/**/*.[ot]tf
+fonts/__pycache__/
 
 # html build
 docs/_build/*
