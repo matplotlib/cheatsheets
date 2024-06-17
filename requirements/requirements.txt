@@ -177,7 +177,7 @@ tomli==2.0.1
     #   pyproject-hooks
 typing-extensions==4.9.0
     # via pydata-sphinx-theme
-urllib3==2.2.0
+urllib3==2.2.2
     # via requests
 virtualenv==20.25.0
     # via pre-commit
