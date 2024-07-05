@@ -22,7 +22,7 @@ bump2version==1.0.1
     # via -r requirements.in
 cartopy==0.22.0
     # via -r requirements.in
-certifi==2023.11.17
+certifi==2024.7.4
     # via
     #   pyproj
     #   requests
