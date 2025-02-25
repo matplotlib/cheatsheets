@@ -40,7 +40,7 @@ click==8.1.7
     # via pip-tools
 contourpy==1.2.0
     # via matplotlib
-cryptography==42.0.4
+cryptography==44.0.1
     # via pdfminer-six
 cycler==0.12.1
     # via matplotlib
@@ -62,7 +62,7 @@ idna==3.7
     # via requests
 imagesize==1.4.1
     # via sphinx
-jinja2==3.1.3
+jinja2==3.1.5
     # via sphinx
 kiwisolver==1.4.5
     # via matplotlib
@@ -97,7 +97,7 @@ pdfminer-six==20201018
     # via pdfx
 pdfx==1.4.1
     # via -r requirements.in
-pillow==10.2.0
+pillow==10.3.0
     # via
     #   -r requirements.in
     #   matplotlib
@@ -136,7 +136,7 @@ python-dateutil==2.8.2
     # via matplotlib
 pyyaml==6.0.1
     # via pre-commit
-requests==2.31.0
+requests==2.32.2
     # via sphinx
 scipy==1.12.0
     # via -r requirements.in
@@ -177,9 +177,9 @@ tomli==2.0.1
     #   pyproject-hooks
 typing-extensions==4.9.0
     # via pydata-sphinx-theme
-urllib3==2.2.0
+urllib3==2.2.2
     # via requests
-virtualenv==20.25.0
+virtualenv==20.26.6
     # via pre-commit
 wheel==0.42.0
     # via pip-tools
