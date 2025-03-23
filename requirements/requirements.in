@@ -3,7 +3,6 @@ bump2version
 cartopy==0.22.0
 flake8
 matplotlib==3.8.2
-mpl-sphinx-theme~=3.7.1
 pillow>=9
 pdfx
 pip-tools
