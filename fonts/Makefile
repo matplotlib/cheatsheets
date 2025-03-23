@@ -7,7 +7,7 @@ ROBOTO_SLAB_ZIP      := https://github.com/googlefonts/robotoslab/archive/a65e6d
 SOURCE_CODE_PRO_ZIP  := https://github.com/adobe-fonts/source-code-pro/releases/download/2.038R-ro%2F1.058R-it%2F1.018R-VAR/OTF-source-code-pro-2.038R-ro-1.058R-it.zip
 SOURCE_SANS_PRO_ZIP  := https://github.com/adobe-fonts/source-sans/releases/download/2.045R-ro%2F1.095R-it/source-sans-pro-2.045R-ro-1.095R-it.zip
 SOURCE_SERIF_PRO_ZIP := https://github.com/adobe-fonts/source-serif/releases/download/3.001R/source-serif-pro-3.001R.zip
-PACIFICO_ZIP         := https://fonts.google.com/download?family=Pacifico
+PACIFICO             := https://raw.githubusercontent.com/googlefonts/Pacifico/refs/heads/main/fonts/ttf/Pacifico-Regular.ttf
 
 UNZIP_FLAGS := -x "__MACOSX/*"
 
@@ -25,7 +25,7 @@ all: sources
 	cd source-code-pro && unzip -j /tmp/source-code-pro.zip "*.otf" $(UNZIP_FLAGS)
 	cd source-sans-pro && unzip -j /tmp/source-sans-pro.zip "source-sans-pro-2.045R-ro-1.095R-it/OTF/*.otf" $(UNZIP_FLAGS)
 	cd source-serif-pro && unzip -j /tmp/source-serif-pro.zip "source-serif-pro-3.001R/OTF/*.otf" $(UNZIP_FLAGS)
-	cd pacifico && unzip -j /tmp/pacifico.zip "*.ttf" $(UNZIP_FLAGS)
+	cd pacifico && cp /tmp/pacifico.ttf .
 
 .PHONY: sources
 sources:
@@ -36,7 +36,7 @@ sources:
 	wget $(SOURCE_CODE_PRO_ZIP) -O /tmp/source-code-pro.zip
 	wget $(SOURCE_SANS_PRO_ZIP) -O /tmp/source-sans-pro.zip
 	wget $(SOURCE_SERIF_PRO_ZIP) -O /tmp/source-serif-pro.zip
-	wget $(PACIFICO_ZIP) -O /tmp/pacifico.zip
+	wget $(PACIFICO) -O /tmp/pacifico.ttf
 
 .PHONY: clean
 clean:
