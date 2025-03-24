@@ -27,7 +27,6 @@ markers = [
     ".", "o", "s", "P", "X", "*", "p", "D", "<", ">", "^", "v", ]
 for x, y, marker in zip(X, Y, markers):
     if y == 3: fc = "white"
-    elif y == 2: fc = "None"
     else: fc = "C1"
     plt.scatter(x, 1+y, s=100, marker=marker, fc=fc, ec="C1", lw=0.5)
 
