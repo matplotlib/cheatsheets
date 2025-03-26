@@ -2,6 +2,7 @@
 # Matplotlib cheat sheet
 # Released under the BSD License
 # -----------------------------------------------------------------------------
+import sys
 import pathlib
 
 import numpy as np
@@ -11,6 +12,9 @@ from mpl_toolkits.axes_grid1 import make_axes_locatable
 
 
 ROOT_DIR = pathlib.Path(__file__).parent.parent
+sys.path.append(str(ROOT_DIR / "fonts"))
+import custom_fonts  # noqa
+
 
 fig = plt.figure(figsize=(0.4, 0.4))
 margin = 0.01
