@@ -1,11 +1,11 @@
 name: CI
-permissions:
-  contents: write
-
 on: [push, pull_request]
 
 jobs:
   pre-commit:
+    permissions:
+      contents: read
+
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v4
@@ -13,6 +13,9 @@ jobs:
       - uses: pre-commit/action@v3.0.1
   build:
     runs-on: ubuntu-20.04
+    permissions:
+      contents: write
+
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
