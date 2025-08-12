@@ -1,18 +1,27 @@
 name: CI
-
 on: [push, pull_request]
 
 jobs:
   pre-commit:
-    runs-on: ubuntu-20.04
+    permissions:
+      contents: read
+
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - uses: actions/setup-python@v5
-      - uses: pre-commit/action@v3.0.1
+      - uses: pre-commit/action@2c7b3805fd2a0fd8c1884dcaebf91fc102a13ecd # v3.0.1
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - uses: actions/setup-python@v5
         with:
           python-version: "3.10"
@@ -67,14 +76,9 @@ jobs:
           name: diffs
           path: |
             diffs/
-      - name: Output artifacts URL
-        run: |
-          echo 'Artifact URL:' \
-            '${{ steps.diffs-artifact-upload.outputs.artifact-url }}' \
-            >> $GITHUB_STEP_SUMMARY
       - name: Publish cheatsheets and handouts
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
-        uses: peaceiris/actions-gh-pages@v4
+        uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e # v4.0.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs/_build/html/
