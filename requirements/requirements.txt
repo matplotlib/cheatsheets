@@ -68,14 +68,14 @@ kiwisolver==1.4.5
     # via matplotlib
 markupsafe==2.1.4
     # via jinja2
-matplotlib==3.8.2
+matplotlib==3.9.4
     # via
     #   -r requirements.in
     #   cartopy
     #   mpl-sphinx-theme
 mccabe==0.7.0
     # via flake8
-mpl-sphinx-theme==3.8.0
+mpl-sphinx-theme==3.9.0
     # via -r requirements.in
 nodeenv==1.8.0
     # via pre-commit
