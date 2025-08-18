@@ -15,7 +15,7 @@ Beginner handout [(download pdf)](https://matplotlib.org/cheatsheets/handout-beg
 
 ## How to compile
 
-1. You need to create a `fonts` repository with:
+1. You need to fill the `fonts` directory with:
 
 * `fonts/roboto/*`           : See https://fonts.google.com/specimen/Roboto
                                 or https://github.com/googlefonts/roboto/tree/master/src/hinted
@@ -33,17 +33,6 @@ Beginner handout [(download pdf)](https://matplotlib.org/cheatsheets/handout-beg
 On Linux, with `make` installed, the fonts can be set up with the following command:
 ```shell
 make -C fonts
-```
-
-The fonts can be made discoverable by `matplotlib` (through `fontconfig`) by creating the following in `$HOME/.config/fontconfig/fonts.conf` (see [here](https://www.freedesktop.org/software/fontconfig/fontconfig-user.html)):
-
-```xml
-<?xml version="1.0"?>
-<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
-<fontconfig>
-<dir>/path/to/cheatsheets/fonts/</dir>
-...
-</fontconfig>
 ```
 
 
