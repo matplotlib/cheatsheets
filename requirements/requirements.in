@@ -10,6 +10,6 @@ pre-commit
 scipy
 # Docs
 mpl-sphinx-theme~=3.9.0
-pydata-sphinx-theme==0.13.3
+pydata-sphinx-theme~=0.15.0
 sphinx
 sphinx-design
