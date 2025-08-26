@@ -2,12 +2,16 @@
 # Matplotlib cheat sheet
 # Released under the BSD License
 # -----------------------------------------------------------------------------
+import sys
 import pathlib
 
 import matplotlib.pyplot as plt
 
 
 ROOT_DIR = pathlib.Path(__file__).parent.parent
+sys.path.append(str(ROOT_DIR / "fonts"))
+import custom_fonts  # noqa
+
 
 fig = plt.figure(figsize=(4.25, 3.8))
 ax = fig.add_axes([0, 0, 1, 1], frameon=False, xticks=[], yticks=[],
@@ -17,13 +21,13 @@ y = 1
 
 # -----------------------------------------------------------------------------
 variants = {
-    "normal" : "../fonts/eb-garamond/EBGaramond08-Regular.otf",
-    "small-caps" : "../fonts/eb-garamond/EBGaramondSC08-Regular.otf"
+    "normal": "EB Garamond",
+    "small-caps": "EB Garamond SC",
 }
 
 text = "The quick brown fox jumps over the lazy dog"
-for i, (variant, file) in enumerate(variants.items()):
-    ax.text(1, y, text, size=9, va="center", font=pathlib.Path(file).resolve())
+for i, (variant, family) in enumerate(variants.items()):
+    ax.text(1, y, text, size=9, va="center", family=family)
 
     ax.text(39, y, variant,
             color="0.25", va="center", ha="right",

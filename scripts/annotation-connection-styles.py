@@ -1,3 +1,4 @@
+import sys
 import pathlib
 
 import matplotlib as mpl
@@ -5,6 +6,9 @@ import matplotlib.pyplot as plt
 
 
 ROOT_DIR = pathlib.Path(__file__).parent.parent
+sys.path.append(str(ROOT_DIR / "fonts"))
+import custom_fonts  # noqa
+
 
 mpl.style.use([
     ROOT_DIR / 'styles/base.mplstyle',
