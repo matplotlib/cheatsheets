@@ -1,3 +1,4 @@
+import sys
 import pathlib
 
 import matplotlib.pyplot as plt
@@ -5,6 +6,9 @@ import matplotlib.patches as mpatches
 
 
 ROOT_DIR = pathlib.Path(__file__).parent.parent
+sys.path.append(str(ROOT_DIR / "fonts"))
+import custom_fonts  # noqa
+
 
 styles = mpatches.ArrowStyle.get_styles()
 

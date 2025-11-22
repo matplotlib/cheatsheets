@@ -2,6 +2,7 @@
 # Author:  Nicolas P. Rougier
 # License: BSD
 # ----------------------------------------------------------------------------
+import sys
 import pathlib
 
 import numpy as np
@@ -10,6 +11,9 @@ import matplotlib.pyplot as plt
 
 
 ROOT_DIR = pathlib.Path(__file__).parent.parent
+sys.path.append(str(ROOT_DIR / "fonts"))
+import custom_fonts  # noqa
+
 
 mpl.rcParams['axes.linewidth'] = 1.5
 

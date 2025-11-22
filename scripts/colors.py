@@ -3,6 +3,7 @@
 # Released under the BSD License
 # -----------------------------------------------------------------------------
 
+import sys
 import pathlib
 
 import numpy as np
@@ -11,6 +12,9 @@ import matplotlib.pyplot as plt
 
 
 ROOT_DIR = pathlib.Path(__file__).parent.parent
+sys.path.append(str(ROOT_DIR / "fonts"))
+import custom_fonts  # noqa
+
 
 figsize = 4.0, 0.25
 fig = plt.figure(figsize=figsize)
