@@ -54,7 +54,7 @@ filelock==3.13.1
     # via virtualenv
 flake8==7.0.0
     # via -r requirements.in
-fonttools==4.47.2
+fonttools==4.61.0
     # via matplotlib
 identify==2.5.33
     # via pre-commit
