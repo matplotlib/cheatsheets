@@ -11,25 +11,9 @@ ROOT_DIR = pathlib.Path(__file__).parent.parent
 
 fig = plt.figure(figsize=(4.25, 3.8))
 ax = fig.add_axes([0, 0, 1, 1], frameon=False, xticks=[], yticks=[],
-                  xlim=[0, 40], ylim=[0, 38])
+                  xlim=[0, 40], ylim=[0, 34])
 
 y = 1
-
-# -----------------------------------------------------------------------------
-variants = {
-    "normal" : "../fonts/eb-garamond/EBGaramond08-Regular.otf",
-    "small-caps" : "../fonts/eb-garamond/EBGaramondSC08-Regular.otf"
-}
-
-text = "The quick brown fox jumps over the lazy dog"
-for i, (variant, file) in enumerate(variants.items()):
-    ax.text(1, y, text, size=9, va="center", font=pathlib.Path(file).resolve())
-
-    ax.text(39, y, variant,
-            color="0.25", va="center", ha="right",
-            size="small", family="Source Code Pro", weight=400)
-    y += 1.65
-y += 1
 
 # -----------------------------------------------------------------------------
 styles = ["normal", "italic"]
