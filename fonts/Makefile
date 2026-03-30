@@ -1,6 +1,5 @@
-FONT_DIRS := eb-garamond roboto roboto-mono roboto-slab source-code-pro source-sans-pro source-serif-pro pacifico
+FONT_DIRS := roboto roboto-mono roboto-slab source-code-pro source-sans-pro source-serif-pro pacifico
 
-EB_GARAMOND_ZIP      := https://bitbucket.org/georgd/eb-garamond/downloads/EBGaramond-0.016.zip
 ROBOTO_ZIP           := https://github.com/googlefonts/roboto/releases/download/v2.138/roboto-unhinted.zip
 ROBOTO_MONO_ZIP      := https://github.com/googlefonts/RobotoMono/archive/8f651634e746da6df6c2c0be73255721d24f2372.zip
 ROBOTO_SLAB_ZIP      := https://github.com/googlefonts/robotoslab/archive/a65e6d00d8e3e7ee2fabef844e58fa12690384d2.zip
@@ -18,7 +17,6 @@ default: all
 .PHONY: all
 all: sources
 	mkdir -p $(FONT_DIRS)
-	cd eb-garamond && unzip -j /tmp/eb-garamond.zip "EBGaramond-0.016/otf/*.otf" $(UNZIP_FLAGS)
 	cd roboto && unzip -j /tmp/roboto.zip "*.ttf" $(UNZIP_FLAGS)
 	cd roboto-mono && unzip -j /tmp/roboto-mono.zip "RobotoMono-8f651634e746da6df6c2c0be73255721d24f2372/fonts/ttf/*.ttf" $(UNZIP_FLAGS)
 	cd roboto-slab && unzip -j /tmp/roboto-slab.zip "robotoslab-a65e6d00d8e3e7ee2fabef844e58fa12690384d2/fonts/static/*.ttf" $(UNZIP_FLAGS)
@@ -29,7 +27,6 @@ all: sources
 
 .PHONY: sources
 sources:
-	wget $(EB_GARAMOND_ZIP) -O /tmp/eb-garamond.zip
 	wget $(ROBOTO_ZIP) -O /tmp/roboto.zip
 	wget $(ROBOTO_MONO_ZIP) -O /tmp/roboto-mono.zip
 	wget $(ROBOTO_SLAB_ZIP) -O /tmp/roboto-slab.zip
