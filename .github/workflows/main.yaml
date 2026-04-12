@@ -8,7 +8,7 @@ jobs:
 
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           persist-credentials: false
       - uses: actions/setup-python@v6
@@ -19,7 +19,7 @@ jobs:
       contents: write
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           persist-credentials: false
       - uses: actions/setup-python@v6
@@ -61,7 +61,7 @@ jobs:
       - name: Run checks
         run: |
           make check
-      - uses: actions/upload-artifact@v5
+      - uses: actions/upload-artifact@v7
         if: ${{ always() }}
         with:
           name: build
@@ -69,7 +69,7 @@ jobs:
             cheatsheets.pdf
             handout-*.pdf
             ./docs/_build/html/
-      - uses: actions/upload-artifact@v5
+      - uses: actions/upload-artifact@v7
         id: diffs-artifact-upload
         if: ${{ always() }}
         with:
