@@ -98,7 +98,7 @@ pdfminer-six==20201018
     # via pdfx
 pdfx==1.4.1
     # via -r requirements.in
-pillow==12.1.1
+pillow==12.2.0
     # via
     #   -r requirements.in
     #   matplotlib
