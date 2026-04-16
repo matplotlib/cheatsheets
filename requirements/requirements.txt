@@ -75,7 +75,7 @@ matplotlib==3.10.8
     #   mpl-sphinx-theme
 mccabe==0.7.0
     # via flake8
-mpl-sphinx-theme==3.9.0
+mpl-sphinx-theme==3.10.0
     # via -r requirements.in
 nodeenv==1.10.0
     # via pre-commit
@@ -91,7 +91,6 @@ packaging==26.0
     #   build
     #   cartopy
     #   matplotlib
-    #   pydata-sphinx-theme
     #   sphinx
     #   wheel
 pdfminer-six==20201018
@@ -114,10 +113,8 @@ pycodestyle==2.14.0
     #   flake8
 pycparser==3.0
     # via cffi
-pydata-sphinx-theme==0.13.3
-    # via
-    #   -r requirements.in
-    #   mpl-sphinx-theme
+pydata-sphinx-theme==0.16.1
+    # via mpl-sphinx-theme
 pyflakes==3.4.0
     # via flake8
 pygments==2.19.2
@@ -159,7 +156,9 @@ sphinx==8.1.3
     #   pydata-sphinx-theme
     #   sphinx-design
 sphinx-design==0.6.1
-    # via -r requirements.in
+    # via
+    #   -r requirements.in
+    #   mpl-sphinx-theme
 sphinxcontrib-applehelp==2.0.0
     # via sphinx
 sphinxcontrib-devhelp==2.0.0
