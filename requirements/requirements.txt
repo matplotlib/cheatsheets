@@ -183,7 +183,7 @@ typing-extensions==4.15.0
     #   cryptography
     #   pydata-sphinx-theme
     #   virtualenv
-urllib3==2.6.3
+urllib3==2.7.0
     # via requests
 virtualenv==20.36.1
     # via pre-commit
