@@ -149,7 +149,8 @@
 }
 
 
-\newcommand{\optional}[1]{\textcolor{gray}{#1}}
+# 89, 89, 89 is the lightest colour that still gives a good contrast ratio with the white background
+\newcommand{\optional}[1]{\textcolor[RGB]{89, 89, 89}{#1}}
 \newcommand{\mandatory}[1]{\textbf{#1}}
 \newcommand{\parameter}[2]{%
   \expandafter\ifstrequal\expandafter{#1}{optional}%
