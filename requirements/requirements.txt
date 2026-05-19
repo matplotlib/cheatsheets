@@ -58,7 +58,7 @@ fonttools==4.61.1
     # via matplotlib
 identify==2.6.16
     # via pre-commit
-idna==3.11
+idna==3.15
     # via requests
 imagesize==1.4.1
     # via sphinx
