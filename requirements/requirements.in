@@ -3,7 +3,7 @@ bump2version
 cartopy==0.22.0
 flake8
 matplotlib==3.10.8
-pillow>=9
+pillow>=12.3.0
 pdfx
 pip-tools
 pre-commit
