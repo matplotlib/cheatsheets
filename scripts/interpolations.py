@@ -4,9 +4,12 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 import numpy as np
 
+import _custom_fonts
+
 
 ROOT_DIR = pathlib.Path(__file__).parent.parent
 
+_custom_fonts.setup()
 mpl.style.use([
     ROOT_DIR / 'styles/base.mplstyle',
     ROOT_DIR / 'styles/plotlet-grid.mplstyle',

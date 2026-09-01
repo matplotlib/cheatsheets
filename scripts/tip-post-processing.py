@@ -6,8 +6,11 @@ from matplotlib.figure import Figure
 from matplotlib.backends.backend_agg import FigureCanvas
 from scipy.ndimage import gaussian_filter
 
+import _custom_fonts
+
 
 ROOT_DIR = pathlib.Path(__file__).parent.parent
+_custom_fonts.setup()
 
 # First pass for drop-shadow
 fig = Figure(figsize=(6, 1.5))

@@ -6,8 +6,11 @@ import pathlib
 
 import matplotlib.pyplot as plt
 
+import _custom_fonts
+
 
 ROOT_DIR = pathlib.Path(__file__).parent.parent
+_custom_fonts.setup()
 
 fig = plt.figure(figsize=(6, 1))
 # ax = plt.subplot(111, frameon=False, aspect=.1)

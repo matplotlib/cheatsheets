@@ -8,9 +8,12 @@ import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 
+import _custom_fonts
+
 
 ROOT_DIR = pathlib.Path(__file__).parent.parent
 
+_custom_fonts.setup()
 mpl.rcParams['axes.linewidth'] = 1.5
 
 fig = plt.figure(figsize=(8, 1.5))

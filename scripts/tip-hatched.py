@@ -3,8 +3,11 @@ import pathlib
 import numpy as np
 import matplotlib.pyplot as plt
 
+import _custom_fonts
+
 
 ROOT_DIR = pathlib.Path(__file__).parent.parent
+_custom_fonts.setup()
 
 cmap = plt.get_cmap("Oranges")
 color1, color2 = cmap(0.3), cmap(0.5)

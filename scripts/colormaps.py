@@ -3,8 +3,11 @@ import pathlib
 import numpy as np
 import matplotlib.pyplot as plt
 
+import _custom_fonts
+
 
 ROOT_DIR = pathlib.Path(__file__).parent.parent
+_custom_fonts.setup()
 
 figsize = 4.0, 0.25
 fig = plt.figure(figsize=figsize)

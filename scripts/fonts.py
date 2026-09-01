@@ -6,8 +6,11 @@ import pathlib
 
 import matplotlib.pyplot as plt
 
+import _custom_fonts
+
 
 ROOT_DIR = pathlib.Path(__file__).parent.parent
+_custom_fonts.setup()
 
 fig = plt.figure(figsize=(4.25, 3.8))
 ax = fig.add_axes([0, 0, 1, 1], frameon=False, xticks=[], yticks=[],

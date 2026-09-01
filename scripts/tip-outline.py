@@ -11,8 +11,11 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 import matplotlib.patheffects as path_effects
 
+import _custom_fonts
+
 
 ROOT_DIR = pathlib.Path(__file__).parent.parent
+_custom_fonts.setup()
 
 fig = plt.figure(figsize=(2, 2))
 mpl.rcParams['axes.linewidth'] = 1.5

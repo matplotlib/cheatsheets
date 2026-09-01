@@ -1,4 +1,5 @@
 SRC := $(wildcard *.tex)
+SCRIPTS := $(filter-out _%, $(notdir $(wildcard scripts/*.py)))
 CONVERTFLAGS = -density 150 -alpha remove -depth 8
 
 .PHONY: default
@@ -10,7 +11,7 @@ all: figures cheatsheets handouts docs
 .PHONY: figures
 figures:
 	# generate the figures
-	cd scripts && for script in *.py; do echo $$script; MPLBACKEND="agg" python $$script; done
+	cd scripts && for script in $(SCRIPTS); do echo $$script; MPLBACKEND="agg" python $$script; done
 	# crop some of the figures
 	cd figures && pdfcrop adjustments.pdf adjustments.pdf
 	cd figures && pdfcrop annotate.pdf annotate.pdf

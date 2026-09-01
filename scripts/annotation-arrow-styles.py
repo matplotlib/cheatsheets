@@ -3,8 +3,11 @@ import pathlib
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 
+import _custom_fonts
+
 
 ROOT_DIR = pathlib.Path(__file__).parent.parent
+_custom_fonts.setup()
 
 styles = mpatches.ArrowStyle.get_styles()
 

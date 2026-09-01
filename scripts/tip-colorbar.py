@@ -10,8 +10,11 @@ import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 
+import _custom_fonts
+
 
 ROOT_DIR = pathlib.Path(__file__).parent.parent
+_custom_fonts.setup()
 
 fig = plt.figure(figsize=(2.15, 2))
 mpl.rcParams['axes.linewidth'] = 1.5

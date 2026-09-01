@@ -8,8 +8,11 @@ import pathlib
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 
+import _custom_fonts
+
 
 ROOT_DIR = pathlib.Path(__file__).parent.parent
+_custom_fonts.setup()
 
 
 # Setup a plot such that only the bottom spine is shown

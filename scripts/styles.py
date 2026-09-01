@@ -7,8 +7,11 @@ import pathlib
 import numpy as np
 import matplotlib.pyplot as plt
 
+import _custom_fonts
+
 
 ROOT_DIR = pathlib.Path(__file__).parent.parent
+_custom_fonts.setup()
 
 for style in ['default'] + plt.style.available:
     with plt.style.context(style):
